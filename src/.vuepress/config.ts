@@ -1,6 +1,8 @@
 import { defineUserConfig } from "vuepress";
 import theme from "./theme.js"; // 引入主题函数
-import { autoCatalogPlugin } from "vuepress-plugin-auto-catalog";
+import { searchPlugin } from '@vuepress/plugin-search'
+
+
 
 export default defineUserConfig({
   // 站点配置
@@ -17,10 +19,10 @@ export default defineUserConfig({
 
   // 自动目录排除插件
   plugins: [
-    // autoCatalogPlugin({
-    //     exclude: ["/code/project/","/code/Leetcode/"],
-    //   }
-    // )
+    // 搜索插件
+    searchPlugin({
+      // 配置项
+    }),
   ],
   
   // 导入字体

@@ -79,12 +79,12 @@ export default hopeTheme({
   plugins: {
     blog: true,
 
-    // 评论
-    // comment: {
-    //   // You should generate and use your own comment service
-    //   provider: "Waline",
-    //   serverURL: "https://waline-comment.vuejs.press",
-    // },
+    //评论
+    comment: {
+      // You should generate and use your own comment service
+      provider: "Waline",
+      serverURL: "https://blog-comment-murex.vercel.app/",
+    },
 
     // all features are enabled for demo, only preserve features you need here
     mdEnhance: {
@@ -127,6 +127,8 @@ export default hopeTheme({
       vPre: true,
       vuePlayground: true,
     },
+
+
 
     // uncomment these if you want a PWA
     // pwa: {

@@ -11,10 +11,10 @@ bgImage: /assets/images/bg.png
 
 footer: T4mako's Blog
 projects: [ 
-  {name: 分类, link: /category, icon: link},
-  {name: 标签, link: /tag, icon: link},
-  {name: 时间线, link: /timeline, icon: link},
-  {name: 友链, link: /friends, icon: link},
+  # {name: 分类, link: /category, icon: link},
+  # {name: 标签, link: /tag, icon: link},
+  # {name: 时间线, link: /timeline, icon: link},
+  # {name: 友链, link: /friends, icon: link},
 ]
 ---
 
