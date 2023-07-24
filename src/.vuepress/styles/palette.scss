@@ -1,0 +1,32 @@
+// you can change colors here
+// $theme-color: #09d997;  //主题色
+// $theme-colors: #2196f3, #f26d6d, #3eaf7c, #fb9b5f;
+$theme-color: #2196f3;
+
+$bg-color: (
+  light: rgb(254,254,254),
+  dark: #0e1219,
+);
+$bg-color-secondary: (
+  light: rgb(245,246,250),
+  dark: #181d25,
+);
+$bg-color-tertiary: (
+  light: #efeef4,
+  dark: #21262c,
+);
+$border-color: (
+  light: #eaecef,
+  dark: #30363d,
+);
+
+
+// 单独设置
+.vp-blog-hero-title,.vp-blog-hero-description,.vp-blogger-info,.vp-site-name{
+  font-family: 'Zen Maru Gothic', sans-serif;
+}
+.vp-blog-infos{
+  display: none;
+}
+
+
