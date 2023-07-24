@@ -4,12 +4,12 @@ layout: BlogHome
 icon: home
 title: 主页
 heroImage: /logo.png
-heroText: T4mako's Bloc
+heroText: T4mako's Blog
 heroFullScreen: true
 tagline: 咖啡很苦，但这是为了用舌头去品尝生活的苦涩
 bgImage: /assets/images/bg.png
 
-footer: T4mako's Bloc
+footer: T4mako's Blog
 projects: [ 
   {name: 分类, link: /category, icon: link},
   {name: 标签, link: /tag, icon: link},
