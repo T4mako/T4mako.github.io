@@ -22,7 +22,7 @@ export default hopeTheme({
 
   author: {
     name: "T4mako",
-    url: "https://github.com/T4mako/T4mako.github.io",
+    url: "https://github.com/T4mako/T4mako.github.io", // 作者网站
   },
 
   darkmode: 'toggle', // 提供浅色与深色模式
@@ -33,7 +33,7 @@ export default hopeTheme({
 
   logo: "/favicon.ico", // 导航栏logo，个人资料logo
 
-  repo: "https://github.com/T4mako/T4mako.github.io",
+  repo: "https://github.com/T4mako/T4mako-Blog", // bolg代码仓库
 
   docsDir: "src",
 
