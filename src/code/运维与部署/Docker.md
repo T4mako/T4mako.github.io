@@ -1,7 +1,7 @@
 ---
 title: Docker 基础
 icon: docker
-category: Linux
+category: Docker
 tag:
   - docker
   - 部署
