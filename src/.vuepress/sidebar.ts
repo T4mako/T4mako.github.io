@@ -1,21 +1,48 @@
 import { sidebar } from "vuepress-theme-hope";
 
 export default sidebar({
-  // "/": [
-  //   "",
-  //   {
-  //     text: "如何使用",
-  //     icon: "laptop-code",
-  //     prefix: "demo/",
-  //     link: "demo/",
-  //     children: "structure",
-  //   },
-  //   {
-  //     text: "文章",
-  //     icon: "book",
-  //     prefix: "posts/",
-  //     children: "structure",
-  //   },
-  //   "intro",
-  // ],
+  "/code/": [
+    {
+      text: "代码笔记",
+      icon: "code",
+      children: "structure"
+    }
+  ],
+  "/interests/": [
+    {
+      text: "兴趣爱好",
+      icon: "view",
+      children: "structure"
+    }
+  ],
+  "/life/": [
+    {
+      text: "生活碎片",
+      icon: "note",
+      children: "structure"
+    }
+  ],
+  "/": [
+    "",
+    "intro",
+    {
+      text: "代码笔记",
+      icon: "code",
+      prefix: "code/",
+      link: "code/",
+    },
+    {
+      text: "兴趣爱好",
+      icon: "view",
+      prefix: "posts/",
+      link: "interests/"
+    },
+    {
+      text: "生活碎片",
+      icon: "note",
+      prefix: "posts/",
+      link: "life/"
+    },
+  ],
+  
 });

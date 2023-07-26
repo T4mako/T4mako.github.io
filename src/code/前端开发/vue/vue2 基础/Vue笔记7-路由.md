@@ -412,11 +412,11 @@ npm i vue-router
 不借助```<router-link> ```实现路由跳转，让路由跳转更加灵活
 
 具体编码：
-this.$router.push：push 方式路由
-this.$router.replace：replace 方式路由
-this.$router.forward() /：前进
-this.$router.back() ：后退
-this.$router.go() ：可前进也可后退（正负数控制）
+`this.$router.push`：push 方式路由
+`this.$router.replace`：replace 方式路由
+`this.$router.forward()` /：前进
+`this.$router.back()` ：后退
+`this.$router.go()` ：可前进也可后退（正负数控制）
 
 ```js
 //$router的两个API

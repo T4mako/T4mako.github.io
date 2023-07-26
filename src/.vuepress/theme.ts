@@ -41,27 +41,25 @@ export default hopeTheme({
   navbar,
 
   // sidebar
-  sidebar: "structure",
+  sidebar,
 
-  footer: "默认页脚",
+  footer: "T4mako's blog",
 
   displayFooter: true,
 
   blog: {
-    description: "",
+    description: "相信的心就是你的魔法",
     roundAvatar: true, // 圆形头像
     intro: "/intro.html", //个人介绍地址
     medias: {
       BiliBili: ["https://space.bilibili.com/313309138",BILIBILI],  
       GitHub: ["https://github.com/T4mako",GITHUB],
       Bangumi: ['https://bgm.tv/user/t4mako',BANGUMI],
-      // Instagram: "https://example.com",
       // Rss: "https://example.com",
       Steam: ["https://steamcommunity.com/profiles/76561199025694576/",STEAM],
       网易云: ["https://music.163.com/#/user/home?id=559686132",WANGYIYUN],
       微博: ["https://m.weibo.cn/u/6321875003",WEIBO],
       抖音: ["https://www.douyin.com/user/MS4wLjABAAAA32mwXDHtuWrwk5MD48IWbQCxLEzl1K-wBpUKNiH6NdA",DOUYIN],
-      // MrHope: ["https://mister-hope.com", MR_HOPE_AVATAR],
     },
   },
 
@@ -131,6 +129,8 @@ export default hopeTheme({
       vPre: true,
       vuePlayground: true,
     },
+
+
 
 
 

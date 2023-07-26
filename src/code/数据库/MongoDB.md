@@ -429,8 +429,8 @@ BookModel.find({price: {$lt:20}},(err,data) => {
 
 #### 3.5.2、逻辑运算
 
-$or 逻辑或的情况  
-$and 逻辑与的情况  
+`$or` 逻辑或的情况  
+`$and` 逻辑与的情况  
 
 ```js
 BookModel.find({$or:[{author: 'name'},{autohr: 'name2'}]},(err,data) => {

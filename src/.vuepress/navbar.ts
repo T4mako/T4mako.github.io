@@ -14,17 +14,28 @@ export default navbar([
       { text: "运维与部署", link: "运维与部署" },
       { text: "Python", link: "python" },
       { text: "Leetcode", link: "leetcode" },
-      { text: "项目笔记", link: "project" },
+      { text: "心得", link: "心得" },
+      { text: "项目笔记", link: "project" }
     ],
   },
   {
-    text: "设计相关",
+    text: "兴趣爱好",
     icon: "view",
-    children: []
+    prefix: "/interests/",
+    children: [
+      { text: "AE", link: "AE" },
+      { text: "Blender", link: "Blender" },
+      { text: "HLAE", link: "HLAE" },
+      // { text: "番剧鉴赏", link: "animate" },
+      // { text: "游戏鉴赏", link: "games" },
+      // { text: "厨艺", link: "cook" },
+      // { text: "咖啡", link: "coffee" },
+
+    ]
   },
   {
     text: "生活碎片",
-    icon: "share",
+    icon: "note",
     children: []
   },
   {
