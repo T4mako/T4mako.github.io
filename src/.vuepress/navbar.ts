@@ -14,8 +14,8 @@ export default navbar([
       { text: "运维与部署", link: "运维与部署" },
       { text: "Python", link: "python" },
       { text: "Leetcode", link: "leetcode" },
-      { text: "心得", link: "心得" },
-      { text: "项目笔记", link: "project" }
+      { text: "项目笔记", link: "project" },
+      { text: "其他", link: "其他" },
     ],
   },
   {

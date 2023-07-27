@@ -2,7 +2,6 @@
 title: Mybatis 基础
 icon: flow
 order: 8
-date: 2022-12-26
 category: 
     - java
 tag: 

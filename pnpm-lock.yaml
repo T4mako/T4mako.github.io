@@ -19,7 +19,13 @@ devDependencies:
   '@vuepress/plugin-docsearch':
     specifier: 2.0.0-beta.66
     version: 2.0.0-beta.66(@algolia/client-search@4.19.1)(search-insights@2.7.0)
+  '@vuepress/plugin-register-components':
+    specifier: 2.0.0-beta.66
+    version: 2.0.0-beta.66
   '@vuepress/plugin-search':
+    specifier: 2.0.0-beta.66
+    version: 2.0.0-beta.66
+  '@vuepress/utils':
     specifier: 2.0.0-beta.66
     version: 2.0.0-beta.66
   vue:
@@ -2409,6 +2415,17 @@ packages:
     dependencies:
       '@vuepress/core': 2.0.0-beta.66
       prismjs: 1.29.0
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - supports-color
+    dev: true
+
+  /@vuepress/plugin-register-components@2.0.0-beta.66:
+    resolution: {integrity: sha512-AQP813aOEByVcZXTsYXuzdC0rw/UjRETyTMwad83cAFM+lNle9bVBbMlC6FfXwb+hYo4Sbc9JJUvvaPUxc51jg==}
+    dependencies:
+      '@vuepress/core': 2.0.0-beta.66
+      '@vuepress/utils': 2.0.0-beta.66
+      chokidar: 3.5.3
     transitivePeerDependencies:
       - '@vue/composition-api'
       - supports-color

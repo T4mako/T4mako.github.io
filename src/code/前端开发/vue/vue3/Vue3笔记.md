@@ -1,6 +1,5 @@
 ---
 icon: vue
-date: 2023-05-20
 category: 
     - Vue
 tag: 

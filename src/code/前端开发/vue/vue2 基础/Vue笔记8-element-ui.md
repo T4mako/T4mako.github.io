@@ -1,7 +1,6 @@
 ---
 order: 8
 icon: vue
-date: 2023-05-19
 category: 
     - Vue
 tag: 

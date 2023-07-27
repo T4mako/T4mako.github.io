@@ -2,7 +2,6 @@
 title: JDBC 基础
 icon: java
 order: 3
-date: 2022-08-06
 category: 
     - java
 tag: 

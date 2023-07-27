@@ -1,6 +1,5 @@
 ---
 icon: java
-date: 2022-06-22
 category: 
     - java
 tag: 

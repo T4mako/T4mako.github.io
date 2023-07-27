@@ -2,7 +2,6 @@
 title: RabbitMQ 基础
 icon: article
 order: 14
-date: 2023-03-27
 category: 
     - java
 tag: 

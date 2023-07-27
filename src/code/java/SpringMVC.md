@@ -2,7 +2,6 @@
 title: SpringMVC 基础
 icon: leaf
 order: 9
-date: 2023-01-08
 category: 
     - java
 tag: 

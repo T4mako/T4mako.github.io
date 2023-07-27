@@ -2,7 +2,6 @@
 title: Maven 基础
 icon: categoryselected
 order: 7
-date: 2022-12-19
 category: 
     - java
 tag: 

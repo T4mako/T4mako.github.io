@@ -1,7 +1,6 @@
 ---
 title: Markdown 语法基础
 icon: markdown
-date: 2022-06-05
 category: 基础知识
 tag:
   - 基础语法

@@ -2,11 +2,16 @@ import { defineUserConfig } from "vuepress";
 import theme from "./theme.js"; // 引入主题函数
 import { docsearchPlugin } from "@vuepress/plugin-docsearch";
 import { ohmylive2dPlugin } from 'vuepress-plugin-oh-my-live2d';
+import { registerComponentsPlugin } from "@vuepress/plugin-register-components";
+import { getDirname, path } from "@vuepress/utils";
 
-
-
+const __dirname = getDirname(import.meta.url);
 
 export default defineUserConfig({
+  // 别名
+  alias: {
+    "@MyComponent": path.resolve(__dirname, "components/MyComponent.vue"),
+  },
   // 站点配置
   base: "/",
 
@@ -74,10 +79,15 @@ export default defineUserConfig({
         },
       },
     }),
-    // live 2D
-    // ohmylive2dPlugin({
-    //   // 在这里进行配置
-    // })
+    /* live 2D
+     ohmylive2dPlugin({
+        // 在这里进行配置
+     })*/
+
+    // 自己的组件
+    registerComponentsPlugin({
+      
+    }),
     
   ],
   

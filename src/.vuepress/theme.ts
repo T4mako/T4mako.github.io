@@ -51,6 +51,7 @@ export default hopeTheme({
     description: "相信的心就是你的魔法",
     roundAvatar: true, // 圆形头像
     intro: "/intro.html", //个人介绍地址
+    timeline: "时间线",
     medias: {
       BiliBili: ["https://space.bilibili.com/313309138",BILIBILI],  
       GitHub: ["https://github.com/T4mako",GITHUB],
