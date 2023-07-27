@@ -397,10 +397,10 @@ grant replication slave on *.* to t4mako;
 
 #### 3、配置从库Slaver
 
-第一步：修改Mysql数据库配置文件/etc/my.cnf （Ubantu下在 /etc/mysql/my.cnf）
+第一步：修改Mysql数据库配置文件/etc/my.cnf （Ubuntu下在 /etc/mysql/my.cnf）
 
 ```
-!server-id=101 #[必须]服务器唯一ID (ubantu下加一个！)
+!server-id=101 #[必须]服务器唯一ID (Ubuntu下加一个！)
 ```
 
 第二步：重启服务

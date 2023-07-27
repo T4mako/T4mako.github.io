@@ -53,7 +53,7 @@ permissions:
 
 jobs:
   deploy-gh-pages:
-    #运行在ubantu环境
+    #运行在Ubuntu环境
     runs-on: ubuntu-latest 
     steps:
       - name: Checkout
