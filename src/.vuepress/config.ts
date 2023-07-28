@@ -4,6 +4,7 @@ import { docsearchPlugin } from "@vuepress/plugin-docsearch";
 import { ohmylive2dPlugin } from 'vuepress-plugin-oh-my-live2d';
 import { registerComponentsPlugin } from "@vuepress/plugin-register-components";
 import { getDirname, path } from "@vuepress/utils";
+import { feedPlugin } from "vuepress-plugin-feed2";
 
 const __dirname = getDirname(import.meta.url);
 
@@ -79,6 +80,7 @@ export default defineUserConfig({
         },
       },
     }),
+
     /* live 2D
      ohmylive2dPlugin({
         // 在这里进行配置
@@ -87,6 +89,13 @@ export default defineUserConfig({
     // 自己的组件
     registerComponentsPlugin({
       
+    }),
+
+    // rss
+    feedPlugin({
+      hostname: "https://t4mako.github.io/",
+      rss: true,
+      icon: "rss"
     }),
     
   ],

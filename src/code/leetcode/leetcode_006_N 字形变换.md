@@ -1,27 +1,13 @@
+---
+category: 
+  - 算法
+tag: 
+  - 字符串
+---
+
 #  006_Z字形变换
 
-> tag：字符串
->
-> 难度：中等
-
-> 题目：
->
-> 将一个给定字符串 s 根据给定的行数 numRows ，以从上往下、从左到右进行 Z 字形排列。
->
-> 比如输入字符串为 "PAYPALISHIRING" 行数为 3 时，排列如下：
->
-> P   A   H   N
-> A P L S I I G
-> Y   I   R
-> 之后，你的输出需要从左往右逐行读取，产生出一个新的字符串，比如："PAHNAPLSIIGYIR"。
->
-> 请你实现这个将字符串进行指定行数变换的函数：
->
-> string convert(string s, int numRows);
->
-> 来源：力扣（LeetCode）
-> 链接：https://leetcode.cn/problems/zigzag-conversion
-> 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+<Badge text="中等" type="warning" vertical="middle" />
 
 ## 解法一：二维数组与数学规律
 
@@ -94,7 +80,5 @@ class Solution {
     }
 }
 ```
-
-#### 解法思路：
 
 建立一个ArrayList列表，列表中存放StringBuilder，建立整形i和flag，用for循环给list赋值，当flag为正数，i+flag为向下，如下图所示，当i\=\=0或者i%(n-1)\=\=0时说明要反向赋值，此时flag=-falg，i+flag为向上，将遍历到的字符赋值给相应的StringBuilder，最后将每个StringBuilder相加起来为所得结果。

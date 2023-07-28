@@ -1,31 +1,17 @@
+---
+category: 
+  - 算法
+tag: 
+  - 动态规划
+  - 字符串
+---
+
 # 005_最长回文子串
 
-> tag：动态规划、字符串
->
-> 难度：中等
-
-> 问题：
->
-> 给你一个字符串 `s`，找到 `s` 中最长的回文子串。  
-> 如果字符串的反序与原始字符串相同，则该字符串称为回文字符串。
->
-> 示例 1：
->
-> 输入：s = "babad"
-> 输出："bab"
-> 解释："aba" 同样是符合题意的答案。
-> 示例 2：
->
-> 输入：s = "cbbd"
-> 输出："bb"
->
-> 来源：力扣（LeetCode）
-> 链接：https://leetcode.cn/problems/longest-palindromic-substring
-> 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+<Badge text="中等" type="warning" vertical="middle" />
 
 
-
-# 解法一：中心扩散
+## 解法一：中心扩散
 
 ```java
 public  String longestPalindrome(String s) {
@@ -97,11 +83,9 @@ public  String longestPalindrome(String s) {
     }
 ```
 
-#### 解法思路：
-
 创建一个方法isPalindrome，用于返回当前字符所处位置的最长回文子串，通过两个指针left，right，对当前所指字符分别向左，右移动，如果两处所指的字符不同，则退出循环，如果相同继续执行，在longestPalindrome方法中，通过for循环不断遍历字符，并记录最长的那串字符。
 
-# 解法一优化：
+## 解法一优化：
 
 ```java
 public static String longestPalindrome(String s){
@@ -128,8 +112,6 @@ public static String longestPalindrome(String s){
         return right-left-1;
     }
 ```
-
-#### 解法思路：
 
 isPalindrome方法中传入字符串s，left，right后，判断left，right是否越界，并且所指字符是否相同，返回right到left的值，并在longestPalindrome方法中计算字符的位置
 

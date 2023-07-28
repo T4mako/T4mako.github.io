@@ -36,7 +36,11 @@ export default navbar([
   {
     text: "生活碎片",
     icon: "note",
-    children: []
+    prefix: "/life/",
+    children: [
+      {text: "随笔",link: "随笔"},
+      {text: "观影区",link: "观影区"},
+    ]
   },
   {
     text: "友链",

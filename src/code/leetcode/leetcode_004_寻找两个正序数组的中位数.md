@@ -1,31 +1,17 @@
+---
+category: 
+  - 算法
+tag: 
+  - 分治
+  - 二分
+  - 数组
+---
 # 004_寻找两个正序数组的中位数
 
-> tag：分治、二分、数组
->
-> 难度：困难
+<Badge text="困难" type="danger" vertical="middle" />
 
-> 题目：
->
-> 给定两个大小分别为 m 和 n 的正序（从小到大）数组 nums1 和 nums2。请你找出并返回这两个正序数组的 中位数 。
->
-> 算法的时间复杂度应该为 O(log (m+n)) 。
->
-> 示例 1：
->
-> 输入：nums1 = [1,3], nums2 = [2]
-> 输出：2.00000
-> 解释：合并数组 = [1,2,3] ，中位数 2
-> 示例 2：
->
-> 输入：nums1 = [1,2], nums2 = [3,4]
-> 输出：2.50000
-> 解释：合并数组 = [1,2,3,4] ，中位数 (2 + 3) / 2 = 2.5
->
-> 来源：力扣（LeetCode）
-> 链接：https://leetcode.cn/problems/median-of-two-sorted-arrays
-> 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
-# 解法一：归并排序
+## 解法一：归并排序
 
 ```java
 public static double findMedianSortedArrays(int[] nums1, int[] nums2) {
@@ -76,7 +62,7 @@ public static double findMedianSortedArrays(int[] nums1, int[] nums2) {
 
 
 
-# 解法二：二分法
+## 解法二：二分法
 
 ```java
 class Solution {
@@ -105,7 +91,6 @@ class Solution {
 }
 ```
 
-## 解法思路：
 
 题目提示算法的时间复杂度为O(log(n+m))，看到logn的复杂度就想到二分法，对于这题两个数组的和可能是奇数也可能是偶数，即m+n 的奇偶不确定。为了简化代码，分别找 **第 (m+n+1) / 2 个，和 (m+n+2) / 2 个**，然后求其平均值即可，这对奇偶数均适用。  
 定义一个函数来在两个有序数组中找到第 K 个元素，函数参数为两个原始数组和两个开始的指针与要找的第 k 个数。  
