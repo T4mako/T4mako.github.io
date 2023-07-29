@@ -1,1 +1,0 @@
-import{_ as e}from"./plugin-vue_export-helper-c27b6911.js";import{o as _,c as t,a as o}from"./app-e1356749.js";const c={},s=o("p",null,"在约一周前，有幸与某公司IT部老大与其一个手下交谈。作为社恐，交流并没有太多。",-1),n=[s];function r(a,l){return _(),t("div",null,n)}const m=e(c,[["render",r],["__file","职场交流.html.vue"]]);export{m as default};
