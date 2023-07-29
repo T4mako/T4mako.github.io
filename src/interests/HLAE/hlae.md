@@ -2,6 +2,7 @@
 tltle: hlae instructs
 ---
 # hlae instructs
+<!-- more -->
 :::info
 ═══════════════════════════════════════════
         Config Preset V1.6 by Purp1e        

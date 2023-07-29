@@ -139,3 +139,33 @@ const line3 = 'This is line 3'
 ```
 
 注意：不要在 VuePress 的 Markdown 中使用已废弃的 html 标签
+
+### 使用Vue组件
+在MarkDown文件中可以使用Vue语法和Vue组件  
+建议在`.vuepress/components`文件夹下创建组件  
+通过`@vuepress/plugin-register-components`插件可以进行组件的注册  
+
+[安装插件与配置项](https://vuejs.press/zh/reference/plugin/register-components.html) 
+
+[在vuepress-theme-hope中使用](https://theme-hope.vuejs.press/zh/cookbook/customize/component.html#%E5%9C%A8-markdown-%E4%B8%AD%E4%BD%BF%E7%94%A8-vue-%E8%AF%AD%E6%B3%95%E4%B8%8E%E7%BB%84%E4%BB%B6)：   
+为了正确导入自己的组件，你需要为它们创建别名，你可以通过 alias 选项实现这一点:
+```ts
+// .vuepress/config.ts
+import { getDirname, path } from "@vuepress/utils";
+
+const __dirname = getDirname(import.meta.url);
+
+export default {
+  alias: {
+    "@MyComponent": path.resolve(__dirname, "components/MyComponent.vue"),
+  },
+};
+```
+在MarkDown中引入：
+```md
+<MyComponent />
+
+<script setup lang="ts">
+import MyComponent from "@MyComponent";
+</script>
+```

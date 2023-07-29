@@ -2,6 +2,8 @@
 title: HTML 基础
 icon: html
 ---
+#
+<!-- more -->
 ## 1、前导概念
 
 **WEB标准：**

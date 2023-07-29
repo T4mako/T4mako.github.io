@@ -10,7 +10,7 @@ export default sidebar({
   ],
   "/interests/": [
     {
-      text: "兴趣爱好",
+      text: "兴趣使然",
       icon: "view",
       children: "structure"
     }
@@ -32,7 +32,7 @@ export default sidebar({
       link: "code/",
     },
     {
-      text: "兴趣爱好",
+      text: "兴趣使然",
       icon: "view",
       prefix: "posts/",
       link: "interests/"

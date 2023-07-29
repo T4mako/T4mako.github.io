@@ -3,7 +3,7 @@ title: Axios 教程
 icon: study
 ---
 
-**axios 引入方式：https://github.com/axios/axios#installing**
+axios 引入方式：https://github.com/axios/axios#installing
 
 ## 1、json-server 介绍与服务搭建
 

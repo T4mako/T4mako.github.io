@@ -1,11 +1,14 @@
 ---
+sticky: 10
 icon: delete
 date: 2023-07-27
 tag:
   - 个人介绍
 ---
-# 个人介绍
 
+
+# 个人介绍
+<!-- more -->
 ## 我是谁？
 
 - T4mako  
@@ -50,10 +53,8 @@ T4mako名字的由来：Tamako来自于[京都动画](https://www.kyotoanimation
 |     微信      |  支付宝   | 
 | :-----------: | :-------------: | 
 |<img src="../src/.vuepress/public/assets/images/vx.jpg" alt="vx" width="200" height="200">|<img src="../src/.vuepress/public/assets/images/zfb.jpg" alt="zfb" width="200" height="200"> | 
-## 待完善的内容
+## 博客待完善的内容
+- 文章格式整理
 - RSS订阅
-- 黑色主题主题色减暗
-- 背景图
-- 视频的嵌入
-- leetcode的导入
-- 更多的互动玩法（投票，小游戏。。。）
+- 更多玩法
+- 拉取更多信息

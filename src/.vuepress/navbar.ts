@@ -19,7 +19,7 @@ export default navbar([
     ],
   },
   {
-    text: "兴趣爱好",
+    text: "兴趣使然",
     icon: "view",
     prefix: "/interests/",
     children: [

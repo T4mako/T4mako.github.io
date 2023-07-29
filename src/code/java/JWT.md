@@ -10,16 +10,13 @@ tag:
     - 单点登录
     - 安全
 ---
-## JWT 
-
-### 1、JWT 介绍
 
 JSON Web Token ([JWT](https://jwt.io/introduction/)) 是一个开放标准（rfc7519），它定义了一种紧凑的、自包含的方式，用于在各方之间以 **JSON对象** 安全地传输信息。此信息可以验证和信任，因为它是数字签名的。JWT 可以使用 HMAC算法 或 使用 RSA 或 ECDSA 的公钥/私钥对进行签名
 <!-- more -->
 
 JSON Web Token（缩写 JWT）是目前最流行的跨域认证解决方案																																																										
 
-### 2、JWT 作用
+### 1、JWT 作用
 
 1、**登录授权**
 
@@ -32,7 +29,7 @@ JSON Web Token（缩写 JWT）是目前最流行的跨域认证解决方案
   通过对 JWT 进行签名（例如，使用公钥/私钥对），可以确保发件人是他们所说的人。
   此外，由于签名是使用标头和有效负载计算的，因此您还可以验证内容是否遭到篡改。
 
-### 3、session 与 JWT 对比
+### 2、session 与 JWT 对比
 
 #### 传统的Session认证
 
@@ -95,7 +92,7 @@ JWT 的原理是，服务器认证以后，生成一个 JSON 对象，发回给�
 
 - 不需要在服务端保存会话信息，特别适用于分布式微服务。
 
-### 4、JWT 结构
+### 3、JWT 结构
 
 **header.payload.singnature**
 
@@ -168,7 +165,7 @@ JWT 的原理是，服务器认证以后，生成一个 JSON 对象，发回给�
 
 ![image-20200726124257203](https://raw.githubusercontent.com/T4mako/ImageBed/main/image-20200726124257203.png)
 
-### 5、JWT 使用
+### 4、JWT 使用
 
 [JWT官网提供的使用](https://jwt.io/libraries)
 
@@ -253,7 +250,7 @@ public class JWTUtils {
 }
 ```
 
-### 7.整合springboot
+### 6.整合springboot
 
 #### Controller 层开发
 

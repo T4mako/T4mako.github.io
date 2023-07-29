@@ -49,7 +49,7 @@ export default hopeTheme({
   displayFooter: true,
 
   blog: {
-    description: "相信的心就是你的魔法",
+    description: "noob coder",
     roundAvatar: true, // 圆形头像
     intro: "/intro.html", //个人介绍地址
     timeline: "时间线",
@@ -139,6 +139,11 @@ export default hopeTheme({
         "Badge"
       ],
     },
+    // rss
+    feed: {
+      rss: true,
+      icon: "rss"
+    }
 
 
 

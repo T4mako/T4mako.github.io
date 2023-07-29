@@ -1,13 +1,15 @@
 ---
-title: IDE 的使用
+title: IDE 快捷键
 icon: sidebar
 order: 20
 category: java
 tag:
   - IDE
 ---
-## Eclipse
+#
 <!-- more -->
+## Eclipse
+
 - 补全代码的声明： alt + /
 - *快速修复: ctrl + 1 **
 - 批量导包： ctrl + shift + o

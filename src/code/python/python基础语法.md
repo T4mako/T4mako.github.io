@@ -2,6 +2,8 @@
 title: Python 基础语法
 icon: python
 ---
+#
+<!-- more -->
 ## 1、数据类型
 
 Python3 中有六个标准的数据类型：

@@ -1,6 +1,6 @@
 ---
 order: 4
-icon: vues
+icon: vue
 category: 
     - Vue
 tag: 

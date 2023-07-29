@@ -3,7 +3,8 @@ title: Elasticsearch
 icon: search
 ---
 
-## elasticsearch分布式搜索引擎
+elasticsearch分布式搜索引擎
+<!-- more -->
 
 ## 1、初识elasticsearch
 

@@ -12,6 +12,7 @@ export default defineUserConfig({
   // 别名
   alias: {
     "@MyComponent": path.resolve(__dirname, "components/MyComponent.vue"),
+    "@MyBangumi": path.resolve(__dirname, "components/MyBangumi.vue")
   },
   // 站点配置
   base: "/",
@@ -89,14 +90,7 @@ export default defineUserConfig({
     // 自己的组件
     registerComponentsPlugin({
       
-    }),
-
-    // rss
-    feedPlugin({
-      hostname: "https://t4mako.github.io/",
-      rss: true,
-      icon: "rss"
-    }),
+    })
     
   ],
   

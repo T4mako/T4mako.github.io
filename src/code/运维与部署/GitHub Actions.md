@@ -1,5 +1,5 @@
 ---
-title: 使用 GitHub Actions 部署 vuepress-theme-hope Blog 
+title: GitHub Actions 部署
 icon: ci  
 date: 2023-07-24  
 category: 
@@ -10,7 +10,10 @@ tag:
     - GitHub
 ---
 
-## 使用 GitHub Actions 部署 vuepress-theme-hope Blog 
+
+使用 GitHub Actions 部署，以 vuepress-theme-hope Blog 为例
+
+<!-- more -->
 
 关于 git  相关使用  [GIt基础](/code/基础知识/Git)
 

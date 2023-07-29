@@ -2,6 +2,7 @@
 tltle: personal config
 ---
 # personal config
+<!-- more -->
 ```
 bind"mouse5""+jump;-attack;-jump"
 bind v "toggle cl_righthand 1 0"
