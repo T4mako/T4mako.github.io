@@ -28,7 +28,8 @@ export default navbar([
       { text: "HLAE", link: "HLAE" },
       // { text: "番剧鉴赏", link: "animate" },
       // { text: "游戏鉴赏", link: "games" },
-      // { text: "厨艺", link: "cook" },
+      { text: "吃饭糊弄学", link: "cook" },
+
       // { text: "咖啡", link: "coffee" },
 
     ]

@@ -1,8 +1,9 @@
 ---
 title: CSGO weapons 导入 blender
 ---
-#
-<!-- more -->
+
+<BiliBili bvid="BV1Mg411c73H" />
+
 ## 1、提取CSGO文件
 
 下载Crowbar、解包文件
@@ -10,6 +11,7 @@ title: CSGO weapons 导入 blender
 ![image-20230202233524241](https://raw.githubusercontent.com/T4mako/ImageBed/main/image-20230202233524241.png)
 
 ## 2、导出smd文件
+
 
 ![image-20230202233539754](https://raw.githubusercontent.com/T4mako/ImageBed/main/image-20230202233539754.png)
 
