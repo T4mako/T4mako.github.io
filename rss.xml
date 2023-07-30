@@ -6,8 +6,8 @@
     <link>https://T4mako.github.io/</link>
     <description>T4mako</description>
     <language>zh-CN</language>
-    <pubDate>Sat, 29 Jul 2023 16:26:46 GMT</pubDate>
-    <lastBuildDate>Sat, 29 Jul 2023 16:26:46 GMT</lastBuildDate>
+    <pubDate>Sun, 30 Jul 2023 15:24:24 GMT</pubDate>
+    <lastBuildDate>Sun, 30 Jul 2023 15:24:24 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>心得</category>
@@ -127,7 +127,6 @@ B是sap与c#方向。毕业院校不是很好，同时也走了不少弯路。�
 <li>文章格式整理</li>
 <li>RSS订阅</li>
 <li>更多玩法</li>
-<li>拉取更多信息</li>
 </ul>
 ]]></content:encoded>
     </item>
