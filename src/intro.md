@@ -55,4 +55,5 @@ T4mako名字的由来：Tamako来自于[京都动画](https://www.kyotoanimation
 ## 博客待完善的内容
 - 文章格式整理
 - RSS订阅
+- 背景图更换
 - 更多玩法
