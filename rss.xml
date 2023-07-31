@@ -6,8 +6,8 @@
     <link>https://T4mako.github.io/</link>
     <description>T4mako</description>
     <language>zh-CN</language>
-    <pubDate>Mon, 31 Jul 2023 12:58:20 GMT</pubDate>
-    <lastBuildDate>Mon, 31 Jul 2023 12:58:20 GMT</lastBuildDate>
+    <pubDate>Mon, 31 Jul 2023 13:39:34 GMT</pubDate>
+    <lastBuildDate>Mon, 31 Jul 2023 13:39:34 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>算法</category>
@@ -79,13 +79,13 @@ B是sap与c#方向。毕业院校不是很好，同时也走了不少弯路。�
 ]]></content:encoded>
     </item>
     <item>
-      <title>个人介绍</title>
+      <title>个人介绍 / 留言板</title>
       <link>https://T4mako.github.io/intro.html</link>
       <guid>https://T4mako.github.io/intro.html</guid>
-      <source url="https://T4mako.github.io/rss.xml">个人介绍</source>
-      <description>个人介绍</description>
+      <source url="https://T4mako.github.io/rss.xml">个人介绍 / 留言板</source>
+      <description>个人介绍 / 留言板</description>
       <pubDate>Thu, 27 Jul 2023 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<h1> 个人介绍</h1>
+      <content:encoded><![CDATA[<h1> 个人介绍 / 留言板</h1>
 <!-- more -->
 <h2> 我是谁？</h2>
 <ul>
@@ -104,11 +104,12 @@ B是sap与c#方向。毕业院校不是很好，同时也走了不少弯路。�
 <ul>
 <li>编程 <s>解决吃饭</s></li>
 <li>打游戏 <s>电子阳痿</s></li>
-<li>视频设计 <s>Edit for fun</s></li>
+<li>MAD/摸鱼 <s>Edit for fun</s></li>
 <li>看番 <s>婆罗门</s></li>
 <li>厨艺 <s>吃饭糊弄学研究方向</s></li>
+<li>more and more <s>感兴趣但不会</s></li>
 </ul>
-<h2> 社交账号与联系方式</h2>
+<h2> 社交媒体与联系方式</h2>
 <p>联系方式：</p>
 <ul>
 <li>你可以在下方留言</li>
