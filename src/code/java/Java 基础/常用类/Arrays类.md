@@ -26,6 +26,13 @@ System.out.println(Arrays.toString(nums));
 // 2、Arrays.sort() 数组排序
 Arrays.sort(nums);
 System.out.println(Arrays.toString(nums));
+// 对二维数组排序，重写比较器
+Arrays.sort(b, new Comparator<int[]>() {
+        @Override
+    public int compare(int[] o1, int[] o2) {
+        return Integer.compare(o1[0] , o2[0]);
+    }
+});
 // 3、Arrays.asList() 将数组转化成List
 ArrayList<Integer> ints = new ArrayList<>(Arrays.asList(nums));
 // 4、Arrays.fill() 将数组填充某个值
@@ -43,5 +50,12 @@ System.out.println(Arrays.toString(integers));
 // 8、Arrays.copyOfRange 截取从from到to的数组返回新的数组，左闭右开
 Integer[] integers1 = Arrays.copyOfRange(nums2, 1, 8);
 System.out.println(Arrays.toString(integers1));
+// 9、Arrays.deepToString() 深度打印
+int[][] b = new int[10][2];
+for (int j = 0; j < b.length; j++) {
+    b[j][0] = new Random().nextInt(10);
+    b[j][1] = new Random().nextInt(10);
+}
+System.out.println(Arrays.deepToString(b));
 ```
 
