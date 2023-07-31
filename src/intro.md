@@ -14,7 +14,7 @@ tag:
 - T4mako  
 - 经典社恐
 - 性别：男  
-- 年龄：21
+- 年龄：22
 - 婚姻情况: 未婚  
 - 单身: 是  
 - 学历：苏州科技大学 CS在读  
@@ -34,7 +34,7 @@ T4mako名字的由来：Tamako来自于[京都动画](https://www.kyotoanimation
 - 你可以在下方留言  
 - 或通过QQ号查找到我：1536954632
 
-社交账号：
+社交媒体：
 - [Bilibili](https://space.bilibili.com/313309138) ~~（home）~~
 - [GitHub](https://github.com/T4mako) ~~（学习与整活）~~
 - [Bangumi](https://bgm.tv/user/t4mako) ~~（速来看番）~~
@@ -44,7 +44,6 @@ T4mako名字的由来：Tamako来自于[京都动画](https://www.kyotoanimation
 - [抖音](https://www.douyin.com/user/MS4wLjABAAAA32mwXDHtuWrwk5MD48IWbQCxLEzl1K-wBpUKNiH6NdA) ~~（随心发）~~
 ## 日常
 学习、睡觉、吃饭、玩
-目前摆烂式备战考研中  
 ## 关于博客
 本博客基于[vuepress-theme-hope](https://theme-hope.vuejs.press/zh/)主题搭建的[vuepress](https://vuejs.press/zh/)博客。  
 该博客存储我的大部分笔记，并提供搜索、评论服务~~我真会来搜吗~~
