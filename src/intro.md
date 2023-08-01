@@ -26,7 +26,7 @@ T4mako名字的由来：Tamako来自于[京都动画](https://www.kyotoanimation
 ## 兴趣爱好
 - 编程 ~~解决吃饭~~
 - 打游戏 ~~电子阳痿~~
-- MAD/摸鱼 ~~Edit for fun~~
+- MAD/摸鱼 ~~计算机图形学实验员~~
 - 看番 ~~婆罗门~~
 - 厨艺 ~~吃饭糊弄学研究方向~~
 - more and more ~~感兴趣但不会~~
