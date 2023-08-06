@@ -16,6 +16,8 @@ order: 1679
 
 <Badge text="中等" type="warning" vertical="middle" />
 
+[题目描述](https://leetcode.cn/problems/max-number-of-k-sum-pairs/?envType=study-plan-v2&envId=leetcode-75)
+
 ## 解法一：哈希表
 
 讲数组中所有的数添加到哈希表中，key存储数字，value存储个数，通过找对应key和k-key的个数判断执行几次操作
