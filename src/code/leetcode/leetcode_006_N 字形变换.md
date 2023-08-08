@@ -3,9 +3,10 @@ category:
   - 算法
 tag: 
   - 字符串
+order: 6
 ---
 
-#  006_Z字形变换
+#  006. Z字形变换
 
 <Badge text="中等" type="warning" vertical="middle" />
 

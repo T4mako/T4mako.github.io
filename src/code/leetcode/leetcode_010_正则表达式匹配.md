@@ -5,8 +5,9 @@ tag:
   - 动态规划
   - 递归
   - 字符串
+order: 10
 ---
-# 010_正则表达式匹配
+# 010. 正则表达式匹配
 
 <Badge text="困难" type="danger" vertical="middle" />
 

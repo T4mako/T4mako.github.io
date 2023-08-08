@@ -5,8 +5,9 @@ tag:
   - 分治
   - 二分
   - 数组
+order: 4
 ---
-# 004_寻找两个正序数组的中位数
+# 004. 寻找两个正序数组的中位数
 
 <Badge text="困难" type="danger" vertical="middle" />
 

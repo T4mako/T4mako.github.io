@@ -3,8 +3,10 @@ category:
   - 算法
 tag: 
   - 数学
+
+order: 7
 ---
-# 007_整数反转
+# 007. 整数反转
 
 <Badge text="中等" type="warning" vertical="middle" />
 

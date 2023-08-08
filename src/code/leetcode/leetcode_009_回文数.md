@@ -3,8 +3,10 @@ category:
   - 算法
 tag: 
   - 数学
+
+order: 9
 ---
-# 009_回文数
+# 009. 回文数
 
 <Badge text="简单" type="tip" vertical="middle" />
 

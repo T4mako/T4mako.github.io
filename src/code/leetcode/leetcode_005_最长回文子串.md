@@ -4,9 +4,10 @@ category:
 tag: 
   - 动态规划
   - 字符串
+order: 5
 ---
 
-# 005_最长回文子串
+# 005. 最长回文子串
 
 <Badge text="中等" type="warning" vertical="middle" />
 

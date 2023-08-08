@@ -4,8 +4,9 @@ category:
 tag: 
   - 数组
   - 哈希
+order: 1
 ---
-# 001_两数之和
+# 001. 两数之和
 
 <Badge text="简单" type="tip" vertical="middle" />
 

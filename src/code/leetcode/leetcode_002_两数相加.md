@@ -5,8 +5,9 @@ tag:
   - 递归
   - 链表
   - 数学
+order: 2
 ---
-# 002_两数相加
+# 002. 两数相加
 
 <Badge text="中等" type="warning" vertical="middle" />
 

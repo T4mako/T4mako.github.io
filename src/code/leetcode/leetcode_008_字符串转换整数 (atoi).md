@@ -3,9 +3,10 @@ category:
   - 算法
 tag: 
   - 字符串
+order: 8
 ---
 
-# 008_字符串转换整数 (atoi)
+# 008. 字符串转换整数 (atoi)
 
 <Badge text="中等" type="warning" vertical="middle" />
 
