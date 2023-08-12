@@ -62,3 +62,13 @@ from Tweets
 where LENGTH(content) > 15;
 ```
 
+### 1378. 使用唯一标识码替换员工ID
+
+
+<Badge text="简单" type="tip" vertical="middle" />
+
+```sql
+select b.unique_id,a.name 
+from Employees a left join EmployeeUNI b 
+on a.id = b.id;
+```

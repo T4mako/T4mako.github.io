@@ -11,7 +11,7 @@ order: 735
 
 # 933. 最近的请求次数
 
-<Badge text="简答" type="tip" vertical="middle" />
+<Badge text="简单" type="tip" vertical="middle" />
 
 [题目描述](https://leetcode.cn/problems/number-of-recent-calls/description/?envType=study-plan-v2&envId=leetcode-75)
 
