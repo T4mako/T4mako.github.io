@@ -1,6 +1,5 @@
 ---
 title: TypeScript基础
-sticky: 9
 date: 2023-08-12
 category: 
   - TypeScript

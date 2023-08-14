@@ -1,4 +1,5 @@
 ---
+
 date: 2023-08-11
 category: 
   - 算法
@@ -7,6 +8,7 @@ tag:
   - 数组
   - 模拟
 order: 735
+article: false
 ---
 
 # 735. 行星碰撞

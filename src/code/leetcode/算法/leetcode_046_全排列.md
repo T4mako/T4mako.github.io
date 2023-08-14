@@ -4,6 +4,7 @@ category:
 tag: 
   - 数组
   - 回溯
+article: false
 ---
 
 # 046_全排列

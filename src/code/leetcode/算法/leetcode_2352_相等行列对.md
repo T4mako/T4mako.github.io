@@ -1,4 +1,5 @@
 ---
+article: false
 date: 2023-08-09
 category: 
   - 算法
@@ -10,7 +11,7 @@ tag:
 order: 1207
 ---
 
-# 1207. 独一无二的出现次数
+# 2352. 相等行列对
 
 <Badge text="中等" type="warning" vertical="middle" />
 

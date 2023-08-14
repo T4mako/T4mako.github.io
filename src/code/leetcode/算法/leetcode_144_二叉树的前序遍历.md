@@ -1,4 +1,5 @@
 ---
+article: false
 category: 
   - 算法
 tag: 

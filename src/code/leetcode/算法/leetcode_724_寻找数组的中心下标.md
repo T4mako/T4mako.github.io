@@ -6,6 +6,7 @@ tag:
   - 数组
   - 前缀和
 order: 724
+article: false
 ---
 # 724_寻找数组的中心下标
 

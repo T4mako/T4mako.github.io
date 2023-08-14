@@ -72,3 +72,24 @@ select b.unique_id,a.name
 from Employees a left join EmployeeUNI b 
 on a.id = b.id;
 ```
+
+### 1068. 产品销售分析 I
+<Badge text="简单" type="tip" vertical="middle" />
+
+```sql
+select p.product_name,s.year,s.price 
+from Sales s , Product p
+where  s.product_id = p.product_id;
+```
+
+### 1581. 进店却未进行过交易的顾客
+
+<Badge text="简单" type="tip" vertical="middle" />
+
+```sql
+select v.customer_id,COUNT(customer_id) count_no_trans
+from Visits v left join Transactions t
+on t.visit_id = v.visit_id
+where t.visit_id is null
+group by customer_id;
+```
