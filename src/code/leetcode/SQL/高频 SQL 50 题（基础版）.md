@@ -93,3 +93,28 @@ on t.visit_id = v.visit_id
 where t.visit_id is null
 group by customer_id;
 ```
+
+### 197. 上升的温度
+
+<Badge text="简单" type="tip" vertical="middle" />
+
+```sql
+select w1.id Id
+from Weather w1,Weather w2
+where DATEDIFF(w1.recordDate,w2.recordDate) = 1 and w1.temperature > w2.temperature;
+```
+
+### 1661. 每台机器的进程平均运行时间
+
+<Badge text="简单" type="tip" vertical="middle" />
+
+### 577. 员工奖金
+
+<Badge text="简单" type="tip" vertical="middle" />
+
+```sql
+select e.name,b.bonus
+from Employee e left join Bonus b
+on e.empid = b.empid
+where b.bonus is null or b.bonus < 1000;
+```

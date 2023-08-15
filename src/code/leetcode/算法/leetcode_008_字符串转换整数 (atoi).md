@@ -3,7 +3,8 @@ category:
   - 算法
 tag: 
   - 字符串
-order: 8
+
+article: false
 ---
 
 # 008. 字符串转换整数 (atoi)

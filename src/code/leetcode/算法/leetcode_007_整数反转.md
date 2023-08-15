@@ -3,8 +3,7 @@ category:
   - 算法
 tag: 
   - 数学
-
-order: 7
+article: false
 ---
 # 007. 整数反转
 

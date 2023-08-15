@@ -4,7 +4,8 @@ category:
 tag: 
   - 动态规划
   - 字符串
-order: 5
+
+article: false
 ---
 
 # 005. 最长回文子串

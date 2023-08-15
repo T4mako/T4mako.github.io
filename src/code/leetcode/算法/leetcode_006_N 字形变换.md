@@ -3,7 +3,8 @@ category:
   - 算法
 tag: 
   - 字符串
-order: 6
+
+article: false
 ---
 
 #  006. Z字形变换
