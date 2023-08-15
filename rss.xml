@@ -6,8 +6,8 @@
     <link>https://T4mako.github.io/</link>
     <description>T4mako</description>
     <language>zh-CN</language>
-    <pubDate>Mon, 14 Aug 2023 11:09:44 GMT</pubDate>
-    <lastBuildDate>Mon, 14 Aug 2023 11:09:44 GMT</lastBuildDate>
+    <pubDate>Tue, 15 Aug 2023 15:32:05 GMT</pubDate>
+    <lastBuildDate>Tue, 15 Aug 2023 15:32:05 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>TypeScript</category>
@@ -27,10 +27,11 @@
       <link>https://T4mako.github.io/code/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/TypeScrip%E5%9F%BA%E7%A1%80.html</link>
       <guid>https://T4mako.github.io/code/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/TypeScrip%E5%9F%BA%E7%A1%80.html</guid>
       <source url="https://T4mako.github.io/rss.xml">TypeScript基础</source>
-      <description>(参考文章)[https://wangdoc.com/typescript/] 一、TypeScript 语言简介 1、概述 TypeScript（简称 TS）是微软公司开发的一种 基于 JavaScript （简称 JS）语言的编程语言。 它的目的并不是创造一种全新语言，而是 增强 JavaScript 的功能，使其更适合多人合作的企业级项目。</description>
+      <description>(参考文章)[https://wangdoc.com/typescript/] 最简单的 TypeScript 使用方法，就是使用官网的在线编译页面， TypeScript Playground。 一、TypeScript 语言简介</description>
       <category>TypeScript</category>
       <pubDate>Sat, 12 Aug 2023 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[<p>(参考文章)[<a href="https://wangdoc.com/typescript/" target="_blank" rel="noopener noreferrer">https://wangdoc.com/typescript/</a>]</p>
+<p>最简单的 TypeScript 使用方法，就是使用官网的在线编译页面， <a href="http://www.typescriptlang.org/play/" target="_blank" rel="noopener noreferrer">TypeScript Playground</a>。</p>
 <h2> 一、TypeScript 语言简介</h2>
 <h3> 1、概述</h3>
 <p>TypeScript（简称 TS）是微软公司开发的一种 <strong>基于 JavaScript</strong> （简称 JS）语言的编程语言。</p>
@@ -247,14 +248,327 @@
 <p>undefined 类型只包含一个值<code>undefined</code>，表示未定义（即还未给出定义，以后可能会有定义）。</p>
 <div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，变量<code>x</code>就属于 undefined 类型。两个<code>undefined</code>里面，第一个是类型，第二个是值。</p>
 <p>null 类型也只包含一个值<code>null</code>，表示为空（即此处没有值）。</p>
+<div class="hint-container warning">
+<p class="hint-container-title">注意</p>
 <p>注意，如果没有声明类型的变量，被赋值为<code>undefined</code>或<code>null</code>，它们的类型会被推断为<code>any</code>。</p>
+</div>
 <div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>如果希望避免这种情况，则需要打开编译选项<code>strictNullChecks</code>。（vscode默认打开）</p>
 <div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，打开编译设置<code>strictNullChecks</code>以后，赋值为<code>undefined</code>的变量会被推断为<code>undefined</code>类型，赋值为<code>null</code>的变量会被推断为<code>null</code>类型。</p>
 <h3> 2、包装对象类型</h3>
+<h4> 2.1、包装对象的概念</h4>
+<p>JavaScript 的8种类型之中（boolean，number，bigint，stristring，symbol，undefined，null，object），<code>undefined</code>和<code>null</code>其实是两个特殊值，<code>object</code>属于复合类型，剩下的五种属于原始类型（primitive value），代表最基本的、不可再分的值。</p>
+<ul>
+<li>boolean、string、number、bigint、symbol</li>
+</ul>
+<p>上面这五种原始类型的值，都有对应的包装对象（wrapper object）。所谓“包装对象”，指的是这些值在需要时，会自动产生的对象。</p>
+<div class="language-javascript line-numbers-mode" data-ext="js"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>上面示例中，字符串<code>hello</code>执行了<code>charAt()</code>方法。但是，在 JavaScript 语言中，只有对象才有方法，原始类型的值本身没有方法。这行代码之所以可以运行，就是因为在调用方法时，字符串会<strong>自动转为包装对象</strong>，<code>charAt()</code>方法其实是定义在包装对象上。</p>
+<p>五种包装对象之中，symbol 类型和 bigint 类型无法直接获取它们的包装对象（即<code>Symbol()</code>和<code>BigInt()</code>不能作为构造函数使用），但是剩下三种可以。</p>
+<ul>
+<li><code>Boolean()</code>、<code>String()</code>、<code>Number()</code></li>
+</ul>
+<div class="language-javascript line-numbers-mode" data-ext="js"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>::warning</p>
+<p>注意，<code>String()</code>只有当作构造函数使用时（即带有<code>new</code>命令调用），才会返回包装对象。如果当作普通函数使用（不带有<code>new</code>命令），返回就是一个普通字符串。其他两个构造函数<code>Number()</code>和<code>Boolean()</code>也是如此。</p>
+<p>:::</p>
+<h4> 2.2、包装对象类型与字面量类型</h4>
+<p>由于包装对象的存在，导致每一个原始类型的值都有包装<strong>对象</strong>和<strong>字面量</strong>两种情况。</p>
+<div class="language-javascript line-numbers-mode" data-ext="js"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>为了区分这两种情况，TypeScript 对五种原始类型分别提供了大写和小写两种类型。</p>
+<ul>
+<li>Boolean 和 boolean</li>
+<li>String 和 string</li>
+<li>Number 和 number</li>
+<li>BigInt 和 bigint</li>
+<li>Symbol 和 symbol</li>
+</ul>
+<p>其中，大写类型同时包含包装对象和字面量两种情况，小写类型只包含字面量，不包含包装对象。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="hint-container info">
+<p class="hint-container-title">相关信息</p>
+<p>建议只使用小写类型，不使用大写类型。因为绝大部分使用原始类型的场合，都是使用字面量，不使用包装对象。<br>
+而且，TypeScript 把很多内置方法的参数，定义成小写类型，使用大写类型会报错。</p>
+</div>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，<code>Math.abs()</code>方法的参数类型被定义成小写的<code>number</code>，传入大写的<code>Number</code>类型就会报错。</p>
+<p>上一小节说过，<code>Symbol()</code>和<code>BigInt()</code>这两个函数不能当作构造函数使用，所以没有办法直接获得 symbol 类型和 bigint 类型的包装对象，除非使用下面的写法。但是，它们没有使用场景，因此<code>Symbol</code>和<code>BigInt</code>这两个类型虽然存在，但是完全没有使用的理由。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，得到的就是 Symbol 和 BigInt 的包装对象，但是没有使用的意义。</p>
+<h3> 3、Object 类型与 object 类型</h3>
+<p>TypeScript 的<strong>对象类型</strong>也有大写<code>Object</code>和小写<code>object</code>两种。</p>
+<h4> 3.1、Object 类型</h4>
+<p>大写的<code>Object</code>类型代表 JavaScript 语言里面的广义对象。所有可以转成对象的值，都是<code>Object</code>类型，这囊括了几乎所有的值。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，原始类型值、对象、数组、函数都是合法的<code>Object</code>类型。</p>
+<div class="hint-container info">
+<p class="hint-container-title">相关信息</p>
+<p>事实上，除了<code>undefined</code>和<code>null</code>这两个值不能转为对象，其他任何值都可以赋值给<code>Object</code>类型。</p>
+<p>上面示例中，<code>undefined</code>和<code>null</code>赋值给<code>Object</code>类型，就会报错。</p>
+</div>
+<p>另外，空对象<code>{}</code>是<code>Object</code>类型的简写形式，所以使用<code>Object</code>时常常用空对象代替。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，变量<code>obj</code>的类型是空对象<code>{}</code>，就代表<code>Object</code>类型。</p>
+<p>显然，无所不包的<code>Object</code>类型既不符合直觉，也不方便使用。</p>
+<h4> 3.2、object 类型</h4>
+<p>小写的<code>object</code>类型代表 JavaScript 里面的狭义对象，即可以用字面量表示的对象，只包含对象、数组和函数，<strong>不包括原始类型</strong>的值。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，<code>object</code>类型不包含原始类型值，只包含<strong>对象、数组和函数</strong>。</p>
+<div class="hint-container info">
+<p class="hint-container-title">相关信息</p>
+<p>所以，建议总是使用小写类型<code>object</code>，不使用大写类型<code>Object</code>。</p>
+<p>注意，无论是大写的<code>Object</code>类型，还是小写的<code>object</code>类型，都只包含 JavaScript 内置对象原生的属性和方法，用户自定义的属性和方法都不存在于这两个类型之中。</p>
+</div>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，<code>toString()</code>是对象的原生方法，可以正确访问。<code>foo</code>是自定义属性，访问就会报错。<br>
+如何描述对象的自定义属性，详见《对象类型》一章。</p>
+<h3> 4、undefined 和 null 的特殊性</h3>
+<div class="hint-container info">
+<p class="hint-container-title">相关信息</p>
+<p><code>undefined</code>和<code>null</code>既是 <strong>值</strong>，又是 <strong>类型</strong>。</p>
+<p>作为值，它们有一个特殊的地方：任何<strong>其他类型</strong>的变量都可以赋值为<code>undefined</code>或<code>null</code>。</p>
+</div>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>上面代码中，变量<code>age</code>的类型是<code>number</code>，但是赋值为<code>null</code>或<code>undefined</code>并不报错。</p>
+<p>这并不是因为<code>undefined</code>和<code>null</code>包含在<code>number</code>类型里面，而是故意这样设计<br>
+任何类型的变量都可以赋值为<code>undefined</code>和<code>null</code>，以便跟 JavaScript 的行为保持一致。</p>
+<p>JavaScript 的行为是，变量如果等于<code>undefined</code>就表示还没有赋值，如果等于<code>null</code>就表示值为空。所以，TypeScript 就允许了任何类型的变量都可以赋值为这两个值。</p>
+<p>但是有时候，这并不是开发者想要的行为，也不利于发挥类型系统的优势。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，变量<code>obj</code>等于<code>undefined</code>，编译不会报错。但是，实际执行时，调用<code>obj.toString()</code>就报错了，因为<code>undefined</code>不是对象，没有这个方法。</p>
+<p>为了避免这种情况，及早发现错误，TypeScript 提供了一个编译选项<code>strictNullChecks</code>。<br>
+只要打开这个选项，<code>undefined</code>和<code>null</code>就不能赋值给其他类型的变量（除了<code>any</code>类型和<code>unknown</code>类型）。</p>
+<p>下面是 tsc 命令打开这个编译选项的例子。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，打开<code>--strictNullChecks</code>以后，<code>number</code>类型的变量<code>age</code>就不能赋值为<code>undefined</code>和<code>null</code>。</p>
+<p>这个选项在配置文件**<code>tsconfig.json</code>**的写法如下。</p>
+<div class="language-json line-numbers-mode" data-ext="json"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>打开<code>strictNullChecks</code>以后，<code>undefined</code>和<code>null</code>这两种值也不能互相赋值了。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，<code>undefined</code>类型的变量赋值为<code>null</code>，或者<code>null</code>类型的变量赋值为<code>undefind</code>，都会报错。</p>
+<p>总之，打开<code>strictNullChecks</code>以后，<code>undefined</code>和<code>null</code>只能赋值给自身，或者<code>any</code>类型和<code>unknown</code>类型的变量。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><h3> 5、值类型</h3>
+<p>TypeScript 规定，单个值也是一种类型，称为“值类型”。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，变量<code>x</code>的类型是字符串<code>hello</code>，导致它只能赋值为这个字符串，赋值为其他字符串就会报错。</p>
+<div class="hint-container info">
+<p class="hint-container-title">相关信息</p>
+<p>TypeScript 推断类型时，遇到<code>const</code>命令声明的变量，如果代码里面没有注明类型，就会推断该变量是值类型。</p>
+</div>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，变量<code>x</code>是<code>const</code>命令声明的，TypeScript 就会推断它的类型是值<code>https</code>，而不是<code>string</code>类型。</p>
+<p>这样推断是合理的，因为<code>const</code>命令声明的变量，一旦声明就不能改变，相当于常量。值类型就意味着不能赋为其他值。</p>
+<div class="hint-container info">
+<p class="hint-container-title">相关信息</p>
+<p>注意，<code>const</code>命令声明的变量，如果赋值为对象，并不会推断为值类型。</p>
+</div>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，变量<code>x</code>没有被推断为值类型，而是推断属性<code>foo</code>的类型是<code>number</code>。<br>
+这是因为 JavaScript 里面，<strong><code>const</code>变量赋值为对象时，属性值是可以改变的</strong>。</p>
+<p>值类型可能会出现一些很奇怪的报错。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>上面示例中，等号左侧的类型是数值<code>5</code>，等号右侧<code>4 + 1</code>的类型，TypeScript 推测为<code>number</code>。由于<code>5</code>是<code>number</code>的子类型，<code>number</code>是<code>5</code>的父类型，父类型不能赋值给子类型，所以报错了（详见本章后文）。</p>
+<p>但是，反过来是可以的，子类型可以赋值给父类型。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，变量<code>x</code>属于子类型，变量<code>y</code>属于父类型。<code>y</code>不能赋值为子类型<code>x</code>，但是反过来是可以的。</p>
+<p>如果一定要让子类型可以赋值为父类型的值，就要用到类型断言（详见《类型断言》一章）。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>上面示例中，在<code>4 + 1</code>后面加上<code>as 5</code>，就是告诉编译器，可以把<code>4 + 1</code>的类型视为值类型<code>5</code>，这样就不会报错了。</p>
+<p>只包含单个值的值类型，用处不大。实际开发中，往往将多个值结合，作为联合类型使用。</p>
+<h3> 6、联合类型 |</h3>
+<p>联合类型（union types）指的是多个类型组成的一个新类型，使用符号<code>|</code>表示。</p>
+<p>联合类型<code>A|B</code>表示，任何一个类型只要属于<code>A</code>或<code>B</code>，就属于联合类型<code>A|B</code>。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，变量<code>x</code>就是联合类型<code>string|number</code>，表示它的值既可以是字符串，也可以是数值。</p>
+<p>联合类型可以与值类型相结合，表示一个变量的值有若干种可能。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>上面的示例都是由值类型组成的联合类型，非常清晰地表达了变量的取值范围。其中，<code>true|false</code>其实就是布尔类型<code>boolean</code>。</p>
+<p>前面提到，打开编译选项<code>strictNullChecks</code>后，其他类型的变量不能赋值为<code>undefined</code>或<code>null</code>。这时，如果某个变量确实可能包含空值，就可以采用联合类型的写法。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，变量<code>name</code>的值可以是字符串，也可以是<code>null</code>。</p>
+<p>联合类型的第一个成员前面，也可以加上竖杠<code>|</code>，这样便于多行书写。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>如果一个变量有多种类型，读取该变量时，往往需要进行“类型缩小”（type narrowing），区分该值到底属于哪一种类型，然后再进一步处理。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>解决方法就是对参数<code>id</code>做一下类型缩小，确定它的类型以后再进行处理。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，函数体内部会判断一下变量<code>id</code>的类型，如果是字符串，就对其执行<code>toUpperCase()</code>方法。</p>
+<p>“类型缩小”是 TypeScript 处理联合类型的标准方法，凡是遇到可能为多种类型的场合，都需要先缩小类型，再进行处理。<br>
+实际上，联合类型本身可以看成是一种“<strong>类型放大</strong>”（type widening），处理时就需要“<strong>类型缩小</strong>”（type narrowing）。</p>
+<p>下面是“类型缩小”的另一个例子。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，函数体内部对参数变量<code>scheme</code>进行类型缩小，根据不同的值类型，返回不同的结果。</p>
+<h3> 7、交叉类型 &amp;</h3>
+<p>交叉类型（intersection types）指的多个类型组成的一个新类型，使用符号<code>&amp;</code>表示。</p>
+<p>交叉类型<code>A&amp;B</code>表示，任何一个类型必须<strong>同时属于<code>A</code>和<code>B</code></strong>，才属于交叉类型<code>A&amp;B</code>，即交叉类型同时满足<code>A</code>和<code>B</code>的特征。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>上面示例中，变量<code>x</code>同时是数值和字符串，这当然是不可能的，所以 TypeScript 会认为<code>x</code>的类型实际是**<code>never</code>**。</p>
+<p>交叉类型的主要用途是表示<strong>对象的合成</strong>。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，变量<code>obj</code>同时具有属性<code>foo</code>和属性<code>bar</code>。</p>
+<p>交叉类型常常用来为对象类型添加新属性。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，类型<code>B</code>是一个交叉类型，用来在<code>A</code>的基础上增加了属性<code>bar</code>。</p>
+<h3> 8、type 命令</h3>
+<p><code>type</code>命令用来定义一个类型的别名。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，<code>type</code>命令为<code>number</code>类型定义了一个别名<code>Age</code>。这样就能像使用<code>number</code>一样，使用<code>Age</code>作为类型。</p>
+<p>别名可以让类型的名字变得更有意义，也能增加代码的可读性，还可以使复杂类型用起来更方便，便于以后修改变量的类型。</p>
+<p><strong>别名不允许重名</strong>。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，同一个别名<code>Color</code>声明了两次，就报错了。</p>
+<p>别名的作用域是<strong>块级作用域</strong>。这意味着，代码块内部定义的别名，影响不到外部。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，<code>if</code>代码块内部的类型别名<code>Color</code>，跟外部的<code>Color</code>是不一样的。</p>
+<p>别名支持使用表达式，也可以在定义一个别名时，使用另一个别名，即<strong>别名允许嵌套</strong>。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，别名<code>Greeting</code>使用了模板字符串，读取另一个别名<code>World</code>。</p>
+<p><code>type</code>命令属于类型相关的代码，编译成 JavaScript 的时候，会被全部删除。</p>
+<h3> 9、typeof 运算符</h3>
+<p>JavaScript 语言中，typeof 运算符是一个一元运算符，返回一个字符串，代表操作数的类型。</p>
+<div class="language-javascript line-numbers-mode" data-ext="js"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>上面示例中，<code>typeof</code>运算符返回字符串<code>foo</code>的类型是<code>string</code>。</p>
+<div class="hint-container warning">
+<p class="hint-container-title">注意</p>
+<p>注意，这时 typeof 的操作数是一个<strong>值</strong>。</p>
+</div>
+<p>JavaScript 里面，<code>typeof</code>运算符只可能返回八种结果，而且都是字符串。</p>
+<div class="language-javascript line-numbers-mode" data-ext="js"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>TypeScript 将<code>typeof</code>运算符移植到了<strong>类型</strong>运算，它的操作数依然是一个值，但是返回的不是字符串，而是该值的 TypeScript 类型。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，<code>typeof a</code>表示返回变量<code>a</code>的 TypeScript 类型（<code>{ x: number }</code>）。同理，<code>typeof a.x</code>返回的是属性<code>x</code>的类型（<code>number</code>）。</p>
+<p>这种用法的<code>typeof</code>返回的是 TypeScript 类型，所以只能用在<strong>类型运算</strong>之中（即跟类型相关的代码之中），不能用在<strong>值运算</strong>。</p>
+<p>也就是说，同一段代码可能存在两种<code>typeof</code>运算符，一种用在值相关的 JavaScript 代码部分，另一种用在类型相关的 TypeScript 代码部分。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，用到了两个<code>typeof</code>，第一个是类型运算，第二个是值运算。它们是不一样的，不要混淆。</p>
+<p>JavaScript 的 typeof 遵守 JavaScript 规则，TypeScript 的 typeof 遵守 TypeScript 规则。<br>
+它们的一个重要区别在于，编译后，前者会保留，后者会被全部删除。</p>
+<p>上例的代码编译结果如下。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，只保留了原始代码的第二个 typeof，删除了第一个 typeof。</p>
+<p>由于编译时不会进行 JavaScript 的值运算，所以TypeScript 规定，typeof 的参数只能是<strong>标识符</strong>，不能是需要运算的表达式。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>上面示例会报错，原因是 typeof 的参数不能是一个值的运算式，而<code>Date()</code>需要运算才知道结果。</p>
+<p>另外，<code>typeof</code>命令的参数不能是类型。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，<code>Age</code>是一个类型别名，用作<code>typeof</code>命令的参数就会报错。</p>
+<p>typeof 是一个很重要的 TypeScript 运算符，有些场合不知道某个变量<code>foo</code>的类型，这时使用<code>typeof foo</code>就可以获得它的类型。</p>
+<h3> 10、块级类型声明</h3>
+<p>TypeScript 支持块级类型声明，即类型可以声明在代码块（用大括号表示）里面，并且只在当前代码块有效。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，存在两个代码块，其中分别有一个类型<code>T</code>的声明。这两个声明都只在自己的代码块内部有效，在代码块外部无效。</p>
+<h3> 11、类型的兼容</h3>
+<p>TypeScript 的类型存在兼容关系，某些类型可以兼容其他类型。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，变量<code>a</code>和<code>b</code>的类型是不一样的，但是变量<code>a</code>赋值给变量<code>b</code>并不会报错。这时，我们就认为，<code>b</code>的类型兼容<code>a</code>的类型。</p>
+<p>TypeScript 为这种情况定义了一个专门术语。如果类型<code>A</code>的值可以赋值给类型<code>B</code>，那么类型<code>A</code>就称为类型<code>B</code>的<strong>子类型</strong>（subtype）。<br>
+在上例中，类型<code>number</code>就是类型<code>number|string</code>的子类型。</p>
+<p>TypeScript 的一个规则是，凡是可以使用父类型的地方，都可以使用子类型，但是反过来不行。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，<code>hi</code>是<code>string</code>的子类型，<code>string</code>是<code>hi</code>的父类型。所以，变量<code>a</code>可以赋值给变量<code>b</code>，但是反过来就会报错。</p>
+<p>之所以有这样的规则，是因为子类型继承了父类型的所有特征，所以可以用在父类型的场合。但是，子类型还可能有一些父类型没有的特征，所以父类型不能用在子类型的场合。</p>
 <h2> 五、数组</h2>
+<p>JavaScript 数组在 TypeScript 里面分成两种类型，分别是<strong>数组（array）<strong>和</strong>元组（tuple）</strong>。</p>
+<h3> 1、简介</h3>
+<p>TypeScript 数组有一个根本特征：所有成员的<strong>类型必须相同</strong>，但是成员数量是不确定的，可以是无限数量的成员，也可以是零成员。</p>
+<p>数组的类型有两种写法。第一种写法是在数组成员的类型后面，加上一对方括号。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>上面示例中，数组<code>arr</code>的类型是<code>number[]</code>，其中<code>number</code>表示数组成员类型是<code>number</code>。</p>
+<p>如果数组成员的类型比较复杂，可以写在圆括号里面。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>上面示例中，数组<code>arr</code>的成员类型是<code>number|string</code>。</p>
+<p>这个例子里面的圆括号是必须的，否则因为竖杠<code>|</code>的优先级低于<code>[]</code>，TypeScript 会把<code>number|string[]</code>理解成<code>number</code>和<code>string[]</code>的联合类型。</p>
+<p>如果数组成员可以是任意类型，写成<code>any[]</code>。当然，这种写法是应该避免的。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>数组类型的第二种写法是使用 TypeScript 内置的 <code>Array </code>接口。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>上面示例中，数组<code>arr</code>的类型是<code>Array&lt;number&gt;</code>，其中<code>number</code>表示成员类型是<code>number</code>。</p>
+<p>这种写法对于成员类型比较复杂的数组，代码<strong>可读性</strong>会稍微好一些。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>这种写法本质上属于泛型，详细解释参见《泛型》一章。<br>
+另外，数组类型还有第三种写法，因为很少用到，本章就省略了，详见《interface 接口》一章。</p>
+<p>数组类型声明了以后，成员数量是不限制的，任意数量的成员都可以，也可以是空数组。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，数组<code>arr</code>无论有多少个成员，都是正确的。</p>
+<p>这种规定的隐藏含义就是，数组的成员是可以动态变化的。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，数组增加成员或减少成员，都是可以的。</p>
+<p>正是由于成员数量可以动态变化，所以 TypeScript 不会对数组边界进行检查，越界访问数组并不会报错。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，变量<code>foo</code>的值是一个不存在的数组成员，TypeScript 并不会报错。</p>
+<p>TypeScript 允许使用方括号读取数组成员的类型。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，类型<code>Names</code>是字符串数组，那么<code>Names[0]</code>返回的类型就是<code>string</code>。</p>
+<p>由于数组成员的索引类型都是<code>number</code>，所以读取成员类型也可以写成下面这样。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，<code>Names[number]</code>表示数组<code>Names</code>所有数值索引的成员类型，所以返回<code>string</code>。</p>
+<h3> 2、数组的类型推断</h3>
+<p>如果数组变量没有声明类型，TypeScript 就会推断数组成员的类型。这时，推断行为会因为值的不同，而有所不同。</p>
+<p>如果变量的初始值是空数组，那么 TypeScript 会推断数组类型是<code>any[]</code>。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>后面，为这个数组赋值时，TypeScript 会自动更新类型推断。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="hint-container info">
+<p class="hint-container-title">相关信息</p>
+<p>上面示例中，数组变量<code>arr</code>的初始值是空数组，然后随着新成员的加入，TypeScript 会自动修改推断的数组类型。</p>
+<p>但是，类型推断的自动更新只发生初始值为空数组的情况。如果初始值不是空数组，类型推断就不会更新。</p>
+</div>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，数组变量<code>arr</code>的初始值是<code>[123]</code>，TypeScript 就推断成员类型为<code>number</code>。新成员如果不是这个类型，TypeScript 就会报错，而不会更新类型推断。</p>
+<h3> 3、只读数组，const 断言</h3>
+<p>JavaScript 规定，<code>const</code>命令声明的数组变量是可以改变成员的。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，修改<code>const</code>命令声明的数组的成员是允许的。</p>
+<p>但是，很多时候确实有声明为只读数组的需求，即不允许变动数组成员。</p>
+<p>TypeScript 允许声明只读数组，方法是在数组类型前面加上<code>readonly</code>关键字。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>TypeScript 将<code>readonly number[]</code>与<code>number[]</code>视为两种不一样的类型，后者是前者的子类型。</p>
+<p>这是因为只读数组没有<code>pop()</code>、<code>push()</code>之类会改变原数组的方法，所以<code>number[]</code>的方法数量要多于<code>readonly number[]</code>，这意味着<code>number[]</code>其实是<code>readonly number[]</code>的子类型。</p>
+<p>我们知道，子类型继承了父类型的所有特征，并加上了自己的特征，所以子类型<code>number[]</code>可以用于所有使用父类型的场合，反过来就不行。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，子类型<code>number[]</code>可以赋值给父类型<code>readonly number[]</code>，但是反过来就会报错。</p>
+<p>由于只读数组是数组的父类型，所以它不能代替数组。这一点很容易产生令人困惑的报错。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，函数<code>getSum()</code>的参数<code>s</code>是一个数组，传入只读数组就会报错。原因就是只读数组是数组的父类型，父类型不能替代子类型。这个问题的解决方法是使用类型断言<code>getSum(arr as number[])</code>，详见《类型断言》一章。</p>
+<div class="hint-container warning">
+<p class="hint-container-title">注意</p>
+<p>注意，<code>readonly</code>关键字不能与数组的泛型写法一起使用。</p>
+</div>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，<code>readonly</code>与数组的泛型写法一起使用，就会报错。</p>
+<p>实际上，TypeScript 提供了两个专门的泛型，用来生成只读数组的类型。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，泛型<code>ReadonlyArray&lt;T&gt;</code>和<code>Readonly&lt;T[]&gt;</code>都可以用来生成只读数组类型。两者尖括号里面的写法不一样，<code>Readonly&lt;T[]&gt;</code>的尖括号里面是整个数组（<code>number[]</code>），而<code>ReadonlyArray&lt;T&gt;</code>的尖括号里面是数组成员（<code>number</code>）。</p>
+<p>只读数组还有一种声明方法，就是使用“const 断言”。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，<code>as const</code>告诉 TypeScript，推断类型时要把变量<code>arr</code>推断为只读数组，从而使得数组成员无法改变。</p>
+<h3> 4、多维数组</h3>
+<p>TypeScript 使用<code>T[][]</code>的形式，表示二维数组，<code>T</code>是最底层数组成员的类型。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，变量<code>multi</code>的类型是<code>number[][]</code>，表示它是一个二维数组，最底层的数组成员类型是<code>number</code>。</p>
 <h2> 六、元祖</h2>
+<h3> 1、简介</h3>
+<p>元组（tuple）是 TypeScript 特有的数据类型，JavaScript 没有单独区分这种类型。</p>
+<p>元组必须明确声明每个成员的类型。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，元组<code>s</code>的前两个成员的类型是<code>string</code>，最后一个成员的类型是<code>boolean</code>。</p>
+<p>元组类型的写法，与上一章的数组有一个重大差异。数组的成员类型写在方括号外面（<code>number[]</code>），元组的成员类型是写在方括号里面（<code>[number]</code>）。</p>
+<p>TypeScript 的区分方法是，成员类型写在方括号里面的就是元组，写在外面的就是数组。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>上面示例中，变量<code>a</code>是一个元组，只有一个成员，类型是<code>number</code>。</p>
+<p>使用元组时，必须明确给出类型声明（上例的<code>[number]</code>），不能省略，否则 TypeScript 会把一个值自动推断为数组。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，变量<code>a</code>的值其实是一个元组，但是 TypeScript 会将其推断为一个联合类型的数组，即<code>a</code>的类型为<code>(number | boolean)[]</code>。</p>
+<p>元组成员的类型可以添加问号后缀（<code>?</code>），表示该成员是可选的。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>上面示例中，元组<code>a</code>的第二个成员是可选的，可以省略。</p>
+<div class="hint-container warning">
+<p class="hint-container-title">注意</p>
+<p>注意，问号只能用于元组的尾部成员，也就是说，所有可选成员必须在必选成员之后。</p>
+</div>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，元组<code>myTuple</code>的最后两个成员是可选的。也就是说，它的成员数量可能有两个、三个和四个。</p>
+<p>由于需要声明每个成员的类型，所以大多数情况下，元组的成员数量是有限的，从类型声明就可以明确知道，元组包含多少个成员，越界的成员会报错。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，变量<code>x</code>是一个只有两个成员的元组，如果对第三个成员赋值就报错了。</p>
+<p>但是，使用扩展运算符（<code>...</code>），可以表示不限成员数量的元组。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，元组类型<code>NamedNums</code>的第一个成员是字符串，后面的成员使用扩展运算符来展开一个数组，从而实现了不定数量的成员。</p>
+<p>扩展运算符用在元组的任意位置都可以，但是它后面只能是数组或元组。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，扩展运算符分别在元组的尾部、中部和头部。</p>
+<p>如果不确定元组成员的类型和数量，可以写成下面这样。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>上面示例中，元组<code>Tuple</code>可以放置任意数量和类型的成员。但是这样写，也就失去了使用元组和 TypeScript 的意义。</p>
+<p>元组可以通过方括号，读取成员类型。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，<code>Tuple[1]</code>返回1号位置的成员类型。</p>
+<p>由于元组的成员都是数值索引，即索引类型都是<code>number</code>，所以可以像下面这样读取。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，<code>Tuple[number]</code>表示元组<code>Tuple</code>的所有数值索引的成员类型，所以返回<code>string|number|Date</code>，即这个类型是三种值的联合类型。</p>
+<h3> 2、只读元组</h3>
+<p>元组也可以是只读的，不允许修改，有两种写法。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，两种写法都可以得到只读元组，其中写法二是一个泛型，用到了工具类型<code>Readonly&lt;T&gt;</code>。</p>
+<p>跟数组一样，只读元组是元组的父类型。所以，元组可以替代只读元组，而只读元组不能替代元组。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，类型<code>t1</code>是只读元组，类型<code>t2</code>是普通元组。<code>t2</code>类型可以赋值给<code>t1</code>类型，反过来就会报错。</p>
+<p>由于只读元组不能替代元组，所以会产生一些令人困惑的报错。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，函数<code>distanceFromOrigin()</code>的参数是一个元组，传入只读元组就会报错，因为只读元组不能替代元组。</p>
+<div class="hint-container info">
+<p class="hint-container-title">相关信息</p>
+<p>读者可能注意到了，上例中<code>[3, 4] as const</code>的写法，在上一章讲到，生成的是只读数组，其实生成的同时也是只读元组。因为它生成的实际上是一个只读的“值类型”<code>readonly [3, 4]</code>，把它解读成只读数组或只读元组都可以。</p>
+</div>
+<p>上面示例报错的解决方法，就是使用类型断言，在最后一行将传入的参数断言为普通元组，详见《类型断言》一章。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 3、成员数量的推断</h3>
+<p>如果没有可选成员和扩展运算符，TypeScript 会推断出元组的成员数量（即元组长度）。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例会报错，原因是 TypeScript 发现元组<code>point</code>的长度是<code>2</code>，不可能等于<code>3</code>，这个判断无意义。</p>
+<p>如果包含了可选成员，TypeScript 会推断出可能的成员数量。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例会报错，原因是 TypeScript 发现<code>point.length</code>的类型是<code>1|2|3</code>，不可能等于<code>4</code>。</p>
+<h3> 4、扩展运算符与成员数量</h3>
+<p>扩展运算符（<code>...</code>）将数组（注意，不是元组）转换成一个逗号分隔的序列，这时 TypeScript 会认为这个序列的成员数量是不确定的，因为数组的成员数量是不确定的。</p>
+<p>这导致如果函数调用时，使用扩展运算符传入函数参数，可能发生参数数量与数组长度不匹配的报错。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例会报错，原因是函数<code>add()</code>只能接受两个参数，但是传入的是<code>...arr</code>，TypeScript 认为转换后的参数个数是不确定的。</p>
+<p>有些函数可以接受任意数量的参数，这时使用扩展运算符就不会报错。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，<code>console.log()</code>可以接受任意数量的参数，所以传入<code>...arr</code>就不会报错。</p>
+<p>解决这个问题的一个方法，就是把成员数量不确定的数组，写成成员数量确定的元组，再使用扩展运算符。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，<code>arr</code>是一个拥有两个成员的元组，所以 TypeScript 能够确定<code>...arr</code>可以匹配函数<code>add()</code>的参数数量，就不会报错了。</p>
+<p>另一种写法是使用<code>as const</code>断言。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>上面这种写法也可以，因为 TypeScript 会认为<code>arr</code>的类型是<code>readonly [1, 2]</code>，这是一个只读的值类型，可以当作数组，也可以当作元组。</p>
 <h2> 七、symbol 类型</h2>
-<h2> 八、函数</h2>
+<h3> 1、简介</h3>
+<p>Symbol 是 ES2015 新引入的一种原始类型的值。它类似于字符串，但是每一个 Symbol 值都是独一无二的，与其他任何值都不相等。</p>
+<p>Symbol 值通过<code>Symbol()</code>函数生成。在 TypeScript 里面，Symbol 的类型使用<code>symbol</code>表示。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，变量<code>x</code>和<code>y</code>的类型都是<code>symbol</code>，且都用<code>Symbol()</code>生成，但是它们是不相等的。</p>
+<h3> 2、unique symbol</h3>
+<p><code>symbol</code>类型包含所有的 Symbol 值，但是无法表示某一个具体的 Symbol 值。</p>
+<p>比如，<code>5</code>是一个具体的数值，就用<code>5</code>这个字面量来表示，这也是它的值类型。但是，Symbol 值不存在字面量，必须通过变量来引用，所以写不出只包含单个 Symbol 值的那种值类型。</p>
+<p>为了解决这个问题，TypeScript 设计了<code>symbol</code>的一个子类型<code>unique symbol</code>，它表示单个的、某个具体的 Symbol 值。</p>
+<p>因为<code>unique symbol</code>表示单个值，所以这个类型的变量是不能修改值的，只能用<code>const</code>命令声明，不能用<code>let</code>声明。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，<code>let</code>命令声明的变量，不能是<code>unique symbol</code>类型，会报错。</p>
+<p><code>const</code>命令为变量赋值 Symbol 值时，变量类型默认就是<code>unique symbol</code>，所以类型可以省略不写。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>每个声明为<code>unique symbol</code>类型的变量，它们的值都是不一样的，其实属于两个值类型。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，变量<code>a</code>和变量<code>b</code>的类型虽然都是<code>unique symbol</code>，但其实是两个值类型。不同类型的值肯定是不相等的，所以最后一行就报错了。</p>
+<p>由于 Symbol 类似于字符串，可以参考下面的例子来理解。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，变量<code>a</code>和<code>b</code>都是字符串，但是属于不同的值类型，不能使用严格相等运算符进行比较。</p>
+<p>而且，由于变量<code>a</code>和<code>b</code>是两个类型，就不能把一个赋值给另一个。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，变量<code>a</code>和变量<code>b</code>的类型都是<code>unique symbol</code>，但是其实类型不同，所以把<code>a</code>赋值给<code>b</code>会报错。</p>
+<p>上例变量<code>b</code>的类型，如果要写成与变量<code>a</code>同一个<code>unique symbol</code>值类型，只能写成类型为<code>typeof a</code>。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>不过我们知道，相同参数的<code>Symbol.for()</code>方法会返回相同的 Symbol 值。TypeScript 目前无法识别这种情况，所以可能出现多个 unique symbol 类型的变量，等于同一个 Symbol 值的情况。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，变量<code>a</code>和<code>b</code>是两个不同的值类型，但是它们的值其实是相等的。</p>
+<p>unique symbol 类型是 symbol 类型的子类型，所以可以将前者赋值给后者，但是反过来就不行。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，unique symbol 类型（变量<code>a</code>）赋值给 symbol 类型（变量<code>b</code>）是可以的，但是 symbol 类型（变量<code>b</code>）赋值给 unique symbol 类型（变量<code>c</code>）会报错。</p>
+<p>unique symbol 类型的一个作用，就是用作属性名，这可以保证不会跟其他属性名冲突。如果要把某一个特定的 Symbol 值当作属性名，那么它的类型只能是 unique symbol，不能是 symbol。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，变量<code>y</code>当作属性名，但是<code>y</code>的类型是 symbol，不是固定不变的值，导致报错。</p>
+<p><code>unique symbol</code>类型也可以用作类（class）的属性值，但只能赋值给类的<code>readonly static</code>属性。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，静态只读属性<code>foo</code>的类型就是<code>unique symbol</code>。注意，这时<code>static</code>和<code>readonly</code>两个限定符缺一不可，这是为了保证这个属性是固定不变的。</p>
+<h3> 3、类型推断</h3>
+<p>如果变量声明时没有给出类型，TypeScript 会推断某个 Symbol 值变量的类型。</p>
+<p><code>let</code>命令声明的变量，推断类型为 symbol。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p><code>const</code>命令声明的变量，推断类型为 unique symbol。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>但是，<code>const</code>命令声明的变量，如果赋值为另一个 symbol 类型的变量，则推断类型为 symbol。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><code>let</code>命令声明的变量，如果赋值为另一个 unique symbol 类型的变量，则推断类型还是 symbol。</p>
+<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 八、函数</h2>
 <h2> 九、对象</h2>
 <h2> 十、interface</h2>
 <h2> 十一、类</h2>
@@ -6089,6 +6403,26 @@ StopWahtch：监听整个应用程序启动停止的监听器<br>
 <p>综上所述，虽然过滤器和拦截器都是用于拦截请求和响应的机制，但它们的触发时间、应用范围、执行顺序、功能和对于返回结果的处理等方面都存在差异。在实际开发中，开发人员应该根据具体的需求来选择合适的机制。</p>
 ]]></content:encoded>
       <enclosure url="https://raw.githubusercontent.com/T4mako/ImageBed/main/image-20230120113626334.png" type="image/png"/>
+    </item>
+    <item>
+      <title>SpringBoot 自动装配原理</title>
+      <link>https://T4mako.github.io/code/java/SpringBoot%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D%E5%8E%9F%E7%90%86.html</link>
+      <guid>https://T4mako.github.io/code/java/SpringBoot%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D%E5%8E%9F%E7%90%86.html</guid>
+      <source url="https://T4mako.github.io/rss.xml">SpringBoot 自动装配原理</source>
+      <description>早期的Spring项目需要添加需要配置繁琐的xml,比如MVC、事务、数据库连接等繁琐的配置。SpringBoot的出现就无需这些繁琐的配置，因为SpringBoot基于约定大于配置的理念，在项目启动时候，将约定的配置类自动配置到IOC容器里。这些都因为SpringBoot有自动配置的特性。 Sping Boot 如何实现自动配置 Spring Boot都需要创建一个mian启动类，而启动类都含有@SpringBootApplication注解，从启动类，一步步探索源码。</description>
+      <category>java</category>
+      <content:encoded><![CDATA[<p>早期的<code>Spring</code>项目需要添加需要配置繁琐的xml,比如<code>MVC</code>、事务、数据库连接等繁琐的配置。<code>SpringBoot</code>的出现就无需这些繁琐的配置，因为<code>SpringBoot</code>基于<strong>约定大于配置</strong>的理念，在项目启动时候，将约定的配置类自动配置到<code>IOC</code>容器里。这些都因为<code>SpringBoot</code>有自动配置的特性。</p>
+<h2> Sping Boot 如何实现自动配置</h2>
+<p><code>Spring Boot</code>都需要创建一个<code>mian</code>启动类，而启动类都含有<code>@SpringBootApplication</code>注解，从启动类，一步步探索源码。</p>
+<h3> @SpringBootApplication注解</h3>
+<p><code>Spring Boot</code> 启动类上都有一个 <code>@SpringBootApplication</code>注解：</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> @EnableAutoConfiguration注解</h3>
+<p><code>@SpringBootApplication</code> 里面有 <code>@EnableAutoConfiguration</code> 的注解：</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> AutoConfigurationImportSelector类</h3>
+<p><code>@EnableAutoConfiguration</code>注解导入<code>AutoConfigurationImportSelector</code>类：</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> selectImports()方法</h3>
+<p><code>AutoConfigurationImportSelector</code>类找到 <code>selectImports</code> 方法，里面有<code>getAutoConfigurationEntry</code>方法：</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content:encoded>
     </item>
     <item>
       <title>SpringCloud 基础</title>
@@ -17281,116 +17615,6 @@ CFG预设（Purp1e制作）<br>
       <source url="https://T4mako.github.io/rss.xml">test</source>
     </item>
     <item>
-      <title>001. 两数之和</title>
-      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_001_%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C.html</link>
-      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_001_%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C.html</guid>
-      <source url="https://T4mako.github.io/rss.xml">001. 两数之和</source>
-      <description>001. 两数之和</description>
-      <category>算法</category>
-      <content:encoded><![CDATA[<h1> 001. 两数之和</h1>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>002. 两数相加</title>
-      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_002_%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0.html</link>
-      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_002_%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0.html</guid>
-      <source url="https://T4mako.github.io/rss.xml">002. 两数相加</source>
-      <description>002. 两数相加</description>
-      <category>算法</category>
-      <content:encoded><![CDATA[<h1> 002. 两数相加</h1>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>003. 无重复最长子串</title>
-      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_003_%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%90%E4%B8%B2.html</link>
-      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_003_%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%90%E4%B8%B2.html</guid>
-      <source url="https://T4mako.github.io/rss.xml">003. 无重复最长子串</source>
-      <description>003. 无重复最长子串</description>
-      <category>算法</category>
-      <content:encoded><![CDATA[<h1> 003. 无重复最长子串</h1>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>004. 寻找两个正序数组的中位数</title>
-      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_004_%E5%AF%BB%E6%89%BE%E4%B8%A4%E4%B8%AA%E6%AD%A3%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E4%B8%AD%E4%BD%8D%E6%95%B0.html</link>
-      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_004_%E5%AF%BB%E6%89%BE%E4%B8%A4%E4%B8%AA%E6%AD%A3%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E4%B8%AD%E4%BD%8D%E6%95%B0.html</guid>
-      <source url="https://T4mako.github.io/rss.xml">004. 寻找两个正序数组的中位数</source>
-      <description>004. 寻找两个正序数组的中位数</description>
-      <category>算法</category>
-      <content:encoded><![CDATA[<h1> 004. 寻找两个正序数组的中位数</h1>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>005. 最长回文子串</title>
-      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_005_%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2.html</link>
-      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_005_%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2.html</guid>
-      <source url="https://T4mako.github.io/rss.xml">005. 最长回文子串</source>
-      <description>005. 最长回文子串</description>
-      <category>算法</category>
-      <content:encoded><![CDATA[<h1> 005. 最长回文子串</h1>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>006. Z字形变换</title>
-      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_006_N%20%E5%AD%97%E5%BD%A2%E5%8F%98%E6%8D%A2.html</link>
-      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_006_N%20%E5%AD%97%E5%BD%A2%E5%8F%98%E6%8D%A2.html</guid>
-      <source url="https://T4mako.github.io/rss.xml">006. Z字形变换</source>
-      <description>006. Z字形变换</description>
-      <category>算法</category>
-      <content:encoded><![CDATA[<h1> 006. Z字形变换</h1>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>007. 整数反转</title>
-      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_007_%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC.html</link>
-      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_007_%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC.html</guid>
-      <source url="https://T4mako.github.io/rss.xml">007. 整数反转</source>
-      <description>007. 整数反转</description>
-      <category>算法</category>
-      <content:encoded><![CDATA[<h1> 007. 整数反转</h1>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>008. 字符串转换整数 (atoi)</title>
-      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_008_%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E6%8D%A2%E6%95%B4%E6%95%B0%20(atoi).html</link>
-      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_008_%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E6%8D%A2%E6%95%B4%E6%95%B0%20(atoi).html</guid>
-      <source url="https://T4mako.github.io/rss.xml">008. 字符串转换整数 (atoi)</source>
-      <description>008. 字符串转换整数 (atoi)</description>
-      <category>算法</category>
-      <content:encoded><![CDATA[<h1> 008. 字符串转换整数 (atoi)</h1>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>009. 回文数</title>
-      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_009_%E5%9B%9E%E6%96%87%E6%95%B0.html</link>
-      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_009_%E5%9B%9E%E6%96%87%E6%95%B0.html</guid>
-      <source url="https://T4mako.github.io/rss.xml">009. 回文数</source>
-      <description>009. 回文数</description>
-      <category>算法</category>
-      <content:encoded><![CDATA[<h1> 009. 回文数</h1>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>010. 正则表达式匹配</title>
-      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_010_%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8C%B9%E9%85%8D.html</link>
-      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_010_%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8C%B9%E9%85%8D.html</guid>
-      <source url="https://T4mako.github.io/rss.xml">010. 正则表达式匹配</source>
-      <description>010. 正则表达式匹配</description>
-      <category>算法</category>
-      <content:encoded><![CDATA[<h1> 010. 正则表达式匹配</h1>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>011_盛最多水的容器</title>
-      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_011_%E7%9B%9B%E6%9C%80%E5%A4%9A%E6%B0%B4%E7%9A%84%E5%AE%B9%E5%99%A8.html</link>
-      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_011_%E7%9B%9B%E6%9C%80%E5%A4%9A%E6%B0%B4%E7%9A%84%E5%AE%B9%E5%99%A8.html</guid>
-      <source url="https://T4mako.github.io/rss.xml">011_盛最多水的容器</source>
-      <description>011_盛最多水的容器</description>
-      <category>算法</category>
-      <content:encoded><![CDATA[<h1> 011_盛最多水的容器</h1>
-]]></content:encoded>
-    </item>
-    <item>
       <title>012_整数转罗马数字</title>
       <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_012_%E6%95%B4%E6%95%B0%E8%BD%AC%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97.html</link>
       <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_012_%E6%95%B4%E6%95%B0%E8%BD%AC%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97.html</guid>
@@ -17768,6 +17992,106 @@ CFG预设（Purp1e制作）<br>
       <description>066_加一</description>
       <category>算法</category>
       <content:encoded><![CDATA[<h1> 066_加一</h1>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>067_二进制求和</title>
+      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_067_%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%B1%82%E5%92%8C.html</link>
+      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_067_%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%B1%82%E5%92%8C.html</guid>
+      <source url="https://T4mako.github.io/rss.xml">067_二进制求和</source>
+      <description>067_二进制求和</description>
+      <category>算法</category>
+      <content:encoded><![CDATA[<h1> 067_二进制求和</h1>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>069_x的平方根</title>
+      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_069_x%E7%9A%84%E5%B9%B3%E6%96%B9%E6%A0%B9.html</link>
+      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_069_x%E7%9A%84%E5%B9%B3%E6%96%B9%E6%A0%B9.html</guid>
+      <source url="https://T4mako.github.io/rss.xml">069_x的平方根</source>
+      <description>069_x的平方根</description>
+      <category>算法</category>
+      <content:encoded><![CDATA[<h1> 069_x的平方根</h1>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>070_爬楼梯</title>
+      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_070_%E7%88%AC%E6%A5%BC%E6%A2%AF.html</link>
+      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_070_%E7%88%AC%E6%A5%BC%E6%A2%AF.html</guid>
+      <source url="https://T4mako.github.io/rss.xml">070_爬楼梯</source>
+      <description>070_爬楼梯</description>
+      <category>算法</category>
+      <content:encoded><![CDATA[<h1> 070_爬楼梯</h1>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>094_二叉树的中序遍历</title>
+      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_094_%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86.html</link>
+      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_094_%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86.html</guid>
+      <source url="https://T4mako.github.io/rss.xml">094_二叉树的中序遍历</source>
+      <description>094_二叉树的中序遍历</description>
+      <category>算法</category>
+      <content:encoded><![CDATA[<h1> 094_二叉树的中序遍历</h1>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>095_不同的二叉搜索树II</title>
+      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_095_%E4%B8%8D%E5%90%8C%E7%9A%84%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%20II.html</link>
+      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_095_%E4%B8%8D%E5%90%8C%E7%9A%84%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%20II.html</guid>
+      <source url="https://T4mako.github.io/rss.xml">095_不同的二叉搜索树II</source>
+      <description>095_不同的二叉搜索树II</description>
+      <category>算法</category>
+      <content:encoded><![CDATA[<h1> 095_不同的二叉搜索树II</h1>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>096_不同的二叉搜索树</title>
+      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_096_%E4%B8%8D%E5%90%8C%E7%9A%84%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91.html</link>
+      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_096_%E4%B8%8D%E5%90%8C%E7%9A%84%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91.html</guid>
+      <source url="https://T4mako.github.io/rss.xml">096_不同的二叉搜索树</source>
+      <description>096_不同的二叉搜索树</description>
+      <category>算法</category>
+      <content:encoded><![CDATA[<h1> 096_不同的二叉搜索树</h1>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>098_验证二叉搜索树</title>
+      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_098_%E9%AA%8C%E8%AF%81%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91.html</link>
+      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_098_%E9%AA%8C%E8%AF%81%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91.html</guid>
+      <source url="https://T4mako.github.io/rss.xml">098_验证二叉搜索树</source>
+      <description>098_验证二叉搜索树</description>
+      <category>算法</category>
+      <content:encoded><![CDATA[<h1> 098_验证二叉搜索树</h1>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>102_二叉树的层序遍历</title>
+      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_102_%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86.html</link>
+      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_102_%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86.html</guid>
+      <source url="https://T4mako.github.io/rss.xml">102_二叉树的层序遍历</source>
+      <description>102_二叉树的层序遍历</description>
+      <category>算法</category>
+      <content:encoded><![CDATA[<h1> 102_二叉树的层序遍历</h1>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>103_二叉树的锯齿形层序遍历</title>
+      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_103_%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%94%AF%E9%BD%BF%E5%BD%A2%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86.html</link>
+      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_103_%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%94%AF%E9%BD%BF%E5%BD%A2%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86.html</guid>
+      <source url="https://T4mako.github.io/rss.xml">103_二叉树的锯齿形层序遍历</source>
+      <description>103_二叉树的锯齿形层序遍历</description>
+      <category>算法</category>
+      <content:encoded><![CDATA[<h1> 103_二叉树的锯齿形层序遍历</h1>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>104_二叉树的最大深度</title>
+      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_104_%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%A4%A7%E6%B7%B1%E5%BA%A6.html</link>
+      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_104_%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%A4%A7%E6%B7%B1%E5%BA%A6.html</guid>
+      <source url="https://T4mako.github.io/rss.xml">104_二叉树的最大深度</source>
+      <description>104_二叉树的最大深度</description>
+      <category>算法</category>
+      <content:encoded><![CDATA[<h1> 104_二叉树的最大深度</h1>
 ]]></content:encoded>
     </item>
   </channel>
