@@ -6,7 +6,6 @@ tag:
   - 栈
   - 数组
   - 模拟
-order: 735
 article: false
 ---
 

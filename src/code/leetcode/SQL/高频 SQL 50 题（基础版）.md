@@ -108,6 +108,14 @@ where DATEDIFF(w1.recordDate,w2.recordDate) = 1 and w1.temperature > w2.temperat
 
 <Badge text="简单" type="tip" vertical="middle" />
 
+```sql
+select a1.machine_id,ROUND(avg(a2.timestamp - a1.timestamp),3) processing_time
+from Activity a1 join Activity a2
+on a1.machine_id = a2.machine_id
+where a1.activity_type = 'start' and a2.activity_type = 'end'
+group by machine_id
+```
+
 ### 577. 员工奖金
 
 <Badge text="简单" type="tip" vertical="middle" />

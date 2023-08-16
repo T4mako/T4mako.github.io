@@ -24,7 +24,8 @@ tag:
   - 若不存在，退出循环，此时慢指针指向需要移除的结点的前一个节点
     - `left.next = left.next.next;` 即可
 
-
+::: code-tabs
+@tab Java
 ```java
 class Solution {
     public ListNode deleteMiddle(ListNode head) {
@@ -40,3 +41,18 @@ class Solution {
     }
 }
 ```
+@tab Ts
+```ts
+function deleteMiddle(head: ListNode | null): ListNode | null {
+    if(head.next == null) return null;
+    let left = head;
+    let right = head.next;
+    while(right.next != null && right.next.next != null){
+        left = left.next;
+        right = right.next.next;
+    }
+    left.next = left.next.next;
+    return head;
+};
+```
+:::

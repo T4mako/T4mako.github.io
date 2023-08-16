@@ -44,6 +44,8 @@ export default hopeTheme({
   // sidebar
   sidebar,
 
+  // sidebarSorter: ["readme","date-desc", "order", "title", "filename"],
+
   footer: "T4mako's blog",
 
   displayFooter: true,
@@ -53,6 +55,7 @@ export default hopeTheme({
     roundAvatar: true, // 圆形头像
     intro: "/intro.html", //个人介绍地址
     timeline: "时间线",
+    //articleInfo:["Author", "Original", "Date", "Category", "Tag", "ReadingTime"], // 博客页面文章信息，不显示访问量
     medias: {
       BiliBili: ["https://space.bilibili.com/313309138",BILIBILI],  
       GitHub: ["https://github.com/T4mako",GITHUB],
@@ -84,7 +87,6 @@ export default hopeTheme({
       // You should generate and use your own comment service
       provider: "Waline",
       serverURL: "https://blog-comment-murex.vercel.app/",
-
     },
 
     // 不显示最后一次提交时间

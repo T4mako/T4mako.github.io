@@ -1,10 +1,11 @@
-import { defineUserConfig } from "vuepress";
+import { Page, defineUserConfig, resolvePageDataInfo } from "vuepress";
 import theme from "./theme.js"; // 引入主题函数
 import { docsearchPlugin } from "@vuepress/plugin-docsearch";
 import { ohmylive2dPlugin } from 'vuepress-plugin-oh-my-live2d';
 import { registerComponentsPlugin } from "@vuepress/plugin-register-components";
 import { getDirname, path } from "@vuepress/utils";
 import { feedPlugin } from "vuepress-plugin-feed2";
+import { autoCatalogPlugin } from "vuepress-plugin-auto-catalog";
 
 const __dirname = getDirname(import.meta.url);
 
@@ -82,15 +83,21 @@ export default defineUserConfig({
       },
     }),
 
-    /* live 2D
-     ohmylive2dPlugin({
-        // 在这里进行配置
-     })*/
+    // 自动目录插件
+    // autoCatalogPlugin({
+    //   //  orderGetter: (page:Page) => page.date,
+    // }),
+
+
 
     // 自己的组件
     registerComponentsPlugin({
       
-    })
+    }),
+    /* live 2D
+     ohmylive2dPlugin({
+        // 在这里进行配置
+     })*/
     
   ],
   
