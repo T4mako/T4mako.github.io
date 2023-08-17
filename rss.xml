@@ -6,12 +6,12 @@
     <link>https://T4mako.github.io/</link>
     <description>T4mako</description>
     <language>zh-CN</language>
-    <pubDate>Wed, 16 Aug 2023 15:34:24 GMT</pubDate>
-    <lastBuildDate>Wed, 16 Aug 2023 15:34:24 GMT</lastBuildDate>
+    <pubDate>Thu, 17 Aug 2023 14:47:22 GMT</pubDate>
+    <lastBuildDate>Thu, 17 Aug 2023 14:47:22 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
-    <category>SQL</category>
     <category>java</category>
+    <category>SQL</category>
     <category>vue</category>
     <category>部署</category>
     <category>MarkDown</category>
@@ -21,6 +21,49 @@
     <category>Linux</category>
     <category>AE</category>
     <category>算法</category>
+    <item>
+      <title>SpringBoot 自动装配原理</title>
+      <link>https://T4mako.github.io/code/java/SpringBoot%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D%E5%8E%9F%E7%90%86.html</link>
+      <guid>https://T4mako.github.io/code/java/SpringBoot%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D%E5%8E%9F%E7%90%86.html</guid>
+      <source url="https://T4mako.github.io/rss.xml">SpringBoot 自动装配原理</source>
+      <description>早期的Spring项目需要添加需要配置繁琐的xml,比如MVC、事务、数据库连接等繁琐的配置。SpringBoot的出现就无需这些繁琐的配置，因为SpringBoot基于约定大于配置的理念，在项目启动时候，将约定的配置类自动配置到IOC容器里。这些都因为SpringBoot有自动配置的特性。 Sping Boot 如何实现自动配置 Spring Boot都需要创建一个mian启动类，而启动类都含有@SpringBootApplication注解，从启动类，一步步探索源码。</description>
+      <category>java</category>
+      <pubDate>Tue, 15 Aug 2023 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<p>早期的<code>Spring</code>项目需要添加需要配置繁琐的xml,比如<code>MVC</code>、事务、数据库连接等繁琐的配置。<code>SpringBoot</code>的出现就无需这些繁琐的配置，因为<code>SpringBoot</code>基于<strong>约定大于配置</strong>的理念，在项目启动时候，将约定的配置类自动配置到<code>IOC</code>容器里。这些都因为<code>SpringBoot</code>有自动配置的特性。</p>
+<h2> Sping Boot 如何实现自动配置</h2>
+<p><code>Spring Boot</code>都需要创建一个<code>mian</code>启动类，而启动类都含有<code>@SpringBootApplication</code>注解，从启动类，一步步探索源码。</p>
+<h3> @SpringBootApplication注解</h3>
+<p><code>Spring Boot</code> 启动类上都有一个 <code>@SpringBootApplication</code>注解：</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> @EnableAutoConfiguration注解</h3>
+<p><code>@SpringBootApplication</code> 里面有 <code>@EnableAutoConfiguration</code> 的注解：</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> AutoConfigurationImportSelector类</h3>
+<p><code>@EnableAutoConfiguration</code>注解导入<code>AutoConfigurationImportSelector</code>类：</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> selectImports()方法</h3>
+<p><code>AutoConfigurationImportSelector</code>类找到 <code>selectImports</code> 方法，里面有<code>getAutoConfigurationEntry</code>方法：</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> SpringFactoriesLoader.loadFactoryNames() 方法</h3>
+<p><code>getAutoConfigurationEntry</code>方法通过<code>SpringFactoriesLoader.loadFactoryNames()</code> 扫描所有含有<code>META-INF/spring.factories</code>的<code>jar</code>包：</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><code>spring-boot-autoconfigure-xxx.jar</code>项目包含<code>META-INF/spring.factories</code>文件，<code>spring.factories</code>是一个键值对的形式，扫描该文件下<code>@EnableAutoConfiguration</code>对应类：</p>
+<div class="hint-container info">
+<p class="hint-container-title">总结</p>
+<ul>
+<li>自动配置主要由<code>@EnableAutoConfiguration</code>实现</li>
+<li>添加了<code>@EnableAutoConfiguration</code>注解，会导入<code>AutoConfigurationImportSelector</code>类</li>
+<li>里面的<code>selectImports</code>方法通过<code>SpringFactoriesLoader.loadFactoryNames()</code>扫描所有含有<code>META-INF/spring.factories</code>的<code>jar</code>包</li>
+<li><code>spring.factories</code>是一个键值对的形式，扫描该文件下<code>@EnableAutoConfiguration</code>对应类：</li>
+<li>将对应<code>key</code>为<code>@EnableAutoConfiguration</code>注解全名对应的<code>value</code>类全部装配到<code>IOC</code>容器中。</li>
+</ul>
+</div>
+<p>这些属性自动配置到<code>IOC</code>之后就无需自己手动配置<code>bean</code>了，<code>Spring Boot</code>中的<code>约定大于配置</code>理念，约定是将需要的配置以约定的方式添加到<code>IOC</code>容器中。</p>
+<h2> 自动配置生效条件</h2>
+<p>那是不是<code>spring.factories</code>文件对应的配置都会加载到<code>IOC</code>容器中？</p>
+<p>其中有几个注解：  <code>@ConditionalOnClass</code>, <code>@ConditionalOnMissingBean</code></p>
+<ul>
+<li><code>@ConditionalOnClass</code>表示在类路径中存在类才会配置该配置类。只有引入相关依赖才会自动配置该配置类。</li>
+<li><code>@ConditionalOnMissingBean</code>表示只有不存在对应的类的<code>bean</code>才会自动配置该类。</li>
+</ul>
+<p>所以<code>spring.factories</code>里面并不是所有的<code>bean</code>都会装配到<code>IOC</code>容器中，只会按需配置对应的<code>bean</code>。</p>
+]]></content:encoded>
+    </item>
     <item>
       <title>高频 SQL 50题</title>
       <link>https://T4mako.github.io/code/leetcode/SQL/%E9%AB%98%E9%A2%91%20SQL%2050%20%E9%A2%98%EF%BC%88%E5%9F%BA%E7%A1%80%E7%89%88%EF%BC%89.html</link>
@@ -5835,48 +5878,6 @@ StopWahtch：监听整个应用程序启动停止的监听器<br>
 <p>综上所述，虽然过滤器和拦截器都是用于拦截请求和响应的机制，但它们的触发时间、应用范围、执行顺序、功能和对于返回结果的处理等方面都存在差异。在实际开发中，开发人员应该根据具体的需求来选择合适的机制。</p>
 ]]></content:encoded>
       <enclosure url="https://raw.githubusercontent.com/T4mako/ImageBed/main/image-20230120113626334.png" type="image/png"/>
-    </item>
-    <item>
-      <title>SpringBoot 自动装配原理</title>
-      <link>https://T4mako.github.io/code/java/SpringBoot%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D%E5%8E%9F%E7%90%86.html</link>
-      <guid>https://T4mako.github.io/code/java/SpringBoot%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D%E5%8E%9F%E7%90%86.html</guid>
-      <source url="https://T4mako.github.io/rss.xml">SpringBoot 自动装配原理</source>
-      <description>早期的Spring项目需要添加需要配置繁琐的xml,比如MVC、事务、数据库连接等繁琐的配置。SpringBoot的出现就无需这些繁琐的配置，因为SpringBoot基于约定大于配置的理念，在项目启动时候，将约定的配置类自动配置到IOC容器里。这些都因为SpringBoot有自动配置的特性。 Sping Boot 如何实现自动配置 Spring Boot都需要创建一个mian启动类，而启动类都含有@SpringBootApplication注解，从启动类，一步步探索源码。</description>
-      <category>java</category>
-      <content:encoded><![CDATA[<p>早期的<code>Spring</code>项目需要添加需要配置繁琐的xml,比如<code>MVC</code>、事务、数据库连接等繁琐的配置。<code>SpringBoot</code>的出现就无需这些繁琐的配置，因为<code>SpringBoot</code>基于<strong>约定大于配置</strong>的理念，在项目启动时候，将约定的配置类自动配置到<code>IOC</code>容器里。这些都因为<code>SpringBoot</code>有自动配置的特性。</p>
-<h2> Sping Boot 如何实现自动配置</h2>
-<p><code>Spring Boot</code>都需要创建一个<code>mian</code>启动类，而启动类都含有<code>@SpringBootApplication</code>注解，从启动类，一步步探索源码。</p>
-<h3> @SpringBootApplication注解</h3>
-<p><code>Spring Boot</code> 启动类上都有一个 <code>@SpringBootApplication</code>注解：</p>
-<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> @EnableAutoConfiguration注解</h3>
-<p><code>@SpringBootApplication</code> 里面有 <code>@EnableAutoConfiguration</code> 的注解：</p>
-<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> AutoConfigurationImportSelector类</h3>
-<p><code>@EnableAutoConfiguration</code>注解导入<code>AutoConfigurationImportSelector</code>类：</p>
-<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> selectImports()方法</h3>
-<p><code>AutoConfigurationImportSelector</code>类找到 <code>selectImports</code> 方法，里面有<code>getAutoConfigurationEntry</code>方法：</p>
-<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> SpringFactoriesLoader.loadFactoryNames() 方法</h3>
-<p><code>getAutoConfigurationEntry</code>方法通过<code>SpringFactoriesLoader.loadFactoryNames()</code> 扫描所有含有<code>META-INF/spring.factories</code>的<code>jar</code>包：</p>
-<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><code>spring-boot-autoconfigure-xxx.jar</code>项目包含<code>META-INF/spring.factories</code>文件，<code>spring.factories</code>是一个键值对的形式，扫描该文件下<code>@EnableAutoConfiguration</code>对应类：</p>
-<div class="hint-container info">
-<p class="hint-container-title">总结</p>
-<ul>
-<li>自动配置主要由<code>@EnableAutoConfiguration</code>实现</li>
-<li>添加了<code>@EnableAutoConfiguration</code>注解，会导入<code>AutoConfigurationImportSelector</code>类</li>
-<li>里面的<code>selectImports</code>方法通过<code>SpringFactoriesLoader.loadFactoryNames()</code>扫描所有含有<code>META-INF/spring.factories</code>的<code>jar</code>包</li>
-<li><code>spring.factories</code>是一个键值对的形式，扫描该文件下<code>@EnableAutoConfiguration</code>对应类：</li>
-<li>将对应<code>key</code>为<code>@EnableAutoConfiguration</code>注解全名对应的<code>value</code>类全部装配到<code>IOC</code>容器中。</li>
-</ul>
-</div>
-<p>这些属性自动配置到<code>IOC</code>之后就无需自己手动配置<code>bean</code>了，<code>Spring Boot</code>中的<code>约定大于配置</code>理念，约定是将需要的配置以约定的方式添加到<code>IOC</code>容器中。</p>
-<h2> 自动配置生效条件</h2>
-<p>那是不是<code>spring.factories</code>文件对应的配置都会加载到<code>IOC</code>容器中？</p>
-<p>其中有几个注解：  <code>@ConditionalOnClass</code>, <code>@ConditionalOnMissingBean</code></p>
-<ul>
-<li><code>@ConditionalOnClass</code>表示在类路径中存在类才会配置该配置类。只有引入相关依赖才会自动配置该配置类。</li>
-<li><code>@ConditionalOnMissingBean</code>表示只有不存在对应的类的<code>bean</code>才会自动配置该类。</li>
-</ul>
-<p>所以<code>spring.factories</code>里面并不是所有的<code>bean</code>都会装配到<code>IOC</code>容器中，只会按需配置对应的<code>bean</code>。</p>
-]]></content:encoded>
     </item>
     <item>
       <title>SpringCloud 基础</title>
