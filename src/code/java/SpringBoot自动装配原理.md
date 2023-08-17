@@ -1,4 +1,5 @@
 ---
+date: 2023-08-15
 title: SpringBoot 自动装配原理
 icon: leaf
 category: 

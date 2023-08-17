@@ -83,9 +83,10 @@ export default defineUserConfig({
       },
     }),
 
-    // 自动目录插件
+    //自动目录插件
     // autoCatalogPlugin({
-    //   //  orderGetter: (page:Page) => page.date,
+    //   // 根据时间升序排序
+    //   orderGetter(page) {return -new Date(page.date).getTime();}
     // }),
 
 
@@ -94,6 +95,7 @@ export default defineUserConfig({
     registerComponentsPlugin({
       
     }),
+
     /* live 2D
      ohmylive2dPlugin({
         // 在这里进行配置
