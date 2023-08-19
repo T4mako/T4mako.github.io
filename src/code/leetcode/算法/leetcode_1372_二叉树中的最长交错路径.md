@@ -23,7 +23,7 @@ dfs时传入一个参数 falg，判断这次所在结点应该向左还是向右
 
 :::code-tabs
 @tab Java
-```Java
+```java
 class Solution {
    int res = 0;
     public int longestZigZag(TreeNode root) {

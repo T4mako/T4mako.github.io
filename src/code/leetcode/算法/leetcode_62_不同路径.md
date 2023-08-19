@@ -25,7 +25,7 @@ else `a[i][j] = a[i-1][j] + a[i][j-1]`
 
 :::code-tabs
 @tab Java
-```Java
+```java
 class Solution {
     public int uniquePaths(int m, int n) {
         if(m == 1 && n == 1) return 1;
