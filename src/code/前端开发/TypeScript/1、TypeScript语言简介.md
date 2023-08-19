@@ -6,9 +6,11 @@ category:
 order: 1
 article: false
 ---
-(参考文章)[https://wangdoc.com/typescript/]
+[官方文档](https://www.typescriptlang.org/zh/docs/)
 
-最简单的 TypeScript 使用方法，就是使用官网的在线编译页面， [TypeScript Playground](http://www.typescriptlang.org/play/)。
+[参考文章](https://wangdoc.com/typescript/)
+
+官网的在线编译页面 [TypeScript Playground](http://www.typescriptlang.org/play/)。
 
 ## 一、TypeScript 语言简介
 
