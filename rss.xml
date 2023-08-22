@@ -6,8 +6,8 @@
     <link>https://T4mako.github.io/</link>
     <description>T4mako</description>
     <language>zh-CN</language>
-    <pubDate>Tue, 22 Aug 2023 10:14:05 GMT</pubDate>
-    <lastBuildDate>Tue, 22 Aug 2023 10:14:05 GMT</lastBuildDate>
+    <pubDate>Tue, 22 Aug 2023 16:29:28 GMT</pubDate>
+    <lastBuildDate>Tue, 22 Aug 2023 16:29:28 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>算法</category>
@@ -21,6 +21,17 @@
     <category>Docker</category>
     <category>Linux</category>
     <category>AE</category>
+    <item>
+      <title>700. 二叉搜索树中的搜索</title>
+      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_450_%E5%88%A0%E9%99%A4%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E4%B8%AD%E7%9A%84%E8%8A%82%E7%82%B9.html</link>
+      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_450_%E5%88%A0%E9%99%A4%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E4%B8%AD%E7%9A%84%E8%8A%82%E7%82%B9.html</guid>
+      <source url="https://T4mako.github.io/rss.xml">700. 二叉搜索树中的搜索</source>
+      <description>700. 二叉搜索树中的搜索</description>
+      <category>算法</category>
+      <pubDate>Tue, 22 Aug 2023 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<h1> 700. 二叉搜索树中的搜索</h1>
+]]></content:encoded>
+    </item>
     <item>
       <title>1161. 最大层内元素和</title>
       <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_1161_%E6%9C%80%E5%A4%A7%E5%B1%82%E5%86%85%E5%85%83%E7%B4%A0%E5%92%8C.html</link>
@@ -48,23 +59,22 @@
       <link>https://T4mako.github.io/code/java/JVM.html</link>
       <guid>https://T4mako.github.io/code/java/JVM.html</guid>
       <source url="https://T4mako.github.io/rss.xml">JVM 相关知识点汇总</source>
-      <description>JVM 相关知识点汇总 1、JVM vs JDK vs JRE 1、JVM 概述 Java 虚拟机（JVM）是运行 Java 字节码的虚拟机。 JVM 有针对不同系统的特定实现（Windows，Linux，macOS），目的是使用相同的字节码，它们都会给出相同的结果。 字节码和不同系统的 JVM 实现是 Java 语言“一次编译，随处可以运行”的关键所在。 JVM 并不是只有一种！只要满足 JVM 规范，每个公司、组织或者个人都可以开发自己的专属 JVM。 也就是说我们平时接触到的 HotSpot VM（Sun/Oracle JDK 和 OpenJDK 中所带的虚拟机） 仅仅是是 JVM 规范的一种实现而已</description>
+      <description>JVM(Java Virtual Machine) 其实就类似于一台小电脑运行在 windows 或者 linux 这些操作系统环境下即可。 它直接和操作系统进行交互，与硬件不直接交互，而操作系统可以帮我们完成和硬件进行交互的工作。 1、基础知识 JVM Java 虚拟机（JVM）是运行 Java 字节码的虚拟机。 JVM 有针对不同系统的特定实现（Windows，Linux，macOS），目的是使用相同的字节码，它们都会给出相同的结果。 字节码和不同系统的 JVM 实现是 Java 语言“一次编译，随处可以运行”的关键所在。</description>
       <category>java</category>
       <pubDate>Sun, 20 Aug 2023 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<h1> JVM 相关知识点汇总</h1>
-<h2> 1、JVM vs JDK vs JRE</h2>
-<h3> 1、JVM 概述</h3>
+      <content:encoded><![CDATA[<p>JVM(Java Virtual Machine) 其实就类似于一台小电脑运行在 windows 或者 linux 这些操作系统环境下即可。<br>
+它直接和操作系统进行交互，与硬件不直接交互，而操作系统可以帮我们完成和硬件进行交互的工作。</p>
+<h2> 1、基础知识</h2>
+<h3> JVM</h3>
 <p>Java 虚拟机（JVM）是运行 Java 字节码的虚拟机。</p>
 <p>JVM 有针对不同系统的特定实现（Windows，Linux，macOS），目的是使用相同的字节码，它们都会给出相同的结果。</p>
 <p>字节码和不同系统的 JVM 实现是 Java 语言“一次编译，随处可以运行”的关键所在。</p>
 <p><strong>JVM 并不是只有一种！只要满足 JVM 规范，每个公司、组织或者个人都可以开发自己的专属 JVM。</strong><br>
 也就是说我们平时接触到的 HotSpot VM（Sun/Oracle JDK 和 OpenJDK 中所带的虚拟机） 仅仅是是 JVM 规范的一种实现而已</p>
 <blockquote>
-<p>Oracle JDK 是基于 OpenJDK 源代码构建的<br>
-关于 Oracle JDK 与 OpenJDK <a href="https://www.cnblogs.com/shoufeng/p/9719995.html" target="_blank" rel="noopener noreferrer">https://www.cnblogs.com/shoufeng/p/9719995.html</a></p>
-<p>维基百科上就有常见 JVM 的对比：<a href="https://en.wikipedia.org/wiki/Comparison_of_Java_virtual_machines" target="_blank" rel="noopener noreferrer">Comparison of Java virtual machinesopen in new window</a> ，感兴趣的可以去看看。并且，你可以在 <a href="https://docs.oracle.com/javase/specs/index.html" target="_blank" rel="noopener noreferrer">Java SE Specificationsopen in new window</a> 上找到各个版本的 JDK 对应的 JVM 规范。</p>
+<p>Oracle JDK 是基于 OpenJDK 源代码构建的</p>
 </blockquote>
-<h3> 2、JDK 和 JRE</h3>
+<h3> JDK 和 JRE</h3>
 <ul>
 <li>JDK（Java Development Kit）= JRE + 开发工具集（javac.exe,java..exe,javadoc.exe...）</li>
 <li>JRE（Java Runtime Environment Java运行环境）= JVM + Java SE 标准类库（Java Class Library）</li>
@@ -77,7 +87,7 @@
 <p>如果需要进行 Java 编程工作，比如编写和编译 Java 程序、使用 Java API 文档等，就需要安装 JDK。<br>
 而对于某些需要使用 Java 特性的应用程序，如 JSP 转换为 Java Servlet、使用反射等，也需要 JDK 来编译和运行 Java 代码。<br>
 因此，即使不打算进行 Java 应用程序的开发工作，也有可能需要安装 JDK。</p>
-<h3> 3、字节码</h3>
+<h3> 字节码</h3>
 <p>在 Java 中，JVM 可以理解的代码就叫做字节码（即扩展名为 <code>.class</code> 的文件），它不面向任何特定的处理器，只面向虚拟机。</p>
 <p>Java 语言通过字节码的方式，在一定程度上解决了传统解释型语言执行效率低的问题，同时又保留了解释型语言可移植的特点。所以， Java 程序运行时相对来说还是高效的（不过，和 C++，Rust，Go 等语言还是有一定差距的），而且，由于字节码并不针对一种特定的机器，因此，Java 程序无须重新编译便可在多种不同操作系统的计算机上运行。</p>
 <p><code>.class-&gt;机器码</code> 这一步。在这一步 JVM 类加载器首先加载字节码文件，然后通过解释器<strong>逐行解释执行</strong>，这种方式的执行速度会相对比较慢。</p>
@@ -97,12 +107,80 @@
 <p>AOT 可以提前编译节省启动时间，那为什么不全部使用这种编译方式呢？</p>
 <p>长话短说，这和 Java 语言的动态特性有千丝万缕的联系了。举个例子，CGLIB 动态代理使用的是 ASM 技术，而这种技术大致原理是运行时直接在内存中生成并加载修改后的字节码文件也就是 .class 文件，如果全部使用 AOT 提前编译，也就不能使用 ASM 技术了。为了支持类似的动态特性，所以选择使用 JIT 即时编译器。</p>
 </div>
-<h3> 4、Java 语言“编译与解释并存”的原因</h3>
+<h3> Java 语言“编译与解释并存”的原因</h3>
 <p>高级编程语言按照程序的执行方式分为两种：</p>
 <ul>
 <li>编译型：编译型语言 会通过编译器将源代码 <strong>一次性翻译</strong> 成可被该平台执行的机器码。一般情况下，编译语言的执行速度比较快，开发效率比较低。常见的编译性语言有 C、C++、Go、Rust 等等。</li>
 <li>解释型：解释型语言会通过解释器 <strong>一句一句的将代码解释</strong>（interpret）为机器代码后再执行。解释型语言开发效率比较快，执行速度比较慢。常见的解释性语言有 Python、JavaScript、PHP 等等。</li>
 </ul>
+<h3> Oracle JDK vs OpenJDK</h3>
+<p>2006 年 SUN 公司将 Java 开源，也就有了 OpenJDK。<br>
+2009 年 Oracle 收购了 Sun 公司，于是自己在 OpenJDK 的基础上搞了一个 Oracle JDK。  Oracle JDK 是不开源的，并且刚开始的几个版本（Java8 ~ Java11）还会相比于 OpenJDK 添加一些特有的功能和工具。</p>
+<p>Oracle JDK 是基于 OpenJDK 7 构建的，只添加了一些小功能，由 Oracle 工程师参与维护。</p>
+<p>Oracle JDK 和 OpenJDK 的区别：</p>
+<ol>
+<li>是否开源：OpenJDK 是一个参考模型并且是完全开源的，而 Oracle JDK 是基于 OpenJDK 实现的，并不是完全开源的。<br>
+OpenJDK 开源项目：<a href="https://github.com/openjdk/jdk" target="_blank" rel="noopener noreferrer">https://github.com/openjdk/jdk</a></li>
+<li>是否免费：Oracle JDK 会提供免费版本，但一般有时间限制。<br>
+JDK17 之后的版本可以免费分发和商用，但是仅有 3 年时间，3 年后无法免费商用<br>
+不过，JDK8u221 之前只要不升级可以无限期免费。OpenJDK 是完全免费的。</li>
+<li>功能性：Oracle JDK 在 OpenJDK 的基础上添加了一些特有的功能和工具，比如 Java Flight Recorder（JFR，一种监控工具）、Java Mission Control（JMC，一种监控工具）等工具。<br>
+不过，在 Java 11 之后，OracleJDK 和 OpenJDK 的功能基本一致，之前 OracleJDK 中的私有组件大多数也已经被捐赠给开源组织。</li>
+<li>稳定性：OpenJDK 不提供 LTS 服务，而 OracleJDK 大概每三年都会推出一个 LTS 版进行长期支持。<br>
+不过，很多公司都基于 OpenJDK 提供了对应的和 OracleJDK 周期相同的 LTS 版。因此，两者稳定性其实也是差不多的。</li>
+<li>协议：Oracle JDK 使用 <code>BCL/OTN</code> 协议获得许可，而 OpenJDK 根据 <code>GPL v2</code> 许可获得许可。</li>
+</ol>
+<div class="hint-container info">
+<p class="hint-container-title">相关信息</p>
+<p>既然 Oracle JDK 这么好，那为什么还要有 OpenJDK？</p>
+<ul>
+<li>OpenJDK 是开源的，开源意味着你可以对它根据你自己的需要进行修改、优化，比如 Alibaba 基于 OpenJDK 开发了 Dragonwell8：<a href="https://github.com/alibaba/dragonwell8" target="_blank" rel="noopener noreferrer">https://github.com/alibaba/dragonwell8</a></li>
+<li>OpenJDK 是商业免费的（这也是为什么通过 yum 包管理器上默认安装的 JDK 是 OpenJDK 而不是 Oracle JDK）。虽然 Oracle JDK 也是商业免费（比如 JDK 8），但并不是所有版本都是免费的。</li>
+<li>OpenJDK 更新频率更快。Oracle JDK 一般是每 6 个月发布一个新版本，而 OpenJDK 一般是每 3 个月发布一个新版本。（现在你知道为啥 Oracle JDK 更稳定了吧，先在 OpenJDK 试试水，把大部分问题都解决掉了才在 Oracle JDK 上发布）基于以上这些原因，OpenJDK 还是有存在的必要的！</li>
+</ul>
+</div>
+<h2> 2、Java 文件是如何被运行的</h2>
+<p>假设编写了一个 <code>A.java</code> 文件，目前它只是一个文本文件且有一定的缩进<br>
+JVM 是不认识文本文件的，所以它需要一个 <strong>编译</strong> ，让其成为一个它会读二进制文件的 <code>A.class</code></p>
+<h3> ① 类加载器</h3>
+<p>如果 JVM 想要执行这个 .class 文件，我们需要将其装进一个 <strong>类加载器</strong> 中，它就像一个搬运工一样，会把所有的 .class 文件全部搬进 JVM 里面来。</p>
+<h3> ② 方法区</h3>
+<p><strong>方法区</strong> 是用于存放类似于元数据信息方面的数据的，比如类信息，常量，静态变量，编译后代码···等<br>
+类加载器将 .class 文件搬过来就是先丢到这一块上</p>
+<h3> ③ 堆</h3>
+<p>堆 主要放了一些存储的数据，比如对象实例，数组···等，它和方法区都同属于 线程共享区域 。也就是说它们都是 <strong>线程不安全</strong> 的</p>
+<h3> ④ 栈</h3>
+<p>栈 这是我们的代码运行空间。我们编写的每一个方法都会放到 栈 里面运行。我们会听说过 本地方法栈 或者 本地方法接口 这两个名词，不过我们基本不会涉及这两块的内容，它俩底层是使用 C 来进行工作的，和 Java 没有太大的关系。</p>
+<h3> ⑤ 程序计数器</h3>
+<p>主要就是完成一个加载工作，类似于一个指针一样的，指向下一行我们需要执行的代码。和栈一样，都是 <strong>线程独享</strong> 的，就是说每一个线程都会有自己对应的一块区域而不会存在并发和多线程的问题。</p>
+<p><img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/image-20230823001104289.png" alt="image-20230823001104289" loading="lazy"></p>
+<div class="hint-container info">
+<p class="hint-container-title">相关信息</p>
+<ul>
+<li><code>.java</code> 文件经过编译后变成 <code>.class</code> 字节码文件</li>
+<li>字节码文件通过 <code>类加载器</code> 被搬运到 JVM 虚拟机中</li>
+<li>虚拟机主要的 5 大块：
+<ul>
+<li><code>方法区</code>，<code>堆</code> 都为<code>线程共享</code>区域，有线程安全问题</li>
+<li><code>栈</code> 和 <code>本地方法栈</code> 和 <code>计数器</code> 都是 <code>独享区域</code>，不存在线程安全问题</li>
+<li>而 JVM 的调优主要就是围绕 <code>堆</code>，<code>栈</code> 两大块进行</li>
+</ul>
+</li>
+</ul>
+</div>
+<h3> 一个简单的示例</h3>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ol>
+<li><code>App.java</code> 编译后得到 <code>App.class</code> ，执行<code> App.class</code>，系统会启动一个 <code>JVM 进程</code>，从 <code>classpath</code> 路径中找到一个名为 <code>App.class</code> 的二进制文件，将 App 的类信息加载到运行时数据区的 <code>方法区</code> 内，这个过程叫做 App <code>类的加载</code></li>
+<li>JVM 找到 App 的主程序入口，执行 main 方法</li>
+<li>main 中的第一条语句为 <code>Stu stu = new Stu("T4mako");</code> ，就是让 JVM 创建一个 Stu 对象，但是这个时候方法区中是没有 Stu 类的信息的，所以 JVM 马上加载 Stu 类，把 Stu 类的信息放到 <code>方法区</code> 中</li>
+<li>加载完 Stu 类后，JVM 在 <code>堆</code> 中为一个新的 stu 实例分配内存，然后调用构造函数初始化 stu 实例，这个 stu 实例持有 <strong>指向方法区中的 Stu 类的类型信息的引用</strong></li>
+<li>执行 <code>stu.say();</code> 时，JVM 根据 stu 的引用找到 stu 对象，然后根据 stu 对象持有的引用定位到方法区中 Stu 类的类型信息的方法表，获得 say() 的字节码地址。</li>
+<li>执行 say()</li>
+</ol>
+<div class="hint-container info">
+<p class="hint-container-title">相关信息</p>
+<p>只需要知道对象实例初始化时会去方法区中找类信息，完成后再到栈那里去运行方法。找方法就在方法表中找</p>
+</div>
 ]]></content:encoded>
       <enclosure url="https://raw.githubusercontent.com/T4mako/ImageBed/main/image-20230821005244740.png" type="image/png"/>
     </item>
@@ -17604,16 +17682,6 @@ CFG预设（Purp1e制作）<br>
       <description>095_不同的二叉搜索树II</description>
       <category>算法</category>
       <content:encoded><![CDATA[<h1> 095_不同的二叉搜索树II</h1>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>096_不同的二叉搜索树</title>
-      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_096_%E4%B8%8D%E5%90%8C%E7%9A%84%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91.html</link>
-      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_096_%E4%B8%8D%E5%90%8C%E7%9A%84%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91.html</guid>
-      <source url="https://T4mako.github.io/rss.xml">096_不同的二叉搜索树</source>
-      <description>096_不同的二叉搜索树</description>
-      <category>算法</category>
-      <content:encoded><![CDATA[<h1> 096_不同的二叉搜索树</h1>
 ]]></content:encoded>
     </item>
   </channel>
