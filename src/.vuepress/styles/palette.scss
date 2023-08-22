@@ -35,5 +35,8 @@ $border-color: (
 .vp-nav-links span,.vp-navbar .nav-item > .nav-link,.dropdown-item a{
   color: var(--text-color)
 }
+.page-pageview-info{
+  display: none; //不显示访问量
+}
 
 
