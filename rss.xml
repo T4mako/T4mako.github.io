@@ -6,12 +6,12 @@
     <link>https://T4mako.github.io/</link>
     <description>T4mako</description>
     <language>zh-CN</language>
-    <pubDate>Sun, 20 Aug 2023 17:05:06 GMT</pubDate>
-    <lastBuildDate>Sun, 20 Aug 2023 17:05:06 GMT</lastBuildDate>
+    <pubDate>Tue, 22 Aug 2023 10:14:05 GMT</pubDate>
+    <lastBuildDate>Tue, 22 Aug 2023 10:14:05 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
-    <category>java</category>
     <category>算法</category>
+    <category>java</category>
     <category>SQL</category>
     <category>vue</category>
     <category>部署</category>
@@ -21,6 +21,28 @@
     <category>Docker</category>
     <category>Linux</category>
     <category>AE</category>
+    <item>
+      <title>1161. 最大层内元素和</title>
+      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_1161_%E6%9C%80%E5%A4%A7%E5%B1%82%E5%86%85%E5%85%83%E7%B4%A0%E5%92%8C.html</link>
+      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_1161_%E6%9C%80%E5%A4%A7%E5%B1%82%E5%86%85%E5%85%83%E7%B4%A0%E5%92%8C.html</guid>
+      <source url="https://T4mako.github.io/rss.xml">1161. 最大层内元素和</source>
+      <description>1161. 最大层内元素和</description>
+      <category>算法</category>
+      <pubDate>Mon, 21 Aug 2023 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<h1> 1161. 最大层内元素和</h1>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>746. 使用最小花费爬楼梯</title>
+      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_746_%E4%BD%BF%E7%94%A8%E6%9C%80%E5%B0%8F%E8%8A%B1%E8%B4%B9%E7%88%AC%E6%A5%BC%E6%A2%AF.html</link>
+      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_746_%E4%BD%BF%E7%94%A8%E6%9C%80%E5%B0%8F%E8%8A%B1%E8%B4%B9%E7%88%AC%E6%A5%BC%E6%A2%AF.html</guid>
+      <source url="https://T4mako.github.io/rss.xml">746. 使用最小花费爬楼梯</source>
+      <description>746. 使用最小花费爬楼梯</description>
+      <category>算法</category>
+      <pubDate>Mon, 21 Aug 2023 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<h1> 746. 使用最小花费爬楼梯</h1>
+]]></content:encoded>
+    </item>
     <item>
       <title>JVM 相关知识点汇总</title>
       <link>https://T4mako.github.io/code/java/JVM.html</link>
@@ -58,7 +80,7 @@
 <h3> 3、字节码</h3>
 <p>在 Java 中，JVM 可以理解的代码就叫做字节码（即扩展名为 <code>.class</code> 的文件），它不面向任何特定的处理器，只面向虚拟机。</p>
 <p>Java 语言通过字节码的方式，在一定程度上解决了传统解释型语言执行效率低的问题，同时又保留了解释型语言可移植的特点。所以， Java 程序运行时相对来说还是高效的（不过，和 C++，Rust，Go 等语言还是有一定差距的），而且，由于字节码并不针对一种特定的机器，因此，Java 程序无须重新编译便可在多种不同操作系统的计算机上运行。</p>
-<p><code>.class-&gt;机器码</code> 这一步。在这一步 JVM 类加载器首先加载字节码文件，然后通过解释器逐行解释执行，这种方式的执行速度会相对比较慢。</p>
+<p><code>.class-&gt;机器码</code> 这一步。在这一步 JVM 类加载器首先加载字节码文件，然后通过解释器<strong>逐行解释执行</strong>，这种方式的执行速度会相对比较慢。</p>
 <p>而且，有些方法和代码块是经常需要被调用的(也就是所谓的热点代码)，所以后面引进了 JIT（just-in-time compilation） 编译器，而 JIT 属于运行时编译。当 JIT 编译器完成第一次编译后，其会将字节码对应的机器码保存下来，下次可以直接使用。</p>
 <p>而我们知道，机器码的运行效率肯定是高于 Java 解释器的。这也解释了我们为什么经常会说 Java 是编译与解释共存的语言</p>
 <div class="hint-container info">
@@ -69,6 +91,18 @@
 </div>
 <p>JVM 大致结构模型：</p>
 <p><img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/image-20230821005244740.png" alt="image-20230821005244740" loading="lazy"></p>
+<div class="hint-container info">
+<p class="hint-container-title">相关信息</p>
+<p>为什么不全部使用 AOT 呢?</p>
+<p>AOT 可以提前编译节省启动时间，那为什么不全部使用这种编译方式呢？</p>
+<p>长话短说，这和 Java 语言的动态特性有千丝万缕的联系了。举个例子，CGLIB 动态代理使用的是 ASM 技术，而这种技术大致原理是运行时直接在内存中生成并加载修改后的字节码文件也就是 .class 文件，如果全部使用 AOT 提前编译，也就不能使用 ASM 技术了。为了支持类似的动态特性，所以选择使用 JIT 即时编译器。</p>
+</div>
+<h3> 4、Java 语言“编译与解释并存”的原因</h3>
+<p>高级编程语言按照程序的执行方式分为两种：</p>
+<ul>
+<li>编译型：编译型语言 会通过编译器将源代码 <strong>一次性翻译</strong> 成可被该平台执行的机器码。一般情况下，编译语言的执行速度比较快，开发效率比较低。常见的编译性语言有 C、C++、Go、Rust 等等。</li>
+<li>解释型：解释型语言会通过解释器 <strong>一句一句的将代码解释</strong>（interpret）为机器代码后再执行。解释型语言开发效率比较快，执行速度比较慢。常见的解释性语言有 Python、JavaScript、PHP 等等。</li>
+</ul>
 ]]></content:encoded>
       <enclosure url="https://raw.githubusercontent.com/T4mako/ImageBed/main/image-20230821005244740.png" type="image/png"/>
     </item>
@@ -79,19 +113,8 @@
       <source url="https://T4mako.github.io/rss.xml">199. 二叉树的右视图</source>
       <description>199. 二叉树的右视图</description>
       <category>算法</category>
-      <pubDate>Sat, 19 Aug 2023 00:00:00 GMT</pubDate>
+      <pubDate>Sun, 20 Aug 2023 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[<h1> 199. 二叉树的右视图</h1>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>236. 二叉树的最近公共祖先</title>
-      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_236_%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88.html</link>
-      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_236_%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88.html</guid>
-      <source url="https://T4mako.github.io/rss.xml">236. 二叉树的最近公共祖先</source>
-      <description>236. 二叉树的最近公共祖先</description>
-      <category>算法</category>
-      <pubDate>Sat, 19 Aug 2023 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<h1> 236. 二叉树的最近公共祖先</h1>
 ]]></content:encoded>
     </item>
     <item>
@@ -17591,16 +17614,6 @@ CFG预设（Purp1e制作）<br>
       <description>096_不同的二叉搜索树</description>
       <category>算法</category>
       <content:encoded><![CDATA[<h1> 096_不同的二叉搜索树</h1>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>098_验证二叉搜索树</title>
-      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_098_%E9%AA%8C%E8%AF%81%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91.html</link>
-      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_098_%E9%AA%8C%E8%AF%81%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91.html</guid>
-      <source url="https://T4mako.github.io/rss.xml">098_验证二叉搜索树</source>
-      <description>098_验证二叉搜索树</description>
-      <category>算法</category>
-      <content:encoded><![CDATA[<h1> 098_验证二叉搜索树</h1>
 ]]></content:encoded>
     </item>
   </channel>
