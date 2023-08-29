@@ -9,7 +9,7 @@ tag:
   - 矩阵
 ---
 
-# 1926. 迷宫中离入口最近的出口
+# 994. 腐烂的橘子
 
 <Badge text="中等" type="warning" vertical="middle" />
 

@@ -4,9 +4,11 @@ category:
 tag: 
   - 递归
   - 数学
+
+title: 050. Pow(x,n)
 ---
 
-# 050_Pow(x,n)
+# 050. Pow(x,n)
 
 <Badge text="中等" type="warning" vertical="middle" />
 
