@@ -363,9 +363,10 @@ Java 虚拟机也可以动态扩展，但随着扩展会不断地申请内存，
 
 #### 3.3.6、虚拟机堆的概念
 
-JVM 内存会划分为堆内存和非堆内存，堆内存中也会划分为 **年轻代** 和 **老年代**，而非堆内存则为 **永久代**
+JVM 内存会划分为堆内存和非堆内存，堆内存中也会划分为 **年轻代** 和 **老年代**，而非堆内存则为 **永久代**  
 
-Eden，FromPlace 和 ToPlace 的默认占比为 8:1:1。可以通过一个 `-XX:+UsePSAdaptiveSurvivorSizePolicy` 参数来根据生成对象的速率动态调整
+Eden，FromPlace 和 ToPlace 的默认占比为 8:1:1。  
+可以通过一个 `-XX:+UsePSAdaptiveSurvivorSizePolicy` 参数来根据生成对象的速率动态调整
 
 ```mermaid
 flowchart LR
@@ -408,7 +409,7 @@ Survivor0 区 的对象什么时候垃圾回收呢？
 老年代是存储长期存活的对象的，占满时就会触发我们最常听说的 Full GC，期间会停止所有线程等待 GC 的完成。  
 所以对于响应要求高的应用应该尽量去减少发生 Full GC 从而避免响应超时的问题。
 
-老年区执行了 full gc 之后仍然无法进行对象保存的操作，就会产生 `Out of Memory`，这时候就是虚拟机中的堆内存不足，原因可能会是堆内存设置的大小过小，这个可以通过参数-Xms、-Xmx 来调整。也可能是代码中创建的对象大且多，而且它们一直在被引用从而长时间垃圾收集无法收集它们。
+老年区执行了 full gc 之后仍然无法进行对象保存的操作，就会产生 `Out of Memory`，这时候就是虚拟机中的堆内存不足，原因可能会是堆内存设置的大小过小，这个可以通过参数 -Xms、-Xmx 来调整。也可能是代码中创建的对象大且多，而且它们一直在被引用从而长时间垃圾收集无法收集它们。
 
 ```mermaid
 flowchart TB
@@ -422,9 +423,9 @@ flowchart TB
     新生代 --> 老年代
 ```
 
-补充说明：关于-XX:TargetSurvivorRatio 参数的问题。  
-其实也不一定是要满足-XX:MaxTenuringThreshold 才移动到老年代。  
-举例：如对象年龄 5 的占 30%，年龄 6 的占 36%，年龄 7 的占 34%，加入某个年龄段后，当总占用超过 Survivor 空间 *TargetSurvivorRatio 的时候，从该年龄段开始及大于的年龄对象就要进入老年代，这时候无需等到 MaxTenuringThreshold 中要求的 15
+补充说明：关于 `-XX:TargetSurvivorRatio` 参数的问题。  
+其实也不一定是要满足 `-XX:MaxTenuringThreshold` 才移动到老年代。  
+举例：如对象年龄 5 的占 30%，年龄 6 的占 36%，年龄 7 的占 34%，加入某个年龄段后，当总占用超过 Survivor 空间  *TargetSurvivorRatio 的时候，从该年龄段开始及大于的年龄对象就要进入老年代，这时候无需等到 MaxTenuringThreshold 中要求的 15
 
 #### 3.3.8、判断一个对象需要被干掉
 
@@ -472,8 +473,18 @@ JVM 调优，主要就是堆内存那块
 
 ### 4.1 调整最大堆内存和最小堆内存
 
-`-Xmx`：指定 java 堆最大值（默认值是物理内存的 1/4(<1GB)）  
-`–Xms`：初始 java 堆最小值（默认值是物理内存的 1/64(<1GB)）  
+1. `-Xmx`
+   指定 java 堆最大值（默认值是物理内存的 1/4(<1GB)）  
+   如 `- Xmx3550m` 设置 JVM 堆最大值为 3550M。  
+2. `–Xms`：初始 java 堆最小值（默认值是物理内存的 1/64(<1GB)）  
+   如 `-Xms200m`，表示分配 200M  
+3. `-Xss` 
+   为 jvm 启动的每个线程分配的内存大小，默认 JDK1.4 中是256K，JDK1.5+ 中是 1M  
+4. `-Xmn`
+   年轻代大小  
+   如 `-Xmn2g`：设置年轻代大小为 2G。整个堆大小 = 年轻代大小 + 年老代大小 + 持久代大小   
+
+
 
 默认空余堆内存小于 40% 时，JVM 就会增大堆直到 -Xmx 的最大限制 （MinHeapFreeRatio 参数可以调整）
 默认空余堆内存大于 70% 时，JVM 会减少堆直到 -Xms 的最小限制（MaxHeapFreeRatio 参数可以调整）
@@ -490,3 +501,79 @@ System.out.println("Xmx=" + Runtime.getRuntime().maxMemory() / 1024.0 / 1024 + "
 System.out.println("free mem=" + Runtime.getRuntime().freeMemory() / 1024.0 / 1024 + "M");  //系统的空闲空间
 System.out.println("total mem=" + Runtime.getRuntime().totalMemory() / 1024.0 / 1024 + "M");  //当前可用的总空间
 ```
+
+> 运行结果：
+> Xmx=3621.5M
+> free mem=240.37600708007812M
+> total mem=245.5M
+
+可以设置 VM options 的参数：`-Xmx20m -Xms5m -XX:+PrintGCDetails`
+
+Java 会尽可能将 total mem 的值维持在最小堆内存大小  
+当最小堆内存顶不住时。total memory 就会申请内存。
+
+当手动执行 `System.gc();`（full gc）， total memory 会把申请的内存释放掉
+
+### 4.2、调整新生代和老年代的比值
+`-XX:NewRatio` ：新生代（eden + 2*Survivor）和老年代（不包含永久区）的比值  
+
+例如：`-XX:NewRatio=4`，表示 `新生代:老年代=1:4` ，即新生代占整个堆的 1/5。  
+
+在 Xms = Xmx 并且设置了 Xmn 的情况下，该参数不需要进行设置。
+
+### 4.3、调整 Survivor 区和 Eden 区的比值
+`-XX:SurvivorRatio`（幸存代）：设置两个 Survivor 区和 eden 的比值
+
+如：`-XX:SurvivorRatio=8`，表示两个 `Survivor:eden=2:8`，即一个 Survivor 占年轻代的 1/10
+
+### 4.4、设置年轻代和老年代的大小
+- `-XX:NewSize` --- 设置年轻代大小
+- `-XX:MaxNewSize` --- 设置年轻代最大值
+
+可以通过设置不同参数来测试不同的情况，反正最优解当然就是官方的 Eden 和 Survivor 的占比为 8:1:1  
+
+最大堆内存和最小堆内存如果数值不同会导致多次的 gc，需要注意。
+
+:::info
+根据实际事情调整新生代和幸存代的大小，官方推荐新生代占 java 堆的 3/8，幸存代占新生代的 1/10 
+在 OOM 时，记得 Dump 出堆，确保可以排查现场问题，通过下面命令你可以输出一个.dump 文件，这个文件可以使用 VisualVM 或者 Java 自带的 Java VisualVM 工具。
+
+`-Xmx20m -Xms5m -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=你要输出的日志路径`
+
+一般我们也可以通过编写脚本的方式来让 OOM 出现时给我们报个信，可以通过发送邮件或者重启程序等来解决。
+:::
+
+### 4.5、永久区的设置
+`-XX:PermSize -XX:MaxPermSize`
+
+初始空间（默认为物理内存的 1/64）和最大空间（默认为物理内存的 1/4）。  
+也就是说，jvm 启动时，永久区一开始就占用了 PermSize 大小的空间，如果空间还不够，可以继续扩展，但是不能超过 MaxPermSize，否则会 OOM。  
+tips：如果堆空间没有用完也抛出了 OOM，有可能是永久区导致的。堆空间实际占用非常少，但是永久区溢出 一样抛出 OOM。
+
+### 4.6、JVM 的栈参数调优
+#### 调整每个线程栈空间的大小
+
+可以通过 `-Xss` ：调整每个线程栈空间的大小
+JDK5.0 以后每个线程堆栈大小为 1M，以前每个线程堆栈大小为 256K。  
+在相同物理内存下，减小这个值能生成更多的线程。  
+但是操作系统对一个进程内的线程数还是有限制的，不能无限生成，经验值在 `3000~5000` 左右
+
+#### 设置线程栈的大小
+`-XXThreadStackSize`：设置线程栈的大小(0 means use default stack size)
+
+### 4.7、其他参数介绍
+- `-XXThreadStackSize`：设置内存页的大小，不可设置过大，会影响Perm的大小
+- `-XX:+UseFastAccessorMethods`：设置原始类型的快速优化
+- `-XX:+DisableExplicitGC`：设置关闭 `System.gc()` (这个参数需要严格的测试)
+- `-XX:MaxTenuringThreshold`
+    设置垃圾最大年龄。如果设置为0的话,则年轻代对象不经过 Survivor 区,直接进入年老代    
+    对于年老代比较多的应用,可以提高效率。如果将此值设置为一个较大值,  
+    则年轻代对象会在 Survivor 区进行多次复制,这样可以增加对象再年轻代的存活时间,    
+    增加在年轻代即被回收的概率。该参数只有在串行GC时才有效  
+- `-XX:+AggressiveOpts`：加快编译速度
+- `-XX:+UseBiasedLocking`：改善锁机制性能
+- `-Xnoclassgc`：禁用垃圾回收
+- `-XX:SoftRefLRUPolicyMSPerMB`：设置每兆堆空闲空间中 SoftReference 的存活时间，默认值是 1s。
+- `-XX:PretenureSizeThreshold`：设置对象超过多大时直接在老年代分配，默认值是 0。
+- `-XX:TLABWasteTargetPercent`：设置 TLAB 占 eden 区的百分比，默认值是 1%
+- `-XX:+CollectGen0First`：设置 FullGC 时是否先 YGC，默认值是 false
