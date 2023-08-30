@@ -6,8 +6,8 @@
     <link>https://T4mako.github.io/</link>
     <description>T4mako</description>
     <language>zh-CN</language>
-    <pubDate>Tue, 29 Aug 2023 15:12:53 GMT</pubDate>
-    <lastBuildDate>Tue, 29 Aug 2023 15:12:53 GMT</lastBuildDate>
+    <pubDate>Wed, 30 Aug 2023 15:21:57 GMT</pubDate>
+    <lastBuildDate>Wed, 30 Aug 2023 15:21:57 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>算法</category>
@@ -21,6 +21,28 @@
     <category>Docker</category>
     <category>Linux</category>
     <category>AE</category>
+    <item>
+      <title>2300. 咒语和药水的成功对数</title>
+      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_2300.%20%E5%92%92%E8%AF%AD%E5%92%8C%E8%8D%AF%E6%B0%B4%E7%9A%84%E6%88%90%E5%8A%9F%E5%AF%B9%E6%95%B0.html</link>
+      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_2300.%20%E5%92%92%E8%AF%AD%E5%92%8C%E8%8D%AF%E6%B0%B4%E7%9A%84%E6%88%90%E5%8A%9F%E5%AF%B9%E6%95%B0.html</guid>
+      <source url="https://T4mako.github.io/rss.xml">2300. 咒语和药水的成功对数</source>
+      <description>2300. 咒语和药水的成功对数</description>
+      <category>算法</category>
+      <pubDate>Wed, 30 Aug 2023 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<h1> 2300. 咒语和药水的成功对数</h1>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>2336. 无限集中的最小数字</title>
+      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_2336_%E6%97%A0%E9%99%90%E9%9B%86%E4%B8%AD%E7%9A%84%E6%9C%80%E5%B0%8F%E6%95%B0%E5%AD%97.html</link>
+      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_2336_%E6%97%A0%E9%99%90%E9%9B%86%E4%B8%AD%E7%9A%84%E6%9C%80%E5%B0%8F%E6%95%B0%E5%AD%97.html</guid>
+      <source url="https://T4mako.github.io/rss.xml">2336. 无限集中的最小数字</source>
+      <description>2336. 无限集中的最小数字</description>
+      <category>算法</category>
+      <pubDate>Tue, 29 Aug 2023 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<h1> 2336. 无限集中的最小数字</h1>
+]]></content:encoded>
+    </item>
     <item>
       <title>215. 数组中的第K个最大元素</title>
       <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_215_%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E7%AC%ACK%E4%B8%AA%E6%9C%80%E5%A4%A7%E5%85%83%E7%B4%A0.html</link>
@@ -289,7 +311,8 @@ Java 虚拟机也可以动态扩展，但随着扩展会不断地申请内存，
 <p>为了节省栈帧空间，这些 slot 是可以复用的，当方法执行位置超过了某个变量，那么这个变量的 slot 可以被其它变量复用。当然如果需要复用，那我们的垃圾回收自然就不会去动这些内存</p>
 <h4> 3.3.6、虚拟机堆的概念</h4>
 <p>JVM 内存会划分为堆内存和非堆内存，堆内存中也会划分为 <strong>年轻代</strong> 和 <strong>老年代</strong>，而非堆内存则为 <strong>永久代</strong></p>
-<p>Eden，FromPlace 和 ToPlace 的默认占比为 8:1:1。可以通过一个 <code>-XX:+UsePSAdaptiveSurvivorSizePolicy</code> 参数来根据生成对象的速率动态调整</p>
+<p>Eden，FromPlace 和 ToPlace 的默认占比为 8:1:1。<br>
+可以通过一个 <code>-XX:+UsePSAdaptiveSurvivorSizePolicy</code> 参数来根据生成对象的速率动态调整</p>
 <div class="hint-container info">
 <p class="hint-container-title">相关信息</p>
 <p><strong>堆内存</strong> 中存放的是 <strong>对象</strong><br>
@@ -316,10 +339,10 @@ Survivor0 区 的对象什么时候垃圾回收呢？<br>
 假设 Survivor0 区现在是满的，此时又触发了 Minor GC ，发现 Survivor0 区依旧是满的，存不下，此时会将 S0 区与 Eden 区的对象一起进行可达性分析，找出活跃的对象，将它复制到 S1 区并且将 S0 区域和 Eden 区的对象给清空，这样那些不可达的对象进行清除，并且将 S0 区 和 S1 区交换。</p>
 <p>老年代是存储长期存活的对象的，占满时就会触发我们最常听说的 Full GC，期间会停止所有线程等待 GC 的完成。<br>
 所以对于响应要求高的应用应该尽量去减少发生 Full GC 从而避免响应超时的问题。</p>
-<p>老年区执行了 full gc 之后仍然无法进行对象保存的操作，就会产生 <code>Out of Memory</code>，这时候就是虚拟机中的堆内存不足，原因可能会是堆内存设置的大小过小，这个可以通过参数-Xms、-Xmx 来调整。也可能是代码中创建的对象大且多，而且它们一直在被引用从而长时间垃圾收集无法收集它们。</p>
-<p>补充说明：关于-XX:TargetSurvivorRatio 参数的问题。<br>
-其实也不一定是要满足-XX:MaxTenuringThreshold 才移动到老年代。<br>
-举例：如对象年龄 5 的占 30%，年龄 6 的占 36%，年龄 7 的占 34%，加入某个年龄段后，当总占用超过 Survivor 空间 *TargetSurvivorRatio 的时候，从该年龄段开始及大于的年龄对象就要进入老年代，这时候无需等到 MaxTenuringThreshold 中要求的 15</p>
+<p>老年区执行了 full gc 之后仍然无法进行对象保存的操作，就会产生 <code>Out of Memory</code>，这时候就是虚拟机中的堆内存不足，原因可能会是堆内存设置的大小过小，这个可以通过参数 -Xms、-Xmx 来调整。也可能是代码中创建的对象大且多，而且它们一直在被引用从而长时间垃圾收集无法收集它们。</p>
+<p>补充说明：关于 <code>-XX:TargetSurvivorRatio</code> 参数的问题。<br>
+其实也不一定是要满足 <code>-XX:MaxTenuringThreshold</code> 才移动到老年代。<br>
+举例：如对象年龄 5 的占 30%，年龄 6 的占 36%，年龄 7 的占 34%，加入某个年龄段后，当总占用超过 Survivor 空间  *TargetSurvivorRatio 的时候，从该年龄段开始及大于的年龄对象就要进入老年代，这时候无需等到 MaxTenuringThreshold 中要求的 15</p>
 <h4> 3.3.8、判断一个对象需要被干掉</h4>
 <p><img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/image-20230828223704998.png" alt="image-20230828223704998" loading="lazy"></p>
 <div class="hint-container info">
@@ -353,8 +376,18 @@ Survivor0 区 的对象什么时候垃圾回收呢？<br>
 <p>所有线程共享数据区大小 = 新生代大小 + 年老代大小 + 持久代大小。<br>
 持久代一般固定大小为 64m。所以 java 堆中增大年轻代后，将会减小年老代大小（因为老年代的清理是使用 fullgc，所以老年代过小的话反而是会增多 fullgc 的）。此值对系统性能影响较大，Sun 官方推荐配置为 java 堆的 3/8。</p>
 <h3> 4.1 调整最大堆内存和最小堆内存</h3>
-<p><code>-Xmx</code>：指定 java 堆最大值（默认值是物理内存的 1/4(&lt;1GB)）<br>
-<code>–Xms</code>：初始 java 堆最小值（默认值是物理内存的 1/64(&lt;1GB)）</p>
+<ol>
+<li><code>-Xmx</code><br>
+指定 java 堆最大值（默认值是物理内存的 1/4(&lt;1GB)）<br>
+如 <code>- Xmx3550m</code> 设置 JVM 堆最大值为 3550M。</li>
+<li><code>–Xms</code>：初始 java 堆最小值（默认值是物理内存的 1/64(&lt;1GB)）<br>
+如 <code>-Xms200m</code>，表示分配 200M</li>
+<li><code>-Xss</code><br>
+为 jvm 启动的每个线程分配的内存大小，默认 JDK1.4 中是256K，JDK1.5+ 中是 1M</li>
+<li><code>-Xmn</code><br>
+年轻代大小<br>
+如 <code>-Xmn2g</code>：设置年轻代大小为 2G。整个堆大小 = 年轻代大小 + 年老代大小 + 持久代大小</li>
+</ol>
 <p>默认空余堆内存小于 40% 时，JVM 就会增大堆直到 -Xmx 的最大限制 （MinHeapFreeRatio 参数可以调整）<br>
 默认空余堆内存大于 70% 时，JVM 会减少堆直到 -Xms 的最小限制（MaxHeapFreeRatio 参数可以调整）</p>
 <p>简单来说，不停往堆内存里丢数据，等它剩余大小 &lt;40%，JVM 就会动态申请内存空间且 &lt;-Xmx<br>
@@ -363,7 +396,69 @@ Survivor0 区 的对象什么时候垃圾回收呢？<br>
 <p class="hint-container-title">相关信息</p>
 <p>开发过程中，通常会将 -Xms 与 -Xmx 两个参数配置成相同的值，其目的是为了能够在 java 垃圾回收机制清理完堆区后不需要重新分隔计算堆区的大小而浪费资源。</p>
 </div>
-<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content:encoded>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote>
+<p>运行结果：<br>
+Xmx=3621.5M<br>
+free mem=240.37600708007812M<br>
+total mem=245.5M</p>
+</blockquote>
+<p>可以设置 VM options 的参数：<code>-Xmx20m -Xms5m -XX:+PrintGCDetails</code></p>
+<p>Java 会尽可能将 total mem 的值维持在最小堆内存大小<br>
+当最小堆内存顶不住时。total memory 就会申请内存。</p>
+<p>当手动执行 <code>System.gc();</code>（full gc）， total memory 会把申请的内存释放掉</p>
+<h3> 4.2、调整新生代和老年代的比值</h3>
+<p><code>-XX:NewRatio</code> ：新生代（eden + 2*Survivor）和老年代（不包含永久区）的比值</p>
+<p>例如：<code>-XX:NewRatio=4</code>，表示 <code>新生代:老年代=1:4</code> ，即新生代占整个堆的 1/5。</p>
+<p>在 Xms = Xmx 并且设置了 Xmn 的情况下，该参数不需要进行设置。</p>
+<h3> 4.3、调整 Survivor 区和 Eden 区的比值</h3>
+<p><code>-XX:SurvivorRatio</code>（幸存代）：设置两个 Survivor 区和 eden 的比值</p>
+<p>如：<code>-XX:SurvivorRatio=8</code>，表示两个 <code>Survivor:eden=2:8</code>，即一个 Survivor 占年轻代的 1/10</p>
+<h3> 4.4、设置年轻代和老年代的大小</h3>
+<ul>
+<li><code>-XX:NewSize</code> --- 设置年轻代大小</li>
+<li><code>-XX:MaxNewSize</code> --- 设置年轻代最大值</li>
+</ul>
+<p>可以通过设置不同参数来测试不同的情况，反正最优解当然就是官方的 Eden 和 Survivor 的占比为 8:1:1</p>
+<p>最大堆内存和最小堆内存如果数值不同会导致多次的 gc，需要注意。</p>
+<div class="hint-container info">
+<p class="hint-container-title">相关信息</p>
+<p>根据实际事情调整新生代和幸存代的大小，官方推荐新生代占 java 堆的 3/8，幸存代占新生代的 1/10<br>
+在 OOM 时，记得 Dump 出堆，确保可以排查现场问题，通过下面命令你可以输出一个.dump 文件，这个文件可以使用 VisualVM 或者 Java 自带的 Java VisualVM 工具。</p>
+<p><code>-Xmx20m -Xms5m -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=你要输出的日志路径</code></p>
+<p>一般我们也可以通过编写脚本的方式来让 OOM 出现时给我们报个信，可以通过发送邮件或者重启程序等来解决。</p>
+</div>
+<h3> 4.5、永久区的设置</h3>
+<p><code>-XX:PermSize -XX:MaxPermSize</code></p>
+<p>初始空间（默认为物理内存的 1/64）和最大空间（默认为物理内存的 1/4）。<br>
+也就是说，jvm 启动时，永久区一开始就占用了 PermSize 大小的空间，如果空间还不够，可以继续扩展，但是不能超过 MaxPermSize，否则会 OOM。<br>
+tips：如果堆空间没有用完也抛出了 OOM，有可能是永久区导致的。堆空间实际占用非常少，但是永久区溢出 一样抛出 OOM。</p>
+<h3> 4.6、JVM 的栈参数调优</h3>
+<h4> 调整每个线程栈空间的大小</h4>
+<p>可以通过 <code>-Xss</code> ：调整每个线程栈空间的大小<br>
+JDK5.0 以后每个线程堆栈大小为 1M，以前每个线程堆栈大小为 256K。<br>
+在相同物理内存下，减小这个值能生成更多的线程。<br>
+但是操作系统对一个进程内的线程数还是有限制的，不能无限生成，经验值在 <code>3000~5000</code> 左右</p>
+<h4> 设置线程栈的大小</h4>
+<p><code>-XXThreadStackSize</code>：设置线程栈的大小(0 means use default stack size)</p>
+<h3> 4.7、其他参数介绍</h3>
+<ul>
+<li><code>-XXThreadStackSize</code>：设置内存页的大小，不可设置过大，会影响Perm的大小</li>
+<li><code>-XX:+UseFastAccessorMethods</code>：设置原始类型的快速优化</li>
+<li><code>-XX:+DisableExplicitGC</code>：设置关闭 <code>System.gc()</code> (这个参数需要严格的测试)</li>
+<li><code>-XX:MaxTenuringThreshold</code><br>
+设置垃圾最大年龄。如果设置为0的话,则年轻代对象不经过 Survivor 区,直接进入年老代<br>
+对于年老代比较多的应用,可以提高效率。如果将此值设置为一个较大值,<br>
+则年轻代对象会在 Survivor 区进行多次复制,这样可以增加对象再年轻代的存活时间,<br>
+增加在年轻代即被回收的概率。该参数只有在串行GC时才有效</li>
+<li><code>-XX:+AggressiveOpts</code>：加快编译速度</li>
+<li><code>-XX:+UseBiasedLocking</code>：改善锁机制性能</li>
+<li><code>-Xnoclassgc</code>：禁用垃圾回收</li>
+<li><code>-XX:SoftRefLRUPolicyMSPerMB</code>：设置每兆堆空闲空间中 SoftReference 的存活时间，默认值是 1s。</li>
+<li><code>-XX:PretenureSizeThreshold</code>：设置对象超过多大时直接在老年代分配，默认值是 0。</li>
+<li><code>-XX:TLABWasteTargetPercent</code>：设置 TLAB 占 eden 区的百分比，默认值是 1%</li>
+<li><code>-XX:+CollectGen0First</code>：设置 FullGC 时是否先 YGC，默认值是 false</li>
+</ul>
+]]></content:encoded>
       <enclosure url="https://raw.githubusercontent.com/T4mako/ImageBed/main/image-20230821005244740.png" type="image/png"/>
     </item>
     <item>
@@ -17853,26 +17948,6 @@ CFG预设（Purp1e制作）<br>
       <description>095_不同的二叉搜索树II</description>
       <category>算法</category>
       <content:encoded><![CDATA[<h1> 095_不同的二叉搜索树II</h1>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>096_不同的二叉搜索树</title>
-      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_096_%E4%B8%8D%E5%90%8C%E7%9A%84%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91.html</link>
-      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_096_%E4%B8%8D%E5%90%8C%E7%9A%84%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91.html</guid>
-      <source url="https://T4mako.github.io/rss.xml">096_不同的二叉搜索树</source>
-      <description>096_不同的二叉搜索树</description>
-      <category>算法</category>
-      <content:encoded><![CDATA[<h1> 096_不同的二叉搜索树</h1>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>098_验证二叉搜索树</title>
-      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_098_%E9%AA%8C%E8%AF%81%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91.html</link>
-      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_098_%E9%AA%8C%E8%AF%81%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91.html</guid>
-      <source url="https://T4mako.github.io/rss.xml">098_验证二叉搜索树</source>
-      <description>098_验证二叉搜索树</description>
-      <category>算法</category>
-      <content:encoded><![CDATA[<h1> 098_验证二叉搜索树</h1>
 ]]></content:encoded>
     </item>
   </channel>
