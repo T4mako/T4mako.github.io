@@ -67,6 +67,8 @@ export default hopeTheme({
     },
   },
 
+  print: true,
+
   encrypt: {
     // 加密文章
     config: {

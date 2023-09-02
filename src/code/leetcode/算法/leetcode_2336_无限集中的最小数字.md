@@ -1,5 +1,5 @@
 ---
-article: true
+article: false
 date: 2023-08-29
 category: 
   - 算法
