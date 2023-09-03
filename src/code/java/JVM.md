@@ -6,6 +6,8 @@ title: 认识 JVM
 headerDepth: 3
 ---
 
+> 参考：https://javaguide.cn/java/jvm/jvm-intro.html
+
 JVM(Java Virtual Machine) 其实就类似于一台小电脑运行在 windows 或者 linux 这些操作系统环境下即可。  
 它直接和操作系统进行交互，与硬件不直接交互，而操作系统可以帮我们完成和硬件进行交互的工作。
 
@@ -577,3 +579,5 @@ JDK5.0 以后每个线程堆栈大小为 1M，以前每个线程堆栈大小为 
 - `-XX:PretenureSizeThreshold`：设置对象超过多大时直接在老年代分配，默认值是 0。
 - `-XX:TLABWasteTargetPercent`：设置 TLAB 占 eden 区的百分比，默认值是 1%
 - `-XX:+CollectGen0First`：设置 FullGC 时是否先 YGC，默认值是 false
+
+
