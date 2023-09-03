@@ -4,7 +4,7 @@
 - T4mako.guithub.io
 - 1536954632@qq.com
 
-### ![](/src/.vuepress/public/assets/svg/edu.svg)教育经历
+### 教育经历
 <hr>
 
 #### 本科 苏州科技大学
