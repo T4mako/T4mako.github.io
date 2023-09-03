@@ -1,8 +1,8 @@
 ## T4mako
-- ![](/src/.vuepress/public/assets/svg/person.svg) 男，2001 年出生
-- ![](/src/.vuepress/public/assets/svg/phone.svg) 18461584417
-- ![](/src/.vuepress/public/assets/svg/website.svg) T4mako.guithub.io
-- ![](/src/.vuepress/public/assets/svg/email.svg) 1536954632@qq.com
+- 男，2001 年出生
+- 18461584417
+- T4mako.guithub.io
+- 1536954632@qq.com
 
 ### ![](/src/.vuepress/public/assets/svg/edu.svg)教育经历
 <hr>
