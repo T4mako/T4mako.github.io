@@ -6,8 +6,8 @@
     <link>https://T4mako.github.io/</link>
     <description>T4mako</description>
     <language>zh-CN</language>
-    <pubDate>Sun, 03 Sep 2023 00:46:41 GMT</pubDate>
-    <lastBuildDate>Sun, 03 Sep 2023 00:46:41 GMT</lastBuildDate>
+    <pubDate>Sun, 03 Sep 2023 15:30:14 GMT</pubDate>
+    <lastBuildDate>Sun, 03 Sep 2023 15:30:14 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>MySQL</category>
@@ -27,10 +27,15 @@
       <link>https://T4mako.github.io/code/%E6%95%B0%E6%8D%AE%E5%BA%93/MySQL%E7%B4%A2%E5%BC%95.html</link>
       <guid>https://T4mako.github.io/code/%E6%95%B0%E6%8D%AE%E5%BA%93/MySQL%E7%B4%A2%E5%BC%95.html</guid>
       <source url="https://T4mako.github.io/rss.xml">MySQL 索引</source>
-      <description>索引是一种用于快速查询和检索数据的数据结构，其本质可以看成是一种排序好的数据结构。 索引底层数据结构存在很多种类型，常见的索引结构有: B 树， B+树 和 Hash、红黑树。 在 MySQL 中，无论是 Innodb 还是 MyIsam，都使用了 B+树 作为索引结构。 相关信息 存储引擎是数据库的核心，在MySQL中，存储引擎是以插件的形式运行的。支持的引擎有十几种之多，实战常用到的，大概只有 InnoDB、MyISAM 和 Memory https://cloud.tencent.com/developer/article/1662516</description>
+      <description>参考： https://javaguide.cn/database/mysql/mysql-index.html https://www.bilibili.com/video/BV1Wm4y147mS</description>
       <category>MySQL</category>
       <pubDate>Thu, 31 Aug 2023 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<p>索引是一种用于快速查询和检索数据的数据结构，其本质可以看成是一种排序好的数据结构。</p>
+      <content:encoded><![CDATA[<blockquote>
+<p>参考：<br>
+<a href="https://javaguide.cn/database/mysql/mysql-index.html" target="_blank" rel="noopener noreferrer">https://javaguide.cn/database/mysql/mysql-index.html</a><br>
+<a href="https://www.bilibili.com/video/BV1Wm4y147mS" target="_blank" rel="noopener noreferrer">https://www.bilibili.com/video/BV1Wm4y147mS</a></p>
+</blockquote>
+<p>索引是一种用于快速查询和检索数据的数据结构，其本质可以看成是一种排序好的数据结构。</p>
 <p>索引底层数据结构存在很多种类型，常见的索引结构有: B 树， B+树 和 Hash、红黑树。<br>
 在 MySQL 中，无论是 Innodb 还是 MyIsam，都使用了 <strong>B+树</strong> 作为索引结构。</p>
 <div class="hint-container info">
@@ -67,10 +72,13 @@
       <link>https://T4mako.github.io/code/java/JVM.html</link>
       <guid>https://T4mako.github.io/code/java/JVM.html</guid>
       <source url="https://T4mako.github.io/rss.xml">认识 JVM</source>
-      <description>JVM(Java Virtual Machine) 其实就类似于一台小电脑运行在 windows 或者 linux 这些操作系统环境下即可。 它直接和操作系统进行交互，与硬件不直接交互，而操作系统可以帮我们完成和硬件进行交互的工作。 一、基础知识 JVM Java 虚拟机（JVM）是运行 Java 字节码的虚拟机。 JVM 有针对不同系统的特定实现（Windows，Linux，macOS），目的是使用相同的字节码，它们都会给出相同的结果。 字节码和不同系统的 JVM 实现是 Java 语言“一次编译，随处可以运行”的关键所在。</description>
+      <description>参考：https://javaguide.cn/java/jvm/jvm-intro.html JVM(Java Virtual Machine) 其实就类似于一台小电脑运行在 windows 或者 linux 这些操作系统环境下即可。 它直接和操作系统进行交互，与硬件不直接交互，而操作系统可以帮我们完成和硬件进行交互的工作。</description>
       <category>java</category>
       <pubDate>Sun, 20 Aug 2023 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<p>JVM(Java Virtual Machine) 其实就类似于一台小电脑运行在 windows 或者 linux 这些操作系统环境下即可。<br>
+      <content:encoded><![CDATA[<blockquote>
+<p>参考：<a href="https://javaguide.cn/java/jvm/jvm-intro.html" target="_blank" rel="noopener noreferrer">https://javaguide.cn/java/jvm/jvm-intro.html</a></p>
+</blockquote>
+<p>JVM(Java Virtual Machine) 其实就类似于一台小电脑运行在 windows 或者 linux 这些操作系统环境下即可。<br>
 它直接和操作系统进行交互，与硬件不直接交互，而操作系统可以帮我们完成和硬件进行交互的工作。</p>
 <h2> 一、基础知识</h2>
 <h3> JVM</h3>
@@ -1192,60 +1200,6 @@ GitHub 只要发现<code>.github/workflows</code>目录里面有<code>.yml</code
       <category>算法</category>
       <pubDate>Thu, 24 Nov 2022 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[<h1> LCP 68_美观的花束</h1>
-]]></content:encoded>
-    </item>
-    <item>
-      <title></title>
-      <link>https://T4mako.github.io/resume.html</link>
-      <guid>https://T4mako.github.io/resume.html</guid>
-      <source url="https://T4mako.github.io/rss.xml"></source>
-      <description>T4mako 男，2001 年出生 18461584417 T4mako.guithub.io 1536954632@qq.com 教育经历 本科 苏州科技大学 同专业绩点前 10%. 十二届蓝桥杯大赛省赛软件开发类 Java 软件开发二等奖. 十一届蓝桥杯省赛软件类 Python 程序设计大学组二等奖. 大学英语四级证书. 计算机程序设计员四级证书.</description>
-      <content:encoded><![CDATA[<h2> T4mako</h2>
-<ul>
-<li>男，2001 年出生</li>
-<li>18461584417</li>
-<li><a href="http://T4mako.guithub.io" target="_blank" rel="noopener noreferrer">T4mako.guithub.io</a></li>
-<li><a href="mailto:1536954632@qq.com">1536954632@qq.com</a></li>
-</ul>
-<h3> 教育经历</h3>
-<hr>
-<h4> 本科 苏州科技大学</h4>
-<ul>
-<li>同专业绩点前 10%.</li>
-<li>十二届蓝桥杯大赛省赛软件开发类 Java 软件开发二等奖.</li>
-<li>十一届蓝桥杯省赛软件类 Python 程序设计大学组二等奖.</li>
-<li>大学英语四级证书.</li>
-<li>计算机程序设计员四级证书.</li>
-</ul>
-<h3> 技术储备</h3>
-<hr>
-<ul>
-<li>熟练掌握 Java 语言基础及标准库，了解 JVM 字节码原理.</li>
-<li>熟悉 Spring, Spring Boot, Spring MVC 等常见业务框架.</li>
-<li>熟练使用 Maven 等构建工具，Git 等版本控制工具.</li>
-<li>熟悉 MySQL 数据库的使用，了解 Mysql 索引.</li>
-<li>熟悉 Redis 等非关系型数据库的使用.</li>
-<li>熟悉常见的数据结构与算法，独立完成算法题 200+.</li>
-<li>了解 SpringCloud，Nacos注册中心，分布式，集群，负载均衡，ElasticSearch，Nginx，Docker.</li>
-<li>了解 Vue.js，Vuepress，TypeScript，Node.js，MongoDB，javaScript，HTML，CSS，Python.</li>
-</ul>
-<h3> 项目经验</h3>
-<hr>
-<h4> 科睿简报</h4>
-<ul>
-<li>SpringCloud + Nacos + Redis + Jwt + MybatisPlus + MySQL + Kafla + xxl-job</li>
-<li>一个仿造今日头条的推送应用.</li>
-<li>在本项目中，我完成了后端功能的基本实现。使用网关 与 Token 实现用户鉴权。使用 xxl-job 定时计算热点文章并用 Redis 缓存。使用 Kafka 及异步通知文章上下架.</li>
-</ul>
-<h4> 东方景宴</h4>
-<ul>
-<li>SpringBoot + MybatisPlus + Redis + Spring Cache + Swagger + Vue + ElementUI</li>
-<li>基于 SpringBoot 与 Vue 的单体订餐系统，分为用户端与管理端.</li>
-<li>在本项目中，我完成了后端功能的基本实现。提供了简单的 Redis 缓存支持。配置了数据库的主从复制，使用 Sharding-JDBC 实现数据库的读写分离。使用 ThreadLocal 存储每个线程的私有数据解决元数据对象处理器无法获得 session 对象的问题.</li>
-</ul>
-<h3> 自我评价</h3>
-<hr>
-本人有优秀的学习能力和团队沟通能力，热爱开源，对编程有十分浓厚的兴趣，热爱思考，富有责任心，敢于创新，敢于担当.
 ]]></content:encoded>
     </item>
     <item>
@@ -17999,6 +17953,16 @@ CFG预设（Purp1e制作）<br>
       <description>095_不同的二叉搜索树II</description>
       <category>算法</category>
       <content:encoded><![CDATA[<h1> 095_不同的二叉搜索树II</h1>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>096_不同的二叉搜索树</title>
+      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_096_%E4%B8%8D%E5%90%8C%E7%9A%84%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91.html</link>
+      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_096_%E4%B8%8D%E5%90%8C%E7%9A%84%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91.html</guid>
+      <source url="https://T4mako.github.io/rss.xml">096_不同的二叉搜索树</source>
+      <description>096_不同的二叉搜索树</description>
+      <category>算法</category>
+      <content:encoded><![CDATA[<h1> 096_不同的二叉搜索树</h1>
 ]]></content:encoded>
     </item>
   </channel>

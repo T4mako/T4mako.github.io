@@ -1,1 +1,0 @@
-import{_ as n}from"./plugin-vue_export-helper-c27b6911.js";import{o as t,c as o,b as e}from"./app-109e850b.js";const c={},s=e("div",{class:"hint-container info"},[e("p",{class:"hint-container-title"},"相关信息"),e("p",null,"Coming Soon")],-1),i=[s];function r(_,a){return t(),o("div",null,i)}const f=n(c,[["render",r],["__file","index.html.vue"]]);export{f as default};
