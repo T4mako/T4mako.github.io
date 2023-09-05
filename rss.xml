@@ -6,12 +6,12 @@
     <link>https://T4mako.github.io/</link>
     <description>T4mako</description>
     <language>zh-CN</language>
-    <pubDate>Sun, 03 Sep 2023 15:30:14 GMT</pubDate>
-    <lastBuildDate>Sun, 03 Sep 2023 15:30:14 GMT</lastBuildDate>
+    <pubDate>Tue, 05 Sep 2023 15:28:30 GMT</pubDate>
+    <lastBuildDate>Tue, 05 Sep 2023 15:28:30 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
-    <category>MySQL</category>
     <category>算法</category>
+    <category>MySQL</category>
     <category>java</category>
     <category>SQL</category>
     <category>Vue</category>
@@ -22,6 +22,18 @@
     <category>Docker</category>
     <category>Linux</category>
     <category>AE</category>
+    <item>
+      <title>790. 多米诺和托米诺平铺</title>
+      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_790_%E5%A4%9A%E7%B1%B3%E8%AF%BA%E5%92%8C%E6%89%98%E7%B1%B3%E8%AF%BA%E5%B9%B3%E9%93%BA.html</link>
+      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_790_%E5%A4%9A%E7%B1%B3%E8%AF%BA%E5%92%8C%E6%89%98%E7%B1%B3%E8%AF%BA%E5%B9%B3%E9%93%BA.html</guid>
+      <source url="https://T4mako.github.io/rss.xml">790. 多米诺和托米诺平铺</source>
+      <description>790. 多米诺和托米诺平铺</description>
+      <category>算法</category>
+      <pubDate>Mon, 04 Sep 2023 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<h1> 790. 多米诺和托米诺平铺</h1>
+]]></content:encoded>
+      <enclosure url="https://assets.leetcode-cn.com/solution-static/790/1.png" type="image/png"/>
+    </item>
     <item>
       <title>MySQL 索引</title>
       <link>https://T4mako.github.io/code/%E6%95%B0%E6%8D%AE%E5%BA%93/MySQL%E7%B4%A2%E5%BC%95.html</link>
@@ -17953,16 +17965,6 @@ CFG预设（Purp1e制作）<br>
       <description>095_不同的二叉搜索树II</description>
       <category>算法</category>
       <content:encoded><![CDATA[<h1> 095_不同的二叉搜索树II</h1>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>096_不同的二叉搜索树</title>
-      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_096_%E4%B8%8D%E5%90%8C%E7%9A%84%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91.html</link>
-      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_096_%E4%B8%8D%E5%90%8C%E7%9A%84%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91.html</guid>
-      <source url="https://T4mako.github.io/rss.xml">096_不同的二叉搜索树</source>
-      <description>096_不同的二叉搜索树</description>
-      <category>算法</category>
-      <content:encoded><![CDATA[<h1> 096_不同的二叉搜索树</h1>
 ]]></content:encoded>
     </item>
   </channel>
