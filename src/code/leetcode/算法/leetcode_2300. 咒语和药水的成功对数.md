@@ -1,5 +1,4 @@
 ---
-article: true
 date: 2023-08-30
 category: 
   - 算法
@@ -8,6 +7,7 @@ tag:
   - 双指针
   - 二分查找
   - 排序
+article: false
 ---
 
 # 2300. 咒语和药水的成功对数
