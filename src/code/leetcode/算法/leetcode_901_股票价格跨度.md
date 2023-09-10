@@ -6,7 +6,7 @@ tag:
   - 栈
   - 设计
   - 单调栈
-article: true
+article: false
 ---
 
 # 901. 股票价格跨度
