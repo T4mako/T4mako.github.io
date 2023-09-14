@@ -6,13 +6,13 @@
     <link>https://T4mako.github.io/</link>
     <description>T4mako</description>
     <language>zh-CN</language>
-    <pubDate>Sun, 10 Sep 2023 15:28:51 GMT</pubDate>
-    <lastBuildDate>Sun, 10 Sep 2023 15:28:51 GMT</lastBuildDate>
+    <pubDate>Thu, 14 Sep 2023 15:40:31 GMT</pubDate>
+    <lastBuildDate>Thu, 14 Sep 2023 15:40:31 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>算法</category>
-    <category>MySQL</category>
     <category>java</category>
+    <category>MySQL</category>
     <category>SQL</category>
     <category>Vue</category>
     <category>部署</category>
@@ -22,6 +22,270 @@
     <category>Docker</category>
     <category>Linux</category>
     <category>AE</category>
+    <item>
+      <title>1318. 或运算的最小翻转次数</title>
+      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_1318_%E6%88%96%E8%BF%90%E7%AE%97%E7%9A%84%E6%9C%80%E5%B0%8F%E7%BF%BB%E8%BD%AC%E6%AC%A1%E6%95%B0.html</link>
+      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_1318_%E6%88%96%E8%BF%90%E7%AE%97%E7%9A%84%E6%9C%80%E5%B0%8F%E7%BF%BB%E8%BD%AC%E6%AC%A1%E6%95%B0.html</guid>
+      <source url="https://T4mako.github.io/rss.xml">1318. 或运算的最小翻转次数</source>
+      <description>1318. 或运算的最小翻转次数</description>
+      <category>算法</category>
+      <pubDate>Thu, 14 Sep 2023 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<h1> 1318. 或运算的最小翻转次数</h1>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>SpringBoot 常用注解总结</title>
+      <link>https://T4mako.github.io/code/java/SpringBoot%E5%B8%B8%E7%94%A8%E6%B3%A8%E8%A7%A3%E6%80%BB%E7%BB%93.html</link>
+      <guid>https://T4mako.github.io/code/java/SpringBoot%E5%B8%B8%E7%94%A8%E6%B3%A8%E8%A7%A3%E6%80%BB%E7%BB%93.html</guid>
+      <source url="https://T4mako.github.io/rss.xml">SpringBoot 常用注解总结</source>
+      <description>参考：https://javaguide.cn/system-design/framework/spring/spring-common-annotations.html 一、 @SpringBootApplication 这个注解是 Spring Boot 项目的基石，创建 SpringBoot 项目之后会默认在主类加上。</description>
+      <category>java</category>
+      <pubDate>Tue, 12 Sep 2023 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<p>参考：<a href="https://javaguide.cn/system-design/framework/spring/spring-common-annotations.html" target="_blank" rel="noopener noreferrer">https://javaguide.cn/system-design/framework/spring/spring-common-annotations.html</a></p>
+<h2> 一、 @SpringBootApplication</h2>
+<p>这个注解是 Spring Boot 项目的基石，创建 SpringBoot 项目之后会默认在主类加上。</p>
+<p>我们可以把 <code>@SpringBootApplication</code> 看作是 <code>@Configuration</code> + <code>@EnableAutoConfiguration</code> + <code>@ComponentScan</code></p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>根据 SpringBoot 官网，这三个注解的作用分别是：</p>
+<ul>
+<li><code>@EnableAutoConfiguration</code>：启用 SpringBoot 的自动配置机制</li>
+<li><code>@ComponentScan</code>：扫描被 @Component 注解的 bean，注解默认会扫描该类所在的<strong>包下所有的类</strong>。</li>
+<li><code>@Configuration</code>：允许在 Spring 上下文中注册额外的 bean 或导入其他配置类</li>
+</ul>
+<h2> 二、Spring Bean 相关</h2>
+<h3> 2.1 @Autowired</h3>
+<p>一般使用<code> @Autowired</code> 注解让 Spring 容器帮我们自动装配 bean。</p>
+<h3> 2.2 @Component 相关</h3>
+<p>要想把类标识成可用于 @Autowired 注解自动装配的 bean 的类，可以采用以下注解：</p>
+<ul>
+<li><code>@Component</code>：通用的注解</li>
+<li><code>@Repository</code>：持久层即 Dao 层，主要用于数据库相关操作</li>
+<li><code>@Service</code>：服务层，主要涉及一些复杂的逻辑，需要用到 Dao 层</li>
+<li><code>@Controller</code>：控制层，主要用于接受用户请求并调用 Service 层返回数据给前端页面</li>
+</ul>
+<h3> 2.3 @RestController</h3>
+<p><code>@RestController</code> = <code>@Controller</code> + <code>@ResponseBody</code><br>
+表示这是个控制器 bean，并且是将函数的返回值直接填入 HTTP 响应体中，是 REST 风格的控制器。</p>
+<h3> 2.4 @Scope</h3>
+<p>声明 Spring Bean 的作用域，使用方法:</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>四种常见的 Spring Bean 的作用域：</p>
+<ul>
+<li>singleton : 唯一 bean 实例，Spring 中的 bean 默认都是单例的。</li>
+<li>prototype : 每次请求都会创建一个新的 bean 实例。</li>
+<li>request : 每一次 HTTP 请求都会产生一个新的 bean，该 bean 仅在当前 HTTP request 内有效。</li>
+<li>session : 每一个 HTTP Session 会产生一个新的 bean，该 bean 仅在当前 HTTP session 内有效。</li>
+</ul>
+<h3> 2.5 @Configuration</h3>
+<p>一般用来声明 <strong>配置类</strong> ，可以使用 @Component 注解替代，不过使用 @Configuration 注解声明配置类更加语义化。</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 三、 处理常见的 HTTP 请求类型</h2>
+<p>5 种常见的请求类型:</p>
+<ul>
+<li>GET：请求从服务器获取特定资源。</li>
+<li>POST：在服务器上创建一个新的资源。</li>
+<li>PUT：更新服务器上的资源（客户端提供更新后的整个资源）。</li>
+<li>DELETE：从服务器删除特定的资源。</li>
+<li>PATCH：更新服务器上的资源（客户端提供更改的属性，可以看做作是部分更新）。</li>
+</ul>
+<div class="hint-container info">
+<p class="hint-container-title">相关信息</p>
+<p><code>@GetMapping("users")</code> 等价于 <code>@RequestMapping(value="/users",method=RequestMethod.GET)</code></p>
+<p><code>@PostMapping("users")</code> 等价于 <code>@RequestMapping(value="/users",method=RequestMethod.POST)</code></p>
+<p><code>@PutMapping("/users/{userId}")</code> 等价于 <code>@RequestMapping(value="/users/{userId}",method=RequestMethod.PUT)</code></p>
+<p><code>@DeleteMapping("/users/{userId}")</code> 等价于 <code>@RequestMapping(value="/users/{userId}",method=RequestMethod.DELETE)</code></p>
+<p>一般实际项目中，我们都是 PUT 不够用了之后才用 PATCH 请求去更新数据。<br>
+<code>@PatchMapping("/profile")</code></p>
+</div>
+<h2> 四、 前后端传值</h2>
+<h3> 4.1 @PathVariable 和 @RequestParam</h3>
+<p><code>@PathVariable</code> 用于获取路径参数</p>
+<p><code>@RequestParam</code> 用于获取查询参数。</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>若请求的 url 是：/classes/123456/teachers?type=web<br>
+则获取到的数据就是：classId=123456,type=web。</p>
+<h3> 4.2 @RequestBody</h3>
+<p>用于读取 Request 请求（可能是 POST,PUT,DELETE,GET 请求）的 body 部分并且 Content-Type 为 application/json 格式的数据<br>
+接收到数据之后会自动将数据绑定到 Java 对象上去。系统会使用 <code>HttpMessageConverter</code> 或者自定义的 <code>HttpMessageConverter</code> 将请求的 body 中的 json 字符串转换为 java 对象。</p>
+<div class="hint-container info">
+<p class="hint-container-title">相关信息</p>
+<p>一个请求方法只可以有一个 @RequestBody，但是可以有多个 @RequestParam 和 @PathVariable。<br>
+如果你的方法必须要用两个 @RequestBody 来接受数据的话，大概率是你的数据库设计或者系统设计出问题了！</p>
+</div>
+<h2> 五、 读取配置信息</h2>
+<p>很多时候我们需要将一些常用的配置信息比如阿里云 oss、发送短信、微信认证的相关配置信息等等放到配置文件中。</p>
+<p>Spring 为我们提供从配置文件中读取这些配置信息的方式如下。</p>
+<p>假设数据源 <code>application.yml</code> 内容如下：</p>
+<div class="language-yaml line-numbers-mode" data-ext="yml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 5.1 @Value（常用）</h3>
+<p>使用 <code>@Value("${property}")</code> 读取比较简单的配置信息：</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><h3> 5.2 @ConfigurationProperties（常用）</h3>
+<p>通过 <code>@ConfigurationProperties</code> 读取配置信息并与 bean 绑定。</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>可以像使用普通的 Spring bean 一样，将其注入到类中使用</p>
+<h3> 5.3 @PropertySource（不常用）</h3>
+<p><code>@PropertySource</code> 读取指定 properties 文件</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 六、 参数校验</h2>
+<p>JSR（Java Specification Requests） 是一套 JavaBean 参数校验的标准，它定义了很多常用的校验注解，我们可以直接将这些注解加在 JavaBean 的属性上面，这样就可以在需要校验的时候进行校验了</p>
+<p>校验的时候我们实际用的是 Hibernate Validator 框架。<br>
+SpringBoot 项目的 spring-boot-starter-web 依赖中已经有 hibernate-validator 包，不需要引用相关依赖。</p>
+<div class="hint-container info">
+<p class="hint-container-title">相关信息</p>
+<p>需要注意的是：<br>
+所有的注解，推荐使用 JSR 注解，即 <code>javax.validation.constraints</code>，而不是 org.hibernate.validator.constraints</p>
+</div>
+<h3> 6.1 一些常用的字段验证的注解</h3>
+<table>
+<thead>
+<tr>
+<th>注解</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>@NotEmpty</td>
+<td>被注释的字符串的不能为 null 也不能为空</td>
+</tr>
+<tr>
+<td>@NotBlank</td>
+<td>被注释的字符串非 null，并且必须包含一个非空白字符</td>
+</tr>
+<tr>
+<td>@Null</td>
+<td>被注释的元素必须为 null</td>
+</tr>
+<tr>
+<td>@NotNull</td>
+<td>被注释的元素必须不为 null</td>
+</tr>
+<tr>
+<td>@AssertTrue</td>
+<td>被注释的元素必须为 true</td>
+</tr>
+<tr>
+<td>@AssertFalse</td>
+<td>被注释的元素必须为 false</td>
+</tr>
+<tr>
+<td>@Pattern(regex=,flag=)</td>
+<td>被注释的元素必须符合指定的正则表达式</td>
+</tr>
+<tr>
+<td>@Email</td>
+<td>被注释的元素必须是 Email 格式</td>
+</tr>
+<tr>
+<td>@Min(value)</td>
+<td>被注释的元素必须是 &gt;= value 的数字</td>
+</tr>
+<tr>
+<td>@Max(value)</td>
+<td>被注释的元素必须是 &lt;= value 的数字</td>
+</tr>
+<tr>
+<td>@DecimalMin(value)</td>
+<td>被注释的元素必须是 &gt;= value 的数字</td>
+</tr>
+<tr>
+<td>@DecimalMax(value)</td>
+<td>被注释的元素必须是 &lt;= value 的数字</td>
+</tr>
+<tr>
+<td>@Size(max=, min=)</td>
+<td>被注释的元素的大小必须在指定的范围内</td>
+</tr>
+<tr>
+<td>@Digits(integer, fraction)</td>
+<td>被注释的元素必须是一个数字，其值必须在可接受的范围内</td>
+</tr>
+<tr>
+<td>@Past</td>
+<td>被注释的元素必须是一个过去的日期</td>
+</tr>
+<tr>
+<td>@Future</td>
+<td>被注释的元素必须是一个将来的日期</td>
+</tr>
+</tbody>
+</table>
+<h3> 6.2 验证请求体（RequestBody）</h3>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>在需要验证的参数上加上了 <code>@Valid</code> 注解，如果验证失败，它将抛出 <code>MethodArgumentNotValidException</code></p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 6.3 验证请求参数（Path Variables 和 Request Parameters）</h3>
+<p>在类上加上 <code>@Validated</code> 注解，这个参数可以告诉 Spring 去校验方法参数</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 七、 全局处理 Controller 层异常</h2>
+<p>Spring 项目必备全局处理 Controller 层异常</p>
+<ul>
+<li><code>@ControllerAdvice</code>：注解定义全局异常处理类</li>
+<li><code>@ExceptionHandler</code>：注解声明异常处理方法</li>
+</ul>
+<p>以参数校验这块举例子。如果方法参数不对的话就会抛出 <code>MethodArgumentNotValidException</code>，我们来处理这个异常。</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><a href="https://mp.weixin.qq.com/s?__biz=Mzg2OTA0Njk0OA==&amp;mid=2247485568&amp;idx=2&amp;sn=c5ba880fd0c5d82e39531fa42cb036ac&amp;chksm=cea2474bf9d5ce5dcbc6a5f6580198fdce4bc92ef577579183a729cb5d1430e4994720d59b34&amp;token=2133161636&amp;lang=zh_CN#rd" target="_blank" rel="noopener noreferrer">SpringBoot 处理异常的几种常见姿势</a><br>
+<a href="https://mp.weixin.qq.com/s?__biz=Mzg2OTA0Njk0OA==&amp;mid=2247486379&amp;idx=2&amp;sn=48c29ae65b3ed874749f0803f0e4d90e&amp;chksm=cea24460f9d5cd769ed53ad7e17c97a7963a89f5350e370be633db0ae8d783c3a3dbd58c70f8&amp;token=1054498516&amp;lang=zh_CN#rd" target="_blank" rel="noopener noreferrer">使用枚举简单封装一个优雅的 Spring Boot 全局异常处理</a></p>
+<h2> 八、JPA 相关</h2>
+<p>(Spring Data JPA)[<a href="https://spring.io/projects/spring-data-jpa#overview" target="_blank" rel="noopener noreferrer">https://spring.io/projects/spring-data-jpa#overview</a>]</p>
+<h3> 8.1 创建表</h3>
+<ul>
+<li><code>@Entity</code> 声明一个类对应一个数据库实体</li>
+<li><code>@Table</code> 设置表名</li>
+</ul>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 8.2 创建主键</h3>
+<ul>
+<li><code>@Id</code>：声明一个字段为主键。声明后还需要定义主键的生成策略。</li>
+</ul>
+<h4> @GeneratedValue 生成</h4>
+<p><code>@GeneratedValue</code> 直接使用 JPA 内置提供的四种主键生成策略来指定主键生成策略。<br>
+<code>@GeneratedValue</code> 注解默认使用的策略是 <code>GenerationType.AUTO</code></p>
+<p>一般使用 MySQL 数据库的话，使用 <code>GenerationType.IDENTITY</code> 策略比较普遍一点（分布式系统的话需要另外考虑使用分布式 ID）。</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4> @GenericGenerator</h4>
+<p>通过 <code>@GenericGenerator</code> 声明一个主键策略，然后 <code>@GeneratedValue</code> 使用这个策略</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>jpa 提供的主键生成策略有如下几种：</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 8.3 设置字段类型</h3>
+<p><code>@Column</code> 声明字段</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 8.4 指定不持久化特定字段</h3>
+<p><code>@Transient</code>：声明不需要与数据库映射的字段，在保存的时候不需要保存进数据库</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>还可以采用下面几种方法：</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 8.5 声明大字段</h3>
+<p><code>@Lob</code>：声明某个字段为大字段。</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 8.6 创建枚举类型的字段</h3>
+<p>可以使用枚举类型的字段，不过枚举字段要用 <code>@Enumerated</code> 注解修饰。</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 8.7 增加审计功能</h3>
+<p>只要继承了 <code>@AbstractAuditBase</code> 的类都会默认加上下面四个字段。</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>我们对应的审计功能对应地配置类可能是下面这样的（Spring Security 项目）:</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li><code>@CreatedDate</code>: 表示该字段为创建时间字段，在这个实体被 insert 的时候，会设置值</li>
+<li><code>@CreatedBy</code> :表示该字段为创建人，在这个实体被 insert 的时候，会设置值<br>
+<code>@LastModifiedDate</code>、<code>@LastModifiedBy</code> 同理。</li>
+</ul>
+<p><code>@EnableJpaAuditing</code>：开启 JPA 审计功能。</p>
+<h3> 8.8 删除/修改数据</h3>
+<p><code>@Modifying</code> 注解提示 JPA 该操作是修改操作，注意还要配合 · 注解使用。</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 8.9 关联关系</h3>
+<ul>
+<li><code>@OneToOne</code> 声明一对一关系</li>
+<li><code>@OneToMany</code> 声明一对多关系</li>
+<li><code>@ManyToOne</code> 声明多对一关系</li>
+<li><code>@ManyToMany</code> 声明多对多关系</li>
+</ul>
+<h2> 九、事务 @Transactional</h2>
+<p>在要开启事务的方法上使用 <code>@Transactional</code> 注解即可</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>Exception 分为 运行时异常 和 非运行时异常。<br>
+在 <code>@Transactional</code> 注解中如果不配置 <code>rollbackFor</code> 属性，那么事务只会在遇到 RuntimeException 的时候才会回滚<br>
+加上 <code>rollbackFor=Exception.class</code> 可以让事务在遇到非运行时异常时也回滚。</p>
+<p>@Transactional 注解一般可以作用在 <strong>类</strong> 或者 <strong>方法</strong> 上。</p>
+<ul>
+<li>作用于类：所有该类的 <code>public</code> 方法都配置相同的事务属性信息。</li>
+<li>作用于方法：当类配置了 @Transactional，方法也配置了 @Transactional，方法的事务会覆盖类的事务配置信息。</li>
+</ul>
+<h2> 10、 json 数据处理</h2>
+<h3> 10.1 过滤 json 数据</h3>
+<p><code>@JsonIgnoreProperties</code> 作用在类上用于过滤掉特定字段不返回或者不解析。</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><code>@JsonIgnore</code> 一般用于属性上，作用和 <code>@JsonIgnoreProperties</code> 一样。</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 10.2 格式化 json 数据</h3>
+<p><code>@JsonFormat</code> 一般用来格式化 json 数据。</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><h3> 10.3 扁平化对象</h3>
+<p>使用 <code>@JsonUnwrapped</code> 扁平对象，通常加在属性上</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-json line-numbers-mode" data-ext="json"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 十一、测试相关</h2>
+<p><code>@ActiveProfiles</code> 一般作用于测试类上， 用于声明生效的 Spring 配置文件。</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><code>@Test</code>： 声明一个方法为测试方法<br>
+<code>@Transactional</code>： 被声明的测试方法的数据会回滚，避免污染测试数据。<br>
+<code>@WithMockUser</code>： Spring Security 提供的，用来模拟一个真实用户，并且可以赋予权限。</p>
+]]></content:encoded>
+    </item>
     <item>
       <title>338. 比特位计数</title>
       <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_338_%E6%AF%94%E7%89%B9%E4%BD%8D%E8%AE%A1%E6%95%B0.html</link>
@@ -17943,26 +18207,6 @@ CFG预设（Purp1e制作）<br>
       <description>094_二叉树的中序遍历</description>
       <category>算法</category>
       <content:encoded><![CDATA[<h1> 094_二叉树的中序遍历</h1>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>095_不同的二叉搜索树II</title>
-      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_095_%E4%B8%8D%E5%90%8C%E7%9A%84%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%20II.html</link>
-      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_095_%E4%B8%8D%E5%90%8C%E7%9A%84%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%20II.html</guid>
-      <source url="https://T4mako.github.io/rss.xml">095_不同的二叉搜索树II</source>
-      <description>095_不同的二叉搜索树II</description>
-      <category>算法</category>
-      <content:encoded><![CDATA[<h1> 095_不同的二叉搜索树II</h1>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>096_不同的二叉搜索树</title>
-      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_096_%E4%B8%8D%E5%90%8C%E7%9A%84%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91.html</link>
-      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_096_%E4%B8%8D%E5%90%8C%E7%9A%84%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91.html</guid>
-      <source url="https://T4mako.github.io/rss.xml">096_不同的二叉搜索树</source>
-      <description>096_不同的二叉搜索树</description>
-      <category>算法</category>
-      <content:encoded><![CDATA[<h1> 096_不同的二叉搜索树</h1>
 ]]></content:encoded>
     </item>
   </channel>
