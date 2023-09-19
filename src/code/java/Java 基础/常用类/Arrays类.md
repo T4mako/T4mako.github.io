@@ -1,4 +1,4 @@
-# Arrays类
+# Arrays 类
 
 Arrays类位于 java.util 包中，主要包含了操作数组的各种方法。
 
