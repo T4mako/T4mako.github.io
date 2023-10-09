@@ -6,8 +6,8 @@
     <link>https://T4mako.github.io/</link>
     <description>T4mako</description>
     <language>zh-CN</language>
-    <pubDate>Sat, 07 Oct 2023 14:49:23 GMT</pubDate>
-    <lastBuildDate>Sat, 07 Oct 2023 14:49:23 GMT</lastBuildDate>
+    <pubDate>Mon, 09 Oct 2023 15:39:16 GMT</pubDate>
+    <lastBuildDate>Mon, 09 Oct 2023 15:39:16 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>算法</category>
@@ -8574,12 +8574,12 @@ rollbackFor属性：需要设置一个字符串类型的全类名<br>
 <div class="language-xml line-numbers-mode" data-ext="xml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content:encoded>
     </item>
     <item>
-      <title>LeetCode刷题</title>
+      <title>LeetCode 刷题</title>
       <link>https://T4mako.github.io/code/leetcode/</link>
       <guid>https://T4mako.github.io/code/leetcode/</guid>
-      <source url="https://T4mako.github.io/rss.xml">LeetCode刷题</source>
-      <description>LeetCode刷题 每日更新（大概） 算法 SQL</description>
-      <content:encoded><![CDATA[<h1> LeetCode刷题</h1>
+      <source url="https://T4mako.github.io/rss.xml">LeetCode 刷题</source>
+      <description>LeetCode 刷题 每日更新（大概） 算法 SQL</description>
+      <content:encoded><![CDATA[<h1> LeetCode 刷题</h1>
 <p>每日更新（大概）</p>
 <p><a href="/code/leetcode/%E7%AE%97%E6%B3%95/" target="blank">算法</a><br>
 <a href="/code/leetcode/SQL/" target="blank">SQL</a></p>
@@ -12703,85 +12703,95 @@ Markdown 的目标是实现「易读易写」</p>
       <link>https://T4mako.github.io/code/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F.html</link>
       <guid>https://T4mako.github.io/code/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F.html</guid>
       <source url="https://T4mako.github.io/rss.xml">正则表达式</source>
-      <description>正则表达式 正则表达式的使用三步骤： 1、定义正则表达式的对象 2、定义带校验字符串 3、校验</description>
+      <description>正则表达式是含有一些具有特殊意字符的字符序列 正则表达式有三个主要用途： 模式验证: 检测某个字符串是否符合规则，如手机号、身份证号等 匹配读取: 将目标字符串中满足规则的部分 读取 出来，如将整段文本中的邮箱地址读取出来 匹配替换: 将目标字符串中满足标准的部分 替换 为其他字符串，如将整段文本中的 &amp;quot;hello&amp;quot; 替换成 &amp;quot;haha&amp;quot; 正则表达式的使用三步骤： 定义正则表达式的对象 定义带校验字符串 校验</description>
       <category>基础</category>
-      <content:encoded><![CDATA[<h2> 正则表达式</h2>
-<p><strong>正则表达式的使用三步骤：<br>
-1、定义正则表达式的对象<br>
-2、定义带校验字符串<br>
-3、校验</strong></p>
-<!-- more -->
-<h2> 1.1 正则表达式的概念</h2>
-<p><strong>正则表达式用来校验字符串是否满足一定的规则的公式</strong><br>
-正则表达式是对字符串操作的一种逻辑公式，就是用事先定义好的一些特定字符、及这些特定字符的组合，组成一个“规则字符串”，这个“规则字符串”用来表达对字符串的一种过滤逻辑</p>
-<h2> 1.2 正则表达式的用途</h2>
-<p>所以正则表达式有三个主要用途：</p>
+      <content:encoded><![CDATA[<p>正则表达式是含有一些具有特殊意字符的字符序列</p>
+<p>正则表达式有三个主要用途：</p>
 <ul>
-<li>模式验证: 检测某个字符串是否符合规则，例如检测手机号、身份证号等等是否符合规范</li>
-<li>匹配读取:  将目标字符串中满足规则的部分<strong>读取</strong>出来，例如将整段文本中的邮箱地址读取出来</li>
-<li>匹配替换:  将目标字符串中满足标准的部分<strong>替换</strong>为其他字符串,例如将整段文本中的"hello"替换成"haha"</li>
+<li>模式验证: 检测某个字符串是否符合规则，如手机号、身份证号等</li>
+<li>匹配读取: 将目标字符串中满足规则的部分 <strong>读取</strong> 出来，如将整段文本中的邮箱地址读取出来</li>
+<li>匹配替换: 将目标字符串中满足标准的部分 <strong>替换</strong> 为其他字符串，如将整段文本中的 "hello" 替换成 "haha"</li>
 </ul>
-<h2> 1.3 正则表达式的语法</h2>
-<h3> 1.3.1 创建正则表达式对象</h3>
+<p>正则表达式的使用三步骤：</p>
 <ul>
-<li><strong>对象形式：<code>var reg = new RegExp("正则表达式")</code> 当正则表达式中有"/"那么就使用这种</strong></li>
-<li><strong>直接量形式：<code>var reg = /正则表达式/</code>一般使用这种声明方式</strong></li>
+<li>定义正则表达式的对象</li>
+<li>定义带校验字符串</li>
+<li>校验</li>
 </ul>
-<h3> 2.3.2 正则表达式入门案例</h3>
-<h4> 2.3.2.1 模式验证</h4>
-<p>校验字符串中 <strong>是否包含o</strong> 字母</p>
-<p><strong>注意</strong>：这里是使用<strong>正则表达式对象</strong>来<strong>调用</strong>方法。</p>
-<div class="language-javascript line-numbers-mode" data-ext="js"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4> 2.3.2.2 匹配读取</h4>
-<p>读取字符串中的<strong>所有</strong>'o'<em>（全局匹配，对应所有匹配到的字符）</em></p>
-<div class="language-javascript line-numbers-mode" data-ext="js"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4> 2.3.2.3 匹配替换:</h4>
-<p>将字符串中的第一个'o'<strong>替换</strong>==成'@'</p>
-<div class="language-javascript line-numbers-mode" data-ext="js"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 2.3.3 正则表达式的匹配模式</h3>
-<h4> 2.3.3.1 全文查找</h4>
-<p>如果<strong>不使用g</strong>对正则表达式对象进行修饰，则使用正则表达式进行查找时，<strong>仅返回第一个匹配</strong>；使用g后，返回所有匹配。</p>
-<div class="language-javascript line-numbers-mode" data-ext="js"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>对比代码：</p>
-<div class="language-javascript line-numbers-mode" data-ext="js"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h6> 2.3.3.2 忽略大小写（i）</h6>
-<div class="language-javascript line-numbers-mode" data-ext="js"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>对比代码：</p>
-<div class="language-javascript line-numbers-mode" data-ext="js"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h6> 2.3.3.3 多行查找（m）</h6>
-<p><em><strong>不使用多行查找模式，目标字符串中不管有没有换行符都会被当作一行。</strong></em></p>
-<div class="language-javascript line-numbers-mode" data-ext="js"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>对比代码：</p>
-<div class="language-javascript line-numbers-mode" data-ext="js"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 2.3.4 元字符</h3>
-<p>在正则表达式中被赋予特殊含义的字符，不能被直接当做普通字符使用。如果要匹配元字符本身，需要对元字符进行转义，转义的方式是在元字符前面加上“\”，例如：^</p>
-<h4> 2.3.4.1 常用的元字符</h4>
+<h2> 1、元字符</h2>
+<p>在正则表达式中被赋予特殊含义的字符，不能被直接当做普通字符使用。<br>
+如果要匹配元字符本身，需要对元字符进行转义，转义的方式是在元字符前面加上 <code>\</code> 如：<code>\^</code></p>
 <table>
 <thead>
 <tr>
-<th>代码</th>
+<th>元字符</th>
 <th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>.</td>
-<td>匹配除换行字符以外的任意字符。</td>
+<td>匹配除换行字符以外的任意字符</td>
 </tr>
 <tr>
 <td>\w</td>
-<td>匹配字母或数字或下划线等价于[a-zA-Z0-9_]</td>
+<td>匹配字母或数字或下划线等价于 [a-zA-Z0-9_]</td>
 </tr>
 <tr>
 <td>\W</td>
-<td>匹配任何非单词字符。等价于[^A-Za-z0-9_]</td>
+<td>匹配任何非单词字符。等价于 [^A-Za-z0-9_]</td>
 </tr>
 <tr>
 <td>\s</td>
-<td>匹配任意的空白符，包括空格、制表符、换页符等等。等价于[\f\n\r\t\v]。</td>
+<td>匹配任意的空白符，包括空格、制表符、换页符等等。等价于 [\f\n\r\t\v]。</td>
 </tr>
 <tr>
 <td>\S</td>
-<td>匹配任何非空白字符。等价于[^\f\n\r\t\v]。</td>
+<td>匹配任何非空白字符。等价于 [^\f\n\r\t\v]。</td>
 </tr>
 <tr>
 <td>\d</td>
-<td>匹配数字。等价于[0-9]。</td>
+<td>匹配数字。等价于 [0-9]。</td>
 </tr>
 <tr>
 <td>\D</td>
-<td>匹配一个非数字字符。等价于[^0-9]</td>
+<td>匹配一个非数字字符。等价于 [^0-9]</td>
+</tr>
+<tr>
+<td lower="">\p</td>
+<td>小写字母[a-z]</td>
+</tr>
+<tr>
+<td upper="">\p</td>
+<td>大写字母[A-Z]</td>
+</tr>
+<tr>
+<td ascii="">\p</td>
+<td>ASCII 字符</td>
+</tr>
+<tr>
+<td alpha="">\p</td>
+<td>字母</td>
+</tr>
+<tr>
+<td digit="">\p</td>
+<td>[0-9]</td>
+</tr>
+<tr>
+<td alnum="">\p</td>
+<td>字母或数字</td>
+</tr>
+<tr>
+<td punct="">\p</td>
+<td>标点符号</td>
+</tr>
+<tr>
+<td blank="">\p</td>
+<td>空格或制表符[\t]</td>
+</tr>
+<tr>
+<td cntrl="">\p</td>
+<td>控制字符[\x00-\x1F\x7F]</td>
 </tr>
 <tr>
 <td>\b</td>
@@ -12789,7 +12799,7 @@ Markdown 的目标是实现「易读易写」</p>
 </tr>
 <tr>
 <td>^</td>
-<td>匹配字符串的开始，但在[]中使用表示取反</td>
+<td>匹配字符串的开始，但在 [] 中使用表示取反</td>
 </tr>
 <tr>
 <td>$</td>
@@ -12797,11 +12807,7 @@ Markdown 的目标是实现「易读易写」</p>
 </tr>
 </tbody>
 </table>
-<h4> 2.3.4.2 例子一</h4>
-<div class="language-javascript line-numbers-mode" data-ext="js"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4> 2.3.4.3 例子二</h4>
-<div class="language-javascript line-numbers-mode" data-ext="js"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4> 2.3.4.4 例子三</h4>
-<div class="language-javascript line-numbers-mode" data-ext="js"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4> 2.3.4.5 例子四</h4>
-<div class="language-javascript line-numbers-mode" data-ext="js"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 2.3.5 字符集合</h3>
+<h2> 2、字符集合</h2>
 <table>
 <thead>
 <tr>
@@ -12813,25 +12819,81 @@ Markdown 的目标是实现「易读易写」</p>
 <tbody>
 <tr>
 <td>[字符列表]</td>
-<td>[abc] 含义：目标字符串包含abc中的任何一个字符 <br>目标字符串：plain 是否匹配：是 <br>原因：plain中的“a”在列表“abc”中</td>
-<td>目标字符串中任何一个字符出现在字符列表中就算匹配。</td>
+<td>[abc]：目标字符串包含 abc 中的任何一个字符</td>
+<td>目标字符串中任何一个字符出现在字符列表中</td>
 </tr>
 <tr>
 <td>[^字符列表]</td>
-<td>[^abc] 含义：目标字符串包含abc以外的任何一个字符 <br>目标字符串：plain 是否匹配：是 <br>原因：plain中包含“p”、“l”、“i”、“n”</td>
+<td>[^abc]：目标字符串包含 abc 以外的任何一个字符</td>
 <td>匹配字符列表中未包含的任意字符。</td>
 </tr>
 <tr>
 <td>[字符范围]</td>
-<td>[a-z] 含义：所有小写英文字符组成的字符列表 <br>正则表达式：[A-Z] <br>含义：所有大写英文字符组成的字符列表</td>
-<td>匹配指定范围内的任意字符。匹配指定范围内的任意字符。</td>
+<td>[a-z]：所有小写英文字符组成的字符列表</td>
+<td>匹配指定范围内的任意字符</td>
 </tr>
 </tbody>
 </table>
-<div class="language-javascript line-numbers-mode" data-ext="js"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 2.3.6 出现次数</h3>
-<div class="language-markdown line-numbers-mode" data-ext="md"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-javascript line-numbers-mode" data-ext="js"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 2.3.7 在正则表达式中表达『或者』</h3>
-<p>使用符号：|</p>
-<div class="language-javascript line-numbers-mode" data-ext="js"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 2.4 常用正则表达式</h2>
+<h2> 3、限定符</h2>
+<table>
+<thead>
+<tr>
+<th>代码</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>X*</code></td>
+<td>X 出现零次或多次</td>
+</tr>
+<tr>
+<td><code>X+</code></td>
+<td>X 出现一次或多次</td>
+</tr>
+<tr>
+<td><code>X?</code></td>
+<td>X 出现零次或一次</td>
+</tr>
+<tr>
+<td><code>X{n}</code></td>
+<td>X 出现 n 次</td>
+</tr>
+<tr>
+<td><code>X{n,}</code></td>
+<td>X 出现 n 次或多次</td>
+</tr>
+<tr>
+<td><code>X{n,m}</code></td>
+<td>X 出现 n 到 m 次</td>
+</tr>
+<tr>
+<td><code>XY</code></td>
+<td>X 的后缀是 Y</td>
+</tr>
+<tr>
+<td><code>X|Y</code></td>
+<td>X 或 Y</td>
+</tr>
+</tbody>
+</table>
+<h2> 4、创建正则表达式</h2>
+
+<h2> 5、正则表达式案例</h2>
+<p>校验字符串中是否包含 o 字母</p>
+<div class="language-javascript line-numbers-mode" data-ext="js"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>匹配读取</p>
+<p>读取字符串中的所有 o（全局匹配，对应所有匹配到的字符）</p>
+<div class="language-javascript line-numbers-mode" data-ext="js"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>匹配替换</p>
+<p>将字符串中的第一个 o 替换成 '@'</p>
+<div class="language-javascript line-numbers-mode" data-ext="js"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>全文查找</p>
+<p>如果不使用 g 对正则表达式对象进行修饰，则使用正则表达式进行查找时，仅返回第一个匹配；使用 g 后，返回所有匹配。</p>
+<div class="language-javascript line-numbers-mode" data-ext="js"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>对比代码：</p>
+<div class="language-javascript line-numbers-mode" data-ext="js"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>忽略大小写</p>
+<div class="language-javascript line-numbers-mode" data-ext="js"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>对比代码：</p>
+<div class="language-javascript line-numbers-mode" data-ext="js"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>多行查找（m）</p>
+<p>不使用多行查找模式，目标字符串中不管有没有换行符都会被当作一行。</p>
+<div class="language-javascript line-numbers-mode" data-ext="js"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>对比代码：</p>
+<div class="language-javascript line-numbers-mode" data-ext="js"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-javascript line-numbers-mode" data-ext="js"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-javascript line-numbers-mode" data-ext="js"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-javascript line-numbers-mode" data-ext="js"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-javascript line-numbers-mode" data-ext="js"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-javascript line-numbers-mode" data-ext="js"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-javascript line-numbers-mode" data-ext="js"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-javascript line-numbers-mode" data-ext="js"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 6、常用正则表达式</h2>
 <div class="language-markdown line-numbers-mode" data-ext="md"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content:encoded>
     </item>
     <item>
@@ -17847,10 +17909,722 @@ CFG预设（Purp1e制作）<br>
 ]]></content:encoded>
     </item>
     <item>
+      <title>817 考研</title>
+      <link>https://T4mako.github.io/life/%E8%80%83%E8%AF%95/817%E8%80%83%E7%A0%94.html</link>
+      <guid>https://T4mako.github.io/life/%E8%80%83%E8%AF%95/817%E8%80%83%E7%A0%94.html</guid>
+      <source url="https://T4mako.github.io/rss.xml">817 考研</source>
+      <description>基础概念 数据类型 数组 枚举类 运算符 程序流程控制 面向对象 异常处理 面向对象设计基本原则</description>
+      <content:encoded><![CDATA[<ul>
+<li><a href="/code/java/Java%20%E5%9F%BA%E7%A1%80/%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/1%E3%80%81%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5.html" target="blank">基础概念</a></li>
+<li><a href="/code/java/Java%20%E5%9F%BA%E7%A1%80/%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/2%E3%80%81%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B.html" target="blank">数据类型</a></li>
+<li><a href="/code/java/Java%20%E5%9F%BA%E7%A1%80/%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/5%E3%80%81%E6%95%B0%E7%BB%84.html" target="blank">数组</a></li>
+<li><a href="/code/java/Java%20%E5%9F%BA%E7%A1%80/%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/11%E3%80%81%E6%9E%9A%E4%B8%BE%E7%B1%BB.html" target="blank">枚举类</a></li>
+<li><a href="/code/java/Java%20%E5%9F%BA%E7%A1%80/%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/3%E3%80%81%E8%BF%90%E7%AE%97%E7%AC%A6.html" target="blank">运算符</a></li>
+<li><a href="/code/java/Java%20%E5%9F%BA%E7%A1%80/%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/4%E3%80%81%E7%A8%8B%E5%BA%8F%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6.html" target="blank">程序流程控制</a></li>
+<li><a href="/code/java/Java%20%E5%9F%BA%E7%A1%80/%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/6%E3%80%81%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1.html" target="blank">面向对象</a></li>
+<li><a href="/src/code/java/Java%20%E5%9F%BA%E7%A1%80/%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/9%E3%80%81%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86.html" target="blank">异常处理</a></li>
+<li><a href="/src/code/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%AE%BE%E8%AE%A1%E5%9F%BA%E6%9C%AC%E5%8E%9F%E5%88%99.html" target="blank">面向对象设计基本原则</a></li>
+</ul>
+]]></content:encoded>
+    </item>
+    <item>
       <title>test</title>
       <link>https://T4mako.github.io/life/%E8%A7%82%E5%BD%B1%E5%8C%BA/</link>
       <guid>https://T4mako.github.io/life/%E8%A7%82%E5%BD%B1%E5%8C%BA/</guid>
       <source url="https://T4mako.github.io/rss.xml">test</source>
+    </item>
+    <item>
+      <title>noob-Rg-better</title>
+      <link>https://T4mako.github.io/code/project/noob/noob-Rg-better.html</link>
+      <guid>https://T4mako.github.io/code/project/noob/noob-Rg-better.html</guid>
+      <source url="https://T4mako.github.io/rss.xml">noob-Rg-better</source>
+      <description>1、缓存优化 用户数量多，系统访问量大 频繁访问数据库，系统性能下降，用户体验差 1、通过git推送远程仓库 在github上新建仓库 在idea中新建git本地仓库 在idea中add添加缓存区 在ieda中commit提交本地库 在idea中关联远程仓库 在idea中push代码 2、创建新分支 创建新分支名为v1.0 push到远程仓库 3、环境...</description>
+      <content:encoded><![CDATA[<!-- more -->
+<h2> 1、缓存优化</h2>
+<p>用户数量多，系统访问量大<br>
+频繁访问数据库，系统性能下降，用户体验差</p>
+<h3> 1、通过git推送远程仓库</h3>
+<p>在github上新建仓库<br>
+在idea中新建git本地仓库<br>
+在idea中add添加缓存区<br>
+在ieda中commit提交本地库<br>
+在idea中关联远程仓库<br>
+在idea中push代码</p>
+<h3> 2、创建新分支</h3>
+<p><img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/20230317141628.png" alt="" loading="lazy"></p>
+<p>创建新分支名为v1.0</p>
+<p>push到远程仓库</p>
+<h3> 3、环境搭建</h3>
+<p>在pom文件中导入spring data redids的maven坐标</p>
+<div class="language-xml line-numbers-mode" data-ext="xml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>在项目的applicaation.yml中加入redis相关配置</p>
+<div class="language-yaml line-numbers-mode" data-ext="yml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>在项目中配置RedisConfig，更改序列化器</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 4、缓存短信验证码</h3>
+<p>将原本保存在Session中的短信验证码放到Redis中，具体实现思路：<br>
+1、在服务短板UserController中注入RedisTemplate对象，用于操作Redis<br>
+2、在服务端UserController中的sendMsg方法，将随机生成的验证码缓存到Redis中，设置有效期为5分钟<br>
+3、在服务端UserController的login方法中，从Redis中获取缓存的验证码，如果登录成功删除Redis中的验证码</p>
+<p>更改UserController类：</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 5、缓存菜品数据</h3>
+<p><img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/20230317162916.png" alt="" loading="lazy"></p>
+<p>实现思路如下：<br>
+1、改造DIshController的list方法，先从Redis中获取数据，如果有则直接返回，如果没有则查询数据库，并将查询到的菜品数据放入Redis。<br>
+2、改造DIshController的save和update方法，加入清理缓存的逻辑</p>
+<p>在使用缓存过程中，要注意保证数据中的数据和缓存中的一致，如果数据库中的数据和缓存的数据一致，如果数据库中的数据发生变化，需要及时清理缓存数据。</p>
+<p>更改DIshController</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 6、合并分支</h3>
+<p>切到master分支</p>
+<p><img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/20230317172319.png" alt="" loading="lazy"></p>
+<h2> 2、Spring Cache</h2>
+<h3> 1、Spring Cache介绍</h3>
+<p><img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/20230317172539.png" alt="" loading="lazy"></p>
+<p>SpringCache常用注解</p>
+<table>
+<thead>
+<tr>
+<th>注解</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>@EnableCaching</td>
+<td>开启缓存注解功能</td>
+</tr>
+<tr>
+<td>@Cacheable</td>
+<td>在方法执行前Spring先查看缓存中是否有数据，如果有数据，直接返回缓存数据，如果没有数据，调用方法并将方法返回值放到缓存中</td>
+</tr>
+<tr>
+<td>@CachePut</td>
+<td>将方法的返回值放到缓存中</td>
+</tr>
+<tr>
+<td>@CacheEvict</td>
+<td>将一条或多条数据从缓存中删除</td>
+</tr>
+</tbody>
+</table>
+<p>在spring boot项目中，使用缓存技术只需要在项目中导入相关缓存技术的依赖包，并在启动类上使用@EnableCaching开启缓存支持即可<br>
+例如，使用Redis作为缓存技术，Spring data Redis的maven坐标即可</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 2、Spring Cache使用方式</h3>
+<p>在Spring Boot项目中使用Spring Cache的操作步骤（使用redis缓存技术）：<br>
+1、导入maven坐标</p>
+<div class="language-xml line-numbers-mode" data-ext="xml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>2、配置application.yml</p>
+<div class="language-yaml line-numbers-mode" data-ext="yml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>3、在启动类上加入@EnableCaching注解，开启缓存注解功能<br>
+4、@Controller的方法上加入@Cacheable、@CacheEvict等注解，进行缓存操作</p>
+<h3> 3、缓存套餐数据</h3>
+<p><img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/20230317205237.png" alt="" loading="lazy"></p>
+<p>具体实现思路：<br>
+1、导入Spring Cache和Redis相关maven坐标<br>
+2、在application.yml中配置缓存数据过期时间<br>
+3、在启动类上加入EnableCacheing注解，开启缓存注解功能<br>
+4、在SetmealController的list方法上加入@Cacheable注解<br>
+5、在SetmealController的save和delete方法上加入CacheEvict注解</p>
+<p>更改list方法：</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>注：将返回结果<strong>R实现序列化接口</strong>，否则缓存会报错</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>更改delete与save方法：</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 3、读写分离</h2>
+<h3> 1、MySQL主从复制</h3>
+<p><img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/20230317212236.png" alt="" loading="lazy"></p>
+<p>主库只能有一个，从库可以有多个</p>
+<h4> 1、主从数据库的准备</h4>
+<p>MySQL主从复制-前置条件：<br>
+提前准备好两台服务器，分别安装Mysql并启动服务成功</p>
+<p>这里一台为本机，一台为CentOS<br>
+在 CentOS 操作系统上，可以通过以下步骤来启动、使用 MySQL 服务：</p>
+<ol>
+<li>
+<p>使用以下命令启动 MySQL 服务：</p>
+<div class="language-bash line-numbers-mode" data-ext="sh"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div></li>
+<li>
+<p>如果需要在系统启动时自动启动 MySQL 服务，可以使用以下命令设置：</p>
+<div class="language-bash line-numbers-mode" data-ext="sh"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div></li>
+<li>
+<p>检查 MySQL 服务是否已经启动，可以使用以下命令：</p>
+<div class="language-bash line-numbers-mode" data-ext="sh"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>如果服务已经启动，将会显示 Active: active (running)。</p>
+</li>
+<li>
+<p>连接到 MySQL：</p>
+<div class="language-bash line-numbers-mode" data-ext="sh"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>其中 <code>username</code> 是您的 MySQL 用户名。在输入此命令后，系统将提示您输入密码。</p>
+</li>
+</ol>
+<p>主库：192.168.80.130<br>
+从库：192.168.80.135</p>
+<h4> 2、配置主库Master</h4>
+<p>第一步，修改Mysql数据库的配置文件 /etc/my.cnf</p>
+<div class="language-text line-numbers-mode" data-ext="text"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>第二步：重启Mysql服务</p>
+<div class="language-bash line-numbers-mode" data-ext="sh"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>第三步：登录Mysql数据库，执行下面SQL</p>
+<div class="language-sql line-numbers-mode" data-ext="sql"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>上面的SQL的作用是创建一个用户t4mako，密码为root，并且给t4mako用户授予REPLICATION SLAVE权限，常用于建立复制时所需要用到的用户权限，也就是slave必须被master授权具有该权限的用户，才能通过该用户复制。</p>
+<p>第四步：登录mysql数据库，执行下面SQL记录下结果中file和position的值</p>
+<div class="language-sql line-numbers-mode" data-ext="sql"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p><img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/20230318113857.png" alt="" loading="lazy"></p>
+<h4> 3、配置从库Slaver</h4>
+<p>第一步：修改Mysql数据库配置文件/etc/my.cnf （Ubuntu下在 /etc/mysql/my.cnf）</p>
+<div class="language-text line-numbers-mode" data-ext="text"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>第二步：重启服务</p>
+<div class="language-bash line-numbers-mode" data-ext="sh"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>第三步：登录数据库，执行下面SQL：</p>
+<div class="language-sql line-numbers-mode" data-ext="sql"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/20230318120010.png" alt="" loading="lazy"></p>
+<p>第四步：查看数据库状态</p>
+<div class="language-sql line-numbers-mode" data-ext="sql"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h3> 2、ShardingJDBC</h3>
+<p><img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/image-20230318134934027.png" alt="image-20230318134934027" loading="lazy"></p>
+<h3> 3、读写分离案例</h3>
+<p><img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/20230318134703.png" alt="" loading="lazy"></p>
+<p>使用Sharding-JDBC实现读写分离步骤：<br>
+1、导入maven坐标<br>
+2、在配置文件中配置读写分离规则<br>
+3、在配置文件中配置允许bean定义覆盖配置项</p>
+<div class="language-xml line-numbers-mode" data-ext="xml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-yaml line-numbers-mode" data-ext="yml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>Sharding-JDBC会通过type类名反射创建DataSource，所以druid就无需配置DataSource，所以用druid-starter的话要排除druid的自动配置类去配置DataSource。这是通过Bean覆盖的方式去解决</p>
+<h3> 4、项目实现读写分离</h3>
+<p>配置方式与3一致</p>
+<h2> 4、Nginx</h2>
+<h3> 1、Nginx概述</h3>
+<p>Nginx是一款轻量级的Web服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器，其特点是占有内存少，并发能力强，事实上nginx的并发能力在同类型的网页服务器中表现较好，中国大陆使用nginx的网站有：百度，京东，新浪，网易，腾讯，淘宝等</p>
+<p>Nginx是由伊戈尔·塞索耶夫为俄罗斯访问量第二的Rambler.ru站点开发的，第一个公开版本0.1.0发布于2004年10月</p>
+<p>官网：<a href="https://nginx.org" target="_blank" rel="noopener noreferrer">https://nginx.org</a></p>
+<h3> 2、Nginx的下载与安装</h3>
+<p>通过官网下载tar.gz或者如下步骤</p>
+<p><img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/20230318143107.png" alt="" loading="lazy"></p>
+<p>注意：若第六步骤安装出错，先执行</p>
+<div class="language-bash line-numbers-mode" data-ext="sh"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>再执行 5 、6 两步</p>
+<p>安装完成：<br>
+<img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/20230318144340.png" alt="" loading="lazy"></p>
+<p>Nginx的目录结构：<br>
+<img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/20230318144609.png" alt="" loading="lazy"></p>
+<h3> 3、Nginx命令</h3>
+<p>在<strong>sbin目录</strong>下查看Nginx版本：<strong>./nginx -v</strong></p>
+<p><img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/20230318144902.png" alt="" loading="lazy"></p>
+<p><strong>检查配置文件的正确性</strong>：在启动Nginx服务之前，可以先检查一下conf/nginx.conf文件配置是否有错误，命令如下：<strong>./nginx -t</strong></p>
+<p><img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/20230318145106.png" alt="" loading="lazy"></p>
+<p>启动Nginx服务命令： <strong>./nginx</strong></p>
+<p>停止Nginx服务命令： <strong>./nginx -s stop</strong></p>
+<p>重启Nginx服务命令： <strong>./nginx -s reload</strong></p>
+<p>启动完成后可以查看Nginx进程： ps -ef | grep nginx<br>
+<img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/20230318145445.png" alt="" loading="lazy"></p>
+<p>关闭防火墙后，通过ip即可访问nginx<br>
+<strong>Nginx端口为80，可以省略</strong></p>
+<p>通过<strong>配置Nginx环境变量</strong>，在处处可使用Nginx命令：<br>
+vim /etc/profile 修改文件	source /etc/profile 立即生效<br>
+<img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/20230318150349.png" alt="" loading="lazy"></p>
+<p>这样可以直接通过<br>
+Nginx	启动Nginx</p>
+<h3> 4、Nginx配置文件结构</h3>
+<p>整体结构介绍：<br>
+Nginx配置文件（conf/nginx.conf）整体分为三部分：</p>
+<ol>
+<li>
+<p>全局块：和Nginx运行相关的全局配置</p>
+</li>
+<li>
+<p>enents块：和网络连接相关的配置</p>
+</li>
+<li>
+<p>http块：代理、缓存、日志记录、虚拟主机配置</p>
+<p>​	http全局块</p>
+<p>​	server块：</p>
+<p>​		server全局块</p>
+<p>​		location块</p>
+</li>
+</ol>
+<p>注：http块中可以配置多个Server块，每个Server块中可以配置多个location块</p>
+<p>查看配置文件<br>
+cat /usr/local/nginx/conf/nginx.conf</p>
+<h3> 5、Nginx具体应用</h3>
+<h4> 1、部署静态资源</h4>
+<p>Nginx可以作为静态web服务器来部署静态资源。静态资源指在服务端真实存在并且能够直接展示的一些文件。比如常见的html页面，css文件，图片，视频等资源。<br>
+相对于Tomcat，<strong>Nginx处理静态资源的能力更加高效</strong>，所以在生产环境下，一般会将静态资源部署到Nginx中。<br>
+将静态资源部署到Nginx非常简单，只需要将文件复制到Nginx安装目录下的html目录中即可。</p>
+<h4> 2、反向代理</h4>
+<p><strong>正向代理</strong><br>
+正向代理一般在<strong>客户端设置代理服务器</strong></p>
+<p><img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/20230318154039.png" alt="" loading="lazy"></p>
+<p><strong>反向代理</strong><br>
+反向代理，<strong>客户端不知道目标服务器地址，也无需用户端的任何设定</strong></p>
+<p><img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/20230318154247.png" alt="" loading="lazy"></p>
+<p>配置反向代理：<br>
+针对82这个端口的请求，转发到另一台服务器上</p>
+<p><img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/20230318154927.png" alt="" loading="lazy"></p>
+<h4> 3、负载均衡</h4>
+<p><img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/20230318155937.png" alt="" loading="lazy"></p>
+<p><img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/20230318160002.png" alt="" loading="lazy"></p>
+<p>配置负载均衡：</p>
+<p><img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/20230318160308.png" alt="" loading="lazy"></p>
+<p>upstream指令用于定义一组服务器<br>
+最后一行 targetserver 名字任意，与 upstream 后的名字一致即可<br>
+可以在upstream中server服务器ip后添加 weight=10 参数设置权重，数值越大，分发给它的几率越高</p>
+<p><img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/20230318160929.png" alt="" loading="lazy"></p>
+<h2> 5、前后端分离开发/API</h2>
+<h3> 1、前后端分离开发介绍</h3>
+<p><img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/20230318161318.png" alt="" loading="lazy"></p>
+<p>工程拆分：<br>
+将一个完整工程拆分成前端工程和后端工程<br>
+前端工程部署到Nginx中<br>
+后端工程部署到Tomcat中</p>
+<p>开发流程：<br>
+前后端分离开发后，面临一个问题，就是前后端开发人员后后端开发人员如何进行配合来共同开发一个项目？<br>
+可以按照如下流程进行：<br>
+<img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/20230318161852.png" alt="" loading="lazy"></p>
+<p>接口（API）接口就是一个Http的请求地址，只要就是去定义：请求路径、请求方式、请求参数，响应数据等内容</p>
+<p><img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/20230318162352.png" alt="" loading="lazy"></p>
+<h3> 2、YApi/ApiFox</h3>
+<p><img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/20230319092700.png" alt="" loading="lazy"></p>
+<p><a href="https://github.com/YMFE/yapi" target="_blank" rel="noopener noreferrer">YApi源码地址</a></p>
+<p>要使用YApi，需要自己进行部署</p>
+<p>相似产品：<a href="https://www.apifox.cn/" target="_blank" rel="noopener noreferrer">apifox</a>（更方便，无需自己部署）<br>
+<a href="https://www.bilibili.com/video/BV1ae4y1y7bf/?vd_source=93736dd4ac5c01d75d784e06d15a93ac" target="_blank" rel="noopener noreferrer">apifox的使用</a></p>
+<h3> 3、Swagger</h3>
+<h4> 1、Swagger介绍</h4>
+<p>使用Swagger只需要按照它的规范定义接口信息及接口相关信息，在通过Swagger衍生出来的一系列项目和工具就可以做到生成各种格式的接口文档，以及在线接口调试页面等。<br>
+<a href="https://swagger.io/" target="_blank" rel="noopener noreferrer">Swagger官网</a></p>
+<p><strong>knife4j</strong>是Java MVC框架<strong>集成Swagger生成Api文档</strong>的<strong>增强解决方案</strong>。</p>
+<div class="language-xml line-numbers-mode" data-ext="xml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4> 2、使用方式</h4>
+<p>1、导入knife4j的maven坐标<br>
+2、导入knife4j相关配置类<br>
+3、设置静态资源，否则接口文档页面无法访问<br>
+4、在LoginCheckFilter中设置不需要处理的请求</p>
+<p>① maven坐标</p>
+<div class="language-xml line-numbers-mode" data-ext="xml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>② 导入knife4j相关配置类</p>
+<p>更新WebMvcConfig：</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>③ 设置静态资源，否则接口文档页面无法访问</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>④ 在LoginCheckFilter中设置不需要处理的请求</p>
+<p>修改LoginCheckFilter：</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>访问localhost/doc.html查看接口文档</p>
+<p><img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/20230319100514.png" alt="" loading="lazy"></p>
+<p>可以测试数据，下载接口文档</p>
+<h4> 3、Swagger常用注解</h4>
+<table>
+<thead>
+<tr>
+<th>注解</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>@Api</td>
+<td>用在请求的类上，例如Controller，表示对类的说明</td>
+</tr>
+<tr>
+<td>@ApiMoedl</td>
+<td>用在类上，通常是实体类，表示一个返回响应数据的信息</td>
+</tr>
+<tr>
+<td>@ApiModelProperty</td>
+<td>用在属性上，描述响应类的属性</td>
+</tr>
+<tr>
+<td>@ApiOperation</td>
+<td>用在请求的方法上，说明方法的用途，作用</td>
+</tr>
+<tr>
+<td>@ApiImplicitParams</td>
+<td>用在请求的方法上，表示一组参数说明</td>
+</tr>
+<tr>
+<td>@ApiImplicitParam</td>
+<td>用在@ApiImplicitParams注解中，指定一个请求参数的各个方面</td>
+</tr>
+</tbody>
+</table>
+<h2> 6、项目部署</h2>
+<h3> 1、部署架构、环境</h3>
+<p>部署架构：</p>
+<p><img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/20230319102525.png" alt="" loading="lazy"></p>
+<p>部署环境说明：</p>
+<p><img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/20230319102727.png" alt="" loading="lazy"></p>
+<h3> 2、部署前端项目</h3>
+<p>1、在服务器A中安装Nginx，将项目中的dist目录上传到Nginx的html下</p>
+<p><img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/20230319103030.png" alt="" loading="lazy"></p>
+<p>2、修改Nginx配置文件</p>
+<p>修改配置文件，完成重写请求路径的功能</p>
+<p><img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/20230319103914.png" alt="" loading="lazy"></p>
+<h3> 3、后端项目的部署</h3>
+<p>1、在服务器B中安装jdk，git，maven，MySQL，使用git clone将git远程仓库的diamante克隆下俩</p>
+<p>2、将资料中的reggieStart.sh文件上传到服务器B，通过chmod命令设置执行权限</p>
+<p>3、修改图存存储的位置</p>
+<p>如：</p>
+<div class="language-yaml line-numbers-mode" data-ext="yml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div>]]></content:encoded>
+      <enclosure url="https://raw.githubusercontent.com/T4mako/ImageBed/main/20230317141628.png" type="image/png"/>
+    </item>
+    <item>
+      <title>noob-Rg</title>
+      <link>https://T4mako.github.io/code/project/noob/noob-Rg.html</link>
+      <guid>https://T4mako.github.io/code/project/noob/noob-Rg.html</guid>
+      <source url="https://T4mako.github.io/rss.xml">noob-Rg</source>
+      <description>2、项目介绍 技术选型： 功能架构： 角色： ! (https://raw.githubusercontent.com/T4mako/ImageBed/main/20230225221347.png). 3、开发环境搭建 1、数据库环境搭建 1、创建数据库 2、导入表结构（db_reggie.sql） 或打开命令行：source 绝对路径 注意：路径不...</description>
+      <content:encoded><![CDATA[<!-- more -->
+<h2> 2、项目介绍</h2>
+<p>技术选型：<br>
+<img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/20230225220831.png" alt="" loading="lazy"></p>
+<p>功能架构：<br>
+<img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/20230225221142.png" alt="" loading="lazy"></p>
+<p>角色：<br>
+<img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/20230225221347.png" alt="" loading="lazy">.</p>
+<h2> 3、开发环境搭建</h2>
+<h3> 1、数据库环境搭建</h3>
+<p>1、创建数据库<br>
+<img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/20230226143813.png" alt="" loading="lazy"></p>
+<p>2、导入表结构（db_reggie.sql）<br>
+<img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/20230226144053.png" alt="" loading="lazy"></p>
+<p>或打开命令行：source 绝对路径<br>
+<strong>注意：路径不能有中文字符</strong></p>
+<p>数据表：<br>
+<img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/20230226144406.png" alt="" loading="lazy"></p>
+<h3> 2、maven项目创建</h3>
+<p>创建maven项目，修改名字与位置<br>
+导入pom文件<br>
+导入application.yaml配置文件</p>
+<div class="language-xml line-numbers-mode" data-ext="xml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-yaml line-numbers-mode" data-ext="yml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>配置主类</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>Alibaba Fastjson是一种快速、高效、功能丰富的Java JSON库，可以将Java对象序列化为JSON格式，或将JSON字符串反序列化为Java对象。Fastjson提供了多种序列化和反序列化选项，包括支持Java泛型、自定义序列化、反序列化和过滤器等。</p>
+<p><em>Fastjson的主要用途包括：</em></p>
+<ol>
+<li>序列化Java对象：Fastjson可以将Java对象序列化为JSON格式的字符串，方便在不同系统之间传输数据。</li>
+<li>反序列化JSON字符串：Fastjson可以将JSON格式的字符串反序列化为Java对象，方便在接收到JSON数据时将其转换为Java对象进行处理。</li>
+<li>支持Java泛型：Fastjson可以序列化和反序列化Java泛型对象，使得在处理复杂数据结构时更加方便。</li>
+<li>自定义序列化和反序列化：Fastjson提供了自定义序列化和反序列化的选项，可以对Java对象进行定制化的序列化和反序列化处理。</li>
+<li>过滤器：Fastjson提供了过滤器选项，可以过滤掉不需要序列化或反序列化的属性，提高性能和安全性。</li>
+</ol>
+<h3> 3、前端资源导入</h3>
+<p>导入前端资源到 resources 中<br>
+由于静态资源的访问springboot默认配置在static文件夹等其他配置下</p>
+<p><em><strong>创建配置类修改静态资源映射：</strong></em><br>
+创建 config 包，创建 WebMvcConfig 类</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><code>WebMvcConfigurationSupport</code> 是Spring MVC框架中的一个配置类，它可以用来自定义Spring MVC的配置，包括添加拦截器、消息转换器、视图解析器</p>
+<h2> 4、后台登录功能开发</h2>
+<p><img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/20230226154222.png" alt="" loading="lazy"></p>
+<p>创建实体类Employee，和employee表进行映射：<br>
+创建Entity包：实体类包<br>
+创建controller，service，service→impl，mapper包</p>
+<h3> 1、实体类创建</h3>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 2、mapper创建</h3>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 3、service，serviceImpl创建</h3>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 4、controller创建</h3>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 5、导入返回结果类R</h3>
+<p><em><strong>此类是一个通用结果类，服务端响应的所有结果最终都会包装成此种类型给前端</strong></em></p>
+<p>创建通用类：<br>
+创建common包，创建通过返回结果类R</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 6、登录方法的编写</h3>
+<p>登录的业务：<br>
+<img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/20230226170122.png" alt="" loading="lazy"></p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 7、后台系统退出功能</h3>
+<p>退出业务：<br>
+<img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/20230304133242.png" alt="" loading="lazy"></p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 8、完善登录功能</h3>
+<p>问题分析：<br>
+<img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/20230304135037.png" alt="" loading="lazy"></p>
+<p>实现步骤：<br>
+1、创建自定义过滤器LoginCheckFilter<br>
+2、在启动类上加入注解@ServletComponentScan(扫描)<br>
+3、完善过滤器的处理逻辑<br>
+<code>在SpringBootApplication上使用@ServletComponentScan注解后，Servlet、Filter、Listener可以直接通过@WebServlet、@WebFilter、@WebListener注解自动注册，无需其他代码。</code></p>
+<p>过滤器的具体业务逻辑：<br>
+1、获取本次请求的URL<br>
+2、判断本次请求是否需要处理<br>
+3、如果不需要处理，则直接放行<br>
+4、判断登录状态，如果已登录，则直接放行<br>
+5、如果未登录则返回未登录结果</p>
+<p><img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/20230304144250.png" alt="" loading="lazy"></p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 5、员工管理</h2>
+<h3> 1、新增员工</h3>
+<p>后台系统中可以管理员工信息，通过新员工来添加后台系统用户，点击添加员工按钮跳转到新增页<br>
+<img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/20230304154615.png" alt="" loading="lazy"></p>
+<p>新增员工即将新增的员工插入到employee表中<br>
+employee表中，username字段为唯一约束，status字段默认值为1，id通过雪花算法生成</p>
+<p>整个程序执行过程：<br>
+1、页面发送ajax请求，将新增员工页面中输入的数据以json的形式提交到服务端<br>
+2、服务端Controller接受页面提交的数据并调用Service将数据进行保存<br>
+3、Service调用Mapper操作数据库，保存数据</p>
+<h3> 2、编写全局异常处理器</h3>
+<p>当新增员工时输入账号已存在，由于employee表中对该字段加入了唯一约束，因此程序会抛出异常<br>
+此时我们需要异常捕获，通常有两种处理方式：<br>
+1、在Controller中加入try-catch进行异常捕获<br>
+2、使用异常处理器进行全局异常捕获</p>
+<p><strong>@ControllerAdvice</strong>是一个Spring框架中的注解，用于定义<strong>全局控制器异常处理器</strong>。当控制器方法抛出未被处理的异常时，Spring将查找带有@ControllerAdvice注解的类来处理该异常。该类中的方法可以使用@ExceptionHandler注解来处理特定类型的异常。<br>
+<code>@ControllerAdvice</code>是一个特殊的<code>@Component</code>，用于标识一个类，这个类中被以下三种注解标识的方法：<code>@ExceptionHandler</code>，<code>@InitBinder</code>，<code>@ModelAttribute</code>，将作用于所有的<code>@Controller</code>类的接口上。</p>
+<p><strong>@ExceptionHandler</strong>是一个Spring框架中的注解，用于处理控制器方法中的异常。在控制器方法上添加@ExceptionHandler注解，可以指定要处理的异常类型。当控制器方法抛出该异常时，Spring将调用带有@ExceptionHandler注解的方法来处理该异常。</p>
+<p>@ExceptionHandler注解可以被用于单个方法或全局控制器。在单个方法中使用时，它只会应用于该方法中的异常处理。如果在全局控制器中使用，则它将应用于整个控制器中的所有方法。</p>
+<p>使用@ExceptionHandler注解可以简化异常处理逻辑，使代码更易于维护和测试。</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 3、员工信息分页查新</h3>
+<p>在开发代码前，梳理整个程序的执行过程：<br>
+1、页面发送ajax请求，将分页查询参数（page，pageSize，name）提交到服务端<br>
+2、服务端Controller接受页面提交的数据并调用Service查询数据<br>
+3、Service调用Mapper操作数据库，查询分页数据<br>
+4、Controller将查询到的分页数据响应给页面<br>
+5、页面接受到分页数据并通过ElementUI的Table组件展示到页面上</p>
+<p>创建配置类配置分页插件</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>编写Controller中的业务</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 4、启用/禁用员工账号</h3>
+<p><img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/20230305145523.png" alt="" loading="lazy"></p>
+<p>只有管理员有启用禁用按钮原理：前端通过v-if判断是否为admin管理员</p>
+<p>程序的执行过程：<br>
+1、页面发送ajax请求，将参数（id、status）提交到服务端<br>
+2、服务端Controller接受页面提交的数据并调用Service更新数据<br>
+3、Service调用Mapper操作数据库</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>页面中js处理long型数字只能精确到前16位，所以最终通过ajax请求提交给服务端的时候会丢失精度</strong></p>
+<p>如何解决：<br>
+在服务端给页面响应json数据时将long型转换成String字符串</p>
+<p>具体实现步骤：<br>
+（1）提供对象转换器JacksonObjectMapper，基于Jackson进行Java对象到json数据的转换（资料中提供的类）<br>
+（2）在WebMvcConfig配置类中扩展Spring mvc的消息转换器，在此消息转换器中使用提供的对象转换器（JacksonObjectMapper）进行java对象到json数据的转换<br>
+（如果不扩展配置消息转换器，使用spring mvc提供的消息转换器）</p>
+<p>JacksonObjectMapper类（对象转换器类）</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>扩展MVC的消息转换器：在WebMvcConfig配置类中添加</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 5、编辑员工信息</h3>
+<p>在员工管理列表页面点击编辑按钮，跳转到编辑页面，在编辑页面回显员工信息并进行修改，最后点击保存按钮完成编辑操作</p>
+<p>操作过程对应的程序执行流程：<br>
+1、点击编辑按钮，页面跳转到add.html，在url中携带参数【员工id】<br>
+2、在add.html页面获取url中的参数【员工id】<br>
+3、发送ajax请求，请求服务器，同时提交员工id参数<br>
+4、服务端接受请求，根据员工id查询员工信息，将员工信息以json形式响应给页面<br>
+5、页面接受服务端响应的json数据，通过VUE的数据绑定进行员工信息回显<br>
+6、点击保存按钮，发送ajax请求，将页面中的员工信息以json方式提交给服务器<br>
+7、服务端接受员工信息，并进行处理，完成后给页面响应<br>
+8、页面接收到服务器响应信息后进行相应的处理</p>
+<p>在Controller中编写业务：</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 6、公共字段自动填充</h3>
+<p>在员工管理中，新增员工要添加创建时间，创建人，修改时间，修改人等字段，这些字段<strong>为公共字段，很多表中都有这些字段</strong>。<br>
+能否对于这些字段在某个地方同一管理，简化开发？即使用Mybatis Plus提供的公共字段自动填充功能</p>
+<p>Mybatis Plus公共字段自动填充，就是在插入或更新的时候为指定字段赋予指定的值，使用它的好处就是可以同一对这些字段进行处理，避免重复代码。</p>
+<p>实现步骤：<br>
+1、在实体类的属性上加上@TableField注解，指定自动填充的策略<br>
+2、按照框架要求编写元数据对象处理器，在此类中统一为公共字段赋值，此类需要实现MetaObjectHandler接口</p>
+<p>实现：<br>
+1、在Employee实体类上添加注解：</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>2、按照框架要求编写元数据对象处理器，在此类中统一为公共字段赋值，此类需要实现MetaObjectHandler接口</p>
+<p>自定义元数据对象处理器：MyMetaObjectHandler</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>在设置创建用户与更新用户时，需要放置用户ID，但在此类中无法获取session对象，因此通过<strong>ThreadLocal解决</strong></p>
+<h3> 7、ThreadLocal</h3>
+<p>前导知识：<br>
+在客户端<strong>每次发送http请求时，对应的在服务端都会分配一个新的线程来处理</strong>，在处理过程中涉及到下面类中的方法都属于相同的一个线程：<br>
+1、LoginCheckFilter的doFilter方法<br>
+2、EmployeeController的update方法<br>
+3、MyMetaObjectHandler的updateFill方法</p>
+<p>ThreadLocal:<br>
+ThreadLocal并不是一个Thread，而是Thread的局部变量。当使用ThreadLocal维护变量时，<strong>ThreadLocal为每个使用该变量的线程提供独立的变量副本</strong>，所以<strong>每一个线程都可以独立地改变自己的副本</strong>，而不会影响其他线程对应的副本。ThreadLocal为每个线程提供单独一份存储空间，具有线程隔离的效果，只有在线程内才能获取到对应的值，线程外则不能访问。<br>
+ThreadLocal存放的值为一个对象。</p>
+<p>ThreadLocal常用方法：<br>
+public void set(T value) 设置当前线程的线程局部变量的值<br>
+public T get() 返回当前线程所对应的线程局部变量的值</p>
+<p>我们可以在LoginCheckFilter的doFilter方法中获取当前登录用户id，并调用ThreadLocal的set方法设置当前线程的线程局部变量的值（用户id），然后在MyMetaObjectHandler的updateFill中调用ThreadLcoal的get方法获得当前线程局部变量的值。</p>
+<h3> 8、使用ThreadLocal功能完善</h3>
+<p>1、编写BaseContext工具类，基于ThreadLocal封装的工具类<br>
+2、在LoginCheckFilter的doFilter方法中调用BaseContest获取登录用户的id<br>
+3、在MyMetaObjectHandler的方法中调用BaeContest获取用户登录的id</p>
+<p>BaseContext工具类：</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>更新doFilter方法：</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>MyMetaObjectHandler类：</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 6、菜品分类</h2>
+<h3> 1、新增分类</h3>
+<p><img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/image-20230306143750619.png" alt="image-20230306143750619" loading="lazy"></p>
+<p>创建需要用到的类和接口：<br>
+1、实体类Category<br>
+2、Mapper接口CategoryMapper<br>
+3、业务层接口CategoryService<br>
+4、业务层实现类CategoryServiceImpl<br>
+5、控制层CategoryController</p>
+<p>整个程序的执行过程：<br>
+1、页面(backend/page/category/list.html)发送ajax请求，将新分类窗口输入的数据以json形式提交到服务端<br>
+2、服务端Controller接受页面提交的数据并调用Service将数据进行保存<br>
+3、Servie调用Mapper操作数据库，保存数据</p>
+<p>新增菜品与套餐请求的服务器端地址和提交的json数据结构相同，所以服务端只需要提供一个方法统一处理即可</p>
+<p>编写Controller方法：</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 2、分类信息分页查询</h3>
+<p>程序的执行过程：<br>
+1、页面发送ajax请求，将分页查询参数（page、pageSize）提交到服务端<br>
+2、服务端Controller接受页面提交的数据并调用Serice查询数据<br>
+3、Service调用Mapper操作数据库，查询分页数据<br>
+4、Controller将查询到的分页数据响应给页面<br>
+5、页面接收到分页数据并通过ElementUI的Table组件展示到页面上</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 3、删除分类</h3>
+<p>在分类管理列表页面，可以对某个分类进行删除操作，需要注意的是<strong>当分类关联了菜品或套餐时，此分类不允许删除</strong></p>
+<p>要实现分类删除功能，需要先准备基础的类和接口：<br>
+1、实体类Dish和Setmeal（菜品与套餐）<br>
+2、Mapper接口DishMapper和SetmealMapper<br>
+3、Service接口DishService和SetmealService<br>
+4、Service实现类DishServiceImpl和SetMealSericeImpl</p>
+<p>业务编写过程：<br>
+1、Controller接受前端请求，获取id值，调用service中自己编写的remove方法，删除分类<br>
+2、在service编写remove抽象方法。在serviceImpl中实现。<br>
+3、在serviceImpl中注入DishService和SetmealService，通过id值查询Dish表和Setmeal表中是否有该分类的category_id<br>
+4、如果存在，抛出自己编写的异常类。如果没有，调用super.removeById(id)删除分类<br>
+5、将自己编写的异常类写入GlobalExceptionHandler类中，统一返回消息</p>
+<p>CustomException自定义异常类：</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>GlobalExceptionHandler类中添加：</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>CategoryServiceImpl：</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>Controller：</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 4、修改分类</h3>
+<p>在分类管理列表页面点击修改按钮，弹出修改窗口，在修改窗口回显信息并进行修改，最后点击确定按钮完成修改操作</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 7、菜品管理</h2>
+<h3> 1、文件的上传和下载</h3>
+<h4> 1、概念介绍</h4>
+<p>文件上传，也称为<strong>upload</strong>，是指将本地图片、视频、音频等文件上传到服务器，可以供其他用户浏览或下载的过程。</p>
+<p>文件上传时，对页面的form表单有如下要求：<br>
+<strong>method=“post”	（采用post方式提交）<br>
+enctype=“multipart/form-data”	(采用multipart格式上传文件)<br>
+type=“file”	(使用input的file控件上传)</strong></p>
+<p><img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/20230307133505.png" alt="" loading="lazy"></p>
+<p>目前一些前端组件库也提供了相应的上传组件，但是底层原理还是基于form表单的文件上传<br>
+例如ElementUI中提供的upload上传组件</p>
+<p>服务端要接受客户端页面上传的文件，通常会使用Apache的两个组件：<br>
+<strong>commins-fileupload<br>
+commons-io</strong></p>
+<p>spring框架在<strong>spring-web包</strong>中对文件上传进行了封装，大大简化了服务端代码，我们只需要<strong>在Controller的方法中声明一个MultipartFile类型的参数</strong>即可接收上传文件，例如：</p>
+<p><img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/20230307134027.png" alt="" loading="lazy"></p>
+<p>文件下载，也称为<strong>download</strong><br>
+浏览器进行文件下载，通常有两种形式：<br>
+①以附件形式下载，弹出保存对话框，将文件保存到指定目录<br>
+②直接在浏览器中打开</p>
+<p>通过浏览器下载，本质就是服务端将文件以流的形式写回浏览器的过程</p>
+<h4> 2、文件上传代码实现</h4>
+<p>前端使用ElementUI提供上传组件</p>
+<p><img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/20230307134547.png" alt="" loading="lazy"></p>
+<p>可以在application.yml中配置文件上传的通用目录：</p>
+<div class="language-yaml line-numbers-mode" data-ext="yml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>编写CommonController</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4> 3、文件下载代码实现</h4>
+<p>文件下载，页面端可以使用&lt;img&gt;标签展示下载的图片</p>
+<p><img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/20230307145926.png" alt="" loading="lazy"></p>
+<p>在controller中添加方法：<br>
+通过输出流的方式将数据流返回给前端页面</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 2、新增菜品</h3>
+<p><img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/20230307185259.png" alt="" loading="lazy"></p>
+<p><img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/20230307185420.png" alt="" loading="lazy"></p>
+<p>在开发业务功能前，先将需要用到的类和接口基本结构创建好：<br>
+实体类：DishFlavor<br>
+Mapper接口：DishFlavorMapper<br>
+业务层接口：DishFlavorServvice<br>
+业务层实现类：DishFlavorServiceImpl<br>
+控制层：DishController</p>
+<p>新增菜品时前端和服务端的交互过程：<br>
+1、页面（backend/page/food/add.html）发送ajax请求，请求服务端获取菜品分类并展示到下拉框中<br>
+2、页面发送请求进行图片上传，请求服务端将图片保存到服务器<br>
+3、页面发送请求进行图片下载，将上传的图片进行回显<br>
+4、点击保存按钮，发送ajax请求，将菜品相关数据以json形式提交到服务端</p>
+<p>请求服务端获取菜品分类并展示到下拉框中<br>
+在CategoryController中编写：</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>DTO：全称为DataTransfer Object，即数据传输对象，一般用于展示层与服务层之间的数据传输<br>
+导入DishDTO，用于封装页面提交的数据</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>新增菜品，同时插入菜品对应的口味数据，需要操作两张表：dish、dish_flavor。因此在DishService中添加方法</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>在DishServiceImpl中添加方法</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 3、菜品信息分页查询</h3>
+<p>前端页面与服务端交互过程：<br>
+1、页面（backend/page/food/list.html）发型ajax请求，将分页查询参数（page、pageSize、name）提交到服务端，获取分页数据<br>
+2、页面发送请求，请求服务端进行图片下载，用于图片展示</p>
+<p>开发菜品信息分页查询功能，其实就是在服务端编写代码去处理前端页面发送的两次请求即可、</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 4、修改菜品</h3>
+<p>修改菜品时前端（add.html）和服务端的交互过程：<br>
+1、页面发送ajax请求，请求服务端获取分类数据，用于菜品分类下拉框中数据展示<br>
+2、页面发送ajax请求，请求服务端，根据id查询当前菜品的信息，用于菜品信息回显<br>
+3、页面发送请求，请求服务端进行图片下载，用于页图片回显<br>
+4、点击保存按钮，页面发送ajax请求，将修改后的菜品相关数据以JSON形式提交到服务端</p>
+<p>开发修改菜品功能，其实就是在服务端编写代码去处理前端页面发送的这4次请求即可</p>
+<p>在DishService接口与其对应实现类添加方法：</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 5、启售、停售</h3>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 8、套餐管理</h2>
+<h3> 1、新增套餐</h3>
+<p>新增套餐，其实就是将新增页面录入的套餐信息插入到setmeal表，还需要向setmeal_dish表插入套餐和菜品关联数据<br>
+所以在新增套餐时，设计两个表：<br>
+setmeal 套餐表<br>
+setmeal_dish 套餐菜品关系表</p>
+<p>将用到的类和接口基本结构准备好：<br>
+实体类SetmealDish<br>
+DTO SetmealDto<br>
+Mapper接口 SetmealDishMapper<br>
+业务层接口 SetmealDishMapper<br>
+控制层 SetmealController</p>
+<p>新增套餐时，前端页面和服务端的交互过程：<br>
+1、页面（backend/page/combo/add.html）发送ajax请求，请求服务端获取套餐分类数据并展示到下拉框中<br>
+2、页面发送ajax请求，请求服务端获取菜品分类数据并展示到添加菜品窗口中<br>
+3、页面发送ajax请求，请求服务端，根据菜品分类查询对应的菜品数据并展示到菜品窗口中<br>
+4、页面发送请求进行图片上传，请求服务端将图片保存到服务器<br>
+5、页面发送请求进行图片下载，将上传的图片进行回显<br>
+6、点击保存按钮，发送ajax请求，将套餐相关数据以json形式提交到服务端</p>
+<p>①请求服务端获取套餐分类数据并展示到下拉框中已在上述代码中完成</p>
+<p>②页面发送ajax请求，请求服务端获取菜品分类数据并展示到添加菜品窗口中<br>
+在DishController中添加：</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>③点击保存按钮，发送ajax请求，将套餐相关数据以json形式提交到服务端<br>
+发送请求的参数<strong>通过dto接收</strong></p>
+<p>在setmealService添加方法：</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>方法实现：</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>SeController中添加：</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 2、套餐信息分页查询</h3>
+<p>前后端交互过程：<br>
+1、页面（bacend/page/combo/list.html）发送ajax请求，将分页查询参数（page，pageSize、name）提交到服务端，获取分页数据<br>
+2、页面发送请求，请求服务端进行图片下载，用于页面图片展示</p>
+<p>在SetmealController中添加代码：</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 3、删除套餐</h3>
+<p><img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/20230311105827.png" alt="" loading="lazy"></p>
+<p>注意：对于状态为售卖中的套餐不能删除，需要先停售，然后才能删除</p>
+<p>梳理交互过程：<br>
+1、删除单个套餐时，页面发送ajax请求，根据id删除对应套餐<br>
+2、删除多个套餐时，页面发送ajax请求，根据提交的多个套餐id删除对应套餐<br>
+可以在服务端通过一个方法处理这两种请求</p>
+<p>删除套餐功能编写：</p>
+<p>SetmealService：</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>SetmealServiceImpl：</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>SetmealController：</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>启售，停售功能编写：</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 9、订单管理</h2>
+<p>OrdersController类</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 10、验证码登录</h2>
+<h3> 1、阿里云短信服务</h3>
+<p>进入阿里云控制台，选择短信服务</p>
+<p>设置短信签名和短信模板：<br>
+短信签名是短信发送者的署名，表示发送方的身份<br>
+短信模板包含短信发送内容，场景，变量信息</p>
+<p>使用阿里云短信服务发送短信，可以参照官方提供的文档即可<br>
+具体开发步骤：<br>
+①导入maven坐标<br>
+②调用API</p>
+<p><img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/20230311164159.png" alt="" loading="lazy"></p>
+<p><img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/image-20230311164220854.png" alt="image-20230311164220854" loading="lazy"></p>
+<h3> 2、手机验证码登录</h3>
+<p><img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/20230311164513.png" alt="" loading="lazy"></p>
+<p>通过手机验证码登录时，涉及的表为user表，结构如下：</p>
+<p><img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/image-20230311165126504.png" alt="image-20230311165126504" loading="lazy"></p>
+<p>登录时，页面与服务端的交互过程：<br>
+1、在登录页面（front/page/login.html）输入手机号，点击获取验证码按钮，页面发送ajax请求，在服务端调用短信服务API给指定手机号发送验证码短信<br>
+2、在登录页输入验证码，点击登录按钮，发送ajax请求，在服务端处理登录请求</p>
+<p><img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/20230311165456.png" alt="" loading="lazy"></p>
+<p>修改LoginCheckFilter，添加不需要处理的请求路径<br>
+在LoginCheckFilter过滤器中扩展逻辑，判断移动端用户登录状态</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>在UserController中编写业务逻辑：</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 11、菜品展示、购物车、下单</h2>
+<h3> 1、导入用户地址簿相关功能代码</h3>
+<p><img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/20230312100057.png" alt="" loading="lazy"></p>
+<p>用户地址信息会存储在address_book表中，即地址簿表中</p>
+<p><img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/20230312100250.png" alt="" loading="lazy"></p>
+<p>编写controller业务代码：（导入AddressBookController，手动添加更改与删除地址）</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 2、菜品展示</h3>
+<p><img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/20230312101915.png" alt="" loading="lazy"></p>
+<p>梳理交互过程：<br>
+1、页面（front/index.html）发送ajax请求，获取分类数据（菜品分类和套餐分类）<br>
+2、页面发送ajax请求，获取第一个分类下的菜品或者套餐</p>
+<p>前端展示的页面中不仅要有菜品信息，还要有口味信息，套餐信息<br>
+因此，更改DIshController中的list查询方法，返回DIshDto，增加SetmealController的方法，返回套餐</p>
+<p>DIshController：</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>SetmealController：</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 3、购物车</h3>
+<p><img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/20230312111156.png" alt="" loading="lazy"></p>
+<p>购物车对应的数据表为shopping_cart表</p>
+<p>购物车操作时前端页面和服务端的交互过程：<br>
+1、点击加入购物车或加好按钮，发送ajax请求，请求服务端，将菜品或套餐添加到购物车<br>
+2、点击购物车图标，法功ajax请求，请求服务端查询购物车中的菜品和套餐<br>
+3、点击清空购物车，页面发送ajax请求，请求服务端来执行清空购物车操作</p>
+<p><img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/20230312111834.png" alt="" loading="lazy"></p>
+<p>添加、减少购物车：</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 4、查看、清空购物车</h3>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 5、用户下单</h3>
+<p><img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/20230312131226.png" alt="" loading="lazy"></p>
+<p>用户下单业务对应的数据表为orders表和order_detail表</p>
+<p>前后端交互过程：<br>
+1、在购物车中点击去结算按钮，页面跳转到订单确认页面<br>
+2、在订单确认页面，发送ajax请求，请求服务端获取当前登录用户的默认地址<br>
+3、在订单确认页面，发送ajax请求，请求服务端获取当前用户的购物车数据<br>
+4、在订单确认页面点击去支付按钮，发送ajax请求，请求服务端完成下单操作</p>
+<p><img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/20230312133031.png" alt="" loading="lazy"></p>
+<p>OrdersService：</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>OrderServceImpl</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>OrderController</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 6、用户退出</h3>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content:encoded>
+      <enclosure url="https://raw.githubusercontent.com/T4mako/ImageBed/main/20230225220831.png" type="image/png"/>
     </item>
     <item>
       <title>012_整数转罗马数字</title>
@@ -18230,36 +19004,6 @@ CFG预设（Purp1e制作）<br>
       <description>066_加一</description>
       <category>算法</category>
       <content:encoded><![CDATA[<h1> 066_加一</h1>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>067_二进制求和</title>
-      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_067_%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%B1%82%E5%92%8C.html</link>
-      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_067_%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%B1%82%E5%92%8C.html</guid>
-      <source url="https://T4mako.github.io/rss.xml">067_二进制求和</source>
-      <description>067_二进制求和</description>
-      <category>算法</category>
-      <content:encoded><![CDATA[<h1> 067_二进制求和</h1>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>069_x的平方根</title>
-      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_069_x%E7%9A%84%E5%B9%B3%E6%96%B9%E6%A0%B9.html</link>
-      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_069_x%E7%9A%84%E5%B9%B3%E6%96%B9%E6%A0%B9.html</guid>
-      <source url="https://T4mako.github.io/rss.xml">069_x的平方根</source>
-      <description>069_x的平方根</description>
-      <category>算法</category>
-      <content:encoded><![CDATA[<h1> 069_x的平方根</h1>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>070_爬楼梯</title>
-      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_070_%E7%88%AC%E6%A5%BC%E6%A2%AF.html</link>
-      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_070_%E7%88%AC%E6%A5%BC%E6%A2%AF.html</guid>
-      <source url="https://T4mako.github.io/rss.xml">070_爬楼梯</source>
-      <description>070_爬楼梯</description>
-      <category>算法</category>
-      <content:encoded><![CDATA[<h1> 070_爬楼梯</h1>
 ]]></content:encoded>
     </item>
   </channel>
