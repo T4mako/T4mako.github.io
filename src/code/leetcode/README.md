@@ -1,8 +1,8 @@
 ---
-sticky: 9
+sticky: 8
 ---
 
-# LeetCode刷题
+# LeetCode 刷题
 
 每日更新（大概）
 
