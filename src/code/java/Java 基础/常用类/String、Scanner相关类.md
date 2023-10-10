@@ -262,5 +262,49 @@ while (stringTokenizer.hasMoreTokens()){
 1 you
  */
 ```
+
+
+## 4、Scanner 类
+
+- `import java.util.Scanner`
+- Scanner 的实例化：
+  - `Scanner sc = new Scanner(System.in);`
+  - `Scanner sc = new Scanner("i love u");`
+- 调用 Scanner 类的相关方法，获取指定类型的变量
+  - sc 对象调用 `next()` 方法依此返回 s 的字符序列中的单词
+  - 如果最后一个单词已被 `next()` 方法返回，sc 调用 `hasNext()` 将返回 false，否则返回 true 
+  - sc 可以调用 `nextDouble()`，`nextInt()` 方法将数字型单词转换为 int 或 double 数据返回
+  -  scanner 默认使用「空格」做分隔标记，通过 `sc.useDelimiter(正则表达式)` 将正则表达式作为分隔标记
+
+```java
+import java.util.Scanner;
+CLass ScannerTest{
+    public static void main(String[] args){
+        Scanner scan = new Scanner(System.in);
+        int num = scan.nextInt();
+        double db = scan.nextDouble();
+        String str = scan.next();
+        boolean bool = scan.nextBoolean();
+        System.out.println(num);
+        char c = str.charAt(0);
+
+        Scanner sc = new Scanner("i;love:u");
+        sc.useDelimiter(":");
+        System.out.println(sc.next()); // i;love
+}
+}   
+```
+:::info
+对于 char 型的获取，Scanner 没有提供相关的方法，只能获取一个字符串  
+将字符串提取出 char 字符  
+如果输入的数据类型与要求的不匹配时，会报异常 `InputMismatchException`
+:::
+
+:::info
+StringTokenizer 类和 Scanner 类都可用于分解字符序列中的单词，StringTokenizer 类把分解出来的单词全部存入对象实体中，
+Scanner 仅仅存放怎样获取单词的分隔标记  
+- StringTokenizer 更快的获取单词，占用较多内存，对象一诞生就可知道单词的数目
+- Scanner 类节省更多内存空间，不能立刻知道单词数目，必须一个一个取出
+:::
   
 
