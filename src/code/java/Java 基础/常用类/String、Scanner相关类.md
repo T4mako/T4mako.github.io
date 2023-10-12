@@ -170,42 +170,48 @@ byte 到 String：调用 String 的构造器
 
 ## 2、StringBuffer、StringBuilder
 
-### 1、String，StringBuffer，StringBuilder三者的异同
+### 1、String，StringBuffer，StringBuilder 三者的异同
 
-String：不可变的字符序列；底层使用char[]存储(jdk1.9之后用byte数组)
-StringBuffer：可变的字符序列：线程安全的，效率低；底层使用char[]存储(jdk1.9之后用byte数组)
-StringBuilder：可变的字符序列：jdk5.0新增，线程不安全的，效率高；底层使用char[]存储(jdk1.9之后用byte数组)
+- String：不可变的字符序列；底层使用 char[] 存储(jdk1.9 之后用 byte 数组)
+- StringBuffer：可变的字符序列，线程安全的，效率低；底层使用 char[] 存储(jdk1.9 之后用 byte 数组)
+- StringBuilder：可变的字符序列：jdk5.0 新增，线程不安全的，效率高；底层使用 char[] 存储(jdk1.9 之后用 byte 数组)
+
+StringBuffer 类的三个构造方法：
+- `StringBuffer()`：使用该构造方法时，分配给该对象实体的初始容量可以容纳 **16** 个字符，当存放的字符序列长度大于 16 时，实体容量自动增加
+- `StringBuffer(int size)`：分配指定容量，不够时自动增加
+- `StringBuffer(String s)`：初始长度为 s 的长度加 16 ，不够时自动增加
+
+StringBuffer 扩容机制：默认情况下，扩容为原来容量的「2 倍 + 2」，同时将原有数组的元素复制到新数组中
 
 源码分析：
 
 ```java
-String str = new String();//new char[0];
-String str1 = new String("abc");//new char[]{'a','b','c'};
+String str = new String();// new char[0];
+String str1 = new String("abc");// new char[]{'a','b','c'};
 
-StringBuffer sb1 = new StringBuffer();//new char[16];底层创建了一个长度为16的数组
+StringBuffer sb1 = new StringBuffer();//new char[16];底层创建了一个长度为 16 的数组
 sb1.append('a');//value[0]='a';
 sb1.append('b');//value[1]='b';
 
-StringBuffer sb2 = new StringBuffer("abc")//char[] value = new char["abc".length()+16]
-//问题1：System.out.println(sb2.length())//3
-//问题2：扩容问题：如果要添加的数据底层数组盛不下，那需要扩容底层数组
-//默认情况下，扩容为原来容量的2倍+2，同时将原有数组的元素复制到新数组中
+StringBuffer sb2 = new StringBuffer("abc")// char[] value = new char["abc".length() + 16]
+
 ```
 
-**开发中建议使用StringBuffer**
+### 2、StringBuffer 类的常用方法
 
-### 2、StringBuffer类的常用方法
+| 方法 | 含义 |
+|-|-|
+| `StringBuffer append()` | 用于进行字符串拼接，参数可以是多种类型 |
+| `char charAt(int n`) | 得到第 n 个字符 |
+| `char setCharAt(int n,setCharAt(int n,char ch))` | 改变第 n 个字符 |
+| `StringBuffer insert(int index,String str)` | 将 str 插入 index 位置 |
+| `StringBuffer reverse()` | 反转字符串 |
+| `StringBuffer delete(int startIndex,int endIndex)` | 删除一个字符序列，从 startIndex 到 endIndex - 1 |
+| `StringBuffer replace(int start, int end, String str)` | 把 [start,end) 位置替换为str |
+| `public int length()` | 返回 stringBuffer 的长度 |
+| `public String substring(int start,int end)` | 返回一个从 start 开始到 end 索引结束的左闭右开区间的子字符串 |
+| `public int indexOf(String str)` | 返回 str 所在的位置 |
 
-StringBuffer append(xxx)：提供了很多的append()方法， 用于进行字符串拼接
-StringBuffer delete(int start,int end)：删除指定位置的内容
-StringBuffer replace(int start, int end, String str)：把[start,end)位置替换为str
-StringBuffer insert(int offset, xxx)：在指定位置插入xxx
-StringBuffer reverse() ：把当前字符序列逆转  
-public int indexOf(String str)
-public String substring(int start,int end)：返回一个从start开始到end索引结束的**左闭右开区间**的子字符串
-public int length()
-public char charAt(int n)
-public void setCharAt(int n ,char ch)  
 
 ```java
 @Test
@@ -222,14 +228,16 @@ public void setCharAt(int n ,char ch)
     }
 ```
 
-总结：
-增：append()
-删：delete(int start,int end)
-改：setCharAt(int n ,char ch)  
-查：charAt(int n )
-插： insert(int offset, xxx)
-长度：length()
-遍历：for()+charAt()
+:::info
+总结：  
+增：append()  
+删：delete(int start,int end)  
+改：setCharAt(int n ,char ch)    
+查：charAt(int n )  
+插： insert(int offset, xxx)  
+长度：length()  
+遍历：for()+charAt()  
+:::
 
 ## 3、 StringTokenizer 类
 
