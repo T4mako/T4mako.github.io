@@ -41,7 +41,7 @@ export default hopeTheme({
   navbar,
 
   // sidebar
-  sidebar,
+  sidebar: false,
 
   // sidebarSorter: ["readme","date-desc", "order", "title", "filename"],
 
