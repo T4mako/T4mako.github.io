@@ -6,8 +6,8 @@
     <link>https://T4mako.github.io/</link>
     <description>T4mako</description>
     <language>zh-CN</language>
-    <pubDate>Tue, 24 Oct 2023 15:08:25 GMT</pubDate>
-    <lastBuildDate>Tue, 24 Oct 2023 15:08:25 GMT</lastBuildDate>
+    <pubDate>Tue, 24 Oct 2023 15:28:00 GMT</pubDate>
+    <lastBuildDate>Tue, 24 Oct 2023 15:28:00 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>算法</category>
@@ -18102,7 +18102,7 @@ CFG预设（Purp1e制作）<br>
 <li><a href="/code/java/Java%20%E5%9F%BA%E7%A1%80/%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/9%E3%80%81%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86.html" target="blank">异常处理</a></li>
 <li><a href="/code/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%AE%BE%E8%AE%A1%E5%9F%BA%E6%9C%AC%E5%8E%9F%E5%88%99.html" target="blank">面向对象设计基本原则</a></li>
 <li><a href="/code/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F.html" target="blank">正则表达式</a></li>
-<li><a href="/code/java/Java%20%E5%9F%BA%E7%A1%80/%E5%B8%B8%E7%94%A8%E7%B1%BB/" target="blank">常用类</a>
+<li><a href="/code/java/Java%20%E5%9F%BA%E7%A1%80/%E5%B8%B8%E7%94%A8%E7%B1%BB/" target="blank">常用类</a>（主看下面两篇即可）
 <ul>
 <li><a href="/code/java/Java%20%E5%9F%BA%E7%A1%80/%E5%B8%B8%E7%94%A8%E7%B1%BB/String%E3%80%81Scanner%E7%9B%B8%E5%85%B3%E7%B1%BB.html" target="blank">Stirng、Scanner 相关</a></li>
 <li><a href="/code/java/Java%20%E5%9F%BA%E7%A1%80/%E5%B8%B8%E7%94%A8%E7%B1%BB/Pattern%20%E4%B8%8E%20Matcher%20%E7%B1%BB.html" target="blank">Pattern 与 Matcher 类</a></li>
@@ -18113,6 +18113,12 @@ CFG预设（Purp1e制作）<br>
 <li><a href="/code/java/Java%20%E5%9F%BA%E7%A1%80/%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/13%E3%80%81%E9%9B%86%E5%90%88.html" target="blank">集合</a></li>
 <li><a href="/code/java/Java%20%E5%9F%BA%E7%A1%80/%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/10%E3%80%81%E5%A4%9A%E7%BA%BF%E7%A8%8B.html" target="blank">Java 多线程</a></li>
 <li><a href="/code/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html" target="blank">设计模式</a></li>
+<li><a href="/code/java/JVM.html" target="blank">Jvm 相关（没写）</a>
+<ul>
+<li>垃圾回收器与内存分配策略</li>
+<li>虚拟机类加载机制</li>
+</ul>
+</li>
 </ol>
 <h2> 算法设计与分析</h2>
 <p>没写呢</p>
