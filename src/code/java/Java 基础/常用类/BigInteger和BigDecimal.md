@@ -6,7 +6,7 @@ tag:
     - 基础语法
     - java
 ---
-# BigInteger和BigDecimal类
+# BigInteger 和 BigDecimal 类
 :::info
 BigDecimal类使用频繁
 :::

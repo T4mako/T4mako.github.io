@@ -6,7 +6,7 @@ tag:
     - 基础语法
     - java
 ---
-# Math类
+# Math 类
 
 ## 1、Math.random()
 

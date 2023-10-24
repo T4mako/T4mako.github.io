@@ -7,7 +7,7 @@ tag:
     - java
 ---
 
-# Collections工具类  
+# Collections 工具类  
 
 `Collections` 是一个操作 `Set`、 `List` 和 `Map` 等集合的工具类  
 :::info

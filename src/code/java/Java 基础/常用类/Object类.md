@@ -6,7 +6,7 @@ tag:
     - 基础语法
     - java
 ---
-# Object类
+# Object 类
 
 java.lang.object类
 
