@@ -6,8 +6,8 @@
     <link>https://T4mako.github.io/</link>
     <description>T4mako</description>
     <language>zh-CN</language>
-    <pubDate>Sun, 22 Oct 2023 15:40:05 GMT</pubDate>
-    <lastBuildDate>Sun, 22 Oct 2023 15:40:05 GMT</lastBuildDate>
+    <pubDate>Tue, 24 Oct 2023 15:08:25 GMT</pubDate>
+    <lastBuildDate>Tue, 24 Oct 2023 15:08:25 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>算法</category>
@@ -13033,24 +13033,57 @@ Markdown 的目标是实现「易读易写」</p>
 <li>将 FactoryImpl 对象赋给 Factory 的引用</li>
 <li>调用 FactoryImpl 对象重写的工厂方法返回 ProductImpl 对象赋值给 Product 的引用</li>
 </ul>
-<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 抽象工厂模式</h2>
-<p>抽象工厂模式和工厂方法不太一样，它要解决的问题比较复杂，不但工厂是抽象的，产品是抽象的，而且有多个产品需要创建，因此，这个抽象工厂会对应到多个实际工厂，每个实际工厂负责创建多个实际产品</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>其他参考：<a href="https://www.runoob.com/design-pattern/factory-pattern.html" target="_blank" rel="noopener noreferrer">https://www.runoob.com/design-pattern/factory-pattern.html</a></p>
+<h2> 抽象工厂模式</h2>
+<p>抽象工厂模式（Abstract Factory Pattern）是围绕一个超级工厂创建其他工厂<br>
+该超级工厂又称为其他工厂的工厂。它提供了一种创建对象的最佳方式</p>
+<p>在抽象工厂模式中，接口是负责创建一个相关对象的工厂，不需要显式指定它们的类。每个生成的工厂都能按照工厂模式提供对象。</p>
+<p>抽象工厂模式提供了一种创建一系列相关或相互依赖对象的接口，而无需指定具体实现类。通过使用抽象工厂模式，可以将客户端与具体产品的创建过程解耦，使得客户端可以通过工厂接口来创建一族产品。</p>
+<p>抽象工厂模式包含以下几个核心角色：</p>
+<ul>
+<li>抽象产品（Abstract Product）：定义了一组产品对象的共同接口或抽象类，描述了产品对象的公共方法。</li>
+<li>具体产品（Concrete Product）：实现了抽象产品接口，定义了具体产品的特定行为和属性。</li>
+<li>抽象工厂（Abstract Factory）：声明了一组用于创建产品对象的方法，每个方法对应一种产品类型。抽象工厂可以是接口或抽象类。</li>
+<li>具体工厂（Concrete Factory）：实现了抽象工厂接口，负责创建具体产品对象的实例。</li>
+</ul>
+<p>抽象工厂模式通常涉及一族相关的产品，每个具体工厂类负责创建该族中的具体产品。客户端通过使用抽象工厂接口来创建产品对象，而不需要直接使用具体产品的实现类。</p>
+<p>案例：创建生产带有颜色与形状的工厂</p>
+<ol>
+<li>抽象产品 Shape 和 Color 接口：</li>
+</ol>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ol start="2">
+<li>Shape 与 Color 的具体产品：</li>
+</ol>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ol start="3">
+<li>为 Color 和 Shape 对象创建抽象类 AbstractFactory 来获取工厂<br>
+AbstractFactory 抽象工厂声明了多个创建产品对象的方法，每个方法对应一种产品类型</li>
+</ol>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ol start="4">
+<li>创建扩展了 AbstractFactory 的具体工厂 ShapeFactory、ColorFactory，基于给定的信息生成实体类的对象</li>
+</ol>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ol start="5">
+<li>创建一个工厂创造器/生成器类，通过传递形状或颜色信息来获取工厂。</li>
+</ol>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ol start="6">
+<li>使用 FactoryProducer 来获取 AbstractFactory，通过传递类型信息来获取实体类的对象。</li>
+</ol>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>参考：<a href="https://www.runoob.com/design-pattern/abstract-factory-pattern.html" target="_blank" rel="noopener noreferrer">https://www.runoob.com/design-pattern/abstract-factory-pattern.html</a></p>
 <h2> 原型模式</h2>
 <p>原型模式，即 Prototype，用于创建重复的对象，同时又能保证性能。</p>
 <ul>
 <li>浅拷贝实现 Cloneable，重写 clone() 方法 或 手动添加 copy() 方法</li>
-<li>深拷贝是通过实现 Serializable 读取二进制流。</li>
+<li>深拷贝是通过实现 Serializable 读取二进制流或第三方 JSON 相关包实现</li>
 </ul>
 <p>通过实现 Cloneable 接口实现浅拷贝</p>
-<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>通过编写 copy() 方法实现浅拷贝</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>通过编写 copy() 方法实现浅拷贝</p>
 <div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>通过 Serializable 实现深拷贝</p>
-<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"></div></div>]]></content:encoded>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content:encoded>
     </item>
     <item>
-      <title>面向对象设计基本原则</title>
+      <title>面向对象设计基本原则（UML）</title>
       <link>https://T4mako.github.io/code/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%AE%BE%E8%AE%A1%E5%9F%BA%E6%9C%AC%E5%8E%9F%E5%88%99.html</link>
       <guid>https://T4mako.github.io/code/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%AE%BE%E8%AE%A1%E5%9F%BA%E6%9C%AC%E5%8E%9F%E5%88%99.html</guid>
-      <source url="https://T4mako.github.io/rss.xml">面向对象设计基本原则</source>
+      <source url="https://T4mako.github.io/rss.xml">面向对象设计基本原则（UML）</source>
       <description>UML 类图简介 UML（Unified Modeling Language） 类图（Class Diagram）属于结构图（静态图），常用于被描述一个系统的静态结构。 UML 类图包含 类、接口、泛化（继承）、实现、组合、聚合、关联、依赖关系 1. 类的 UML 图 类图分为三层结构： 第一层：名字层，如果类的名字是斜体，则这个类是抽象类 第二层：变量层（属性层），格式： 变量名:类型 第三层：方法层，格式：方法名(参数列表)</description>
       <category>基础知识</category>
       <content:encoded><![CDATA[<h2> UML 类图简介</h2>
@@ -18060,6 +18093,7 @@ CFG预设（Purp1e制作）<br>
 <ol>
 <li><a href="/code/java/Java%20%E5%9F%BA%E7%A1%80/%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/1%E3%80%81%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5.html" target="blank">基础概念</a></li>
 <li><a href="/code/java/Java%20%E5%9F%BA%E7%A1%80/%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/2%E3%80%81%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B.html" target="blank">数据类型</a></li>
+<li><a href="/code/java/Java%20%E5%9F%BA%E7%A1%80/%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/19%E3%80%81%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA.html" target="blank">格式输入输出</a></li>
 <li><a href="/code/java/Java%20%E5%9F%BA%E7%A1%80/%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/5%E3%80%81%E6%95%B0%E7%BB%84.html" target="blank">数组</a></li>
 <li><a href="/code/java/Java%20%E5%9F%BA%E7%A1%80/%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/11%E3%80%81%E6%9E%9A%E4%B8%BE%E7%B1%BB.html" target="blank">枚举类</a></li>
 <li><a href="/code/java/Java%20%E5%9F%BA%E7%A1%80/%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/3%E3%80%81%E8%BF%90%E7%AE%97%E7%AC%A6.html" target="blank">运算符</a></li>
