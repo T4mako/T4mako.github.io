@@ -6,8 +6,8 @@
     <link>https://T4mako.github.io/</link>
     <description>T4mako</description>
     <language>zh-CN</language>
-    <pubDate>Wed, 25 Oct 2023 15:29:16 GMT</pubDate>
-    <lastBuildDate>Wed, 25 Oct 2023 15:29:16 GMT</lastBuildDate>
+    <pubDate>Fri, 27 Oct 2023 15:15:20 GMT</pubDate>
+    <lastBuildDate>Fri, 27 Oct 2023 15:15:20 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>算法</category>
@@ -18089,7 +18089,12 @@ CFG预设（Purp1e制作）<br>
       <description>苏州科技大学 2024 年硕士研究生入学初试考试程序设计（java）</description>
       <content:encoded><![CDATA[<p>苏州科技大学 2024 年硕士研究生入学初试考试程序设计（java）</p>
 <!-- more -->
-<h2> 程序设计</h2>
+<h2> 考纲</h2>
+<p><a href="/life/%E8%80%83%E8%AF%95/%E8%80%83%E7%BA%B2.html" target="blank">考纲</a></p>
+<h2> 必知必会</h2>
+<h2> 算法</h2>
+<p><a href="/life/%E8%80%83%E8%AF%95/%E7%AE%97%E6%B3%95.html" target="blank">算法</a></p>
+<h3> 基础概念</h3>
 <ol>
 <li><a href="/code/java/Java%20%E5%9F%BA%E7%A1%80/%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/1%E3%80%81%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5.html" target="blank">基础概念</a></li>
 <li><a href="/code/java/Java%20%E5%9F%BA%E7%A1%80/%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/2%E3%80%81%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B.html" target="blank">数据类型</a></li>
@@ -18120,8 +18125,140 @@ CFG预设（Purp1e制作）<br>
 </ul>
 </li>
 </ol>
-<h2> 算法设计与分析</h2>
-<p>没写呢</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>算法</title>
+      <link>https://T4mako.github.io/life/%E8%80%83%E8%AF%95/%E7%AE%97%E6%B3%95.html</link>
+      <guid>https://T4mako.github.io/life/%E8%80%83%E8%AF%95/%E7%AE%97%E6%B3%95.html</guid>
+      <source url="https://T4mako.github.io/rss.xml">算法</source>
+      <description>算法 算法性能度量方法 时间复杂度的判别、动态规划状态转移方程 常见问题 阶乘、素数、完数、回文数、最小公约数、最小公倍数 线性表 线性表有「顺序存储结构 ArrayList」和「链式存储结构 LinkedList」 顺序表和链表的区别及其优缺点： 顺序表： 原理：顺序表存储是将数据元素放到一块连续的内存存储空间，相邻数据元素的存放地址也相邻（逻辑与物理统一）。 优点： 空间利用率高（局部性原理，连续存放，命中率高） 存取速度高效，可以随机存取，通过下标来直接存储 缺点： 插入和删除比较慢，比如：插入或者删除一个元素时，整个表需要遍历移动元素来重新排一次顺序 不可以增长长度，有空间限制，当需要存取的元素个数可能多于顺序表的元素个数时，会出现「溢出」问题，当元素个数远少于预先分配的空间时，空间浪费巨大 顺序表的存储密度为 1（存储密度 = 节点中数据占用的存储量 / 整个节点占用存储量） 时间性能 :查找 O(1)，插入和删除 O(n)</description>
+      <content:encoded><![CDATA[<h1> 算法</h1>
+<h2> 算法性能度量方法</h2>
+<p>时间复杂度的判别、动态规划状态转移方程</p>
+<h2> 常见问题</h2>
+<p>阶乘、素数、完数、回文数、最小公约数、最小公倍数</p>
+<h2> 线性表</h2>
+<p>线性表有「顺序存储结构 ArrayList」和「链式存储结构 LinkedList」</p>
+<p>顺序表和链表的区别及其优缺点：<br>
+顺序表：</p>
+<ul>
+<li>原理：顺序表存储是将数据元素放到一块连续的内存存储空间，相邻数据元素的存放地址也相邻（逻辑与物理统一）。</li>
+<li>优点：
+<ul>
+<li>空间利用率高（局部性原理，连续存放，命中率高）</li>
+<li>存取速度高效，可以随机存取，通过下标来直接存储</li>
+</ul>
+</li>
+<li>缺点：
+<ul>
+<li>插入和删除比较慢，比如：插入或者删除一个元素时，整个表需要遍历移动元素来重新排一次顺序</li>
+<li>不可以增长长度，有空间限制，当需要存取的元素个数可能多于顺序表的元素个数时，会出现「溢出」问题，当元素个数远少于预先分配的空间时，空间浪费巨大</li>
+<li>顺序表的存储密度为 1（存储密度 = 节点中数据占用的存储量 / 整个节点占用存储量）</li>
+</ul>
+</li>
+<li>时间性能 :查找 O(1)，插入和删除 O(n)</li>
+</ul>
+<p>链表：</p>
+<ul>
+<li>原理：链表存储是在程序运行过程中动态的分配空间，只要存储器还有空间，就不会发生存储溢出问题，相邻数据元素可随意存放，但所占存储空间分两部分，一部分存放结点值，另一部分存放表示结点关系间的指针</li>
+<li>优点：
+<ul>
+<li>存取某个元素速度慢</li>
+<li>插入和删除速度快，保留原有的物理顺序，比如：插入或者删除一个元素时，只需要改变指针指向即可</li>
+<li>没有空间限制，存储元素的个数无上限，基本只与内存空间大小有关</li>
+</ul>
+</li>
+<li>缺点：
+<ul>
+<li>占用额外的空间以存储指针</li>
+<li>链表的存储密度小于 1</li>
+<li>查找速度慢，因为查找时，需要从开始节点一个一个节点去查找元素访问</li>
+</ul>
+</li>
+<li>时间性能 :查找 O(n)，插入和删除 O(1)</li>
+</ul>
+<p>线性表常见算法题：</p>
+<h3> 链表题</h3>
+<p><a href="https://t4mako.github.io/tag/%E9%93%BE%E8%A1%A8/" target="_blank" rel="noopener noreferrer">链表合集</a></p>
+<h3> 数组题</h3>
+<p><a href="https://t4mako.github.io/tag/%E6%95%B0%E7%BB%84/" target="_blank" rel="noopener noreferrer">数组合集</a></p>
+<h2> 排序</h2>
+<h2> 查找</h2>
+<h2> 递归与分支</h2>
+<h2> 动态规划</h2>
+<h2> 贪心算法</h2>
+<h2> 回溯法</h2>
+<h2> 分支限界法</h2>
+]]></content:encoded>
+    </item>
+    <item>
+      <title></title>
+      <link>https://T4mako.github.io/life/%E8%80%83%E8%AF%95/%E8%80%83%E7%BA%B2.html</link>
+      <guid>https://T4mako.github.io/life/%E8%80%83%E8%AF%95/%E8%80%83%E7%BA%B2.html</guid>
+      <source url="https://T4mako.github.io/rss.xml"></source>
+      <description>一、考试的基本要求 　　《程序设计》考试大纲适用于报考计算机科学与技术专业硕士研究生的入学考试。其主要目的是测试考生对面向算法基础知识和对象程序设计知识的理解、掌握和熟练程度及面向对象程序设计能力。要求考生掌握计算机科学与技术的基础知识，熟悉算法分析与设计的基本理论、掌握JAVA面向对象程序设计的基本方法, 具有较强的抽象思维能力、逻辑推理能力和实际应用中解决问题的能力。 二、考试内容和考试要求 1、算法语言基础知识 （1）程序设计语言发展历史、背景和特点； （2）Java面向对象编程特点、面向对象程序设计（OOP）的基本概念，Java语言编程规范； （3）结构化程序程序设计与面向对象程序设计； （4）数据类型、运算符与表达式、格式输入输出； （5）程序的控制结构：顺序结构、选择结构、循环结构及使用； （6）数组：数组的基本概念、一维数组的定义、初始化及应用；二维数组的定义、初始化及应用。</description>
+      <content:encoded><![CDATA[<p>一、考试的基本要求<br>
+　　《程序设计》考试大纲适用于报考计算机科学与技术专业硕士研究生的入学考试。其主要目的是测试考生对面向算法基础知识和对象程序设计知识的理解、掌握和熟练程度及面向对象程序设计能力。要求考生掌握计算机科学与技术的基础知识，熟悉算法分析与设计的基本理论、掌握JAVA面向对象程序设计的基本方法, 具有较强的抽象思维能力、逻辑推理能力和实际应用中解决问题的能力。</p>
+<p>二、考试内容和考试要求<br>
+1、算法语言基础知识<br>
+（1）程序设计语言发展历史、背景和特点；<br>
+（2）Java面向对象编程特点、面向对象程序设计（OOP）的基本概念，Java语言编程规范；<br>
+（3）结构化程序程序设计与面向对象程序设计；<br>
+（4）数据类型、运算符与表达式、格式输入输出；<br>
+（5）程序的控制结构：顺序结构、选择结构、循环结构及使用；<br>
+（6）数组：数组的基本概念、一维数组的定义、初始化及应用；二维数组的定义、初始化及应用。</p>
+<p>2、面向对象程序设计基础<br>
+（1）面向对象程序设计的概念；<br>
+（2）类的定义；<br>
+（3）对象及引用；<br>
+（4）继承与多态；<br>
+（5）抽象与接口；<br>
+（6）内部类与匿名类；<br>
+（7）自动装箱拆箱；<br>
+（8）异常处理与异常类；</p>
+<p>3、函数（方法）及模块化程序设计<br>
+（1）模块化程序设计的思想；<br>
+（2）函数的定义和调用；<br>
+（3）实虚参数的传送、变量的作用域和生存时间；<br>
+（4）函数（方法）递归与迭代。</p>
+<p>4、面向对象编程<br>
+（1）面向对象设计的基本原则；<br>
+（2）类与类关系、UML类图；<br>
+（3）几种常见的设计模式及应用：单例模式、工厂方法、抽象工厂、原型；</p>
+<p>5、字符和字符串<br>
+（1）String类、StringBuffer、StringTokenizer类；<br>
+（2）正则表达式、Pattern类和Matcher类。</p>
+<p>6、多线程<br>
+（1）多线程的概念，Java中的线程；<br>
+（2）线程的创建、调度与线程控制；<br>
+（3）线程间通信，线程的互斥与同步；<br>
+（4）多线程应用；</p>
+<p>7、文件及IO流<br>
+（1）Java的基本输入输出，IO流的类层次；<br>
+（2）节点流与过滤流（InputStream/ OutputStream, BufferedInputStream/ BufferedOutputStream, DataInputStream/ DataOutputStream, FileInputStream/ FileOutputStream)；<br>
+（3）Reader和Writer及其子类；<br>
+（4）文件类File及文件的处理，随机文件的处理；<br>
+（5）对象系列化与反系列化；</p>
+<p>8、Java的常用数据结构<br>
+（1）Java集合框架；<br>
+（2）List、Set、Map、枚举及ArrayList、TreeSet、HashMap、Vector等常用数据结构的使用；<br>
+（3）数据排序的几种实现方法；<br>
+（4）泛型及应用；</p>
+<p>9、反射及JAVA虚拟机基本原理<br>
+（1）反射概念、作用；<br>
+（2）反射机制的应用、应用场景；<br>
+（3）垃圾回收器与内存分配策略；<br>
+（4）虚拟机类加载机制；</p>
+<p>10、应用设计与开发<br>
+（1）算法性能度量方法；<br>
+（2）常用数据结构（如线性表）的应用；<br>
+（3）运用面向对象程序设计方法分析典型应用场景中的问题，结合当前成熟的新技术，提出解决相应问题的方案（方法），并加以实现。如电子商务、视频监控、工业控制应用等。</p>
+<p>三、考试基本题型和考试方式<br>
+主要题型可能有：<br>
+(1)基本概念题（填空、选择填空题、程序填空或程序改错）（50~70分）<br>
+(2)算法分析设计、面向对象程序设计题(80~100分)<br>
+考试方式：考试时间180分钟，满分：150分。答题方式为笔试、闭卷。</p>
 ]]></content:encoded>
     </item>
     <item>
@@ -18498,26 +18635,6 @@ CFG预设（Purp1e制作）<br>
       <description>058_最后一个单词的长度</description>
       <category>算法</category>
       <content:encoded><![CDATA[<h1> 058_最后一个单词的长度</h1>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>066_加一</title>
-      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_066_%E5%8A%A0%E4%B8%80.html</link>
-      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_066_%E5%8A%A0%E4%B8%80.html</guid>
-      <source url="https://T4mako.github.io/rss.xml">066_加一</source>
-      <description>066_加一</description>
-      <category>算法</category>
-      <content:encoded><![CDATA[<h1> 066_加一</h1>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>067_二进制求和</title>
-      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_067_%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%B1%82%E5%92%8C.html</link>
-      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_067_%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%B1%82%E5%92%8C.html</guid>
-      <source url="https://T4mako.github.io/rss.xml">067_二进制求和</source>
-      <description>067_二进制求和</description>
-      <category>算法</category>
-      <content:encoded><![CDATA[<h1> 067_二进制求和</h1>
 ]]></content:encoded>
     </item>
   </channel>
