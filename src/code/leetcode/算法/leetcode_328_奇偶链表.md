@@ -4,7 +4,6 @@ category:
   - 算法
 tag: 
   - 链表
-article: false
 ---
 
 # 735. 行星碰撞
