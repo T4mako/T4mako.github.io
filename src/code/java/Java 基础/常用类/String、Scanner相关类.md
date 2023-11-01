@@ -19,6 +19,10 @@ String 字符串，使用一对「""」来表示
 - String 内部定义了 `final char[] value` 用于存储字符串数据
 - String 代表不可变的字符序列，简称「不可变性」
 
+:::danger
+注意使用 String 相关方法时，用于 String 是不可变类，因此需返回新的 String 类型变量得到操作后的结果
+:::
+
 
 :::info
 String 不可变的体现：
@@ -202,12 +206,12 @@ StringBuffer sb2 = new StringBuffer("abc")// char[] value = new char["abc".lengt
 | 方法 | 含义 |
 |-|-|
 | `StringBuffer append()` | 用于进行字符串拼接，参数可以是多种类型 |
-| `char charAt(int n`) | 得到第 n 个字符 |
+| `char charAt(int n)` | 得到第 n 个字符 |
 | `char setCharAt(int n,setCharAt(int n,char ch))` | 改变第 n 个字符 |
 | `StringBuffer insert(int index,String str)` | 将 str 插入 index 位置 |
 | `StringBuffer reverse()` | 反转字符串 |
 | `StringBuffer delete(int startIndex,int endIndex)` | 删除一个字符序列，从 startIndex 到 endIndex - 1 |
-| `StringBuffer replace(int start, int end, String str)` | 把 [start,end) 位置替换为str |
+| `StringBuffer replace(int start, int end, String str)` | 把 `[start,end)` 位置替换为str |
 | `public int length()` | 返回 stringBuffer 的长度 |
 | `public String substring(int start,int end)` | 返回一个从 start 开始到 end 索引结束的左闭右开区间的子字符串 |
 | `public int indexOf(String str)` | 返回 str 所在的位置 |
@@ -247,7 +251,7 @@ StringTokenizer 类在 java.util 包中
 
 构造方法：
 - `StringTokenizer(String str)`：为字符串 str 构造一个 tokenizer 对象
-- `StringTokenizer(String str,String delim)`：为字符串 str 构造一个tokenizer 对象，分隔标记为 delim 中的字符
+- `StringTokenizer(String str,String delim)`：为字符串 str 构造一个 tokenizer 对象，分隔标记为 delim 中的字符
 
 常用方法：
 - `int  countTokens()`：返回 tokenizer 对象所含单独单词个数
