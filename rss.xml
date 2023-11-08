@@ -6,11 +6,12 @@
     <link>https://T4mako.github.io/</link>
     <description>T4mako</description>
     <language>zh-CN</language>
-    <pubDate>Tue, 07 Nov 2023 15:09:25 GMT</pubDate>
-    <lastBuildDate>Tue, 07 Nov 2023 15:09:25 GMT</lastBuildDate>
+    <pubDate>Wed, 08 Nov 2023 14:13:42 GMT</pubDate>
+    <lastBuildDate>Wed, 08 Nov 2023 14:13:42 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>算法</category>
+    <category>多线程</category>
     <category>java</category>
     <category>MySQL</category>
     <category>SQL</category>
@@ -32,6 +33,22 @@
       <pubDate>Fri, 03 Nov 2023 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[<h1> 160. 相交链表</h1>
 ]]></content:encoded>
+    </item>
+    <item>
+      <title>多线程练习</title>
+      <link>https://T4mako.github.io/code/leetcode/%E5%A4%9A%E7%BA%BF%E7%A8%8B/%E5%A4%9A%E7%BA%BF%E7%A8%8B.html</link>
+      <guid>https://T4mako.github.io/code/leetcode/%E5%A4%9A%E7%BA%BF%E7%A8%8B/%E5%A4%9A%E7%BA%BF%E7%A8%8B.html</guid>
+      <source url="https://T4mako.github.io/rss.xml">多线程练习</source>
+      <description>多线程练习 leetcode 1114. 按序打印 题目：https://leetcode.cn/problems/print-in-order/description/ 方法一：使用 while 循环 class Foo { private AtomicInteger firstJobDone = new AtomicInteger(0); private AtomicInteger secondJobDone = new AtomicInteger(0); public Foo() {} public void first(Runnable printFirst) throws InterruptedException { // printFirst.run() outputs &amp;quot;first&amp;quot;. printFirst.run(); // mark the first job as done, by increasing its count. firstJobDone.incrementAndGet(); } public void second(Runnable printSecond) throws InterruptedException { while (firstJobDone.get() != 1) { // waiting for the first job to be done. } // printSecond.run() outputs &amp;quot;second&amp;quot;. printSecond.run(); // mark the second as done, by increasing its count. secondJobDone.incrementAndGet(); } public void third(Runnable printThird) throws InterruptedException { while (secondJobDone.get() != 1) { // waiting for the second job to be done. } // printThird.run() outputs &amp;quot;third&amp;quot;. printThird.run(); } }</description>
+      <category>多线程</category>
+      <pubDate>Thu, 02 Nov 2023 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<h1> 多线程练习</h1>
+<h3> leetcode 1114. 按序打印</h3>
+<p>题目：<a href="https://leetcode.cn/problems/print-in-order/description/" target="_blank" rel="noopener noreferrer">https://leetcode.cn/problems/print-in-order/description/</a></p>
+<h4> 方法一：使用 while 循环</h4>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4> 方法二：使用锁 + wait</h4>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4> 方法三：使用信号量</h4>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content:encoded>
     </item>
     <item>
       <title>141. 环形链表</title>
@@ -8680,11 +8697,12 @@ rollbackFor属性：需要设置一个字符串类型的全类名<br>
       <link>https://T4mako.github.io/code/leetcode/</link>
       <guid>https://T4mako.github.io/code/leetcode/</guid>
       <source url="https://T4mako.github.io/rss.xml">LeetCode 刷题</source>
-      <description>LeetCode 刷题 每日更新（大概） 算法 SQL</description>
+      <description>LeetCode 刷题 每日更新（大概） 算法 SQL 多线程</description>
       <content:encoded><![CDATA[<h1> LeetCode 刷题</h1>
 <p>每日更新（大概）</p>
 <p><a href="/code/leetcode/%E7%AE%97%E6%B3%95/" target="blank">算法</a><br>
-<a href="/code/leetcode/SQL/" target="blank">SQL</a></p>
+<a href="/code/leetcode/SQL/" target="blank">SQL</a><br>
+<a href="/code/leetcode/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" target="blank">多线程</a></p>
 ]]></content:encoded>
     </item>
     <item>
@@ -18324,16 +18342,26 @@ CFG预设（Purp1e制作）<br>
 ]]></content:encoded>
     </item>
     <item>
+      <title>Java 常见排序</title>
+      <link>https://T4mako.github.io/life/%E8%80%83%E8%AF%95/%E5%B8%B8%E8%A7%81%E6%8E%92%E5%BA%8F.html</link>
+      <guid>https://T4mako.github.io/life/%E8%80%83%E8%AF%95/%E5%B8%B8%E8%A7%81%E6%8E%92%E5%BA%8F.html</guid>
+      <source url="https://T4mako.github.io/rss.xml">Java 常见排序</source>
+      <description>Java 常见排序</description>
+      <content:encoded><![CDATA[<h1> Java 常见排序</h1>
+]]></content:encoded>
+    </item>
+    <item>
       <title>算法</title>
       <link>https://T4mako.github.io/life/%E8%80%83%E8%AF%95/%E7%AE%97%E6%B3%95.html</link>
       <guid>https://T4mako.github.io/life/%E8%80%83%E8%AF%95/%E7%AE%97%E6%B3%95.html</guid>
       <source url="https://T4mako.github.io/rss.xml">算法</source>
-      <description>算法 算法性能度量方法 时间复杂度的判别、动态规划状态转移方程 常见问题 阶乘、素数、完数、回文数、最小公约数、最小公倍数 线性表 线性表有「顺序存储结构 ArrayList」和「链式存储结构 LinkedList」 顺序表和链表的区别及其优缺点： 顺序表： 原理：顺序表存储是将数据元素放到一块连续的内存存储空间，相邻数据元素的存放地址也相邻（逻辑与物理统一）。 优点： 空间利用率高（局部性原理，连续存放，命中率高） 存取速度高效，可以随机存取，通过下标来直接存储 缺点： 插入和删除比较慢，比如：插入或者删除一个元素时，整个表需要遍历移动元素来重新排一次顺序 不可以增长长度，有空间限制，当需要存取的元素个数可能多于顺序表的元素个数时，会出现「溢出」问题，当元素个数远少于预先分配的空间时，空间浪费巨大 顺序表的存储密度为 1（存储密度 = 节点中数据占用的存储量 / 整个节点占用存储量） 时间性能 :查找 O(1)，插入和删除 O(n)</description>
+      <description>算法 算法性能度量方法 时间复杂度的判别、动态规划状态转移方程 常见问题 阶乘、素数、完数、回文数、最小公约数、最小公倍数 KMP算法、马拉车算法、Prim算法、Krusk算法、Dijkstra算法、Bellman-Ford算法 线性表 线性表有「顺序存储结构 ArrayList」和「链式存储结构 LinkedList」 顺序表和链表的区别及其优缺点： 顺序表： 原理：顺序表存储是将数据元素放到一块连续的内存存储空间，相邻数据元素的存放地址也相邻（逻辑与物理统一）。 优点： 空间利用率高（局部性原理，连续存放，命中率高） 存取速度高效，可以随机存取，通过下标来直接存储 缺点： 插入和删除比较慢，比如：插入或者删除一个元素时，整个表需要遍历移动元素来重新排一次顺序 不可以增长长度，有空间限制，当需要存取的元素个数可能多于顺序表的元素个数时，会出现「溢出」问题，当元素个数远少于预先分配的空间时，空间浪费巨大 顺序表的存储密度为 1（存储密度 = 节点中数据占用的存储量 / 整个节点占用存储量） 时间性能 :查找 O(1)，插入和删除 O(n)</description>
       <content:encoded><![CDATA[<h1> 算法</h1>
 <h2> 算法性能度量方法</h2>
 <p>时间复杂度的判别、动态规划状态转移方程</p>
 <h2> 常见问题</h2>
 <p>阶乘、素数、完数、回文数、最小公约数、最小公倍数</p>
+<p>KMP算法、马拉车算法、Prim算法、Krusk算法、Dijkstra算法、Bellman-Ford算法</p>
 <h2> 线性表</h2>
 <p>线性表有「顺序存储结构 ArrayList」和「链式存储结构 LinkedList」</p>
 <p>顺序表和链表的区别及其优缺点：<br>
@@ -18469,12 +18497,13 @@ CFG预设（Purp1e制作）<br>
       <link>https://T4mako.github.io/life/%E8%80%83%E8%AF%95/%E9%AB%98%E9%A2%91%E8%80%83%E7%82%B9.html</link>
       <guid>https://T4mako.github.io/life/%E8%80%83%E8%AF%95/%E9%AB%98%E9%A2%91%E8%80%83%E7%82%B9.html</guid>
       <source url="https://T4mako.github.io/rss.xml">817 必会</source>
-      <description>817 必会 uml 类图 正则表达式 随机文件读取 常见排序算法 常见线程同步问题 面向对象相关问题 JVM 相关问题</description>
+      <description>817 必会 uml 类图 正则表达式 随机文件读取 常见排序算法 进制转换 常见线程同步问题 面向对象相关问题 JVM 相关问题</description>
       <content:encoded><![CDATA[<h1> 817 必会</h1>
 <h2> uml 类图</h2>
 <h2> 正则表达式</h2>
 <h2> 随机文件读取</h2>
 <h2> 常见排序算法</h2>
+<h2> 进制转换</h2>
 <h2> 常见线程同步问题</h2>
 <h2> 面向对象相关问题</h2>
 <h2> JVM 相关问题</h2>
@@ -20927,6 +20956,12 @@ throw 后面跟的是错误信息<br>
 ]]></content:encoded>
     </item>
     <item>
+      <title>TypeScript 教程</title>
+      <link>https://T4mako.github.io/code/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/TypeScript/</link>
+      <guid>https://T4mako.github.io/code/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/TypeScript/</guid>
+      <source url="https://T4mako.github.io/rss.xml">TypeScript 教程</source>
+    </item>
+    <item>
       <title>012_整数转罗马数字</title>
       <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_012_%E6%95%B4%E6%95%B0%E8%BD%AC%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97.html</link>
       <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_012_%E6%95%B4%E6%95%B0%E8%BD%AC%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97.html</guid>
@@ -21104,36 +21139,6 @@ throw 后面跟的是错误信息<br>
       <description>029_两数相除</description>
       <category>算法</category>
       <content:encoded><![CDATA[<h1> 029_两数相除</h1>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>030_串联所有单词的子串</title>
-      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_030_%E4%B8%B2%E8%81%94%E6%89%80%E6%9C%89%E5%8D%95%E8%AF%8D%E7%9A%84%E5%AD%90%E4%B8%B2.html</link>
-      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_030_%E4%B8%B2%E8%81%94%E6%89%80%E6%9C%89%E5%8D%95%E8%AF%8D%E7%9A%84%E5%AD%90%E4%B8%B2.html</guid>
-      <source url="https://T4mako.github.io/rss.xml">030_串联所有单词的子串</source>
-      <description>030_串联所有单词的子串</description>
-      <category>算法</category>
-      <content:encoded><![CDATA[<h1> 030_串联所有单词的子串</h1>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>031_下一个排列</title>
-      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_031_%E4%B8%8B%E4%B8%80%E4%B8%AA%E6%8E%92%E5%88%97.html</link>
-      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_031_%E4%B8%8B%E4%B8%80%E4%B8%AA%E6%8E%92%E5%88%97.html</guid>
-      <source url="https://T4mako.github.io/rss.xml">031_下一个排列</source>
-      <description>031_下一个排列</description>
-      <category>算法</category>
-      <content:encoded><![CDATA[<h1> 031_下一个排列</h1>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>032_最长有效括号</title>
-      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_032_%E6%9C%80%E9%95%BF%E6%9C%89%E6%95%88%E6%8B%AC%E5%8F%B7.html</link>
-      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_032_%E6%9C%80%E9%95%BF%E6%9C%89%E6%95%88%E6%8B%AC%E5%8F%B7.html</guid>
-      <source url="https://T4mako.github.io/rss.xml">032_最长有效括号</source>
-      <description>032_最长有效括号</description>
-      <category>算法</category>
-      <content:encoded><![CDATA[<h1> 032_最长有效括号</h1>
 ]]></content:encoded>
     </item>
   </channel>
