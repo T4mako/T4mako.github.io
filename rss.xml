@@ -6,8 +6,8 @@
     <link>https://T4mako.github.io/</link>
     <description>T4mako</description>
     <language>zh-CN</language>
-    <pubDate>Wed, 08 Nov 2023 14:13:42 GMT</pubDate>
-    <lastBuildDate>Wed, 08 Nov 2023 14:13:42 GMT</lastBuildDate>
+    <pubDate>Fri, 10 Nov 2023 15:38:37 GMT</pubDate>
+    <lastBuildDate>Fri, 10 Nov 2023 15:38:37 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>算法</category>
@@ -18355,13 +18355,13 @@ CFG预设（Purp1e制作）<br>
       <link>https://T4mako.github.io/life/%E8%80%83%E8%AF%95/%E7%AE%97%E6%B3%95.html</link>
       <guid>https://T4mako.github.io/life/%E8%80%83%E8%AF%95/%E7%AE%97%E6%B3%95.html</guid>
       <source url="https://T4mako.github.io/rss.xml">算法</source>
-      <description>算法 算法性能度量方法 时间复杂度的判别、动态规划状态转移方程 常见问题 阶乘、素数、完数、回文数、最小公约数、最小公倍数 KMP算法、马拉车算法、Prim算法、Krusk算法、Dijkstra算法、Bellman-Ford算法 线性表 线性表有「顺序存储结构 ArrayList」和「链式存储结构 LinkedList」 顺序表和链表的区别及其优缺点： 顺序表： 原理：顺序表存储是将数据元素放到一块连续的内存存储空间，相邻数据元素的存放地址也相邻（逻辑与物理统一）。 优点： 空间利用率高（局部性原理，连续存放，命中率高） 存取速度高效，可以随机存取，通过下标来直接存储 缺点： 插入和删除比较慢，比如：插入或者删除一个元素时，整个表需要遍历移动元素来重新排一次顺序 不可以增长长度，有空间限制，当需要存取的元素个数可能多于顺序表的元素个数时，会出现「溢出」问题，当元素个数远少于预先分配的空间时，空间浪费巨大 顺序表的存储密度为 1（存储密度 = 节点中数据占用的存储量 / 整个节点占用存储量） 时间性能 :查找 O(1)，插入和删除 O(n)</description>
+      <description>算法 算法性能度量方法 时间复杂度的判别、动态规划状态转移方程 常见问题 阶乘、素数、完数、回文数、最小公约数、最小公倍数 KMP算法、马拉车算法、Prim算法、Krusk算法、Dijkstra算法、Bellman-Ford 算法 线性表 线性表有「顺序存储结构 ArrayList」和「链式存储结构 LinkedList」 顺序表和链表的区别及其优缺点： 顺序表： 原理：顺序表存储是将数据元素放到一块连续的内存存储空间，相邻数据元素的存放地址也相邻（逻辑与物理统一）。 优点： 空间利用率高（局部性原理，连续存放，命中率高） 存取速度高效，可以随机存取，通过下标来直接存储 缺点： 插入和删除比较慢，比如：插入或者删除一个元素时，整个表需要遍历移动元素来重新排一次顺序 不可以增长长度，有空间限制，当需要存取的元素个数可能多于顺序表的元素个数时，会出现「溢出」问题，当元素个数远少于预先分配的空间时，空间浪费巨大 顺序表的存储密度为 1（存储密度 = 节点中数据占用的存储量 / 整个节点占用存储量） 时间性能 :查找 O(1)，插入和删除 O(n)</description>
       <content:encoded><![CDATA[<h1> 算法</h1>
 <h2> 算法性能度量方法</h2>
 <p>时间复杂度的判别、动态规划状态转移方程</p>
 <h2> 常见问题</h2>
 <p>阶乘、素数、完数、回文数、最小公约数、最小公倍数</p>
-<p>KMP算法、马拉车算法、Prim算法、Krusk算法、Dijkstra算法、Bellman-Ford算法</p>
+<p>KMP算法、马拉车算法、Prim算法、Krusk算法、Dijkstra算法、Bellman-Ford 算法</p>
 <h2> 线性表</h2>
 <p>线性表有「顺序存储结构 ArrayList」和「链式存储结构 LinkedList」</p>
 <p>顺序表和链表的区别及其优缺点：<br>
@@ -18415,6 +18415,7 @@ CFG预设（Purp1e制作）<br>
 <h3> 数组题</h3>
 <p><a href="https://t4mako.github.io/tag/%E6%95%B0%E7%BB%84/" target="_blank" rel="noopener noreferrer">数组合集</a></p>
 <h2> 排序</h2>
+<p><a href="https://juejin.cn/post/6844903687932887053#heading-7" target="_blank" rel="noopener noreferrer">https://juejin.cn/post/6844903687932887053#heading-7</a></p>
 <h2> 查找</h2>
 <h2> 递归与分支</h2>
 <h2> 动态规划</h2>
@@ -20956,12 +20957,6 @@ throw 后面跟的是错误信息<br>
 ]]></content:encoded>
     </item>
     <item>
-      <title>TypeScript 教程</title>
-      <link>https://T4mako.github.io/code/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/TypeScript/</link>
-      <guid>https://T4mako.github.io/code/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/TypeScript/</guid>
-      <source url="https://T4mako.github.io/rss.xml">TypeScript 教程</source>
-    </item>
-    <item>
       <title>012_整数转罗马数字</title>
       <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_012_%E6%95%B4%E6%95%B0%E8%BD%AC%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97.html</link>
       <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_012_%E6%95%B4%E6%95%B0%E8%BD%AC%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97.html</guid>
@@ -21139,6 +21134,16 @@ throw 后面跟的是错误信息<br>
       <description>029_两数相除</description>
       <category>算法</category>
       <content:encoded><![CDATA[<h1> 029_两数相除</h1>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>030_串联所有单词的子串</title>
+      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_030_%E4%B8%B2%E8%81%94%E6%89%80%E6%9C%89%E5%8D%95%E8%AF%8D%E7%9A%84%E5%AD%90%E4%B8%B2.html</link>
+      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_030_%E4%B8%B2%E8%81%94%E6%89%80%E6%9C%89%E5%8D%95%E8%AF%8D%E7%9A%84%E5%AD%90%E4%B8%B2.html</guid>
+      <source url="https://T4mako.github.io/rss.xml">030_串联所有单词的子串</source>
+      <description>030_串联所有单词的子串</description>
+      <category>算法</category>
+      <content:encoded><![CDATA[<h1> 030_串联所有单词的子串</h1>
 ]]></content:encoded>
     </item>
   </channel>
