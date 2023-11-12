@@ -5,7 +5,6 @@ category:
 tag: 
   - 数组
   - 排序
-article: false
 ---
 
 # 056. 合并区间

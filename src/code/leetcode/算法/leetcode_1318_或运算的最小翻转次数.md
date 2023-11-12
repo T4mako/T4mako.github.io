@@ -5,7 +5,6 @@ category:
 tag: 
   - 位运算
   - 数组 
-article: true
 ---
 
 # 1318. 或运算的最小翻转次数

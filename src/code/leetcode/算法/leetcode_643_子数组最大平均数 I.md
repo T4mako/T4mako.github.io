@@ -5,7 +5,6 @@ category:
 tag: 
   - 数组
   - 滑动窗口
-article: false
 ---
 
 # 643_子数组最大平均数 I
