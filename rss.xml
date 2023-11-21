@@ -6,8 +6,8 @@
     <link>https://T4mako.github.io/</link>
     <description>T4mako</description>
     <language>zh-CN</language>
-    <pubDate>Mon, 20 Nov 2023 15:26:52 GMT</pubDate>
-    <lastBuildDate>Mon, 20 Nov 2023 15:26:52 GMT</lastBuildDate>
+    <pubDate>Tue, 21 Nov 2023 15:34:24 GMT</pubDate>
+    <lastBuildDate>Tue, 21 Nov 2023 15:34:24 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>算法</category>
@@ -19008,7 +19008,18 @@ CFG预设（Purp1e制作）<br>
 <h2> 考纲</h2>
 <p><a href="/life/%E8%80%83%E8%AF%95/%E8%80%83%E7%BA%B2.html" target="blank">考纲</a></p>
 <h2> 必知必会</h2>
-<p><a href="/life/%E8%80%83%E8%AF%95/%E9%AB%98%E9%A2%91%E8%80%83%E7%82%B9.html" target="blank">高频考点</a></p>
+<ul>
+<li>uml 类图</li>
+<li>正则表达式</li>
+<li>随机文件读取</li>
+<li>常见排序算法</li>
+<li>进制转换</li>
+<li>常见线程同步问题</li>
+<li>面向对象三大特性、面向过程优劣等相关问题</li>
+<li>JVM 相关问题</li>
+<li><a href="/life/%E8%80%83%E8%AF%95/java%E5%AF%B9csv%E6%96%87%E4%BB%B6%E7%9A%84%E5%A4%84%E7%90%86.html" target="blank">csv 文件处理</a></li>
+</ul>
+<h2> JVM 相关问题</h2>
 <h2> 算法</h2>
 <p><a href="/life/%E8%80%83%E8%AF%95/%E7%AE%97%E6%B3%95.html" target="blank">必会算法</a></p>
 <h3> 基础概念</h3>
@@ -19039,6 +19050,21 @@ CFG预设（Purp1e制作）<br>
 <li><a href="/code/java/JVM.html" target="blank">Jvm</a></li>
 </ol>
 ]]></content:encoded>
+    </item>
+    <item>
+      <title></title>
+      <link>https://T4mako.github.io/life/%E8%80%83%E8%AF%95/java%E5%AF%B9csv%E6%96%87%E4%BB%B6%E7%9A%84%E5%A4%84%E7%90%86.html</link>
+      <guid>https://T4mako.github.io/life/%E8%80%83%E8%AF%95/java%E5%AF%B9csv%E6%96%87%E4%BB%B6%E7%9A%84%E5%A4%84%E7%90%86.html</guid>
+      <source url="https://T4mako.github.io/rss.xml"></source>
+      <description>CSV 文件概述 csv 文件以纯文本形式存储表格数据，使用逗号分割，如： a,b,c e,d,f g,h,i</description>
+      <content:encoded><![CDATA[<h2> CSV 文件概述</h2>
+<p>csv 文件以纯文本形式存储表格数据，使用逗号分割，如：</p>
+<div class="language-csv line-numbers-mode" data-ext="csv"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>关于缺失值：csv 中的缺失值被 java 读取后，数据为 「""」，因此需要使用 <code>"".equals(str)</code> 方法判断</p>
+<h2> CSV 文件读取</h2>
+<p>目前桌面上有一个 csv 文件：</p>
+<div class="language-csv line-numbers-mode" data-ext="csv"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>CSV 的读取：</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> CSV 文件写入</h2>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content:encoded>
     </item>
     <item>
       <title>算法</title>
@@ -19274,23 +19300,6 @@ CFG预设（Purp1e制作）<br>
 (1)基本概念题（填空、选择填空题、程序填空或程序改错）（50~70分）<br>
 (2)算法分析设计、面向对象程序设计题(80~100分)<br>
 考试方式：考试时间180分钟，满分：150分。答题方式为笔试、闭卷。</p>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>817 必会</title>
-      <link>https://T4mako.github.io/life/%E8%80%83%E8%AF%95/%E9%AB%98%E9%A2%91%E8%80%83%E7%82%B9.html</link>
-      <guid>https://T4mako.github.io/life/%E8%80%83%E8%AF%95/%E9%AB%98%E9%A2%91%E8%80%83%E7%82%B9.html</guid>
-      <source url="https://T4mako.github.io/rss.xml">817 必会</source>
-      <description>817 必会 uml 类图 正则表达式 随机文件读取 常见排序算法 进制转换 常见线程同步问题 面向对象相关问题 JVM 相关问题</description>
-      <content:encoded><![CDATA[<h1> 817 必会</h1>
-<h2> uml 类图</h2>
-<h2> 正则表达式</h2>
-<h2> 随机文件读取</h2>
-<h2> 常见排序算法</h2>
-<h2> 进制转换</h2>
-<h2> 常见线程同步问题</h2>
-<h2> 面向对象相关问题</h2>
-<h2> JVM 相关问题</h2>
 ]]></content:encoded>
     </item>
   </channel>
