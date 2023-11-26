@@ -4,7 +4,7 @@ category:
 tag: 
   - 字符串
 
-article: false
+ 
 ---
 
 #  006. Z字形变换

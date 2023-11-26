@@ -4,7 +4,7 @@ date: 2023-08-15
 category: 
   - TypeScript
 order: 7
-article: false
+ 
 ---
 
 ## 七、symbol 类型

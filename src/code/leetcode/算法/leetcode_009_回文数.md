@@ -4,7 +4,7 @@ category:
 tag: 
   - 数学
 
-article: false
+ 
 ---
 # 009. 回文数
 

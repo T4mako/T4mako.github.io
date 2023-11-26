@@ -4,7 +4,7 @@ category:
 tag: 
   - 字符串
 
-article: false
+ 
 ---
 
 # 008. 字符串转换整数 (atoi)

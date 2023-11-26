@@ -4,7 +4,7 @@ date: 2023-08-12
 category: 
   - TypeScript
 order: 1
-article: false
+ 
 ---
 [官方文档](https://www.typescriptlang.org/zh/docs/)
 
