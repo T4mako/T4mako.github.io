@@ -6,14 +6,14 @@ tag:
   - 链表
 ---
 
-# 735. 行星碰撞
+# 328. 奇偶链表
 
 <Badge text="中等" type="warning" vertical="middle" />
 
 [题目描述](https://leetcode.cn/problems/odd-even-linked-list/description/?envType=study-plan-v2&envId=leetcode-75)
 
 解法：    
-定义两个指针，odd，even交替移动，将经过的结点存贮给odds和evens
+定义两个指针，odd，even 交替移动，将经过的结点存贮给 odds 和 evens
 
 
 ```java

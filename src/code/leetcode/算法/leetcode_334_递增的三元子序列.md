@@ -7,7 +7,7 @@ tag:
   - 贪心
 ---
 
-# 334_递增的三元子序列
+# 334. 递增的三元子序列
 
 
 <Badge text="简单" type="tip" vertical="middle" />
