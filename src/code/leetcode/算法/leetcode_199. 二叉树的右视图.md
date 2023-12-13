@@ -12,8 +12,6 @@ tag:
 
 # 199. 二叉树的右视图
 
-
-
 <Badge text="中等" type="warning" vertical="middle" />
 
 [题目描述](https://leetcode.cn/problems/binary-tree-right-side-view/description/?envType=study-plan-v2&envId=leetcode-75)

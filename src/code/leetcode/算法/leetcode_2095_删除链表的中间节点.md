@@ -7,7 +7,7 @@ tag:
   - 双指针
 ---
 
-# 2215. 找出两数组的不同
+# 2095. 删除链表的中间节点
 
 
 <Badge text="中等" type="warning" vertical="middle" />
