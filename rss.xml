@@ -6,8 +6,8 @@
     <link>https://T4mako.github.io/</link>
     <description>T4mako</description>
     <language>zh-CN</language>
-    <pubDate>Mon, 01 Jan 2024 10:10:37 GMT</pubDate>
-    <lastBuildDate>Mon, 01 Jan 2024 10:10:37 GMT</lastBuildDate>
+    <pubDate>Tue, 02 Jan 2024 15:37:27 GMT</pubDate>
+    <lastBuildDate>Tue, 02 Jan 2024 15:37:27 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>算法</category>
@@ -19,6 +19,17 @@
     <category>Vue</category>
     <category>部署</category>
     <category>MarkDown</category>
+    <item>
+      <title>452. 用最少数量的箭引爆气球</title>
+      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_452_%E7%94%A8%E6%9C%80%E5%B0%91%E6%95%B0%E9%87%8F%E7%9A%84%E7%AE%AD%E5%BC%95%E7%88%86%E6%B0%94%E7%90%83.html</link>
+      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_452_%E7%94%A8%E6%9C%80%E5%B0%91%E6%95%B0%E9%87%8F%E7%9A%84%E7%AE%AD%E5%BC%95%E7%88%86%E6%B0%94%E7%90%83.html</guid>
+      <source url="https://T4mako.github.io/rss.xml">452. 用最少数量的箭引爆气球</source>
+      <description>452. 用最少数量的箭引爆气球</description>
+      <category>算法</category>
+      <pubDate>Tue, 02 Jan 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<h1> 452. 用最少数量的箭引爆气球</h1>
+]]></content:encoded>
+    </item>
     <item>
       <title>435. 无重叠区间</title>
       <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_435_%E6%97%A0%E9%87%8D%E5%8F%A0%E5%8C%BA%E9%97%B4.html</link>
@@ -1132,6 +1143,28 @@ JDK5.0 以后每个线程堆栈大小为 1M，以前每个线程堆栈大小为 
 ]]></content:encoded>
     </item>
     <item>
+      <title>2095. 删除链表的中间节点</title>
+      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_2095_%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E4%B8%AD%E9%97%B4%E8%8A%82%E7%82%B9.html</link>
+      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_2095_%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E4%B8%AD%E9%97%B4%E8%8A%82%E7%82%B9.html</guid>
+      <source url="https://T4mako.github.io/rss.xml">2095. 删除链表的中间节点</source>
+      <description>2095. 删除链表的中间节点</description>
+      <category>算法</category>
+      <pubDate>Tue, 15 Aug 2023 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<h1> 2095. 删除链表的中间节点</h1>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>328. 奇偶链表</title>
+      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_328_%E5%A5%87%E5%81%B6%E9%93%BE%E8%A1%A8.html</link>
+      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_328_%E5%A5%87%E5%81%B6%E9%93%BE%E8%A1%A8.html</guid>
+      <source url="https://T4mako.github.io/rss.xml">328. 奇偶链表</source>
+      <description>328. 奇偶链表</description>
+      <category>算法</category>
+      <pubDate>Tue, 15 Aug 2023 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<h1> 328. 奇偶链表</h1>
+]]></content:encoded>
+    </item>
+    <item>
       <title>数组</title>
       <link>https://T4mako.github.io/code/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/TypeScript/5%E3%80%81%E6%95%B0%E7%BB%84.html</link>
       <guid>https://T4mako.github.io/code/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/TypeScript/5%E3%80%81%E6%95%B0%E7%BB%84.html</guid>
@@ -1496,25 +1529,14 @@ JDK5.0 以后每个线程堆栈大小为 1M，以前每个线程堆栈大小为 
 ]]></content:encoded>
     </item>
     <item>
-      <title>2095. 删除链表的中间节点</title>
-      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_2095_%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E4%B8%AD%E9%97%B4%E8%8A%82%E7%82%B9.html</link>
-      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_2095_%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E4%B8%AD%E9%97%B4%E8%8A%82%E7%82%B9.html</guid>
-      <source url="https://T4mako.github.io/rss.xml">2095. 删除链表的中间节点</source>
-      <description>2095. 删除链表的中间节点</description>
+      <title>649. Dota2 参议院</title>
+      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_649_Dota2%20%E5%8F%82%E8%AE%AE%E9%99%A2.html</link>
+      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_649_Dota2%20%E5%8F%82%E8%AE%AE%E9%99%A2.html</guid>
+      <source url="https://T4mako.github.io/rss.xml">649. Dota2 参议院</source>
+      <description>649. Dota2 参议院</description>
       <category>算法</category>
-      <pubDate>Tue, 15 Aug 2023 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<h1> 2095. 删除链表的中间节点</h1>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>328. 奇偶链表</title>
-      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_328_%E5%A5%87%E5%81%B6%E9%93%BE%E8%A1%A8.html</link>
-      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_328_%E5%A5%87%E5%81%B6%E9%93%BE%E8%A1%A8.html</guid>
-      <source url="https://T4mako.github.io/rss.xml">328. 奇偶链表</source>
-      <description>328. 奇偶链表</description>
-      <category>算法</category>
-      <pubDate>Tue, 15 Aug 2023 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<h1> 328. 奇偶链表</h1>
+      <pubDate>Mon, 14 Aug 2023 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<h1> 649. Dota2 参议院</h1>
 ]]></content:encoded>
     </item>
     <item>
@@ -1814,17 +1836,6 @@ JDK5.0 以后每个线程堆栈大小为 1M，以前每个线程堆栈大小为 
 ]]></content:encoded>
     </item>
     <item>
-      <title>649. Dota2 参议院</title>
-      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_649_Dota2%20%E5%8F%82%E8%AE%AE%E9%99%A2.html</link>
-      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_649_Dota2%20%E5%8F%82%E8%AE%AE%E9%99%A2.html</guid>
-      <source url="https://T4mako.github.io/rss.xml">649. Dota2 参议院</source>
-      <description>649. Dota2 参议院</description>
-      <category>算法</category>
-      <pubDate>Mon, 14 Aug 2023 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<h1> 649. Dota2 参议院</h1>
-]]></content:encoded>
-    </item>
-    <item>
       <title>374. 猜数字大小</title>
       <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_374_%E7%8C%9C%E6%95%B0%E5%AD%97%E5%A4%A7%E5%B0%8F.html</link>
       <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_374_%E7%8C%9C%E6%95%B0%E5%AD%97%E5%A4%A7%E5%B0%8F.html</guid>
@@ -1833,6 +1844,28 @@ JDK5.0 以后每个线程堆栈大小为 1M，以前每个线程堆栈大小为 
       <category>算法</category>
       <pubDate>Sun, 13 Aug 2023 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[<h1> 374. 猜数字大小</h1>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>206. 反转链表</title>
+      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_206_%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8.html</link>
+      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_206_%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8.html</guid>
+      <source url="https://T4mako.github.io/rss.xml">206. 反转链表</source>
+      <description>206. 反转链表</description>
+      <category>算法</category>
+      <pubDate>Sat, 12 Aug 2023 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<h1> 206. 反转链表</h1>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>394. 字符串解码</title>
+      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_394_%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%A7%A3%E7%A0%81.html</link>
+      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_394_%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%A7%A3%E7%A0%81.html</guid>
+      <source url="https://T4mako.github.io/rss.xml">394. 字符串解码</source>
+      <description>394. 字符串解码</description>
+      <category>算法</category>
+      <pubDate>Sat, 12 Aug 2023 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<h1> 394. 字符串解码</h1>
 ]]></content:encoded>
     </item>
     <item>
@@ -1969,28 +2002,6 @@ JDK5.0 以后每个线程堆栈大小为 1M，以前每个线程堆栈大小为 
 <div class="language-bash line-numbers-mode" data-ext="sh"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，在 TypeScript 命令行 REPL 环境中，先输入一个函数<code>twice</code>，然后调用该函数，就会得到结果。</p>
 <p>要退出这个 REPL 环境，可以按下 Ctrl + d，或者输入<code>.exit</code>。</p>
 <p>如果只是想简单运行 TypeScript 代码看看结果，ts-node 不失为一个便捷的方法。</p>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>206. 反转链表</title>
-      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_206_%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8.html</link>
-      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_206_%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8.html</guid>
-      <source url="https://T4mako.github.io/rss.xml">206. 反转链表</source>
-      <description>206. 反转链表</description>
-      <category>算法</category>
-      <pubDate>Sat, 12 Aug 2023 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<h1> 206. 反转链表</h1>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>394. 字符串解码</title>
-      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_394_%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%A7%A3%E7%A0%81.html</link>
-      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_394_%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%A7%A3%E7%A0%81.html</guid>
-      <source url="https://T4mako.github.io/rss.xml">394. 字符串解码</source>
-      <description>394. 字符串解码</description>
-      <category>算法</category>
-      <pubDate>Sat, 12 Aug 2023 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<h1> 394. 字符串解码</h1>
 ]]></content:encoded>
     </item>
     <item>
@@ -7347,184 +7358,202 @@ Exchange将消息路由到BIndkey与消息RoutingKey一致的队列</p>
       <enclosure url="https://raw.githubusercontent.com/T4mako/ImageBed/main/image-20210422095356088.png" type="image/png"/>
     </item>
     <item>
-      <title>SpringBoot 基础</title>
+      <title>SpringBoot2 基础</title>
       <link>https://T4mako.github.io/code/java/SpringBoot.html</link>
       <guid>https://T4mako.github.io/code/java/SpringBoot.html</guid>
-      <source url="https://T4mako.github.io/rss.xml">SpringBoot 基础</source>
-      <description>1、Spring与SpringBoot Spring的生态：web开发、数据访问、安全控制、分布式、消息服务、移动开发、批处理、...... Spring5重大升级：响应式编程、响应式编程</description>
+      <source url="https://T4mako.github.io/rss.xml">SpringBoot2 基础</source>
+      <description>1、Spring 与 SpringBoot</description>
       <category>java</category>
-      <content:encoded><![CDATA[<h2> 1、Spring与SpringBoot</h2>
-<p>Spring的生态：web开发、数据访问、安全控制、分布式、消息服务、移动开发、批处理、......<br>
-Spring5重大升级：响应式编程、响应式编程</p>
+      <content:encoded><![CDATA[<h2> 1、Spring 与 SpringBoot</h2>
 <!-- more -->
-<p>SpringBoot优点：创建独立Spring应用、内嵌web服务器、自动starter依赖，简化构建配置、自动配置Spring以及第三方功能、提供生产级别的监控、健康检查及外部化配置、无代码生成、无需编写XML<br>
-SpringBoot缺点：称版本帝，迭代快，需要时刻关注变化、封装太深，内部原理复杂，不容易精通</p>
-<p>时代背景：<br>
-<strong>微服务：</strong><br>
-微服务是一种架构风格<br>
-一个应用拆分为一组小型服务<br>
-每个服务运行在自己的进程内，也就是可独立部署和升级<br>
-服务之间使用轻量级HTTP交互<br>
-服务围绕业务功能拆分<br>
-可以由全自动部署机制独立部署<br>
-去中心化，服务自治。服务可以使用不同的语言、不同的存储技术<br>
-**分布式	**<br>
-<strong>云原生</strong></p>
+<p>SpringBoot 优点：创建独立 Spring 应用、内嵌 web 服务器、自动 starter 依赖，简化构建配置、自动配置 Spring 以及第三方功能、提供生产级别的监控、健康检查及外部化配置、无代码生成、无需编写 XML<br>
+SpringBoot 缺点：称版本帝，迭代快，需要时刻关注变化、封装太深，内部原理复杂，不容易精通</p>
 <p><strong><a href="https://docs.spring.io/spring-boot/docs/current/reference/html/documentation.html#documentation" target="_blank" rel="noopener noreferrer">springboot的官方文档</a></strong></p>
-<h2> 2、SpringBoot2入门</h2>
+<h2> 2、SpringBoot2 入门</h2>
 <h3> 1、创建maven工程引入依赖</h3>
 <div class="language-xml line-numbers-mode" data-ext="xml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 2、创建主程序</h3>
 <div class="language-JAVA line-numbers-mode" data-ext="JAVA"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 3、编写业务</h3>
 <div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 4、测试</h3>
-<p><strong>直接运行main方法</strong></p>
+<p><strong>直接运行 main 方法</strong></p>
 <h3> 5、简化配置</h3>
 <p>在 resources 中创建 <strong>application.properties</strong></p>
 <div class="language-properties line-numbers-mode" data-ext="properties"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h3> 6、简化部署</h3>
-<p>如果添加插件启动时报错，可以尝试在<code>&lt;plugin&gt;</code>标签内部添加设置版本号的version标签，版本号要与Spring版本号一致</p>
-<p>在pom.xml中添加：</p>
+<p>如果添加插件启动时报错，可以尝试在 <code>&lt;plugin&gt;</code> 标签内部添加设置版本号的 version 标签，版本号要与 Spring 版本号一致</p>
+<p>在 pom.xml 中添加：</p>
 <div class="language-xml line-numbers-mode" data-ext="xml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>把项目打成 <strong>jar 包</strong>，直接在目标服务器执行即可。</p>
 <p>注意点：<br>
-有的时候cmd命令启动不了springboot项目，可能是因为在属性中开启了【快速编辑模式】，取消方法：右击cmd控制台的窗口上方标题区域打开【选项】取消勾选【快去编辑模式】</p>
+有的时候cmd命令启动不了 springboot 项目，可能是因为在属性中开启了【快速编辑模式】，取消方法：右击 cmd 控制台的窗口上方标题区域打开【选项】取消勾选【快去编辑模式】</p>
 <h2> 3、了解自动配置原理</h2>
-<h3> 1、SpringBoot特点</h3>
+<h3> 1、SpringBoot 特点</h3>
 <h4> 1、依赖管理</h4>
-<h5> ① 父项目做依赖管理</h5>
+<p>① 父项目做依赖管理</p>
 <p><strong>在父工程中统一管理项目中的依赖信息，具体来说是管理依赖信息的版本。</strong></p>
 <div class="language-xml line-numbers-mode" data-ext="xml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>可以修改默认版本号</strong></p>
-<div class="language-xml line-numbers-mode" data-ext="xml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h5> ②starter场景启动器</h5>
-<p>1、<strong>spring-boot-starter-*</strong> ： *就某种场景（<strong>官方starter</strong>）<br>
-2、只要引入 <strong>starter</strong>，这个场景的所有常规需要的 <strong>依赖</strong> 都 <strong>自动引入</strong><br>
-3、SpringBoot所有支持的场景<br>
-<a href="https://docs.spring.io/spring-boot/docs/current/reference/html/using-spring-boot.html#using-boot-starter" target="_blank" rel="noopener noreferrer">https://docs.spring.io/spring-boot/docs/current/reference/html/using-spring-boot.html#using-boot-starter</a><br>
-4、见到的 <strong>*-spring-boot-starter</strong>： <strong>第三方starter</strong>为我们提供的简化开发的场景启动器。<br>
-5、所有 <strong>场景启动器</strong> <strong>最底层的依赖</strong>:</p>
+<div class="language-xml line-numbers-mode" data-ext="xml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>② starter 场景启动器</p>
+<ol>
+<li><code>spring-boot-starter-*</code> ： 就某种场景（官方 starter）</li>
+<li>只要引入 starter，这个场景的所有常规需要的依赖都自动引入</li>
+<li>SpringBoot 所有支持的场景：<br>
+<a href="https://docs.spring.io/spring-boot/docs/current/reference/html/using-spring-boot.html#using-boot-starter" target="_blank" rel="noopener noreferrer">https://docs.spring.io/spring-boot/docs/current/reference/html/using-spring-boot.html#using-boot-starter</a></li>
+<li>见到的 <code>*-spring-boot-starter</code>： 第三方 starter 为我们提供的简化开发的场景启动器</li>
+<li>所有场景启动器最底层的依赖:</li>
+</ol>
 <div class="language-xml line-numbers-mode" data-ext="xml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>注：无需关注版本号，自动版本仲裁:<br>
 1、引入依赖默认都可以不写版本<br>
-2、引入非版本仲裁的jar，要写版本号。</p>
+2、引入非版本仲裁的 jar，要写版本号。</p>
 <h4> 2、自动配置</h4>
-<h5> 1、自动配好Tomcat</h5>
-<p>​	引入Tomcat依赖<br>
-​	配置Tomcat</p>
-<div class="language-xml line-numbers-mode" data-ext="xml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h5> 2、自动配好SpringMVC</h5>
-<p>​	引入 SpringMVC 全套组件<br>
-​	自动配好 SpringMVC 常用组件（功能）</p>
-<h5> 3、自动配好Web常见功能，如：字符编码问题</h5>
-<p>​	SpringBoot 帮我们配置好了所有 web 开发的常见场景<br>
-​		<em>字符过滤器</em> 等</p>
-<h5> 4、默认的包扫描</h5>
-<p>**主程序所在包 **及其下面的所有 <strong>子包</strong> 里面的组件都会被默认扫描进来<br>
-<strong>无需以前的包扫描配置</strong></p>
-<p><em>想要改变扫描路径</em>，在 MainApplication上添加<br>
-<strong>@SpringBootApplication(scanBasePackages="com.t4mako")</strong> 或者 <strong>@ComponentScan指定扫描路径</strong></p>
-<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h5> 5、各种配置拥有默认值</h5>
-<p>默认配置最终都是映射到某个类上，（MultipartProperties类）<br>
-配置文件的值（<strong>application.properties</strong>）最终会 <strong>绑定每个类上</strong>，这个类会在容器中创建对象</p>
-<h5> 6、按需加载所有自动配置项</h5>
-<p>非常多的 starter<br>
-<strong>引入了哪些场景</strong> 这个场景的 <strong>自动配置才会被开启</strong><br>
-SpringBoot 的 <strong>所有自动配置功能</strong> 都在 <strong>spring-boot-autoconfigur包</strong> 里面（不一定都生效）</p>
-<h3> 2、容器功能(关键注解-重要)</h3>
-<p><mark>spring boot 项目默认会扫描主类同级的包</mark></p>
-<h4> 1、组件相关</h4>
-<h5> 1、@Configuration</h5>
-<p><strong>@Configuration <strong>==告诉SpringBoot这是一个</strong>配置类 == 配置文件（创建bean）</strong>==<br>
-<strong>在类上添加 Configration 类似于 Spring 中的 beans.xml</strong><br>
-<strong>标注了@Configuration 注解的类本身也是一个组件</strong></p>
-<p>参数 proxyBeanMethods：<br>
-<strong>true(默认)：单实例<br>
-false：（类、方法）被调用时返回是新创建的</strong></p>
-<p>在类<strong>方法</strong>中添加**@Bean**注解：<br>
-<mark>Id = 方法名，容器中的实例 = 返回的值</mark></p>
-<p><strong>Full(true)模式</strong> 与 <strong>Lite(false)模式</strong>：<br>
-**配置类 **组件之间 <strong>无依赖关系</strong>（没有相互调用）用Lite模式加速容器启动过程，减少判断 <strong>false</strong><br>
-**配置类 **组件之间 <strong>有依赖关系</strong>，方法会被调用得到之前单实例组件 <strong>true</strong></p>
-<p><code>Full模式获取组件时，会先检查容器中是否有该组件，Lite模式不会检查容器，直接创建一个新的组件返回</code></p>
-<p><em>Full(proxyBeanMethods = true)（保证每个</em>*@Bean方法<strong>被调用多少次返回的组件都是</strong>单实例<strong>的）<br>
-Lite(proxyBeanMethods = false)（每个</strong>@Bean方法<strong>被调用多少次返回的组件都是</strong>新创建**的）*</p>
-<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h5> 2、@Bean、@Component、@Controller、@Service、@Repository（持久层注解）</h5>
+<ol>
+<li>
+<p>自动配好 Tomcat<br>
+内嵌 Tomcat，因此项目打 jar 包即可</p>
+</li>
+<li>
+<p>自动配好 SpringMVC<br>
+引入 SpringMVC 全套组件<br>
+自动配好 SpringMVC 常用组件（功能）</p>
+</li>
+<li>
+<p>自动配好 Web 常见功能，如：字符编码问题<br>
+SpringBoot 帮我们配置好了所有 web 开发的常见场景如字符过滤器等</p>
+</li>
+<li>
+<p>默认的包扫描<br>
+主程序所在包及其下面的所有子包里面的组件都会被默认扫描进来，无需以前的包扫描配置<br>
+想要改变扫描路径，在 MainApplication 上添加<code>@SpringBootApplication(scanBasePackages="com.t4mako")</code> 或者 <code>@ComponentScan("com.t4mako")</code> 指定扫描路径</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></li>
+<li>
+<p>各种配置拥有默认值<br>
+默认配置最终都是映射到某个类上，（<code>MultipartProperties</code> 类）<br>
+配置文件的值（<code>application.properties</code>）最终会 绑定每个类上，这个类会在容器中创建对象</p>
+</li>
+<li>
+<p>按需加载所有自动配置项<br>
+引入了哪些场景这个场景的自动配置才会被开启<br>
+SpringBoot 的所有自动配置功能都在    spring-boot-autoconfigur 包里（不一定都生效）</p>
+</li>
+</ol>
+<h3> 2、容器功能（关键注解 - 重要）</h3>
+<p>spring boot 项目默认会扫描主类同级的包</p>
+<h4> @Configuration</h4>
+<p>@Configuration 注解说明这是一个配置类（创建 bean）<br>
+在类上添加 Configration 类似于 Spring 中的 beans.xml<br>
+标注了 @Configuration 注解的类本身也是一个组件</p>
+<ul>
+<li>参数 proxyBeanMethods：
+<ul>
+<li>true（默认）：单实例（Full 模式）</li>
+<li>false：（类、方法）被调用时返回是新创建的（Lite 模式）</li>
+</ul>
+</li>
+</ul>
+<p>Full 模式获取组件时，会先检查容器中是否有该组件，Lite 模式不会检查容器，直接创建一个新的组件返回</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4> @Bean、@Component、@Controller、@Service、@Repository（持久层注解）</h4>
+<ul>
+<li>
+<p>@Bean：<br>
+在方法上添加 <code>@Bean</code> 注解：<br>
+bean 的 Id 为 <code>方法名</code>，容器中的实例 为 <code>方法的返回值</code></p>
+</li>
+<li>
 <p>@Repository 注解可以将这个数据访问对象标记为 Spring 应用程序上下文中的 bean，从而使得我们可以在其他组件中使用该 bean。</p>
-<p>常规组件</p>
-<h5> 3、@ComponentScan、@Import</h5>
-<p><strong>@Import</strong>：标注在有组件注解的类上（Configuration，Controller...）</p>
-<p><strong>用于导入指定类型的组件并自动创建（放到容器中）</strong><br>
-<strong>默认id = 全类名</strong></p>
-<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h5> 4、@Conditional</h5>
-<p>条件装配：<strong>满足</strong> Conditional指定的 <strong>条件</strong> 时才进行组件（bean）注入</p>
+</li>
+</ul>
+<h4> @ComponentScan、@Import</h4>
+<ul>
+<li>@Import：<br>
+标注在有组件注解的类上（Configuration，Controller...）<br>
+用于导入指定类型的组件并自动创建（放到容器中）<br>
+默认 id 为全类名<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></li>
+</ul>
+<h4> @Conditional 条件装配</h4>
+<ul>
+<li>@Conditional 条件装配：<br>
+满足 Conditional 指定的 条件 时才进行组件（bean）注入<br>
+该注解可以标注在类上或方法上（类/方法是否生效）</li>
+</ul>
 <p><img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/image-20230120113626334.png" alt="" loading="lazy"></p>
-<p>该注解可以标注在类上或方法上（类/方法是否生效）</p>
 <p>例子：<br>
-<strong>@ConditionalOnBean</strong>(name = "tom")  容器中 <strong>有</strong> tom组件才生效<br>
-<strong>@ConditionalOnMissingBean</strong>(name = "tom") 容器中 <strong>没有</strong> tom组件才生效</p>
-<h4> 2、原生配置文件引入@ImportResource</h4>
-<p><mark>在随意一个配置类(@Configuration)上编写</mark></p>
-<p><em>在随意一个配置类(@Configuration)上编写</em><br>
-<strong>@ImportResource注解可以帮助</strong><br>
-<strong>导入编写的beans.xml的文件导入配置文件中的bean</strong></p>
-<div class="language-xml line-numbers-mode" data-ext="xml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4> 3、配置绑定 (两种方法)</h4>
+<code>@ConditionalOnBean(name = "tom")</code>  容器中有 tom 组件才生效<br>
+<code>@ConditionalOnMissingBean(name = "tom")</code> 容器中没有 tom 组件才生效</p>
+<h4> @ImportResource 原生配置文件引入</h4>
+<p>在随意一个配置类（@Configuration）上编写<br>
+@ImportResource 注解可以帮助<br>
+导入编写的 beans.xml 的文件导入配置文件中的 bean</p>
+<div class="language-xml line-numbers-mode" data-ext="xml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4> 读取 Propertie 配置绑定</h4>
 <p>使用 Java 读取到 properties 文件中的内容，并且把它封装到 JavaBean 中，以供随时使用</p>
-<p>只有在容器中的组件，才会拥有SpringBoot提供的强大功能</p>
-<h5> 1、@ConfigurationProperties</h5>
-<p>使用：<br>
-该注解标注 <strong>在有组件注解的类</strong>上 （只有在 <strong>容器中的组件</strong> 才能有springboot的强大功能）<br>
-<strong>@ConfigurationProperties(prefix = "")<br>
-表示在Application.properties中的前缀</strong><br>
-将有这些前缀的属性的属性值赋值，并生成一个 bean 保存到容器中</p>
-<div class="language-properties line-numbers-mode" data-ext="properties"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h5> 2、@EnableConfigurationProperties + @ConfigurationProperties</h5>
+<p>只有在容器中的组件，才能进行配置绑定</p>
+<ul>
+<li>
+<p>@ConfigurationProperties</p>
+<ul>
+<li>
+<p>该注解标注在有组件注解的类上</p>
+</li>
+<li>
+<p><code>@ConfigurationProperties(prefix = "")</code></p>
+<ul>
+<li>表示在 Application.properties 中的前缀</li>
+<li>将有这些前缀的属性的属性值赋值，并生成一个 bean 保存到容器中</li>
+</ul>
+<div class="language-properties line-numbers-mode" data-ext="properties"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></li>
+</ul>
+</li>
+<li>
+<p>@EnableConfigurationProperties + @ConfigurationProperties</p>
+<ul>
+<li>
 <p>适用于需要将第三方的没有标注 @Component 的类引入到 IOC 中</p>
-<p>使用：<br>
-在配置类上写 <strong>@EnableConfigurationProperties(Car.class)</strong>，作用：<br>
-开启Car <strong>类的属性配置绑定功能</strong><br>
-把Car这个组件自动注入到容器中</p>
-<p><strong>此时Car类中就不用写@component注解了</strong><br>
-（再通过@ConfigurationProperties配置属性）</p>
-<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 3、自动配置原理入门（给容器中自动注入组件）</h3>
+</li>
+<li>
+<p>在配置类上写 <code>@EnableConfigurationProperties(Car.class)</code></p>
+<ul>
+<li>开启 Car 类的属性配置绑定功能</li>
+<li>把 Car 这个组件自动注入到容器中</li>
+<li>此时 Car 类中就不用写 @component 注解了 （再通过 @ConfigurationProperties 配置属性）</li>
+</ul>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></li>
+</ul>
+</li>
+</ul>
+<h3> 3、自动装配（Bean 自动装入 IOC 容器）</h3>
+<p>遵循约定大于配置原则，在 boot 程序启动后，起步依赖中的一些 bean 对象会自动注入到 IOC 中</p>
 <h4> 3.1、引导加载自动配置类</h4>
-<p><strong>@SpringBootApplication=</strong><br>
-<strong>@SpringBootConfiguration + @EnableAutoConfiguration + @ComponentScan("com.t4mako.boot")</strong></p>
-<p>1、<em>@SpringBootConfiguration：</em><br>
-相当于*@Configuration*。代表当前是一个配置类</p>
-<p>2、<em>@ComponentScan</em>：<br>
-指定扫描哪些，Spring注解</p>
-<p>3、<em><strong>@EnableAutoConfiguration：</strong></em></p>
-<p><strong>@EnableAutoConfiguration = @AutoConfigurationPackage + @Import</strong></p>
-<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>① @AutoConfigurationPackage：</strong></p>
-<p>自动配置包、指定了默认的包规则<br>
-即 <strong>将MainApplication 所在包下所有组件导入进来</strong></p>
-<p><em>点入@AutoConfigurationPackage：</em></p>
-<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>AutoConfigurationPackages.Registrar.class</strong>：<br>
-利用Registrar给容器中导入一系列组件<br>
-将指定的一个包下的所有组件导入进来，即<strong>MainApplication 所在包下</strong>。</p>
-<p><strong>② @Import(AutoConfigurationImportSelector.class)</strong></p>
-<p><em>AutoConfigurationImportSelector.class：</em><br>
-1、利用getAutoConfigurationEntry(annotationMetadata)方法：给容器中批量导入一些组件<br>
-2、调用<code>List&lt;String&gt; configurations = getCandidateConfigurations(annotationMetadata, attributes)</code>：获取到所有需要导入到容器中的配置类<br>
-3、利用工厂加载 <code>Map&lt;String, List&lt;String&gt;&gt; loadSpringFactories(@Nullable ClassLoader classLoader);</code>得到所有的组件<br>
-4、从META-INF/spring.factories位置来加载一个文件。<br>
-默认扫描我们当前系统里面所有META-INF/spring.factories位置的文件：<br>
-spring-boot-autoconfigure-2.3.4.RELEASE.jar包里面也有META-INF/spring.factories</p>
-<p>文件里面写死了spring-boot一启动就要给容器中加载的所有配置类（127个，往后的版本有更改）</p>
+<p><code>@SpringBootApplication</code> =<br>
+<code>@SpringBootConfiguration</code> + <code>@EnableAutoConfiguration</code> + <code>@ComponentScan("com.t4mako.boot")</code></p>
+<ul>
+<li>@SpringBootConfiguration：相当于 @Configuration 。代表当前是一个配置类</li>
+<li>@ComponentScan：指定扫描哪些</li>
+<li>@EnableAutoConfiguration：含有 @import 注解<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li>@AutoConfigurationPackage：自动配置包、指定了默认的包规则<br>
+即将 MainApplication 所在包下所有组件导入进来</li>
+<li>@Import(AutoConfigurationImportSelector.class)：AutoConfigurationImportSelector.class：<br>
+从 <code>META-INF/spring.factories</code> 位置来加载一个文件。<br>
+默认扫描我们当前系统里面所有 META-INF/spring.factories 位置的文件：<br>
+spring-boot-autoconfigure-2.3.4.RELEASE.jar 包里面也有 META-INF/spring.factories，该文件中含有需要自动装配的全类名字符串</li>
+</ul>
+</li>
+</ul>
 <h4> 3.2、按需开启自动配置项</h4>
-<p>虽然我们127个场景的所有自动配置<strong>启动的时候默认全部加载</strong><br>
-xxxxAutoConfiguration按照<strong>条件装配</strong>规则（@Conditional），最终会<strong>按需配置</strong>。</p>
+<p>所有场景启动的时候默认全部加载<br>
+xxxxAutoConfiguration 按照条件装配规则（@Conditional），最终会按需配置</p>
 <h4> 3.3、修改默认配置</h4>
-<p>给@Bean标注的方法传入了对象参数，这个参数的值就会从容器中找。</p>
-<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>SpringBoot默认会在底层配好所有的组件。但是如果用户自己配置了以用户的优先</strong></p>
+<p>给 @Bean 标注的方法传入了对象参数，这个参数的值就会从容器中找</p>
+<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>SpringBoot 默认会在底层配好所有的组件。但是如果用户自己配置了以用户的优先</p>
 <div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>总结：<br>
-SpringBoot先<strong>加载所有的自动配置类</strong>xxxxxAutoConfiguration<br>
-每个自动配置类<strong>按照条件生效（不是全部）</strong>，默认都会绑定配置文件指定的值。xxxxProperties里面拿。xxxProperties和配置文件进行了绑定<br>
-（对应注解*@EnableConfigurationProperties*）<br>
-生效的 <strong>配置类</strong>就会<strong>给容器中装配很多组件</strong><br>
-只要<strong>容器中有这些组件</strong>，相当于这些<strong>功能就有了</strong><br>
+SpringBoot 先加载所有的自动配置类 xxxxxAutoConfiguration<br>
+每个自动配置类按照条件生效，默认都会绑定配置文件指定的值（xxxxProperties 里，xxxProperties 和配置文件进行了绑定）（对应注解 @EnableConfigurationProperties）<br>
+生效的配置类就会给容器中装配很多组件<br>
+只要容器中有这些组件，相当于这些功能就有了<br>
 定制化配置：<br>
-用户自己**@Bean替换底层组件**<br>
-用户去看这个组件是获取的<strong>配置文件什么值就去修改</strong>。</p>
-<p><strong>xxxxxAutoConfiguration ---&gt; 组件  ---&gt;</strong> <strong>xxxxProperties里面拿值  ----&gt; application.properties（修改）</strong></p>
+用户自己 @Bean 替换底层组件<br>
+用户去看这个组件是获取的配置文件什么值就去修改。</p>
+<p>xxxxxAutoConfiguration ---&gt; 组件  ---&gt; xxxxProperties 里面拿值  ----&gt; application.properties（修改）</p>
 <h4> 3.4最佳实践</h4>
 <p>1、引入场景依赖：<br>
 <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/using.html#using.build-systems.starters" target="_blank" rel="noopener noreferrer">https://docs.spring.io/spring-boot/docs/current/reference/html/using.html#using.build-systems.starters</a></p>
 <p>2、查看自动配置了哪些（选做）<br>
 自己分析，引入场景对应的自动配置一般都生效了<br>
-<strong>配置文件中debug=true</strong>开启<strong>自动配置报告</strong>。Negative（不生效）\ Positive（生效）</p>
+配置文件中debug = true开启自动配置报告。Negative（不生效）\ Positive（生效）</p>
 <p>3、是否需要修改<br>
 参照文档修改配置项<br>
 <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html#appendix.application-properties" target="_blank" rel="noopener noreferrer">https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html#appendix.application-properties</a><br>
@@ -7532,32 +7561,13 @@ SpringBoot先<strong>加载所有的自动配置类</strong>xxxxxAutoConfigurati
 自定义或加入替换组件<br>
 @Bean、@Component...<br>
 自定义器<br>
-<strong>XXXXXCustomizer</strong>；</p>
-<h3> 4、开发小技巧</h3>
-<h4> 1、Lombok</h4>
-<p><strong>简化JavaBean开发</strong></p>
-<p>1、引入依赖</p>
-<div class="language-xml line-numbers-mode" data-ext="xml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>2、搜索安装 lombak 插件</p>
-<p>3、编写 JavaBean</p>
-<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4> 2、dev-tools</h4>
-<p>加入依赖</p>
-<div class="language-xml line-numbers-mode" data-ext="xml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>项目或者页面修改以后：<strong>Ctrl+F9 （重启）即可</strong></p>
-<h4> 3、Spring Initailizr（项目初始化向导）</h4>
-<p>创建新项目</p>
-<p><img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/image-20230120164052376.png" alt="image-20230120164235192" loading="lazy"></p>
-<p>选择需要的功能模块，boot版本等</p>
-<p><img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/image-20230120164418965.png" alt="image-20230120164418965" loading="lazy"></p>
-<p>自动引入依赖</p>
-<p>自动创建项目结构：</p>
-<p><img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/image-20230120164443965.png" alt="image-20230120164443965" loading="lazy"></p>
-<p>自动编写好主配置类：</p>
-<p><img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/image-20230120164502332.png" alt="image-20230120164502332" loading="lazy"></p>
+XXXXXCustomizer；</p>
 <h2> 4、配置文件</h2>
 <h3> 1、文件类型</h3>
 <h4> 1、propertie</h4>
 <p>同以前的 properties 用法</p>
 <h4> 2、yaml</h4>
-<h5> yaml简介：</h5>
+<h5> yaml 简介：</h5>
 <p>YAML 是 "YAML Ain't Markup Language"（YAML 不是一种标记语言）的递归缩写。在开发的这种语言时，YAML 的意思其实是："Yet Another Markup Language"（仍是一种标记语言）。</p>
 <p><strong>非常适合用来做以数据为中心的配置文件</strong></p>
 <h5> 基本语法：</h5>
@@ -9276,461 +9286,6 @@ GatewayFilter通过配置定义，处理逻辑是固定的。而GlobalFilter的�
 <p>在gateway服务的application.yml文件中，添加下面的配置：</p>
 <div class="language-yaml line-numbers-mode" data-ext="yml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content:encoded>
       <enclosure url="https://raw.githubusercontent.com/T4mako/ImageBed/main/20230321132615.png" type="image/png"/>
-    </item>
-    <item>
-      <title>SpringMVC 基础</title>
-      <link>https://T4mako.github.io/code/java/SpringMVC.html</link>
-      <guid>https://T4mako.github.io/code/java/SpringMVC.html</guid>
-      <source url="https://T4mako.github.io/rss.xml">SpringMVC 基础</source>
-      <description>1、SpringMVC简介 1、什么是MVC MVC是一种软件架构的思想，将软件按照模型、视图、控制器来划分</description>
-      <category>java</category>
-      <content:encoded><![CDATA[<h2> 1、SpringMVC简介</h2>
-<h3> 1、什么是MVC</h3>
-<p>MVC是一种软件架构的<strong>思想</strong>，将软件按照<strong>模型、视图、控制器</strong>来划分</p>
-<!-- more -->
-<p>M：<strong>Model</strong>，模型层，指工程中的JavaBean，作用是处理数据<br>
-JavaBean分为两类：<br>
-一类称为<strong>实体类Bean</strong>：专门存储业务数据的，如 <strong>Student、User</strong> 等<br>
-一类称为<strong>业务处理 Bean</strong>：指 <strong>Service 或 Dao 对象</strong>，专门用于处理业务逻辑和数据访问。</p>
-<p>V：<strong>View</strong>，视图层，指工程中的<strong>html或jsp等页面</strong>，作用是与用户进行交互，展示数据</p>
-<p>C：<strong>Controller</strong>，控制层，指<strong>工程中的servlet</strong>，作用是<strong>接收请求和响应浏览器</strong></p>
-<p>MVC的工作流程： 用户通过视图层发送请求到服务器，在服务器中请求被Controller接收，Controller调用相应的Model层处理请求，处理完毕将结果返回到Controller，Controller再根据请求处理的结果找到相应的View视图，渲染数据后最终响应给浏览器<br>
-<strong>用户→View→Controller→Model→Controller→View→浏览器</strong></p>
-<h3> 2、什么是SpringMVC</h3>
-<p>SpringMVC是Spring的一个后续产品，是Spring的一个子项目</p>
-<p>SpringMVC 是 Spring 为表述层开发提供的一整套完备的解决方案。在表述层框架历经 Strust、WebWork、Strust2 等诸多产品的历代更迭之后，目前业界普遍选择了 SpringMVC 作为 Java EE 项目表述层开发的首选方案<br>
-注：三层架构分为<strong>表述层（或表示层）</strong>、<strong>业务逻辑层（业务层）</strong>、<strong>数据访问层（持久层）</strong><br>
-<strong>表述层表示前台页面和后台servlet</strong></p>
-<h3> 3、SpringMVC的特点</h3>
-<p>Spring 家族原生产品，与 IOC 容器等基础设施无缝对接<br>
-基于原生的Servlet，通过了功能强大的<strong>前端控制器DispatcherServlet</strong>，对请求和响应进行统一处理<br>
-表述层各细分领域需要解决的问题全方位覆盖，提供全面解决方案<br>
-代码清新简洁，大幅度提升开发效率<br>
-内部组件化程度高，可插拔式组件即插即用，想要什么功能配置相应组件即可<br>
-性能卓著，尤其适合现代大型、超大型互联网项目要求</p>
-<h2> 2、入门案例</h2>
-<h3> 1、创建maven工程</h3>
-<p>①添加web模块</p>
-<p>注意创建web.xml文件目录需要修改为如下图：</p>
-<p><img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/image-20230222202004184.png" alt="image-20230222202004184" loading="lazy"></p>
-<p>②打包方式：war</p>
-<div class="language-xml line-numbers-mode" data-ext="xml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>③引入依赖</p>
-<div class="language-xml line-numbers-mode" data-ext="xml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 2、配置web.xml</h3>
-<p><strong>注册SpringMVC的前端控制器DispatcherServlet</strong></p>
-<div class="language-xml line-numbers-mode" data-ext="xml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 3、创建请求控制器</h3>
-<p>由于前端控制器对浏览器发送的请求进行了统一的处理，但是<strong>具体的请求有不同的处理过程</strong>，因此需要创建处理具体请求的类，即<strong>请求控制器</strong><br>
-请求控制器中每一个处理请求的方法成为控制器方法<br>
-因为SpringMVC的控制器由一个POJO（普通的Java类）担任，因此需要通过@Controller注解将其标识为一个控制层组件，交给Spring的IOC容器管理，此时SpringMVC才能够识别控制器的存在</p>
-<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 4、创建SpringMVC的配置文件</h3>
-<p>SpringMVC的配置文件<strong>默认</strong>的位置和名称：<br>
-位置：WEB-INF下<br>
-名称：&lt;servlet-name&gt;-servlet.xml（web.xml文件下），所以当前配置下的配置文件名为SpringMVC-servlet.xml</p>
-<p><strong>但配置文件一般都要放在resources下，因此在web.xml文件中添加&lt;init-param&gt;，配置springmvc的配置文件</strong><br>
-<strong>所以，springmvc的配置文件一般放在resources下的springmvc.xml中</strong></p>
-<p><strong>目标（物理视图）：/WEB-INF/templates/index.html<br>
-视图前缀：/WEB-INF/templates/<br>
-视图后缀：.html<br>
-逻辑视图：index</strong></p>
-<div class="language-xml line-numbers-mode" data-ext="xml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 5、配置Tomcat</h3>
-<p><img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/image-20230222202824265.png" alt="image-20230222202824265" loading="lazy"></p>
-<p><img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/image-20230109150922942.png" alt="image-20230109150922942" loading="lazy"></p>
-<p><img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/image-20230109151044511.png" alt="image-20230109151044511" loading="lazy"></p>
-<p><img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/image-20230109151102714.png" alt="image-20230109151102714" loading="lazy"></p>
-<p><img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/image-20230109151143776.png" alt="image-20230109151143776" loading="lazy"></p>
-<p><strong>不同的上下文对应Web服务器（单个Tomcat）中不同的工程</strong></p>
-<p><img src="https://raw.githubusercontent.com/T4mako/ImageBed/main/image-20230109151316851.png" alt="image-20230109151316851" loading="lazy"></p>
-<p>**热部署 **</p>
-<h3> 6、测试HelloWorld</h3>
-<h4> ①实现对首页的访问</h4>
-<p>在请求控制器中创建处理请求的方法</p>
-<p>@RequestMapping注解：处理请求和控制器方法之间的映射关系<br>
-@RequestMapping注解的<strong>value属性</strong>可以<strong>通过请求地址匹配请求</strong>，<strong>/表示的当前工程的上下文路径</strong>，匹配成功则执行对应的方法<br>
-return的String字符串为对应的<strong>逻辑视图名称</strong></p>
-<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4> ②通过超链接跳转到指定页面</h4>
-<p>在主页index.html中设置超链接</p>
-<div class="language-html line-numbers-mode" data-ext="html"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>在请求控制器中创建处理请求的方法</p>
-<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 7、总结</h3>
-<p><strong>浏览器发送请求</strong>，若请求地址<strong>符合前端控制器的url-pattern</strong>，该请求就会被前端控制器<strong>DispatcherServlet处理</strong>。前端控制器会<strong>读取SpringMVC的核心配置文件</strong>，通过<strong>扫描组件找到控制器</strong>，将请求地址和控制器中**@RequestMapping注解的value属性值进行匹配**，若匹配成功，该注解所标识的控制器方法就是处理请求的方法。处理请求的方法需要返回一个字符串类型的视图名称，该视图名称会被视图解析器解析，加上前缀和后缀组成视图的路径，通过Thymeleaf对视图进行渲染，最终转发到视图所对应页面</p>
-<h3> 8、web.xml的改进</h3>
-<p>设置SpringMVC核心配置文件的位置和名称<br>
-将DispatcherServlet的初始化时间提前到服务器启动时</p>
-<div class="language-xml line-numbers-mode" data-ext="xml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 3、@RequestMapping注解</h2>
-<h3> 1、@RequestMapping注解的功能</h3>
-<p>从注解名称上我们可以看到，@RequestMapping注解的作用就是将请求和处理请求的控制器方法关联起来，建立映射关系。<br>
-SpringMVC 接收到指定的请求，就会来找到在映射关系中对应的控制器方法来处理这个请求。</p>
-<h3> 2、@RequestMapping注解的位置</h3>
-<p>@RequestMapping<strong>标识一个类</strong>：设置映射请求的<strong>请求路径的初始信息</strong><br>
-@RequestMapping<strong>标识一个方法</strong>：设置映射请求请求<strong>路径的具体信息</strong></p>
-<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 3、@RequestMapping注解的value属性</h3>
-<p>作用：通过请求的请求路径匹配请求<br>
-<strong>value属性是数组类型</strong>，即当前浏览器发送请求的请求路径匹配<strong>value属性中的任何一个值</strong>，则当前请求就会被注解所表示的方法<strong>进行处理</strong></p>
-<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 4、@RequestMapping注解的method属性</h3>
-<p>作用：通过请求的<strong>请求方式匹配请求</strong><br>
-method属性是RequestMethod类型的<strong>数组</strong>，即当前浏览器所发送的请路径匹配method属性中的任何一种请求方式<br>
-若<strong>浏览器发送请求</strong>的请求路径和@RequestMapping的value值匹配，但<strong>请求方式和method值不匹配，报405错误</strong><br>
-默认值为都支持</p>
-<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>在@RequestMapping的基础上，结合请求方式的一些派生注解：<br>
-@GetMapping，@PostMapping，@DeleteMapping，@PutMapping</p>
-<h3> 5、@RequestMapping注解的params属性（了解）</h3>
-<p>作用：通过请求的请求参数匹配请求，即浏览器发送的请求的请求参数必须满足params属性的设置<br>
-params可以使用四种表达式：<br>
-"param"：要求请求映射所匹配的请求必须携带param请求参数<br>
-"!param"：要求请求映射所匹配的请求必须不能携带param请求参数<br>
-"param=value"：要求请求映射所匹配的请求必须携带param请求参数且param=value<br>
-"param!=value"：要求请求映射所匹配的请求必须携带param请求参数但是param!=value</p>
-<p>若当前请求满足@RequestMapping注解的value和method属性，但是不满足params属性，此时页面回报错400</p>
-<h3> 6、@RequestMapping注解的headers属性（了解）</h3>
-<p>作用：通过请求的请求头匹配请求，即浏览器发送的请求头信息必须满足headers属性的设置<br>
-"header"：要求请求映射所匹配的请求必须携带header请求头信息<br>
-"!header"：要求请求映射所匹配的请求必须不能携带header请求头信息<br>
-"header=value"：要求请求映射所匹配的请求必须携带header请求头信息且header=value<br>
-"header!=value"：要求请求映射所匹配的请求必须携带header请求头信息且header!=value</p>
-<p>若当前请求满足@RequestMapping注解的value和method属性，但是不满足headers属性，此时页面显示404错误，即资源未找到<br>
-（注：请求头和响应头不区分大小写）</p>
-<h3> 7、SpringMVC支持ant风格的路径</h3>
-<p>SpringMVC支持ant风格的路径<br>
-在@requestMapping注解的value属性值中设置一些特殊字符：</p>
-<p>*<em>？：表示任意的单个字符，不包括?本身<br>
-<em>：表示任意的0个或多个字符，不包括?和/<br>
-**：表示任意层数的任意目录，**只能写在双斜线中，中间，左右不能有其他字符</em></em><br>
-注意：在使用**时，只能使用/**/xxx的方式</p>
-<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 8、SpringMVC支持路径中的占位符（重点）</h3>
-<p>传统方式：/deleteUser?id=1  通过？传参数<br>
-rest方式：/user/delete/1   通过/传参数</p>
-<p>需要在@RequestMapping注解的value属性所设置的路径中，使用**{xxx}<strong>的方式表示路径中的数据<br>
-再通过</strong>@PathVariable注解**，将占位符所标识的值和控制器方法的形参进行绑定</p>
-<div class="language-html line-numbers-mode" data-ext="html"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 4、SpringMVC获取请求参数</h2>
-<h3> 1、通过ServletAPI获取</h3>
-<p>只需要在控制器方法的新参位置设置HttpServletRequest类型的形参<br>
-就可以在控制器方法中使用request对象获取请求参数</p>
-<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 2、通过控制器方法的形参获取请求参数</h3>
-<p>只需要在控制器方法的形参位置，设置一个形参，形参的名字和请求参数的名字一致即可</p>
-<div class="language-html line-numbers-mode" data-ext="html"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 3、@RequestParam  将请求参数和控制器形参绑定</h3>
-<p>@RequestParam注解的三个属性：value、required，defaultValue</p>
-<p>value：设置和形参绑定请求参数的名字<br>
-required：设置是否必须传输value所对应的请求参数<br>
-默认值为true，表示value所对应的请求参数必须传输，否则页面报错（400错误）<br>
-若设置为false，表示value所对应的请求参数不是必须传输，若为传输，则形参值为null	<br>
-defaultValue：设置当没有传输value所对应的请求参数时，为形参设置的默认值，此时和required属性值无关</p>
-<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 4、@RequestHeader</h3>
-<p>将请求头信息和控制器方法的形参绑定</p>
-<h3> 5、@CookieValue</h3>
-<p>将cookie数据和控制器方法的形参绑定</p>
-<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 6、通过实体类类型的形参获取请求参数</h3>
-<p>需要在控制器方法的形参位置设置实体类类型的形参</p>
-<p>要保证实体类中的属性的属性名和请求参数的名字一致</p>
-<p>可以通过实体类类型的形参获取请求参数</p>
-<div class="language-html line-numbers-mode" data-ext="html"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 7、解决获取请求参数的乱码问题</h3>
-<p>在web.xml中配置Spring的编码过滤器CharacterEncodingFilter</p>
-<div class="language-xml line-numbers-mode" data-ext="xml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>注：SpringMVC中处理编码的过滤器一定要配置到其他过滤器之前，否则无效</strong></p>
-<h2> 5、域对象共享数据</h2>
-<h3> 1、使用ServletAPI向request域对象共享数据</h3>
-<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 2、使用ModelAndView向request域对象共享数据</h3>
-<p>ModelAndView包含Model和View的功能：<br>
-Model：向请求域中共享数据<br>
-View：设置逻辑视图实现页面跳</p>
-<p>通过ModelAndView向请求域共享数据：<br>
-使用ModelAndView时，可以使用其<strong>Model功能向请求域共享数据</strong><br>
-使用<strong>View功能设置逻辑视图</strong>，但是控制器方法<strong>一定要将ModelAndView作为方法的返回值</strong></p>
-<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 3、使用Model，ModelMap，Map向request域对象共享数据</h3>
-<p>Model，ModelMap和Map的关系：<br>
-在底层中，这些类型的形参最终都是通过BindingAwareModelMap创建<br>
-Model、ModelMap、Map类型的参数其实本质上都是 BindingAwareModelMap 类型的</p>
-<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 4、向session域共享数据</h3>
-<div class="language-html line-numbers-mode" data-ext="html"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 5、向application域共享数据</h3>
-<div class="language-html line-numbers-mode" data-ext="html"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 6、SpringMVC的视图</h2>
-<p>SpringMVC中的视图是View接口，视图的作用渲染数据，将模型Model中的数据展示给用户<br>
-SpringMVC视图的种类很多，默认有转发视图和重定向视图<br>
-当工程引入jstl的依赖，转发视图会自动转换为JstlView<br>
-若使用的视图技术为Thymeleaf，在SpringMVC的配置文件中配置了Thymeleaf的视图解析器，由此视图解析器解析之后所得到的是ThymeleafView</p>
-<h3> 1、ThymeleafView</h3>
-<p>当控制器方法中所设置的视图名称<strong>没有任何前缀</strong>时，此时的视图名称会被SpringMVC配置文件中所配置的视图解析器解析（ThymeleafView），视图名称拼接视图前缀和视图</p>
-<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 2、转发视图</h3>
-<p>SpringMVC中默认的转发视图是InternalResourceView</p>
-<p>当控制器方法中所设置的视图名称以"forward:"为前缀时，创建InternalResourceView视图，此时的视图名称不会被SpringMVC配置文件中所配置的视图解析器解析，而是会将前缀"forward:"去掉，剩余部分作为最终路径通过转发的方式实现跳转</p>
-<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 3、重定向视图</h3>
-<p>SpringMVC中默认的重定向视图是RedirectView</p>
-<p>当控制器方法中所设置的视图名称以"redirect:"为前缀时，创建RedirectView视图，此时的视图名称不会被SpringMVC配置文件中所配置的视图解析器解析，而是会将前缀"redirect:"去掉，剩余部分作为最终路径通过重定向的方式实现跳转</p>
-<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 4、视图控制器view-controller</h3>
-<p>当控制器方法中，仅仅用来实现页面跳转，即只需要设置视图名称时，可以将处理器方法使用viewcontroller标签进行表示</p>
-<p>SpringMVC.xml中添加：</p>
-<div class="language-xml line-numbers-mode" data-ext="xml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 7、RESTful</h2>
-<h3> 1、RESTful简介</h3>
-<p>REST：Representational State Transfer，表现层资源状态转移。</p>
-<p>①资源<br>
-将服务器看作是由很多离散的资源组成，即一切皆资源。一个资源可以由一个或多个URI来标识。URI既是资源的名称，也是资源在Web上的地址。对某个资源感兴趣的客户端应用，可以通过资源的URI与其进行交互。</p>
-<p>②资源的表述<br>
-资源的表述可以有多种格式，例如HTML/XML/JSON/纯文本/图片/视频/音频等等。资源的表述格式可以通过协商机制来确定。请求-响应方向的表述通常使用不同的格式。</p>
-<p>③状态转移<br>
-状态转移说的是：在客户端和服务器端之间转移（transfer）代表资源状态的表述。通过转移和操作资源的表述，来间接实现操作资源的目的。</p>
-<h3> 2、RESTful的实现</h3>
-<p>具体说，就是 HTTP 协议里面，四个表示操作方式的动词：GET、POST、PUT、DELETE。</p>
-<p>它们分别对应四种基本操作：<br>
-<strong>GET 用来获取资源<br>
-POST 用来新建资源<br>
-PUT 用来更新资源<br>
-DELETE用来删除资源</strong></p>
-<p>REST 风格提倡 URL 地址使用统一的风格设计，从前到后各个单词使用斜杠分开，不使用问号键值对方式携带请求参数，而是将要发送给服务器的数据作为 URL 地址的一部分，以保证整体风格的一致性</p>
-<table>
-<thead>
-<tr>
-<th>操作</th>
-<th>传统方式</th>
-<th>REST风格</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>查询操作</td>
-<td>getUserById?id=1</td>
-<td>user/1--&gt;get请求方式</td>
-</tr>
-<tr>
-<td>保存操作</td>
-<td>saveUser</td>
-<td>user--&gt;post请求方式</td>
-</tr>
-<tr>
-<td>删除操作</td>
-<td>deleteUser?id=1</td>
-<td>user/1--&gt;delete请求方式</td>
-</tr>
-<tr>
-<td>更新操作</td>
-<td>updateUser</td>
-<td>user--&gt;put请求方式</td>
-</tr>
-</tbody>
-</table>
-<h3> 3、HiddenHttpMethodFilter</h3>
-<p>浏览器目前只能发送get和post请求<br>
-若要发送put和delete请求，需要<strong>在web.xml中配置一个过滤器HiddenMethodFilter</strong><br>
-配置了过滤器之后，发送的请求要<strong>满足两个条件</strong>，才能将请求方式转换为put或delete<br>
-<strong>1、当前请求的请求方式必须为post<br>
-2、当前请求参数必须传输请求参数_method,_method的值才是最终的请求方式</strong></p>
-<p><strong>web.xml：</strong><br>
-<strong>注：其他过滤器一定要放在Spring的编码过滤器的后面</strong></p>
-<div class="language-xml line-numbers-mode" data-ext="xml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>index.html:</strong></p>
-<div class="language-html line-numbers-mode" data-ext="html"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>Controller:</strong></p>
-<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 8、RESTful案例</h2>
-<h3> 1、准备工作</h3>
-<p>①创建pojo实体类<br>
-②准备dao模拟数据</p>
-<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 2、功能清单</h3>
-<table>
-<thead>
-<tr>
-<th>功能</th>
-<th>URL 地址</th>
-<th>请求方式</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>访问首页√</td>
-<td>/</td>
-<td>GET</td>
-</tr>
-<tr>
-<td>查询全部数据√</td>
-<td>/employee</td>
-<td>GET</td>
-</tr>
-<tr>
-<td>删除√</td>
-<td>/employee/2</td>
-<td>DELETE</td>
-</tr>
-<tr>
-<td>跳转到添加数据页面√</td>
-<td>/toAdd</td>
-<td>GET</td>
-</tr>
-<tr>
-<td>执行保存√</td>
-<td>/employee</td>
-<td>POST</td>
-</tr>
-<tr>
-<td>跳转到更新数据页面√</td>
-<td>/employee/2</td>
-<td>GET</td>
-</tr>
-<tr>
-<td>执行更新√</td>
-<td>/employee</td>
-<td>PUT</td>
-</tr>
-</tbody>
-</table>
-<h3> 3、具体功能：访问首页</h3>
-<h4> ①配置web.xml</h4>
-<p>浏览器向服务器请求访问css样式等静态资源<br>
-tomcat的xml配置的DefaultServlet的url-pattern是/<br>
-当前工程的web.xml配置的前端控制器DispatcherServlet的url-pattern也是/<br>
-因为tomcat中的xml有继承性，当前工程为子，tomcat为父，因此处理请求时会全给DispatcherServlet处理，而它不能处理静态资源等，只能处理有请求的request，所以要在当前工程的web.xml添加配置</p>
-<p><strong>web.xml:</strong></p>
-<div class="language-xml line-numbers-mode" data-ext="xml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4> ②创建页面</h4>
-<div class="language-html line-numbers-mode" data-ext="html"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 4、具体功能：查询所有员工数据</h3>
-<h4> ①控制器方法</h4>
-<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4> ②创建employee_list.html</h4>
-<div class="language-xml line-numbers-mode" data-ext="xml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 5、其他功能添加</h3>
-<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 9、SpringMVC处理ajax请求</h2>
-<h3> 1、@RequestBody</h3>
-<p>@RequestBody可以获取请求体信息，使用@RequestBody注解标识控制器方法的形参，当前请求的请求体就会为当前注解所标识的形参赋值<br>
-<strong>@RequestBody注解将HTTP <em>请求体</em> 中的 <em>JSON或XML等数据</em> 转换为 <em>Java对象</em> 。</strong></p>
-<div class="language-html line-numbers-mode" data-ext="html"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>输出结果：<br>
-requestBody:username=admin&amp;password=123456</p>
-<h3> 2、@RequestBody获取json格式的请求参数</h3>
-<p>1、@RequestBody：将请求体中的内容和控制器方法的形参惊醒绑定<br>
-2、使用@RequestBody注解将json格式的请求参数转换为java对象</p>
-<p>在使用了axios发送ajax请求之后，浏览器发送到服务器的请求参数有两种格式：<br>
-1、name=value&amp;name=value...，此时的请求参数可以通过request.getParameter()获取，对应SpringMVC中，可以直接通过控制器方法的形参获取此类请求参数<br>
-2、{key:value,key:value,...}，此时<strong>无法通过request.getParameter()获取</strong>，之前我们使用操作json的相关jar包gson或jackson处理此类请求参数，可以将其转换为指定的实体类对象或map集合。在SpringMVC中，<strong>直接使用@RequestBody注解</strong>标识控制器方法的形参即可将此类请求参数转换为java对象</p>
-<p><strong>使用@RequestBody获取json格式的请求参数的条件</strong>：</p>
-<p>1、导入jackson的依赖</p>
-<div class="language-xml line-numbers-mode" data-ext="xml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>2、SpringMVC的配置文件中设置开启mvc的注解驱动</p>
-<div class="language-xml line-numbers-mode" data-ext="xml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>3、在控制器方法的形参位置，设置<strong>json格式的请求参数要转换成的java类型</strong>（实体类或map）的参数，并使用@RequestBody注解标识</p>
-<div class="language-html line-numbers-mode" data-ext="html"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>使用@RequestBody注解将json格式的数据转换为map集合</p>
-<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 3、@ResponseBody</h3>
-<p>@ResponseBody用于标识一个控制器方法，可以将该方法的**返回值直接作为响应报文的响应体响应到浏览器  **</p>
-<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 4、@ResponseBody响应浏览器json数据</h3>
-<p>1、@RequestBody：将请求体中的内容和控制器方法的形参进行绑定<br>
-2、使用@requestBody注解将json格式的请求参数转换为java对象</p>
-<p>服务器处理ajax请求之后，大多数情况都需要向浏览器响应一个java对象，此时必须将java对象转换为json字符串才可以响应到浏览器，之前我们使用操作json数据的jar包gson或jackson将java对象转换为json字符串。在SpringMVC中，我们可以直接**使用@ResponseBody注解实现此功能  **</p>
-<p>**@ResponseBody响应浏览器json数据的条件：  **</p>
-<p>1、导入jackson的依赖  (同上一个)<br>
-2、SpringMVC的配置文件中设置开启mvc的注解驱动<br>
-3、<strong>使用@ResponseBody注解标识控制器方法</strong>，在方法中，将需要转换为json字符串并响应到浏览器的<strong>java对象作为控制器方法的返回值</strong>，此时SpringMVC就可以将此对象直接转换为json字符串并响应到浏览器</p>
-<p>常用的Java对象转换为json结果：<br>
-实体类--&gt;json对象<br>
-map--&gt;json对象<br>
-list--&gt;json数组</p>
-<div class="language-xml line-numbers-mode" data-ext="xml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 5、@RestController注解</h3>
-<p>@RestController注解是springMVC提供的一个复合注解，标识在控制器的类上，就相当于为类添加了@Controller注解，并且为其中的每个方法添加了@ResponseBody注解<br>
-<strong>@RestController = @Controller+@ResponseBody</strong></p>
-<h2> 10、文件上传和下载</h2>
-<h3> 1、文件下载</h3>
-<p>ResponseEntity:可以作为控制器方法的返回值，表示响应到浏览器的响应报文<br>
-ResponseEntity用于控制器方法的返回值类型，该控制器方法的返回值就是响应到浏览器的响应报文使用ResponseEntity实现下载文件的功能</p>
-<p>文件下载的模板：</p>
-<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 2、文件上传</h3>
-<p>文件上传要求form表单的请求方式<strong>必须为post</strong>，并且添加**属性enctype="multipart/form-data"**SpringMVC中将上传的文件封装到MultipartFile对象中，通过此对象可以获取文件相关信息</p>
-<p>上传步骤：<br>
-①添加依赖：</p>
-<div class="language-xml line-numbers-mode" data-ext="xml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>②在SpringMVC的配置文件中添加配置：</p>
-<div class="language-xml line-numbers-mode" data-ext="xml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>③控制器方法：</p>
-<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 11、拦截器</h2>
-<h3> 1、拦截器的配置</h3>
-<p>SpringMVC中的拦截器用于拦截控制器方法的执行<br>
-SpringMVC中的拦截器需要实现HandlerInterceptor<br>
-SpringMVC的拦截器必须在SpringMVC的配置文件中进行配置</p>
-<div class="language-xml line-numbers-mode" data-ext="xml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 2、拦截器的三个抽象方法</h3>
-<p>SpringMVC中的拦截器有三个抽象方法：</p>
-<p>preHandle：控制器方法执行之前执行preHandle()，其boolean类型的返回值表示是否拦截或放行，返回true为放行，即调用控制器方法；返回false表示拦截，即不调用控制器方法<br>
-postHandle：控制器方法执行之后执行postHandle()<br>
-afterCompletion：处理完视图和模型数据，渲染视图完毕之后执行afterCompletion()</p>
-<h3> 3、多个拦截器的执行顺序</h3>
-<p>多个拦截器的执行顺序和在SpringMVC配置文件中配置的顺序有关<br>
-preHandle()按照配置的顺序执行，而postHandle()和afterCompletion()按照配置的反序执行</p>
-<p>若拦截器中有某个拦截器的preHandle()返回了false<br>
-拦截器的preHandel()返回false和它之前的拦截器的preHandle()都会执行<br>
-所有的postHandle()都不执行<br>
-拦截器的preHandle()返回false之前的拦截器的afterCompletion()会执行</p>
-<h2> 12、异常处理器</h2>
-<h3> 1、基于配置的异常处理</h3>
-<p>SpringMVC提供了一个处理控制器方法执行过程中所出现的异常的接口：HandlerExceptionResolver<br>
-HandlerExceptionResolver接口的实现类有：DefaultHandlerExceptionResolver和SimpleMappingExceptionResolver<br>
-SpringMVC提供了自定义的异常处理器SimpleMappingExceptionResolver，使用方式：</p>
-<div class="language-xml line-numbers-mode" data-ext="xml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 2、基于注解的异常处理</h3>
-<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 13、注解配置SpringMVC</h2>
-<p>使用配置类和注解代替web.xml和SpringMVC配置文件的功能</p>
-<h3> 1、WebInit类，代替web.xml</h3>
-<p>在Servlet3.0环境中，容器会在类路径中查找实现javax.servlet.ServletContainerInitializer接口的类，如果找到的话就用它来配置Servlet容器（Tomcat）。 Spring提供了这个接口的实现，名为SpringServletContainerInitializer，这个类反过来又会查找实现WebApplicationInitializer的类并将配置的任务交给它们来完成。Spring3.2引入了一个便利的WebApplicationInitializer基础实现，名为AbstractAnnotationConfigDispatcherServletInitializer，当我们的类扩展了AbstractAnnotationConfigDispatcherServletInitializer并将其部署到Servlet3.0容器的时候，容器会自动发现它，并用它来配置Servlet上下文。</p>
-<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 2、SpringConfig类，代替spring的配置文件</h3>
-<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 3、WebConfig类，代替SpringMVC的配置文件：</h3>
-<p>功能：扫描组件，视图解析器，默认的servlet，mvc注解驱动，视图控制器、文件上传解析器、拦截器、异常解析器</p>
-<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2> 14、SpringMVC执行流程</h2>
-<h3> 14.1、SpringMVC常用组件</h3>
-<p>DispatcherServlet：前端控制器，不需要工程师开发，由框架提供<br>
-作用：统一处理请求和响应，整个流程控制的中心，由它调用其它组件处理用户的请求</p>
-<p>HandlerMapping：处理器映射器，不需要工程师开发，由框架提供<br>
-作用：根据请求的url、method等信息查找Handler，即控制器方法</p>
-<p>Handler：处理器，需要工程师开发<br>
-作用：在DispatcherServlet的控制下Handler对具体的用户请求进行处理</p>
-<p>HandlerAdapter：处理器适配器，不需要工程师开发，由框架提供<br>
-作用：通过HandlerAdapter对处理器（控制器方法）进行执行</p>
-<p>ViewResolver：视图解析器，不需要工程师开发，由框架提供<br>
-作用：进行视图解析，得到相应的视图，例如：ThymeleafView、InternalResourceView、RedirectView</p>
-<p>View：视图<br>
-作用：将模型数据通过页面展示给用户</p>
-<h3> 14.2、DispatcherServlet初始化过程</h3>
-<p>DispatcherServlet <strong>本质上是一个 Servlet</strong>，所以天然的遵循 Servlet 的生命周期。所以宏观上是 <strong>Servlet生命周期来进行调度</strong>。</p>
-<p>①初始化WebApplicationContext<br>
-所在类：org.springframework.web.servlet.FrameworkServlet</p>
-<p>②创建WebApplicationContext<br>
-所在类：org.springframework.web.servlet.FrameworkServlet</p>
-<p>③DispatcherServlet初始化策略<br>
-FrameworkServlet创建WebApplicationContext后，刷新容器，调用onRefresh(wac)，此方法在DispatcherServlet中进行了重写，调用了initStrategies(context)方法，初始化策略，即初始化DispatcherServlet的各个组件<br>
-所在类：org.springframework.web.servlet.DispatcherServlet</p>
-<h3> 14.3、DispatcherServlet调用组件处理请求</h3>
-<p>①processRequest()<br>
-FrameworkServlet重写HttpServlet中的service()和doXxx()，这些方法中调用了processRequest(request, response)<br>
-所在类：org.springframework.web.servlet.FrameworkServlet</p>
-<p>②doService()<br>
-所在类：org.springframework.web.servlet.DispatcherServlet</p>
-<p>③doDispatch()<br>
-所在类：org.springframework.web.servlet.DispatcherServlet</p>
-<h3> 14.4、SpringMVC的执行流程</h3>
-<p>1、用户向服务器发送请求，请求<strong>被SpringMVC 前端控制器 DispatcherServlet捕获</strong>。</p>
-<p>2、DispatcherServlet<strong>对请求URL</strong>进行<strong>解析</strong>，得到请求<strong>资源标识符（URI）</strong>，<strong>判断请求URI对应的映射</strong>：</p>
-<p>如果不存在：<br>
-再判断是否配置了mvc:default-servlet-handler|<br>
-如果没配置，则控制台报映射查找不到，客户端展示404错误<br>
-如果有配置，则访问目标资源（一般为静态资源，如：JS,CSS,HTML），找不到客户端也会展示404错误</p>
-<p>如果存在则执行下面的流程</p>
-<p>3、根据该URI，调用HandlerMapping获得该Handler配置的所有相关的对象（包括Handler对象以及Handler对象对应的拦截器），最后以HandlerExecutionChain执行链对象的形式返回。</p>
-<p>4、DispatcherServlet 根据获得的Handler，选择一个合适的HandlerAdapter。</p>
-<p>5、如果成功获得HandlerAdapter，此时将开始执行<strong>拦截器的preHandler</strong>(…)方法【正向】</p>
-<p>6、提取Request中的模型数据，填充Handler入参，开始<strong>执行Handler（Controller 控制器)方法</strong>，处理请求。<br>
-在填充Handler的入参过程中，根据你的配置，Spring将帮你做一些额外的工作：<br>
-HttpMessageConveter： 将请求消息（如Json、xml等数据）转换成一个对象，将对象转换为指定的响应信息<br>
-数据转换：对请求消息进行数据转换。如String转换成Integer、Double等<br>
-数据格式化：对请求消息进行数据格式化。 如将字符串转换成格式化数字或格式化日期等<br>
-数据验证： 验证数据的有效性（长度、格式等），验证结果存储到BindingResult或Error中</p>
-<p>7、Handler执行完成后，向DispatcherServlet<strong>返回一个ModelAndView对象</strong>。</p>
-<p>8、此时将开始执行<strong>拦截器的postHandle(...)方法</strong>【逆向】。</p>
-<p>9、根据返回的ModelAndView（此时会判断是否存在异常：如果<strong>存在异常</strong>，则执行<strong>HandlerExceptionResolver进行异常处理</strong>）选择一个适合的ViewResolver进行<strong>视图解析</strong>，根据Model和View，来渲染视图。</p>
-<p>10、<strong>渲染视图完毕</strong>执行<strong>拦截器的afterCompletion(…)方法</strong>【逆向】</p>
-<p>11、将**渲染结果返回给客户端 **</p>
-<h2> 15、SSM整合</h2>
-<h3> 1、ContextLoaderListener</h3>
-<p><strong>SpringMVC的IOC</strong>容器在<strong>DispatcherServlet初始化</strong>的时候创建，而配置文件中加入load-on-startup标签将<strong>DispatcherServlet初始化提前到服务器启动时创建servlet时创建</strong>，所以SpringMVC的IOC容器在服务器启动时就会创建。但SpringMVC的IOC容器中要注入Service等对象，而它由Spring的IOC创建，所以<strong>Spring的IOC要比SpringMVC的IOC创建要提前</strong>。在服务器启动时，会<strong>先创建监听器，过滤器，Servlet</strong>。所以<strong>将读取Spring配置文件，创建Spring的IOC放在监听器的初始方法中</strong>。</p>
-<p><strong>web.xml新增：</strong></p>
-<div class="language-xml line-numbers-mode" data-ext="xml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>spring.xml</strong></p>
-<div class="language-xml line-numbers-mode" data-ext="xml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><h3> 2、准备工作</h3>
-<h4> ①创建Maven Module</h4>
-<h4> ②导入依赖</h4>
-<div class="language-xml line-numbers-mode" data-ext="xml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>③创建表</p>
-<h3> 3、配置web.xml</h3>
-<div class="language-xml line-numbers-mode" data-ext="xml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 4、配置springmvc.xml</h3>
-<div class="language-xml line-numbers-mode" data-ext="xml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 5、搭建MyBatis环境</h3>
-<h4> ①创建属性文件jdbc.properties</h4>
-<div class="language-properties line-numbers-mode" data-ext="properties"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4> ②创建MyBatis的核心配置文件mybatis-config.xml</h4>
-<div class="language-xml line-numbers-mode" data-ext="xml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4> ③创建Mapper接口和映射文件</h4>
-<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-xml line-numbers-mode" data-ext="xml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4> ④创建日志文件log4j.xml</h4>
-<div class="language-xml line-numbers-mode" data-ext="xml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 6、创建Spring的配置文件并配置</h3>
-<div class="language-xml line-numbers-mode" data-ext="xml"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3> 7、测试功能</h3>
-<h4> ①创建组件</h4>
-<p>实体类Employee  （略）</p>
-<p>控制层组件EmployeeController</p>
-<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>创建接口EmployeeService</p>
-<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>创建实现类EmployeeServiceImpl</p>
-<div class="language-java line-numbers-mode" data-ext="java"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4> ②创建页面</h4>
-<div class="language-html line-numbers-mode" data-ext="html"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4> ③访问测试分页功能</h4>
-<p><a href="http://localhost:8080/ssm/employee/page/2" target="_blank" rel="noopener noreferrer">http://localhost:8080/ssm/employee/page/2</a></p>
-]]></content:encoded>
-      <enclosure url="https://raw.githubusercontent.com/T4mako/ImageBed/main/image-20230222202004184.png" type="image/png"/>
     </item>
   </channel>
 </rss>
