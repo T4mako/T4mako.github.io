@@ -1,5 +1,5 @@
 ---
-title: SpringBoot 基础
+title: SpringBoot2 基础
 icon: leaf
 order: 11
 category: 
@@ -9,29 +9,15 @@ tag:
     - java
     - SpringBoot
 ---
-## 1、Spring与SpringBoot
+## 1、Spring 与 SpringBoot
 
-Spring的生态：web开发、数据访问、安全控制、分布式、消息服务、移动开发、批处理、......
-Spring5重大升级：响应式编程、响应式编程
 <!-- more -->
-SpringBoot优点：创建独立Spring应用、内嵌web服务器、自动starter依赖，简化构建配置、自动配置Spring以及第三方功能、提供生产级别的监控、健康检查及外部化配置、无代码生成、无需编写XML
-SpringBoot缺点：称版本帝，迭代快，需要时刻关注变化、封装太深，内部原理复杂，不容易精通
-
-时代背景：
-	**微服务：**
-		微服务是一种架构风格
-		一个应用拆分为一组小型服务
-		每个服务运行在自己的进程内，也就是可独立部署和升级
-		服务之间使用轻量级HTTP交互
-		服务围绕业务功能拆分
-		可以由全自动部署机制独立部署
-		去中心化，服务自治。服务可以使用不同的语言、不同的存储技术
-	**分布式	**
-	**云原生**
+SpringBoot 优点：创建独立 Spring 应用、内嵌 web 服务器、自动 starter 依赖，简化构建配置、自动配置 Spring 以及第三方功能、提供生产级别的监控、健康检查及外部化配置、无代码生成、无需编写 XML  
+SpringBoot 缺点：称版本帝，迭代快，需要时刻关注变化、封装太深，内部原理复杂，不容易精通
 
 **[springboot的官方文档](https://docs.spring.io/spring-boot/docs/current/reference/html/documentation.html#documentation)**
 
-## 2、SpringBoot2入门
+## 2、SpringBoot2 入门
 
 ### 1、创建maven工程引入依赖
 
@@ -79,7 +65,7 @@ public class HelloController {
 
 ### 4、测试
 
-**直接运行main方法**
+**直接运行 main 方法**
 
 ### 5、简化配置
 
@@ -91,9 +77,9 @@ server.port=8888
 
 ### 6、简化部署
 
-如果添加插件启动时报错，可以尝试在`<plugin>`标签内部添加设置版本号的version标签，版本号要与Spring版本号一致
+如果添加插件启动时报错，可以尝试在 `<plugin>` 标签内部添加设置版本号的 version 标签，版本号要与 Spring 版本号一致
 
-在pom.xml中添加：
+在 pom.xml 中添加：
 
 ```xml
 <build>
@@ -110,15 +96,15 @@ server.port=8888
 把项目打成 **jar 包**，直接在目标服务器执行即可。
 
 注意点：
-	有的时候cmd命令启动不了springboot项目，可能是因为在属性中开启了【快速编辑模式】，取消方法：右击cmd控制台的窗口上方标题区域打开【选项】取消勾选【快去编辑模式】
+	有的时候cmd命令启动不了 springboot 项目，可能是因为在属性中开启了【快速编辑模式】，取消方法：右击 cmd 控制台的窗口上方标题区域打开【选项】取消勾选【快去编辑模式】
 
 ## 3、了解自动配置原理
 
-### 1、SpringBoot特点
+### 1、SpringBoot 特点
 
 #### 1、依赖管理
 
-##### ① 父项目做依赖管理
+① 父项目做依赖管理
 
 **在父工程中统一管理项目中的依赖信息，具体来说是管理依赖信息的版本。**
 
@@ -142,22 +128,21 @@ server.port=8888
 **可以修改默认版本号**
 
 ```xml
-<!--1、查看spring-boot-dependencies里面规定当前依赖的版本 用的 key。
+<!--1、查看 spring-boot-dependencies 里面规定当前依赖的版本 用的 key。
 	2、在 当前 项目里面重写配置-->
 <properties>
     <mysql.version>5.1.43</mysql.version>
 </properties>
 ```
 
-##### ②starter场景启动器
+② starter 场景启动器
 
-1、**spring-boot-starter-\*** ： *就某种场景（**官方starter**）
-2、只要引入 **starter**，这个场景的所有常规需要的 **依赖** 都 **自动引入**
-3、SpringBoot所有支持的场景
+1. `spring-boot-starter-*` ： 就某种场景（官方 starter）  
+2. 只要引入 starter，这个场景的所有常规需要的依赖都自动引入
+3. SpringBoot 所有支持的场景：  
 https://docs.spring.io/spring-boot/docs/current/reference/html/using-spring-boot.html#using-boot-starter
-4、见到的 **\*-spring-boot-starter**： **第三方starter**为我们提供的简化开发的场景启动器。
-5、所有 **场景启动器** **最底层的依赖**:
-
+1. 见到的 `*-spring-boot-starter`： 第三方 starter 为我们提供的简化开发的场景启动器
+2. 所有场景启动器最底层的依赖:
 ```xml
 <!--所有场景启动器最底层的依赖-->
 <dependency>
@@ -170,91 +155,59 @@ https://docs.spring.io/spring-boot/docs/current/reference/html/using-spring-boot
 
 注：无需关注版本号，自动版本仲裁:
 	1、引入依赖默认都可以不写版本
-	2、引入非版本仲裁的jar，要写版本号。
+	2、引入非版本仲裁的 jar，要写版本号。
 
 #### 2、自动配置
 
-##### 1、自动配好Tomcat
+1. 自动配好 Tomcat  
+   内嵌 Tomcat，因此项目打 jar 包即可  
 
-​	引入Tomcat依赖
-​	配置Tomcat
+2. 自动配好 SpringMVC  
+   引入 SpringMVC 全套组件   
+   自动配好 SpringMVC 常用组件（功能）
 
-```xml
-<dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-tomcat</artifactId>
-      <version>2.3.4.RELEASE</version>
-      <scope>compile</scope>
-</dependency>
-```
 
-##### 2、自动配好SpringMVC
+3. 自动配好 Web 常见功能，如：字符编码问题  
+   SpringBoot 帮我们配置好了所有 web 开发的常见场景如字符过滤器等
 
-​	引入 SpringMVC 全套组件
-​	自动配好 SpringMVC 常用组件（功能）
+4. 默认的包扫描  
+   主程序所在包及其下面的所有子包里面的组件都会被默认扫描进来，无需以前的包扫描配置  
+   想要改变扫描路径，在 MainApplication 上添加`@SpringBootApplication(scanBasePackages="com.t4mako")` 或者 `@ComponentScan("com.t4mako")` 指定扫描路径
+    ```java
+    @SpringBootApplication
+    等同于
+    @SpringBootConfiguration
+    @EnableAutoConfiguration
+    @ComponentScan("com.t4mako.boot")
+    ```
 
-##### 3、自动配好Web常见功能，如：字符编码问题
+5. 各种配置拥有默认值
+   默认配置最终都是映射到某个类上，（`MultipartProperties` 类）  
+   配置文件的值（`application.properties`）最终会 绑定每个类上，这个类会在容器中创建对象
 
-​	SpringBoot 帮我们配置好了所有 web 开发的常见场景
-​		*字符过滤器* 等
+6. 按需加载所有自动配置项
+    引入了哪些场景这个场景的自动配置才会被开启  
+    SpringBoot 的所有自动配置功能都在    spring-boot-autoconfigur 包里（不一定都生效）
 
-##### 4、默认的包扫描
+### 2、容器功能（关键注解 - 重要）
 
-**主程序所在包 **及其下面的所有 **子包** 里面的组件都会被默认扫描进来
-**无需以前的包扫描配置**
+spring boot 项目默认会扫描主类同级的包
 
-*想要改变扫描路径*，在 MainApplication上添加
-**@SpringBootApplication(scanBasePackages="com.t4mako")** 或者 **@ComponentScan指定扫描路径**
 
-```java
-@SpringBootApplication
-等同于
-@SpringBootConfiguration
-@EnableAutoConfiguration
-@ComponentScan("com.t4mako.boot")
-```
+#### @Configuration
 
-##### 5、各种配置拥有默认值
+@Configuration 注解说明这是一个配置类（创建 bean）  
+在类上添加 Configration 类似于 Spring 中的 beans.xml  
+标注了 @Configuration 注解的类本身也是一个组件  
 
-默认配置最终都是映射到某个类上，（MultipartProperties类）
-配置文件的值（**application.properties**）最终会 **绑定每个类上**，这个类会在容器中创建对象
+- 参数 proxyBeanMethods：
+  - true（默认）：单实例（Full 模式）
+  - false：（类、方法）被调用时返回是新创建的（Lite 模式）
 
-##### 6、按需加载所有自动配置项
-
-非常多的 starter
-**引入了哪些场景** 这个场景的 **自动配置才会被开启**
-SpringBoot 的 **所有自动配置功能** 都在 **spring-boot-autoconfigur包** 里面（不一定都生效）
-
-### 2、容器功能(关键注解-重要)
-
-==spring boot 项目默认会扫描主类同级的包==
-
-#### 1、组件相关
-
-##### 1、@Configuration
-
-**@Configuration **==告诉SpringBoot这是一个**配置类 == 配置文件（创建bean）**==
-**在类上添加 Configration 类似于 Spring 中的 beans.xml**
-**标注了@Configuration 注解的类本身也是一个组件**
-
-参数 proxyBeanMethods：
-	**true(默认)：单实例
-	false：（类、方法）被调用时返回是新创建的**
-
-在类**方法**中添加**@Bean**注解：
-		==Id = 方法名，容器中的实例 = 返回的值==
-
-**Full(true)模式** 与 **Lite(false)模式**：
-**配置类 **组件之间 **无依赖关系**（没有相互调用）用Lite模式加速容器启动过程，减少判断 **false**
-**配置类 **组件之间 **有依赖关系**，方法会被调用得到之前单实例组件 **true**
-
-`Full模式获取组件时，会先检查容器中是否有该组件，Lite模式不会检查容器，直接创建一个新的组件返回`
-
-*Full(proxyBeanMethods = true)（保证每个**@Bean方法**被调用多少次返回的组件都是**单实例**的）
-Lite(proxyBeanMethods = false)（每个**@Bean方法**被调用多少次返回的组件都是**新创建**的）*
+Full 模式获取组件时，会先检查容器中是否有该组件，Lite 模式不会检查容器，直接创建一个新的组件返回
 
 ```java
-@Configuration(proxyBeanMethods = false) //告诉SpringBoot这是一个配置类 == 配置文件（创建bean）
+@Configuration(proxyBeanMethods = false) //告诉 SpringBoot 这是一个配置类 == 配置文件（创建 bean）
 public class MyConfig {
     @Bean  //id = user01
     public User user01(){
@@ -268,80 +221,55 @@ public class MyConfig {
         return new Pet("tomcat");
     }
 }
-//################################@Configuration测试代码如下########################################
-@SpringBootConfiguration
-@EnableAutoConfiguration
-@ComponentScan("com.atguigu.boot")
-public class MainApplication {
-    public static void main(String[] args) {
-        //1、返回我们IOC容器
-        ConfigurableApplicationContext run = SpringApplication.run(MainApplication.class, args);
-        //2、查看容器里面的组件
-        String[] names = run.getBeanDefinitionNames();
-        for (String name : names) {
-            System.out.println(name);
-        }
-        //3、从容器中获取组件
-        Pet tom01 = run.getBean("tom", Pet.class);
-        Pet tom02 = run.getBean("tom", Pet.class);
-        System.out.println("组件："+(tom01 == tom02));
-        //4、com.atguigu.boot.config.MyConfig$$EnhancerBySpringCGLIB$$51f1e1ca@1654a892
-        MyConfig bean = run.getBean(MyConfig.class);
-        System.out.println(bean);
-        //如果 @Configuration(proxyBeanMethods = true)代理对象调用方法。SpringBoot总会检查这个组件是否在容器中有。
-        //保持组件单实例
-        User user = bean.user01();
-        User user1 = bean.user01();
-        System.out.println(user == user1);
-        User user01 = run.getBean("user01", User.class);
-        Pet tom = run.getBean("tom", Pet.class);
-        System.out.println("用户的宠物："+(user01.getPet() == tom));
+// 测试时，在 main 方法中获取 IOC 容器
+```
+
+#### @Bean、@Component、@Controller、@Service、@Repository（持久层注解）
+
+- @Bean：
+  在方法上添加 `@Bean` 注解：  
+  bean 的 Id 为 `方法名`，容器中的实例 为 `方法的返回值`
+
+- @Repository 注解可以将这个数据访问对象标记为 Spring 应用程序上下文中的 bean，从而使得我们可以在其他组件中使用该 bean。
+
+
+#### @ComponentScan、@Import
+
+- @Import：
+  标注在有组件注解的类上（Configuration，Controller...）  
+  用于导入指定类型的组件并自动创建（放到容器中）  
+  默认 id 为全类名  
+  ```java
+    @Import({User.class, DBHelper.class}) //默认 id 全类名
+    @Configuration(proxyBeanMethods = false) //告诉SpringBoot 这是一个配置类
+    public class MyConfig {
     }
-}
-```
+    ```
 
-##### 2、@Bean、@Component、@Controller、@Service、@Repository（持久层注解）
 
-@Repository 注解可以将这个数据访问对象标记为 Spring 应用程序上下文中的 bean，从而使得我们可以在其他组件中使用该 bean。
 
-常规组件
+#### @Conditional 条件装配
 
-##### 3、@ComponentScan、@Import
-
-**@Import**：标注在有组件注解的类上（Configuration，Controller...）
-
-**用于导入指定类型的组件并自动创建（放到容器中）**
-**默认id = 全类名**
-
-```java
-@Import({User.class, DBHelper.class}) //默认id全类名
-@Configuration(proxyBeanMethods = false) //告诉SpringBoot这是一个配置类==配置文件
-public class MyConfig {
-}
-```
-
-##### 4、@Conditional
-
-条件装配：**满足** Conditional指定的 **条件** 时才进行组件（bean）注入
+- @Conditional 条件装配：
+  满足 Conditional 指定的 条件 时才进行组件（bean）注入  
+  该注解可以标注在类上或方法上（类/方法是否生效）
 
 ![](https://raw.githubusercontent.com/T4mako/ImageBed/main/image-20230120113626334.png)
 
-该注解可以标注在类上或方法上（类/方法是否生效）
 
-例子：
-**@ConditionalOnBean**(name = "tom")  容器中 **有** tom组件才生效
-**@ConditionalOnMissingBean**(name = "tom") 容器中 **没有** tom组件才生效
 
-#### 2、原生配置文件引入@ImportResource
+例子：  
+`@ConditionalOnBean(name = "tom")`  容器中有 tom 组件才生效  
+`@ConditionalOnMissingBean(name = "tom")` 容器中没有 tom 组件才生效
 
-==在随意一个配置类(@Configuration)上编写==
+####  @ImportResource 原生配置文件引入
 
-*在随意一个配置类(@Configuration)上编写*
-**@ImportResource注解可以帮助**
-**导入编写的beans.xml的文件导入配置文件中的bean**
+在随意一个配置类（@Configuration）上编写
+@ImportResource 注解可以帮助
+导入编写的 beans.xml 的文件导入配置文件中的 bean
 
 ```xml
-======================有一文件beans.xml=========================
+<!-- 有一文件beans.xml -->
 <bean id="haha" class="com.atguigu.boot.bean.User">
     <property name="name" value="zhangsan"></property>
     <property name="age" value="18"></property>
@@ -353,131 +281,99 @@ public class MyConfig {
 @ImportResource("classpath:beans.xml")
 public class MyConfig {}
 ======================MainApplication测试=================
-        boolean haha = run.containsBean("haha");
-        boolean hehe = run.containsBean("hehe");
-        System.out.println("haha："+haha);//true
-        System.out.println("hehe："+hehe);//true
+boolean haha = run.containsBean("haha");
+boolean hehe = run.containsBean("hehe");
+System.out.println("haha："+haha);//true
+System.out.println("hehe："+hehe);//true
 ```
 
-#### 3、配置绑定 (两种方法)
+#### 读取 Propertie 配置绑定
 
 使用 Java 读取到 properties 文件中的内容，并且把它封装到 JavaBean 中，以供随时使用
 
-只有在容器中的组件，才会拥有SpringBoot提供的强大功能
+只有在容器中的组件，才能进行配置绑定
 
-##### 1、@ConfigurationProperties
+- @ConfigurationProperties
+  - 该注解标注在有组件注解的类上
+  - `@ConfigurationProperties(prefix = "")`
+    - 表示在 Application.properties 中的前缀  
+	- 将有这些前缀的属性的属性值赋值，并生成一个 bean 保存到容器中
 
-使用：
-该注解标注 **在有组件注解的类**上 （只有在 **容器中的组件** 才能有springboot的强大功能）
-**@ConfigurationProperties(prefix = "")  
-表示在Application.properties中的前缀**
-	将有这些前缀的属性的属性值赋值，并生成一个 bean 保存到容器中
+    ```properties
+    mycar.brand=lambo
+    mycar.price=1000000
+    ```
 
-```properties
-mycar.brand=lambo
-mycar.price=1000000
-```
+    ```java
+    /**
+     * 只有在容器中的组件，才能拥有 SpringBoot 提供的强大功能
+     */
+    @Component
+    @ConfigurationProperties(prefix = "mycar")//表示properties 文件中的前缀
+    public class Car {
+        private String brand;
+        private Integer price;
+        ......
+    }
+    ```
 
-```java
-/**
- * 只有在容器中的组件，才会拥有SpringBoot提供的强大功能
- */
-@Component
-@ConfigurationProperties(prefix = "mycar")//表示properties文件中的前缀
-public class Car {
-    private String brand;
-    private Integer price;
-    ......
-}
-```
+- @EnableConfigurationProperties + @ConfigurationProperties
+  - 适用于需要将第三方的没有标注 @Component 的类引入到 IOC 中
+  - 在配置类上写 `@EnableConfigurationProperties(Car.class)`
+    - 开启 Car 类的属性配置绑定功能
+	- 把 Car 这个组件自动注入到容器中
+	- 此时 Car 类中就不用写 @component 注解了 （再通过 @ConfigurationProperties 配置属性）
 
-##### 2、@EnableConfigurationProperties + @ConfigurationProperties
 
-适用于需要将第三方的没有标注 @Component 的类引入到 IOC 中
 
-使用：
-在配置类上写 **@EnableConfigurationProperties(Car.class)**，作用：
-	开启Car **类的属性配置绑定功能**
-	把Car这个组件自动注入到容器中
+    ```java
+    @EnableConfigurationProperties(Car.class) // 开启 Car 的属性配置并自动注入到容器中
+    public class MyConfiguration {
 
-**此时Car类中就不用写@component注解了**
-（再通过@ConfigurationProperties配置属性）
+    @ConfigurationProperties(prefix = "mycar")
+    public class Car {
+    }
+    ```
 
-```java
-@EnableConfigurationProperties(Car.class) // 开启 Car 的属性配置并自动注入到容器中
-public class MyConfiguration {
+### 3、自动装配（Bean 自动装入 IOC 容器）
 
-@ConfigurationProperties(prefix = "mycar")
-public class Car {
-}
-```
-
-### 3、自动配置原理入门（给容器中自动注入组件）
+遵循约定大于配置原则，在 boot 程序启动后，起步依赖中的一些 bean 对象会自动注入到 IOC 中
 
 #### 3.1、引导加载自动配置类
 
-**@SpringBootApplication=**
-**@SpringBootConfiguration + @EnableAutoConfiguration + @ComponentScan("com.t4mako.boot")**
+`@SpringBootApplication` = 
+`@SpringBootConfiguration` + `@EnableAutoConfiguration` + `@ComponentScan("com.t4mako.boot")`  
 
-1、*@SpringBootConfiguration：*
-	相当于*@Configuration*。代表当前是一个配置类
-
-2、*@ComponentScan*：
-	指定扫描哪些，Spring注解
-
-3、***@EnableAutoConfiguration：***
-
-**@EnableAutoConfiguration = @AutoConfigurationPackage + @Import**
-
-```java
-@AutoConfigurationPackage
-@Import(AutoConfigurationImportSelector.class)
-public @interface EnableAutoConfiguration {}
-```
-
-**① @AutoConfigurationPackage：**
-
-自动配置包、指定了默认的包规则
-即 **将MainApplication 所在包下所有组件导入进来**
-
-*点入@AutoConfigurationPackage：*
-
-```java
-@Import(AutoConfigurationPackages.Registrar.class)  //给容器中导入一个组件
-public @interface AutoConfigurationPackage {}
-```
-
-**AutoConfigurationPackages.Registrar.class**：
-	利用Registrar给容器中导入一系列组件
-	将指定的一个包下的所有组件导入进来，即**MainApplication 所在包下**。
-
-**② @Import(AutoConfigurationImportSelector.class)**
-
-*AutoConfigurationImportSelector.class：*
-1、利用getAutoConfigurationEntry(annotationMetadata)方法：给容器中批量导入一些组件
-2、调用`List<String> configurations = getCandidateConfigurations(annotationMetadata, attributes)`：获取到所有需要导入到容器中的配置类
-3、利用工厂加载 `Map<String, List<String>> loadSpringFactories(@Nullable ClassLoader classLoader);`得到所有的组件
-4、从META-INF/spring.factories位置来加载一个文件。
-	默认扫描我们当前系统里面所有META-INF/spring.factories位置的文件：
-    spring-boot-autoconfigure-2.3.4.RELEASE.jar包里面也有META-INF/spring.factories
-
-文件里面写死了spring-boot一启动就要给容器中加载的所有配置类（127个，往后的版本有更改）
+- @SpringBootConfiguration：相当于 @Configuration 。代表当前是一个配置类
+- @ComponentScan：指定扫描哪些
+- @EnableAutoConfiguration：含有 @import 注解
+  ```java
+    @AutoConfigurationPackage
+    @Import(AutoConfigurationImportSelector.class)
+    public @interface EnableAutoConfiguration {}
+    ```
+    - @AutoConfigurationPackage：自动配置包、指定了默认的包规则  
+    即将 MainApplication 所在包下所有组件导入进来
+    - @Import(AutoConfigurationImportSelector.class)：AutoConfigurationImportSelector.class：  
+    从 `META-INF/spring.factories` 位置来加载一个文件。
+	默认扫描我们当前系统里面所有 META-INF/spring.factories 位置的文件：  
+    spring-boot-autoconfigure-2.3.4.RELEASE.jar 包里面也有 META-INF/spring.factories，该文件中含有需要自动装配的全类名字符串
 
 #### 3.2、按需开启自动配置项
 
-虽然我们127个场景的所有自动配置**启动的时候默认全部加载**
-xxxxAutoConfiguration按照**条件装配**规则（@Conditional），最终会**按需配置**。
+所有场景启动的时候默认全部加载    
+xxxxAutoConfiguration 按照条件装配规则（@Conditional），最终会按需配置
 
 #### 3.3、修改默认配置
 
-给@Bean标注的方法传入了对象参数，这个参数的值就会从容器中找。
+给 @Bean 标注的方法传入了对象参数，这个参数的值就会从容器中找
 
 ```java
 @Bean
 @ConditionalOnBean(MultipartResolver.class)  //容器中有这个类型组件
 @ConditionalOnMissingBean(name = DispatcherServlet.MULTIPART_RESOLVER_BEAN_NAME) //容器中没有这个名字 multipartResolver 的组件
 public MultipartResolver multipartResolver(MultipartResolver resolver) {
-    //给@Bean标注的方法传入了对象参数，这个参数的值就会从容器中找。
+    //给 @Bean 标注的方法传入了对象参数，这个参数的值就会从容器中找。
     //SpringMVC multipartResolver。防止有些用户配置的文件上传解析器不符合规范
     // Detect if the user has created a MultipartResolver but named it incorrectly
     return resolver;
@@ -485,7 +381,7 @@ public MultipartResolver multipartResolver(MultipartResolver resolver) {
 //给容器中加入了文件上传解析器；
 ```
 
-**SpringBoot默认会在底层配好所有的组件。但是如果用户自己配置了以用户的优先**
+SpringBoot 默认会在底层配好所有的组件。但是如果用户自己配置了以用户的优先
 
 ```java
 @Bean
@@ -495,16 +391,15 @@ public CharacterEncodingFilter characterEncodingFilter() {
 ```
 
 总结：
-	SpringBoot先**加载所有的自动配置类**xxxxxAutoConfiguration
-	每个自动配置类**按照条件生效（不是全部）**，默认都会绑定配置文件指定的值。xxxxProperties里面拿。xxxProperties和配置文件进行了绑定
-		（对应注解*@EnableConfigurationProperties*）
-	生效的 **配置类**就会**给容器中装配很多组件**
-	只要**容器中有这些组件**，相当于这些**功能就有了**
+	SpringBoot 先加载所有的自动配置类 xxxxxAutoConfiguration   
+	每个自动配置类按照条件生效，默认都会绑定配置文件指定的值（xxxxProperties 里，xxxProperties 和配置文件进行了绑定）（对应注解 @EnableConfigurationProperties）
+	生效的配置类就会给容器中装配很多组件  
+	只要容器中有这些组件，相当于这些功能就有了  
 	定制化配置：
-		用户自己**@Bean替换底层组件**
-		用户去看这个组件是获取的**配置文件什么值就去修改**。
+		用户自己 @Bean 替换底层组件
+		用户去看这个组件是获取的配置文件什么值就去修改。
 
-**xxxxxAutoConfiguration ---> 组件  --->** **xxxxProperties里面拿值  ----> application.properties（修改）**
+xxxxxAutoConfiguration ---> 组件  ---> xxxxProperties 里面拿值  ----> application.properties（修改）
 
 #### 3.4最佳实践
 
@@ -513,7 +408,7 @@ public CharacterEncodingFilter characterEncodingFilter() {
 
 2、查看自动配置了哪些（选做）
 		自己分析，引入场景对应的自动配置一般都生效了
-		**配置文件中debug=true**开启**自动配置报告**。Negative（不生效）\ Positive（生效）
+		配置文件中debug = true开启自动配置报告。Negative（不生效）\ Positive（生效）
 
 3、是否需要修改
 		参照文档修改配置项
@@ -522,94 +417,7 @@ public CharacterEncodingFilter characterEncodingFilter() {
 		自定义或加入替换组件
 			@Bean、@Component...
 		自定义器
-			 **XXXXXCustomizer**；
-
-### 4、开发小技巧
-
-#### 1、Lombok
-
-**简化JavaBean开发**
-
-1、引入依赖
-
-```xml
-<dependency>
-	<groupId>org.projectlombok</groupId>
-	<artifactId>lombok</artifactId>
-</dependency>
-```
-
-2、搜索安装 lombak 插件
-
-3、编写 JavaBean
-
-```java
-===============================简化JavaBean开发===================================
-@NoArgsConstructor //无参构造器
-@AllArgsConstructor //全参构造器
-@Data //get、set方法
-@ToString //toString方法
-@EqualsAndHashCode //EqualsAndHashCode方法
-public class User {
-
-    private String name;
-    private Integer age;  
-    private Pet pet;
-    public User(String name,Integer age){
-        this.name = name;
-        this.age = age;
-    }
-}
-
-
-
-================================简化日志开发===================================
-@Slf4j
-@RestController
-public class HelloController {
-    @RequestMapping("/hello")
-    public String handle01(@RequestParam("name") String name){
-        
-        log.info("请求进来了....");
-        
-        return "Hello, Spring Boot 2!"+"你好："+name;
-    }
-}
-```
-
-#### 2、dev-tools
-
-加入依赖
-
-```xml
-<dependency>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-devtools</artifactId>
-    <optional>true</optional>
-</dependency>
-```
-
-项目或者页面修改以后：**Ctrl+F9 （重启）即可**
-
-#### 3、Spring Initailizr（项目初始化向导）
-
-创建新项目
-
-![image-20230120164235192](https://raw.githubusercontent.com/T4mako/ImageBed/main/image-20230120164052376.png)
-
-选择需要的功能模块，boot版本等
-
-![image-20230120164418965](https://raw.githubusercontent.com/T4mako/ImageBed/main/image-20230120164418965.png)
-
-自动引入依赖
-
-自动创建项目结构：
-
-![image-20230120164443965](https://raw.githubusercontent.com/T4mako/ImageBed/main/image-20230120164443965.png)
-
-自动编写好主配置类：
-
-![image-20230120164502332](https://raw.githubusercontent.com/T4mako/ImageBed/main/image-20230120164502332.png)
+			 XXXXXCustomizer；
 
 ## 4、配置文件
 
@@ -621,7 +429,7 @@ public class HelloController {
 
 #### 2、yaml
 
-##### yaml简介：
+##### yaml 简介：
 
 YAML 是 "YAML Ain't Markup Language"（YAML 不是一种标记语言）的递归缩写。在开发的这种语言时，YAML 的意思其实是："Yet Another Markup Language"（仍是一种标记语言）。 
 
