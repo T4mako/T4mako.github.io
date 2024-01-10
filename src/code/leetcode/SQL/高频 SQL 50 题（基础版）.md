@@ -53,7 +53,6 @@ order by author_id;
 
 ### 1683. 无效的推文
 
-
 <Badge text="简单" type="tip" vertical="middle" />
 
 ```sql
@@ -62,9 +61,8 @@ from Tweets
 where LENGTH(content) > 15;
 ```
 
+## 连接
 ### 1378. 使用唯一标识码替换员工ID
-
-
 <Badge text="简单" type="tip" vertical="middle" />
 
 ```sql
@@ -143,3 +141,25 @@ LEFT JOIN (
 ON s.student_id = grouped.student_id AND sub.subject_name = grouped.subject_name
 ORDER BY s.student_id, sub.subject_name;
 ```
+
+## 聚合函数
+
+### 620. 有趣的电影
+<Badge text="简单" type="tip" vertical="middle" />
+```sql
+select * from cinema 
+where description <> 'boring' 
+and id % 2 = 1
+order by rating desc
+```
+
+### 1251. 平均售价
+<Badge text="简单" type="tip" vertical="middle" />
+```sql
+select p.product_id,IFNULL(ROUND(SUM(units * price) / SUM(units), 2),0) 'average_price'
+from Prices p left join UnitsSold u
+on p.product_id = u.product_id
+and u.purchase_date between p.start_date and p.end_date
+group by p.product_id
+```
+
