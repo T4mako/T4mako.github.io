@@ -4,7 +4,7 @@ category:
   - SQL
 ---
 
-# 高频 SQL 50题
+# 高频 SQL 50 题
 
 [题目集合](https://leetcode.cn/studyplan/sql-free-50/)
 
@@ -161,5 +161,78 @@ from Prices p left join UnitsSold u
 on p.product_id = u.product_id
 and u.purchase_date between p.start_date and p.end_date
 group by p.product_id
+```
+
+### 1075. 项目员工 I
+<Badge text="简单" type="tip" vertical="middle" />
+```sql
+select p.project_id,Round(AVG(e.experience_years),2) as average_years
+from PROJECT as p LEFT JOIN EMPLOYEE as e
+ON p.employee_id = e.employee_id
+group by project_id
+```
+
+### 1633. 各赛事的用户注册率
+<Badge text="简单" type="tip" vertical="middle" />
+```sql
+select 
+    contest_id,Round((COUNT(*) * 100 / (select COUNT(*) from USERS)),2) as percentage
+from 
+    Register as r
+group by 
+    r.contest_id
+order by 
+    percentage desc,r.contest_id
+```
+
+### 1211. 查询结果的质量和占比
+<Badge text="简单" type="tip" vertical="middle" />
+
+```sql
+SELECT 
+    query_name,
+    ROUND(AVG(rating / position),2) as quality,
+    ROUND(SUM(IF(rating < 3, 1, 0)) * 100 / COUNT(*), 2) poor_query_percentage
+FROM Queries
+group by query_name
+having query_name is not null;
+
+
+```
+
+## 排序和分组
+
+### 2356. 每位教师所教授的科目种类的数量
+<Badge text="简单" type="tip" vertical="middle" />
+
+```sql
+SELECT teacher_id,(COUNT(DISTINCT subject_id)) as cnt
+from Teacher 
+GROUP BY teacher_id
+```
+
+### 1141. 查询近30天活跃用户数
+<Badge text="简单" type="tip" vertical="middle" />
+
+```sql
+select activity_date as day,COUNT(distinct user_id) as active_users
+from Activity
+where activity_date between '2019-06-28' and '2019-07-27'
+group by activity_date
+order by activity_date
+```
+
+### 1084. 销售分析III
+<Badge text="简单" type="tip" vertical="middle" />
+
+```sql
+select s.product_id,p.product_name
+from Product as p RIGHT JOIN Sales as s
+on p.product_id = s.product_id
+group by s.product_id
+having
+    MAX(s.sale_date) between '2019-01-01' and '2019-03-31'
+    and
+    MIN(s.sale_date) between '2019-01-01' and '2019-03-31'
 ```
 
