@@ -236,3 +236,34 @@ having
     MIN(s.sale_date) between '2019-01-01' and '2019-03-31'
 ```
 
+### 596. 超过5名学生的课
+
+<Badge text="简单" type="tip" vertical="middle" />
+
+```sql
+select class from Courses group by class having count(distinct student) >= 5
+```
+
+### 1729. 求关注者的数量
+<Badge text="简单" type="tip" vertical="middle" />
+
+```sql
+select user_id ,count(follower_id) followers_count
+from Followers
+group by user_id
+order by user_id
+```
+
+### 619. 只出现一次的最大数字
+<Badge text="简单" type="tip" vertical="middle" />
+
+```sql
+SELECT MAX(num) AS num
+FROM
+    (SELECT
+        num
+    FROM
+        MyNumbers
+    GROUP BY num
+    HAVING COUNT(num) = 1) AS t
+```
