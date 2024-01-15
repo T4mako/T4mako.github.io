@@ -267,3 +267,35 @@ FROM
     GROUP BY num
     HAVING COUNT(num) = 1) AS t
 ```
+
+## 高级查询和连接
+
+### 1731. 每位经理的下属员工数量
+<Badge text="简单" type="tip" vertical="middle" />
+
+```sql
+select 
+    m.employee_id,
+    m.name,
+    count(*) as reports_count,
+    round(avg(e.age),0) as average_age
+from Employees e 
+join Employees m
+on e.reports_to = m.employee_id 
+group by m.employee_id
+order by employee_id
+```
+### 610. 判断三角形
+<Badge text="简单" type="tip" vertical="middle" />
+
+```sql
+SELECT 
+    x,y,z,
+    CASE
+        WHEN x + y > z AND x + z > y AND y + z > x THEN 'Yes'
+        ELSE 'No'
+    END AS 'triangle'
+FROM
+    triangle
+;
+```
