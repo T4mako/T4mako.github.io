@@ -299,3 +299,29 @@ FROM
     triangle
 ;
 ```
+
+## 子查询
+### 1978. 上级经理已离职的公司员工
+<Badge text="简单" type="tip" vertical="middle" />
+
+```sql
+select employee_id 
+from Employees
+where 
+        manager_id is not null 
+    and 
+        manager_id not in (select employee_id from Employees)  
+    and 
+        salary < 30000
+order by employee_id
+```
+
+### 1667. 修复表中的名字
+
+<Badge text="简单" type="tip" vertical="middle" />
+
+```sql
+select user_id,CONCAT(UPPER(left(name, 1)),LOWER(RIGHT(name, length(name) - 1))) as name
+from Users
+order by user_id
+```
