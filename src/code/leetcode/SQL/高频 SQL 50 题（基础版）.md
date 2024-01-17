@@ -316,6 +316,10 @@ where
 order by employee_id
 ```
 
+
+
+## 高级字符串函数 / 正则表达式 / 字句
+
 ### 1667. 修复表中的名字
 
 <Badge text="简单" type="tip" vertical="middle" />
@@ -325,3 +329,36 @@ select user_id,CONCAT(UPPER(left(name, 1)),LOWER(RIGHT(name, length(name) - 1)))
 from Users
 order by user_id
 ```
+
+### 1527. 患某种疾病的患者
+
+<Badge text="简单" type="tip" vertical="middle" />
+
+```sql
+select *
+from Patients
+where conditions REGEXP '^DIAB1| DIAB1'
+```
+
+### 196. 删除重复的电子邮箱
+
+<Badge text="简单" type="tip" vertical="middle" />
+
+```sql
+DELETE p1 FROM Person p1,
+    Person p2
+WHERE
+    p1.Email = p2.Email AND p1.Id > p2.Id
+```
+
+
+### 1484. 按日期分组销售产品
+
+<Badge text="简单" type="tip" vertical="middle" />
+
+```sql
+select sell_date,count(distinct(product)) as num_sold,GROUP_CONCAT(DISTINCT product) products
+from Activities
+group by sell_date
+```
+
