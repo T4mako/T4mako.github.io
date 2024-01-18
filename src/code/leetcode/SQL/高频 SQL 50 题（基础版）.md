@@ -362,3 +362,23 @@ from Activities
 group by sell_date
 ```
 
+### 1327. 列出指定时间段内所有的下单产品
+<Badge text="简单" type="tip" vertical="middle" />
+
+```sql
+select p.product_name,SUM(o.unit) unit    
+from Products p right join Orders o
+on p.product_id = o.product_id
+where o.order_date between '2020-02-01' and '2020-02-29'
+group by p.product_name
+having SUM(o.unit) >= 100
+``` 
+
+
+### 1517. 查找拥有有效邮箱的用户
+<Badge text="简单" type="tip" vertical="middle" />
+
+```sql
+select user_id,name,mail from users where mail regexp '^[a-zA-Z][0-9a-zA-Z\-\_\\.]*@leetcode\\.com$'
+``` 
+
