@@ -126,6 +126,9 @@ where b.bonus is null or b.bonus < 1000;
 ```
 
 ### 1280. 学生们参加各科测试的次数
+
+<Badge text="简单" type="tip" vertical="middle" />
+
 ```sql
 SELECT 
     s.student_id, s.student_name, sub.subject_name, IFNULL(grouped.attended_exams, 0) AS attended_exams
@@ -140,6 +143,27 @@ LEFT JOIN (
 ) grouped 
 ON s.student_id = grouped.student_id AND sub.subject_name = grouped.subject_name
 ORDER BY s.student_id, sub.subject_name;
+```
+
+### 570. 至少有5名直接下属的经理
+
+<Badge text="中等" type="warning" vertical="middle" />
+
+```sql
+select name from Employee where id in (
+    select managerId from Employee group by managerId having count(1) >= 5
+)
+```
+
+### 1934. 确认率
+
+<Badge text="中等" type="warning" vertical="middle" />
+
+```sql
+select s.user_id,ROUND(IFNULL(AVG(c.action='confirmed'), 0), 2) AS confirmation_rate
+from Signups s left join Confirmations c
+on s.user_id = c.user_id
+group by s.user_id
 ```
 
 ## 聚合函数
