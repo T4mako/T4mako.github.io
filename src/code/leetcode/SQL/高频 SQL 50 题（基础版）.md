@@ -224,6 +224,54 @@ having query_name is not null;
 
 ```
 
+### 1193. 每月交易 I
+<Badge text="中等" type="warning" vertical="middle" />
+
+```sql
+SELECT 
+    DATE_FORMAT(trans_date, '%Y-%m') AS month,
+    country,
+    COUNT(*) AS trans_count,
+    COUNT(IF(state = 'approved', 1, NULL)) AS approved_count,
+    SUM(amount) AS trans_total_amount,
+    SUM(IF(state = 'approved', amount, 0)) AS approved_total_amount
+FROM Transactions
+GROUP BY month, country
+```
+
+### 1174. 即时食物配送 II
+<Badge text="中等" type="warning" vertical="middle" />
+
+```sql
+select round (
+    sum(order_date = customer_pref_delivery_date) * 100 /
+    count(*),
+    2
+) as immediate_percentage
+from Delivery
+where (customer_id, order_date) in (
+    select customer_id, min(order_date)
+    from delivery
+    group by customer_id
+)
+```
+
+### 550. 游戏玩法分析 IV
+<Badge text="中等" type="warning" vertical="middle" />
+
+```sql
+select IFNULL(round(count(distinct(Result.player_id)) / count(distinct(Activity.player_id)), 2), 0) as fraction
+from (
+  select Activity.player_id as player_id
+  from (
+    select player_id, DATE_ADD(MIN(event_date), INTERVAL 1 DAY) as second_date
+    from Activity
+    group by player_id
+  ) as Expected, Activity
+  where Activity.event_date = Expected.second_date and Activity.player_id = Expected.player_id
+) as Result, Activity
+```
+
 ## 排序和分组
 
 ### 2356. 每位教师所教授的科目种类的数量
