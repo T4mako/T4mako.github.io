@@ -4,13 +4,13 @@ category:
     - Vue
 tag: 
     - Vue
-title: Vue 3
 ---
+# Vue 3
 
-# 1. Vue3 简介
-# 2. 创建 Vue3 工程
+## 1. Vue3 简介
+## 2. 创建 Vue3 工程
 
-## 2.1. 【基于 vue-cli 创建】
+### 2.1. 【基于 vue-cli 创建】
 点击查看 [官方文档](https://cli.vuejs.org/zh/guide/creating-a-project.html#vue-create)
 
 > 备注：目前`vue-cli`已处于维护模式，官方推荐基于 `Vite` 创建项目。
@@ -25,10 +25,10 @@ npm install -g @vue/cli
 ## 执行创建命令
 vue create vue_test
 
-##  随后选择3.x
-##  Choose a version of Vue.js that you want to start the project with (Use arrow keys)
-##  > 3.x
-##    2.x
+## 随后选择3.x
+## Choose a version of Vue.js that you want to start the project with (Use arrow keys)
+## > 3.x
+## 2.x
 
 ## 启动
 cd vue_test
@@ -37,7 +37,7 @@ npm run serve
 
 ---
 
-## 2.2. 【基于 vite 创建】(推荐)
+### 2.2. 【基于 vite 创建】(推荐)
 `vite` 是新一代前端构建工具，官网地址：[https://vitejs.cn](https://vitejs.cn/)，`vite`的优势如下：
 
 - 轻量快速的热重载（`HMR`），能实现极速的服务启动。
@@ -139,21 +139,21 @@ createApp(App).mount('#app')
 :::
 
 
-# 3. Vue3 核心语法
-## 3.1.  【OptionsAPI  与  CompositionAPI】
+## 3. Vue3 核心语法
+### 3.1.  【OptionsAPI  与  CompositionAPI】
 
 - `Vue2` 的 `API` 设计是`Options`（配置）风格的。
 - `Vue3` 的 `API`设计是 `Composition`（组合）风格的。
-###  Options API 的弊端
+#### Options API 的弊端
 
 `Options` 类型的  `API`，数据、方法、计算属性等，是分散在：`data`、`methods`、`computed`中的，若想新增或者修改一个需求，就需要分别修改：`data`、`methods`、`computed`，不便于维护和复用。
 
-### Composition API 的优势
+#### Composition API 的优势
 
 可以用函数的方式，更加优雅的组织代码，让相关功能的代码更加有序的组织在一起。
 
-## 3.2.  setup
-### setup 概述
+### 3.2.  setup
+#### setup 概述
 `setup` 是 `Vue3` 中一个新的配置项，值是一个函数，它是  `Composition API`  **“表演的舞台**_**”**_，组件中所用到的：数据、方法、计算属性、监视......等等，均配置在`setup`中。
 
 特点如下：
@@ -209,7 +209,7 @@ setup() 无需使用 this，this 是 undefined
   }
 </script>
 ```
-### setup 的返回值
+#### setup 的返回值
 
 - 若返回一个 **对象**：则对象中的：属性、方法等，在模板中均可以直接使用**（重点关注）**
 - 若返回一个 **函数**：则可以自定义渲染内容（用的少），代码如下：
@@ -218,12 +218,12 @@ setup(){
   return ()=> '你好啊！' // 页面为 你好啊！
 }
 ```
-### setup 与 Options API 的关系
+#### setup 与 Options API 的关系
 
 - `Vue2` 的配置（`data`、`methos`......）中 **可以访问到**  `setup` 中的属性、方法。
 - 但在 `setup` 中 **不能访问到** `Vue2` 的配置（`data`、`methos`......）。
 - 如果与 `Vue2` 冲突，则 `setup` 优先。
-### setup 语法糖
+#### setup 语法糖
 `setup` 函数有一个语法糖，可以把 `setup` 独立出去，无需写 setup() 函数和 return 语句，代码如下：
 
 ```vue
@@ -280,7 +280,7 @@ export default defineConfig({
 ```
 
 3. 第三步：`<script setup lang="ts" name="Person">`
-## 3.3. 【ref 创建：基本类型的响应式数据】
+### 3.3. 【ref 创建：基本类型的响应式数据】
 
 - **作用：**定义响应式变量。
 - **语法：**`let xxx = ref(初始值)`。
@@ -325,7 +325,7 @@ export default defineConfig({
   }
 </script>
 ```
-## 3.4. 【reactive 创建：对象类型的响应式数据】
+### 3.4. 【reactive 创建：对象类型的响应式数据】
 
 - **作用：**定义一个**响应式对象**（基本类型不要用它，要用`ref`，否则报错）
 - **语法：**`let 响应式对象= reactive(源对象)`。
@@ -377,7 +377,7 @@ function test(){
 }
 </script>
 ```
-## 3.5. 【ref 创建：对象类型的响应式数据】
+### 3.5. 【ref 创建：对象类型的响应式数据】
 
 - 其实`ref`接收的数据可以是：**基本类型**、**对象类型**。
 - 若`ref`接收的是对象类型，内部其实也是调用了`reactive`函数。
@@ -429,7 +429,7 @@ function test(){
 }
 </script>
 ```
-## 3.6. 【ref 对比 reactive】
+### 3.6. 【ref 对比 reactive】
 宏观角度看：
 
 > 1. `ref`用来定义：**基本类型数据**、**对象类型数据**；
@@ -449,7 +449,7 @@ function test(){
 > 2. 若需要一个响应式对象，层级不深，`ref`、`reactive`都可以。
 > 3. 若需要一个响应式对象，且层级较深，推荐使用`reactive`。
 
-## 3.7. 【toRefs 与 toRef】
+### 3.7. 【toRefs 与 toRef】
 
 - 作用：将一个响应式对象中的每一个属性，转换为`ref`对象。
 - 备注：`toRefs`与`toRef`功能一致，但`toRefs`可以批量转换。
@@ -490,7 +490,7 @@ function test(){
   }
 </script>
 ```
-## 3.8. 【computed】
+### 3.8. 【computed】
 
 作用：根据已有数据计算出新数据（和`Vue2`中的`computed`作用一致）。
 
@@ -537,7 +537,7 @@ function test(){
   } 
 </script>
 ```
-## 3.9.【watch】
+### 3.9.【watch】
 
 - 作用：监视数据的变化（和`Vue2`中的`watch`作用一致）
 - 特点：`Vue3`中的`watch`只能监视以下**四种数据**：
@@ -547,7 +547,7 @@ function test(){
 > 4. 一个包含上述内容的数组。
 
 我们在`Vue3`中使用`watch`的时候，通常会遇到以下几种情况：
-### * 情况一
+#### * 情况一
 监视`ref`定义的【基本类型】数据：直接写数据名即可，监视的是其`value`值的改变。
 
 ```vue
@@ -576,7 +576,7 @@ function test(){
   })
 </script>
 ```
-### * 情况二
+#### * 情况二
 监视`ref`定义的【对象类型】数据：直接写数据名，监视的是对象的【地址值】，若想监视对象内部的数据，要手动开启深度监视。
 
 > 注意：
@@ -626,7 +626,7 @@ function test(){
   
 </script>
 ```
-### *  情况三
+#### *  情况三
 监视`reactive`定义的【对象类型】数据，且默认开启了深度监视。
 ```vue
 <template>
@@ -680,7 +680,7 @@ function test(){
   })
 </script>
 ```
-### * 情况四
+#### * 情况四
 监视`ref`或`reactive`定义的【对象类型】数据中的**某个属性**，注意点如下：
 
 1. 若该属性值**不是**【对象类型】，需要写成函数形式。
@@ -743,7 +743,7 @@ function test(){
   },{deep:true})
 </script>
 ```
-### * 情况五
+#### * 情况五
 监视上述的多个数据
 ```vue
 <template>
@@ -796,7 +796,7 @@ function test(){
 
 </script>
 ```
-## 3.10. 【watchEffect】
+### 3.10. 【watchEffect】
 
 * 官网：立即运行一个函数，同时响应式地追踪其依赖，并在依赖更改时重新执行该函数。
 
@@ -863,7 +863,7 @@ function test(){
   
   
 
-## 3.11. 【标签的 ref 属性】
+### 3.11. 【标签的 ref 属性】
 
 作用：用于注册模板引用。
 
@@ -946,7 +946,7 @@ function test(){
 
 
 
-## 3.12. 【props】
+### 3.12. 【props】
 
 > ```js
 >// 定义一个接口，限制每个Person对象的格式
@@ -1013,7 +1013,7 @@ function test(){
 >   ```
 > 
 
-## 3.13. 【生命周期】
+### 3.13. 【生命周期】
 
 * 概念：`Vue`组件实例在创建时要经历一系列的初始化步骤，在此过程中`Vue`会在合适的时机，调用特定的函数，从而让开发者有机会在特定阶段运行自己的代码，这些特定的函数统称为：生命周期钩子
 
@@ -1094,7 +1094,7 @@ function test(){
   </script>
   ```
 
-## 3.14. 【自定义hook】
+### 3.14. 【自定义hook】
 
 - 什么是`hook`？—— 本质是一个函数，把`setup`函数中使用的`Composition API`进行了封装，类似于`vue2.x`中的`mixin`。
 
@@ -1192,13 +1192,13 @@ function test(){
 
 ---
 
-# 4. 路由
+## 4. 路由
 
-## 4.1. 【对路由的理解】
+### 4.1. 【对路由的理解】
 
 <img src="images/image-20231018144351536.png" alt="image-20231018144351536" style="zoom:20%;border-radius:40px" /> 
 
-## 4.2. 【基本切换效果】
+### 4.2. 【基本切换效果】
 
 - `Vue3`中要使用`vue-router`的最新版本，目前是`4`版本。
 
@@ -1258,13 +1258,13 @@ function test(){
   </script>
   ```
 
-## 4.3. 【两个注意点】
+### 4.3. 【两个注意点】
 
 > 1. 路由组件通常存放在`pages` 或 `views`文件夹，一般组件通常存放在`components`文件夹。
 >
 > 2. 通过点击导航，视觉效果上“消失” 了的路由组件，默认是被**卸载**掉的，需要的时候再去**挂载**。
 
-## 4.4.【路由器工作模式】
+### 4.4.【路由器工作模式】
 
 1. `history`模式
 
@@ -1292,7 +1292,7 @@ function test(){
    > })
    > ```
 
-## 4.5. 【to的两种写法】
+### 4.5. 【to的两种写法】
 
 ```vue
 <!-- 第一种：to的字符串写法 -->
@@ -1302,7 +1302,7 @@ function test(){
 <router-link active-class="active" :to="{path:'/home'}">Home</router-link>
 ```
 
-## 4.6. 【命名路由】
+### 4.6. 【命名路由】
 
 作用：可以简化路由跳转及传参（后面就讲）。
 
@@ -1340,7 +1340,7 @@ routes:[
 
 
 
-## 4.7. 【嵌套路由】
+### 4.7. 【嵌套路由】
 
 1. 编写`News`的子路由：`Detail.vue`
 
@@ -1404,9 +1404,9 @@ routes:[
 
    
 
-## 4.8. 【路由传参】
+### 4.8. 【路由传参】
 
-### query参数
+#### query参数
 
    1. 传递参数
 
@@ -1442,7 +1442,7 @@ routes:[
       ```
 
 
-### params参数
+#### params参数
 
    1. 传递参数
 
@@ -1478,7 +1478,7 @@ routes:[
 >
 > 备注2：传递`params`参数时，需要提前在规则中占位。
 
-## 4.9. 【路由的props配置】
+### 4.9. 【路由的props配置】
 
 作用：让路由组件更方便的收到参数（可以将路由参数作为`props`传给组件）
 
@@ -1501,7 +1501,7 @@ routes:[
 }
 ```
 
-## 4.10. 【 replace属性】
+### 4.10. 【 replace属性】
 
   1. 作用：控制路由跳转时操作浏览器历史记录的模式。
 
@@ -1516,7 +1516,7 @@ routes:[
      <RouterLink replace .......>News</RouterLink>
      ```
 
-## 4.11. 【编程式导航】
+### 4.11. 【编程式导航】
 
 路由组件的两个重要的属性：`$route`和`$router`变成了两个`hooks`
 
@@ -1532,7 +1532,7 @@ console.log(router.push)
 console.log(router.replace)
 ```
 
-## 4.12. 【重定向】
+### 4.12. 【重定向】
 
 1. 作用：将特定的路径，重新定向到已有路由。
 
@@ -1547,13 +1547,13 @@ console.log(router.replace)
 
 
 
-# 5. pinia 
+## 5. pinia 
 
-## 5.1【准备一个效果】
+### 5.1【准备一个效果】
 
 <img src="./images/pinia_example.gif" alt="pinia_example" style="zoom:30%;border:3px solid" /> 
 
-## 5.2【搭建 pinia 环境】
+### 5.2【搭建 pinia 环境】
 
 第一步：`npm install pinia`
 
@@ -1579,7 +1579,7 @@ app.mount('#app')
 
 <img src="https://cdn.nlark.com/yuque/0/2023/png/35780599/1684309952481-c67f67f9-d1a3-4d69-8bd6-2b381e003f31.png" style="zoom:80%;border:1px solid black;border-radius:10px" />
 
-## 5.3【存储+读取数据】
+### 5.3【存储+读取数据】
 
 1. `Store`是一个保存：**状态**、**业务逻辑** 的实体，每个组件都可以**读取**、**写入**它。
 
@@ -1666,7 +1666,7 @@ app.mount('#app')
 
    
 
-## 5.4.【修改数据】(三种方式)
+### 5.4.【修改数据】(三种方式)
 
 1. 第一种修改方式，直接修改
 
@@ -1720,7 +1720,7 @@ app.mount('#app')
    ```
 
 
-## 5.5.【storeToRefs】
+### 5.5.【storeToRefs】
 
 - 借助`storeToRefs`将`store`中的数据转为`ref`对象，方便在模板中使用。
 - 注意：`pinia`提供的`storeToRefs`只会将数据做转换，而`Vue`的`toRefs`会转换`store`中数据。
@@ -1745,7 +1745,7 @@ app.mount('#app')
 
 ```
 
-## 5.6.【getters】
+### 5.6.【getters】
 
   1. 概念：当`state`中的数据，需要经过处理后再使用时，可以使用`getters`配置。
 
@@ -1787,7 +1787,7 @@ app.mount('#app')
 
      
 
-## 5.7.【$subscribe】
+### 5.7.【$subscribe】
 
 通过 store 的 `$subscribe()` 方法侦听 `state` 及其变化
 
@@ -1800,7 +1800,7 @@ talkStore.$subscribe((mutate,state)=>{
 
 
 
-## 5.8. 【store组合式写法】
+### 5.8. 【store组合式写法】
 
 ```ts
 import {defineStore} from 'pinia'
@@ -1829,7 +1829,7 @@ export const useTalkStore = defineStore('talk',()=>{
 
 
 
-# 6. 组件通信
+## 6. 组件通信
 
 **`Vue3`组件通信和`Vue2`的区别：**
 
@@ -1844,7 +1844,7 @@ export const useTalkStore = defineStore('talk',()=>{
 
 <img src="images/image-20231119185900990.png" alt="image-20231119185900990" style="zoom:60%;" /> 
 
-## 6.1. 【props】
+### 6.1. 【props】
 
 概述：`props`是使用频率最高的一种通信方式，常用与 ：**父 ↔ 子**。
 
@@ -1896,7 +1896,7 @@ export const useTalkStore = defineStore('talk',()=>{
 </script>
 ```
 
-## 6.2. 【自定义事件】
+### 6.2. 【自定义事件】
 
 1. 概述：自定义事件常用于：**子 => 父。**
 2. 注意区分好：原生事件、自定义事件。
@@ -1923,7 +1923,7 @@ export const useTalkStore = defineStore('talk',()=>{
    this.$emit('send-toy', 具体数据)
    ```
 
-## 6.3. 【mitt】
+### 6.3. 【mitt】
 
 概述：与消息订阅与发布（`pubsub`）功能类似，可以实现任意组件间通信。
 
@@ -1997,7 +1997,7 @@ function sendToy(){
 
 **注意这个重要的内置关系，总线依赖着这个内置关系**
 
-## 6.4.【v-model】
+### 6.4.【v-model】
 
 1. 概述：实现 **父↔子** 之间相互通信。
 
@@ -2088,7 +2088,7 @@ function sendToy(){
    
 
 
-## 6.5.【$attrs 】
+### 6.5.【$attrs 】
 
 1. 概述：`$attrs`用于实现**当前组件的父组件**，向**当前组件的子组件**通信（**祖→孙**）。
 
@@ -2156,7 +2156,7 @@ function sendToy(){
 </script>
 ```
 
-## 6.6. 【$refs、$parent】
+### 6.6. 【$refs、$parent】
 
 1. 概述：
 
@@ -2170,7 +2170,7 @@ function sendToy(){
    | `$refs`   | 值为对象，包含所有被`ref`属性标识的`DOM`元素或组件实例。 |
    | `$parent` | 值为对象，当前组件的父组件实例对象。                     |
 
-## 6.7. 【provide、inject】
+### 6.7. 【provide、inject】
 
 1. 概述：实现**祖孙组件**直接通信
 
@@ -2237,13 +2237,13 @@ function sendToy(){
    ```
 
 
-## 6.8. 【pinia】
+### 6.8. 【pinia】
 
 参考之前`pinia`部分的讲解
 
-## 6.9. 【slot】
+### 6.9. 【slot】
 
-### 1. 默认插槽
+#### 1. 默认插槽
 
 ![img](http://49.232.112.44/images/default_slot.png)
 
@@ -2264,7 +2264,7 @@ function sendToy(){
         </template>
 ```
 
-### 2. 具名插槽
+#### 2. 具名插槽
 
 ```vue
 父组件中：
@@ -2288,7 +2288,7 @@ function sendToy(){
         </template>
 ```
 
-### 3. 作用域插槽 
+#### 3. 作用域插槽 
 
 1. 理解：<span style="color:red">数据在组件的自身，但根据数据生成的结构需要组件的使用者来决定。</span>（新闻数据在`News`组件中，但使用数据所遍历出来的结构由`App`组件决定）
 
@@ -2325,11 +2325,11 @@ function sendToy(){
 
 
 
-# 7. 其它 API
+## 7. 其它 API
 
-## 7.1.【shallowRef 与 shallowReactive 】
+### 7.1.【shallowRef 与 shallowReactive 】
 
-### `shallowRef`
+#### `shallowRef`
 
 1. 作用：创建一个响应式数据，但只对顶层属性进行响应式处理。
 
@@ -2341,7 +2341,7 @@ function sendToy(){
 
 3. 特点：只跟踪引用值的变化，不关心值内部的属性变化。
 
-### `shallowReactive`
+#### `shallowReactive`
 
 1. 作用：创建一个浅层响应式对象，只会使对象的最顶层属性变成响应式的，对象内部的嵌套属性则不会变成响应式的
 
@@ -2353,15 +2353,15 @@ function sendToy(){
 
 3. 特点：对象的顶层属性是响应式的，但嵌套对象的属性不是。
 
-### 总结
+#### 总结
 
 > 通过使用 [`shallowRef()`](https://cn.vuejs.org/api/reactivity-advanced.html#shallowref) 和 [`shallowReactive()`](https://cn.vuejs.org/api/reactivity-advanced.html#shallowreactive) 来绕开深度响应。浅层式 `API` 创建的状态只在其顶层是响应式的，对所有深层的对象不会做任何处理，避免了对每一个内部属性做响应式所带来的性能成本，这使得属性的访问变得更快，可提升性能。
 
 
 
-## 7.2.【readonly 与 shallowReadonly】
+### 7.2.【readonly 与 shallowReadonly】
 
-### **`readonly`**
+#### **`readonly`**
 
 1. 作用：用于创建一个对象的深只读副本。
 
@@ -2381,7 +2381,7 @@ function sendToy(){
    * 创建不可变的状态快照。
    * 保护全局状态或配置不被修改。
 
-### **`shallowReadonly`**
+#### **`shallowReadonly`**
 
 1. 作用：与 `readonly` 类似，但只作用于对象的顶层属性。
 
@@ -2400,9 +2400,9 @@ function sendToy(){
 
      
 
-## 7.3.【toRaw 与 markRaw】
+### 7.3.【toRaw 与 markRaw】
 
-### `toRaw`
+#### `toRaw`
 
 1. 作用：用于获取一个响应式对象的原始对象， `toRaw` 返回的对象不再是响应式的，不会触发视图更新。
 
@@ -2437,7 +2437,7 @@ function sendToy(){
    console.log(isReactive(citys2))
    ```
 
-### `markRaw`
+#### `markRaw`
 
 1. 作用：标记一个对象，使其**永远不会**变成响应式的。
 
@@ -2457,7 +2457,7 @@ function sendToy(){
    let citys2 = reactive(citys)
    ```
 
-## 7.4.【customRef】
+### 7.4.【customRef】
 
 作用：创建一个自定义的`ref`，并对其依赖项跟踪和更新触发进行逻辑控制。
 
@@ -2493,9 +2493,9 @@ export default function(initValue:string,delay:number){
 
 
 
-# 8. Vue3新组件
+## 8. Vue3新组件
 
-## 8.1. 【Teleport】
+### 8.1. 【Teleport】
 
 - 什么是Teleport？—— Teleport 是一种能够将我们的**组件html结构**移动到指定位置的技术。
 
@@ -2509,7 +2509,7 @@ export default function(initValue:string,delay:number){
 </teleport>
 ```
 
-## 8.2. 【Suspense】
+### 8.2. 【Suspense】
 
 -  等待异步组件时渲染一些额外内容，让应用有更好的用户体验 
 -  使用步骤： 
@@ -2539,7 +2539,7 @@ const Child = defineAsyncComponent(()=>import('./Child.vue'))
 
 
 
-## 8.3.【全局API转移到应用对象】
+### 8.3.【全局API转移到应用对象】
 
 - `app.component`
 - `app.config`
@@ -2548,7 +2548,7 @@ const Child = defineAsyncComponent(()=>import('./Child.vue'))
 - `app.unmount`
 - `app.use`
 
-## 8.4.【其他】
+### 8.4.【其他】
 
 - 过渡类名 `v-enter` 修改为 `v-enter-from`、过渡类名 `v-leave` 修改为 `v-leave-from`。
 
