@@ -340,6 +340,23 @@ FROM
     HAVING COUNT(num) = 1) AS t
 ```
 
+### 1045. 买下所有产品的客户
+
+<Badge text="中等" type="warning" vertical="middle" />
+
+```sql
+select 
+    customer_id 
+from 
+    (select 
+        customer_id,count(distinct(product_key)) num 
+    from 
+        Customer 
+    group by 
+        customer_id) a 
+where num = (select count(1) from Product  )
+```
+
 ## 高级查询和连接
 
 ### 1731. 每位经理的下属员工数量
@@ -369,6 +386,42 @@ SELECT
     END AS 'triangle'
 FROM
     triangle
+;
+```
+
+### 180. 连续出现的数字
+<Badge text="中等" type="warning" vertical="middle" />
+
+```sql
+SELECT DISTINCT
+    l1.Num AS ConsecutiveNums
+FROM
+    Logs l1,
+    Logs l2,
+    Logs l3
+WHERE
+    l1.Id = l2.Id - 1
+    AND l2.Id = l3.Id - 1
+    AND l1.Num = l2.Num
+    AND l2.Num = l3.Num
+;
+```
+
+### 1164. 指定日期的产品价格
+<Badge text="中等" type="warning" vertical="middle" />
+
+```sql
+SELECT DISTINCT
+    l1.Num AS ConsecutiveNums
+FROM
+    Logs l1,
+    Logs l2,
+    Logs l3
+WHERE
+    l1.Id = l2.Id - 1
+    AND l2.Id = l3.Id - 1
+    AND l1.Num = l2.Num
+    AND l2.Num = l3.Num
 ;
 ```
 
