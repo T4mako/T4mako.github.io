@@ -1616,8 +1616,7 @@ console.log(router.replace)
 # 5. pinia 
 
 ## 5.1【准备一个效果】
-
-<img src="./images/pinia_example.gif" alt="pinia_example" style="zoom:30%;border:3px solid" /> 
+ 
 
 ## 5.2【搭建 pinia 环境】
 
