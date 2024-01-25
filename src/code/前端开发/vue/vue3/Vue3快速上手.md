@@ -8,9 +8,11 @@ tag:
 # Vue 3
 
 ## 1. Vue3 简介
+
 ## 2. 创建 Vue3 工程
 
 ### 2.1. 【基于 vue-cli 创建】
+
 点击查看 [官方文档](https://cli.vuejs.org/zh/guide/creating-a-project.html#vue-create)
 
 > 备注：目前`vue-cli`已处于维护模式，官方推荐基于 `Vite` 创建项目。
@@ -137,8 +139,8 @@ createApp(App).mount('#app')
 
 :::
 
-
 ## 3. Vue3 核心语法
+
 ### 3.1.  【OptionsAPI  与  CompositionAPI】
 
 - `Vue2` 的 `API` 设计是`Options`（配置）风格的。
@@ -279,7 +281,7 @@ export default defineConfig({
 ```
 
 3. 第三步：`<script setup lang="ts" name="Person">`
-## 3.3. 【ref  创建：基本类型的响应式数据】
+### 3.3. 【ref  创建：基本类型的响应式数据】
 
 - **引入：**`import {ref} from 'vue'`
 - **作用：**定义响应式变量
@@ -331,7 +333,7 @@ export default defineConfig({
   }
 </script>
 ```
-## 3.4. 【reactive 创建：对象类型的响应式数据】
+### 3.4. 【reactive 创建：对象类型的响应式数据】
 
 - **引入：** `import {reactive} from 'vue'`
 - **作用：**定义一个 **响应式对象**（基本类型不要用它，要用 `ref`，否则报错）
@@ -390,7 +392,7 @@ function test(){
 }
 </script>
 ```
-## 3.5. 【ref  创建：对象类型的响应式数据】
+### 3.5. 【ref  创建：对象类型的响应式数据】
 
 - 其实 `ref` 接收的数据可以是：**基本类型**、**对象类型**
 - 若 `ref` 接收的是对象类型，内部其实也是调用了 `reactive` 函数
@@ -451,7 +453,7 @@ function test(){
 }
 </script>
 ```
-## 3.6. 【ref  对比  reactive】
+### 3.6. 【ref  对比  reactive】
 宏观角度看：
 
 - `ref` 用来定义：**基本类型数据**、**对象类型数据**
@@ -466,7 +468,7 @@ function test(){
   - 若需要一个基本类型的响应式数据，必须使用 `ref`
   - 若需要一个响应式对象，层级不深，`ref`、`reactive` 都可以
   - 若需要一个响应式对象，且层级较深，推荐使用 `reactive`
-## 3.7. 【toRefs 与 toRef】
+### 3.7. 【toRefs 与 toRef】
 
 - 引入：`import {toRefs} from 'vue'`
 
@@ -509,7 +511,7 @@ function test(){
   }
 </script>
 ```
-## 3.8. 【computed】
+### 3.8. 【computed】
 
 - 引入：`import {computed} from 'vue'`
 - 使用：
@@ -559,7 +561,7 @@ function test(){
   } 
 </script>
 ```
-## 3.9.【watch】
+### 3.9.【watch】
 
 - 引入：` import {watch} from 'vue'`
 - 作用：监视数据的变化（和 `Vue2` 中的 `watch` 作用一致）
@@ -570,7 +572,7 @@ function test(){
   - 一个包含上述内容的数组。
 
 我们在 `Vue3` 中使用 `watch` 的时候，通常会遇到以下几种情况：
-### * 情况一：监视 ref  定义基本数据类型
+#### * 情况一：监视 ref  定义基本数据类型
 监视 `ref` 定义的【基本类型】数据：直接写数据名即可，监视的是其 `value` 值的改变
 
 使用：
@@ -610,7 +612,7 @@ let stopValue = compute(要检视的值,(newValue,oldValue) => { // 若参数只
   })
 </script>
 ```
-### * 情况二：监视 ref  定义的对象（深度监视）
+#### * 情况二：监视 ref  定义的对象（深度监视）
 监视 `ref` 定义的【对象类型】数据：直接写数据名，监视的是对象的【地址值】，若想监视对象内部的数据，要手动开启深度监视
 
 - 若修改的是`ref`定义的对象中的属性，`newValue`  和  `oldValue` 都是新值，因为它们是同一个对象
@@ -657,7 +659,7 @@ let stopValue = compute(要检视的值,(newValue,oldValue) => { // 若参数只
   
 </script>
 ```
-### *  情况三  监视 reactive 定义的对象类型数据
+#### *  情况三  监视 reactive 定义的对象类型数据
 监视`reactive`定义的【对象类型】数据，且默认开启了深度监视。
 ```vue
 <template>
@@ -711,7 +713,7 @@ let stopValue = compute(要检视的值,(newValue,oldValue) => { // 若参数只
   })
 </script>
 ```
-### * 情况四 监视 ref  或 reactive 定义的对象中的某个属性
+#### * 情况四 监视 ref  或 reactive 定义的对象中的某个属性
 监视 `ref` 或 `reactive` 定义的【对象类型】数据中的 **某个属性**，注意点如下：
 
 - 若被监视属性值 **不是**【对象类型】，需要写成函数形式
@@ -792,7 +794,7 @@ let stopValue = compute(要检视的值,(newValue,oldValue) => { // 若参数只
   },{deep:true})
 </script>
 ```
-### * 情况五 监视上述的多个数据
+#### * 情况五 监视上述的多个数据
 监视上述的多个数据
 ```vue
 <template>
@@ -845,7 +847,7 @@ let stopValue = compute(要检视的值,(newValue,oldValue) => { // 若参数只
 
 </script>
 ```
-## 3.10. 【watchEffect】
+### 3.10. 【watchEffect】
 
 * 立即运行一个函数，同时响应式地追踪其依赖，并在依赖更改时重新执行该函数（立即执行，用到谁就执行函数）
 
@@ -914,7 +916,7 @@ let stopValue = compute(要检视的值,(newValue,oldValue) => { // 若参数只
 
   
 
-## 3.11. 【标签的 ref 属性】
+### 3.11. 【标签的 ref 属性】
 
 - 引入： ` import {ref} from 'vue'`
 
@@ -998,7 +1000,7 @@ let stopValue = compute(要检视的值,(newValue,oldValue) => { // 若参数只
 
 
 
-## 3.12. 【props】
+### 3.12. 【props】
 
 props 主要为父组件传值给子组件（App.vue 组件导入 Hello.vue，App 为父组件，Hello 为子组件）
 
@@ -1083,7 +1085,7 @@ console.log(props)
 
 
 
-## 3.13. 【生命周期】
+### 3.13. 【生命周期】
 
 * 概念：`Vue`组件实例在创建时要经历一系列的初始化步骤，在此过程中`Vue`会在合适的时机，调用特定的函数，从而让开发者有机会在特定阶段运行自己的代码，这些特定的函数统称为：生命周期钩子
 
@@ -1164,15 +1166,15 @@ console.log(props)
   </script>
   ```
 
-## 3.14. 【自定义hook】
+### 3.14. 【自定义 hook】
 
-- 什么是`hook`？—— 本质是一个函数，把`setup`函数中使用的`Composition API`进行了封装，类似于`vue2.x`中的`mixin`。
+- 什么是 `hook` ？—— 本质是一个函数，把 `setup` 函数中使用的 `Composition API` 进行了封装，类似于 `vue2.x` 中的 `mixin`。
 
-- 自定义`hook`的优势：复用代码, 让`setup`中的逻辑更清楚易懂。
+- 自定义 `hook` 的优势：复用代码, 让 `setup` 中的逻辑更清楚易懂。
 
 示例代码：
 
-- `useSum.ts`中内容如下：
+- `useSum.ts` 中内容如下：
 
   ```js
   import {ref,onMounted} from 'vue'
@@ -1195,7 +1197,7 @@ console.log(props)
   }		
   ```
   
-- `useDog.ts`中内容如下：
+- `useDog.ts` 中内容如下：
 
   ```js
   import {reactive,onMounted} from 'vue'
@@ -1254,36 +1256,44 @@ console.log(props)
     import useDog from './hooks/useDog'
   	
     let {sum,increment,decrement} = useSum()
-    let {dogList,getDog} = useDog()
+    let {dogList,getg} = useDog()
   </script>
   ```
 
-    
 
----
 
-# 4. 路由
+## 4. 路由
 
-## 4.1. 【对路由的理解】 
+### 4.1. 【对路由的理解】 
 
-## 4.2. 【基本切换效果】
+### 4.2. 【基本切换效果】
 
-- `Vue3`中要使用`vue-router`的最新版本，目前是`4`版本。
+vue-router 的安装：
+
+```shell
+npm i vue-router
+```
+
+在 src 下创建 router 文件夹，编写 index.js
+
+- `Vue3` 中要使用 `vue-router` 的最新版本
 
 - 路由配置文件代码如下：
 
   ```js
+  /* /src/router/index.js */
   import {createRouter,createWebHistory} from 'vue-router'
+  // 导入切换的组件
   import Home from '@/pages/Home.vue'
   import News from '@/pages/News.vue'
   import About from '@/pages/About.vue'
-  
+  // 定义路由对象
   const router = createRouter({
   	history:createWebHistory(),
   	routes:[
   		{
-  			path:'/home',
-  			component:Home
+  			path:'/home', // 路径
+  			component:Home // 组件
   		},
   		{
   			path:'/about',
@@ -1291,19 +1301,31 @@ console.log(props)
   		}
   	]
   })
-  export default router
+  export default router // 默认暴露
   ```
-* `main.ts`代码如下：
+
+* `main.ts` 代码如下：
 
   ```js
+  import './assets/main.css'
   import router from './router/index'
-  app.use(router)
   
+  // 导入方法
+  import { createApp } from 'vue'
+  // 导入根组件
+  import App from './App.vue'
+  // createApp() 创建应用实例并挂载在 id 为 app 的 div 上
+  const app = createApp(App)
+  app.use(router)
   app.mount('#app')
   ```
 
 - `App.vue` 代码如下
 
+  使用 **RouterLink** 组件代替 a 标签
+  
+  属性 **to** 代表路径，**active-class** 代表组件激活时的 css 样式
+  
   ```vue
   <template>
     <div class="app">
@@ -1326,41 +1348,47 @@ console.log(props)
   </script>
   ```
 
-## 4.3. 【两个注意点】
+### 4.3. 【两个注意点】
 
-> 1. 路由组件通常存放在`pages` 或 `views`文件夹，一般组件通常存放在`components`文件夹。
->
-> 2. 通过点击导航，视觉效果上“消失” 了的路由组件，默认是被**卸载**掉的，需要的时候再去**挂载**。
+:::info
 
-## 4.4.【路由器工作模式】
+- 路由组件通常存放在 `pages` 或  `views` 文件夹，一般组件通常存放在 `components` 文件夹
+- 通过点击导航，视觉效果上 「消失」 了的路由组件，默认是被 **卸载** 掉的，需要的时候再去 **挂载**
 
-1. `history`模式
+:::
 
-   > 优点：`URL`更加美观，不带有`#`，更接近传统的网站`URL`。
-   >
-   > 缺点：后期项目上线，需要服务端配合处理路径问题，否则刷新会有`404`错误。
-   >
-   > ```js
-   > const router = createRouter({
-   >   	history:createWebHistory(), //history模式
-   >   	/******/
-   > })
-   > ```
+### 4.4.【路由器工作模式】
 
-2. `hash`模式
+1. `history` 模式
 
-   > 优点：兼容性更好，因为不需要服务器端处理路径。
-   >
-   > 缺点：`URL`带有`#`不太美观，且在`SEO`优化方面相对较差。
-   >
-   > ```js
-   > const router = createRouter({
-   >   	history:createWebHashHistory(), //hash模式
-   >   	/******/
-   > })
-   > ```
+   优点：`URL`更加美观，不带有`#`，更接近传统的网站`URL`。
 
-## 4.5. 【to的两种写法】
+   缺点：后期项目上线，需要服务端配合处理路径问题，否则刷新会有`404`错误。
+
+   ```js
+   const router = createRouter({
+   	history:createWebHistory(), //history模式
+   	/******/
+   })
+   ```
+
+2. `hash` 模式
+
+   优点：兼容性更好，因为不需要服务器端处理路径。
+
+   缺点：`URL`带有`#`不太美观，且在`SEO`优化方面相对较差。
+
+   ```js
+   const router = createRouter({
+   	history:createWebHashHistory(), //hash模式
+   	/******/
+   })
+   ```
+
+### 4.5. 【to 的两种写法】
+
+- 字符串形式  `to = '/xxx'`
+- 对象形式  `:to = {path:'/xxx'}`
 
 ```vue
 <!-- 第一种：to的字符串写法 -->
@@ -1370,9 +1398,9 @@ console.log(props)
 <router-link active-class="active" :to="{path:'/home'}">Home</router-link>
 ```
 
-## 4.6. 【命名路由】
+### 4.6. 【命名路由】
 
-作用：可以简化路由跳转及传参（后面就讲）。
+作用：可以简化路由跳转及传参，通过 to 跳转时，使用 to 的对象形式的 name 属性跳转
 
 给路由规则命名：
 
@@ -1408,11 +1436,11 @@ routes:[
 
 
 
-## 4.7. 【嵌套路由】
+### 4.7. 【嵌套路由】
 
-1. 编写`News`的子路由：`Detail.vue`
+1. 编写 `News` 的子路由：`Detail.vue`
 
-2. 配置路由规则，使用`children`配置项：
+2. 配置路由规则，使用 `children` 配置项：
 
    ```ts
    const router = createRouter({
@@ -1472,9 +1500,9 @@ routes:[
 
    
 
-## 4.8. 【路由传参】
+### 4.8. 【路由传参】
 
-### query参数
+#### query参数
 
    1. 传递参数
 
@@ -1510,7 +1538,7 @@ routes:[
       ```
 
 
-### params参数
+#### params参数
 
    1. 传递参数
 
@@ -1546,7 +1574,7 @@ routes:[
 >
 > 备注2：传递`params`参数时，需要提前在规则中占位。
 
-## 4.9. 【路由的props配置】
+### 4.9. 【路由的props配置】
 
 作用：让路由组件更方便的收到参数（可以将路由参数作为`props`传给组件）
 
@@ -1569,7 +1597,7 @@ routes:[
 }
 ```
 
-## 4.10. 【 replace属性】
+### 4.10. 【 replace属性】
 
   1. 作用：控制路由跳转时操作浏览器历史记录的模式。
 
@@ -1584,7 +1612,7 @@ routes:[
      <RouterLink replace .......>News</RouterLink>
      ```
 
-## 4.11. 【编程式导航】
+### 4.11. 【编程式导航】
 
 路由组件的两个重要的属性：`$route`和`$router`变成了两个`hooks`
 
@@ -1600,7 +1628,7 @@ console.log(router.push)
 console.log(router.replace)
 ```
 
-## 4.12. 【重定向】
+### 4.12. 【重定向】
 
 1. 作用：将特定的路径，重新定向到已有路由。
 
@@ -1616,7 +1644,7 @@ console.log(router.replace)
 # 5. pinia 
 
 ## 5.1【准备一个效果】
- 
+
 
 ## 5.2【搭建 pinia 环境】
 
