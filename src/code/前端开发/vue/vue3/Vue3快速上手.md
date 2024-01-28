@@ -1434,8 +1434,6 @@ routes:[
 <router-link :to="{name:'guanyu'}">跳转</router-link>
 ```
 
-
-
 ### 4.7. 【嵌套路由】
 
 1. 编写 `News` 的子路由：`Detail.vue`
@@ -1443,6 +1441,7 @@ routes:[
 2. 配置路由规则，使用 `children` 配置项：
 
    ```ts
+   /* /src/router/index.ts */
    const router = createRouter({
      history:createWebHistory(),
    	routes:[
@@ -1472,139 +1471,230 @@ routes:[
    })
    export default router
    ```
-   
-3. 跳转路由（记得要加完整路径）：
+
+3. 跳转路由：
+
+   to 属性要加 **完整路径**
 
    ```vue
-   <router-link to="/news/detail">xxxx</router-link>
-   <!-- 或 -->
-   <router-link :to="{path:'/news/detail'}">xxxx</router-link>
+   <!-- News.vue -->
+   <!-- 导航区 -->
+   <ul>
+     <li v-for="news in newsList" :key="news.id">
+       <RouterLink to="/news/detail">{{news.title}}</RouterLink>
+     </li>
+   </ul>
+   <!-- 展示区 -->
+   <div class="news-content">
+     <RouterView></RouterView>
+   </div>
    ```
-
-4. 记得去`Home`组件中预留一个`<router-view>`
-
-   ```vue
-   <template>
-     <div class="news">
-       <nav class="news-list">
-         <RouterLink v-for="news in newsList" :key="news.id" :to="{path:'/news/detail'}">
-           {{news.name}}
-         </RouterLink>
-       </nav>
-       <div class="news-detail">
-         <RouterView/>
-       </div>
-     </div>
-   </template>
-   ```
-
-   
 
 ### 4.8. 【路由传参】
 
-#### query参数
+#### query 参数
 
-   1. 传递参数
+- 传递参数
 
-      ```vue
-      <!-- 跳转并携带query参数（to的字符串写法） -->
-      <router-link to="/news/detail?a=1&b=2&content=欢迎你">
-      	跳转
-      </router-link>
-      				
-      <!-- 跳转并携带query参数（to的对象写法） -->
-      <RouterLink 
-        :to="{
-          //name:'xiang', //用name也可以跳转
-          path:'/news/detail',
-          query:{
-            id:news.id,
-            title:news.title,
-            content:news.content
-          }
-        }"
-      >
-        {{news.title}}
-      </RouterLink>
-      ```
+  - 写法一：to 字符串拼接
 
-   2. 接收参数：
+    在 router-link 组件上的 to 属性使用字符串拼接的方式进行传递参数
 
-      ```js
-      import {useRoute} from 'vue-router'
-      const route = useRoute()
-      // 打印query参数
-      console.log(route.query)
-      ```
+    ```vue
+    <!-- 跳转并携带 query 参数（to 的字符串写法） -->
+    <router-link to="/news/detail?a=1&b=2&content=欢迎你">
+    	跳转
+    </router-link>
+    ```
 
+  - 写法二：to 的对象写法
 
-#### params参数
+    使用 to 属性的对象写法，包含参数 path、query
 
-   1. 传递参数
+    ```vue
+    <!-- 跳转并携带 query 参数（to 的对象写法） -->
+    <RouterLink 
+      :to="{
+        //name:'xiang', //用 name 也可以跳转
+        path:'/news/detail',
+        query:{
+          id:news.id,
+          title:news.title,
+          content:news.content
+        }
+      }"
+    >
+      {{news.title}}
+    </RouterLink>
+    ```
 
-      ```vue
-      <!-- 跳转并携带params参数（to的字符串写法） -->
-      <RouterLink :to="`/news/detail/001/新闻001/内容001`">{{news.title}}</RouterLink>
-      				
-      <!-- 跳转并携带params参数（to的对象写法） -->
-      <RouterLink 
-        :to="{
-          name:'xiang', //用name跳转
-          params:{
-            id:news.id,
-            title:news.title,
-            content:news.title
-          }
-        }"
-      >
-        {{news.title}}
-      </RouterLink>
-      ```
+- 接收参数：
 
-   2. 接收参数：
+  从 vue-router 导入 useRouter 组件（它为一个 hooks）
 
-      ```js
-      import {useRoute} from 'vue-router'
-      const route = useRoute()
-      // 打印params参数
-      console.log(route.params)
-      ```
+  ```js
+  import {useRoute} from 'vue-router'
+  const route = useRoute() // 接收参数
+  // 打印query参数
+  console.log(route.query)
+  ```
 
-> 备注1：传递`params`参数时，若使用`to`的对象写法，必须使用`name`配置项，不能用`path`。
->
-> 备注2：传递`params`参数时，需要提前在规则中占位。
+#### params 参数
 
-### 4.9. 【路由的props配置】
+- router 的更改：
 
-作用：让路由组件更方便的收到参数（可以将路由参数作为`props`传给组件）
+  path 使用占位符的写法，？代表可有可无
 
 ```js
+routes:[
+...
 {
-	name:'xiang',
-	path:'detail/:id/:title/:content',
-	component:Detail,
-
-  // props的对象写法，作用：把对象中的每一组key-value作为props传给Detail组件
-  // props:{a:1,b:2,c:3}, 
-
-  // props的布尔值写法，作用：把收到了每一组params参数，作为props传给Detail组件
-  // props:true
-  
-  // props的函数写法，作用：把返回的对象中每一组key-value作为props传给Detail组件
-  props(route){
-    return route.query
-  }
+  name:'xinwen',
+  path:'/news',
+  component:News,
+  children:[
+    {
+      name:'xiang',
+      path:'detail/:id/:title/:content?', 
+      component:Detail
+    }
+  ]
 }
+]
 ```
 
-### 4.10. 【 replace属性】
+- 传递参数
 
-  1. 作用：控制路由跳转时操作浏览器历史记录的模式。
+  - to 的字符串写法
+
+    ```vue
+    <!-- 跳转并携带 params 参数（to的字符串写法） -->
+    <RouterLink :to="`/news/detail/001/新闻001/内容001`">{{news.title}}</RouterLink>
+    ```
+
+  - to 的对象写法
+
+    必须通过 name 跳转
+
+    ```vue
+    <!-- 跳转并携带params参数（to的对象写法） -->
+    <RouterLink 
+      :to="{
+        name:'xiang', 
+        params:{
+          id:news.id,
+          title:news.title,
+          content:news.title
+        }
+      }"
+    >
+      {{news.title}}
+    </RouterLink>
+    ```
+
+- 接收参数：
+
+```js
+import {useRoute} from 'vue-router'
+const route = useRoute()
+// 打印 params 参数
+console.log(route.params)
+```
+
+:::info
+
+- 传递 `params` 参数时，若使用 `to` 的对象写法，必须使用 `name` 配置项，不能用 `path`
+- 传递 `params` 参数时，需要提前在规则中占位。
+- 如果参数没有响应式，可以使用 `toRefs()`
+
+:::
+
+### 4.9. 【路由的 props 配置】
+
+作用：让路由组件更方便的收到参数（可以将路由参数作为 `props` 传给组件）  
+底层相当于  `<Detail a='' b=''>`
+
+路由的 props 的三种配置方法：
+
+- props 的 bool 值写法  
+
+  作用：把收到了每一组 **params** 参数，作为 props 传给 Detail 组件
+
+  ```js
+  // /router/index.js
+  {
+  	name:'content',
+  	path:'detail/:id/:title/:content',
+  	component:Detail,
+      props:true
+  }
+  ```
+
+  接收参数：
+
+  ```vue
+  <template>
+    <div>
+      {{ id }}
+      {{ title }}
+      {{ content }}
+    </div>
+  </template>
+  
+  <script lang="ts" setup>
+    defineProps(['id','title','content'])
+  </script>
+  ```
+
+- props 的函数写法
+
+  可以自己决定将什么作为 props 给路由组件
+
+  ```js
+  // /router/index.js
+  {
+  	name:'content',
+  	path:'detail/:id/:title/:content',
+  	component:Detail,
+      props(route):{
+          return route.query
+      }
+  }
+  ```
+
+  接收参数：
+
+  ```vue
+  <script lang="ts" setup>
+    defineProps(['id','title','content'])
+  </script>
+  ```
+
+- props 的对象写法（用的少）
+
+  可以自己决定将什么作为 props 给路由组件
+
+  ```js
+  // /router/index.js
+  {
+  	name:'content',
+  	path:'detail/:id/:title/:content',
+  	component:Detail,
+      props:{
+        a:100,
+        b:200
+      }
+  }
+  ```
+
+### 4.10. 【 replace 属性】
+
+  1. 作用：控制路由跳转时操作浏览器历史记录的模式
 
   2. 浏览器的历史记录有两种写入方式：分别为```push```和```replace```：
 
-     - ```push```是追加历史记录（默认值）。
-     - `replace`是替换当前记录。
+     - ```push```是追加历史记录（默认值）
+     - `replace`是替换当前记录
 
   3. 开启`replace`模式：
 
@@ -1614,43 +1704,61 @@ routes:[
 
 ### 4.11. 【编程式导航】
 
-路由组件的两个重要的属性：`$route`和`$router`变成了两个`hooks`
+编程式路由导航：脱离 `<RouterLink>`，使用 js 完成路由跳转（最常用）
+
+路由组件的两个重要的属性：`$route`和`$router`变成了两个 `hooks`
+
+router.push() 方法中的参数与 to 的写法相同
+
+- 字符串写法
+- 对象写法
+
+编程式路由导航实践：
 
 ```js
 import {useRoute,useRouter} from 'vue-router'
 
 const route = useRoute()
-const router = useRouter()
+const router = useRouter() // 获得路由器（导航的关键）
 
 console.log(route.query)
 console.log(route.parmas)
 console.log(router.push)
 console.log(router.replace)
+
+onMounted(()=>{
+    setTimeout(()=>{
+        router.push('/content')
+    },3000)
+})
 ```
 
-### 4.12. 【重定向】
+### 4.12. 【路由重定向】
 
 1. 作用：将特定的路径，重新定向到已有路由。
 
 2. 具体编码：
 
    ```js
+   /* /router/index.js */
    {
        path:'/',
-       redirect:'/about'
+       redirect:'/about' // 在路径为 '/' 时，自动跳转到 '/about'
    }
    ```
 
-# 5. pinia 
+## 5. pinia 
 
-## 5.1【准备一个效果】
+### 5.1【介绍】
+
+pinia 与 vue2 使用的 vuex 相似，目的是为了数据的集中管理，不同组件按需拿取数据
 
 
-## 5.2【搭建 pinia 环境】
+### 5.2【搭建 pinia 环境】
 
 第一步：`npm install pinia`
 
-第二步：操作`src/main.ts`
+第二步：操作 `src/main.ts`
 
 ```ts
 import { createApp } from 'vue'
@@ -1668,27 +1776,108 @@ app.use(pinia)
 app.mount('#app')
 ```
 
-此时开发者工具中已经有了`pinia`选项
+此时开发者工具中已经有了 `pinia` 选项
 
-## 5.3【存储+读取数据】
+### 5.3【存储 + 读取数据】
 
-1. `Store`是一个保存：**状态**、**业务逻辑** 的实体，每个组件都可以**读取**、**写入**它。
+`Store` 是一个保存：**状态**、**业务逻辑** 的实体，每个组件都可以 **读取**、**写入** 它  
+它有三个概念：`state`、`getter`、`action`，相当于组件中的： `data`、 `computed` 和 `methods`
 
-2. 它有三个概念：`state`、`getter`、`action`，相当于组件中的： `data`、 `computed` 和 `methods`。
+编码实现数据的存储：`src/store/count.ts`
 
-3. 具体编码：`src/store/count.ts`
+- 在 src 下创建 store 文件夹，存储组件对应的 js/ts 文件，建议：
+  - 文件名与组件名对应
+  - defineStore() 创建的对象名为 useXxxStore 的格式（hooks）
+  - defineStore() 的第一个参数与文件名相同
 
-   ```ts
-   // 引入defineStore用于创建store
-   import {defineStore} from 'pinia'
+```ts
+/* src/store/count.ts */
+
+// 引入 defineStore 用于创建 store
+import {defineStore} from 'pinia'
+
+// 定义并暴露一个store
+export const useCountStore = defineStore('count',{ // 
+  // 动作
+  actions:{},
+  // 状态
+  state(){
+    return { // 保存数据
+      sum:6
+    }
+  },
+  // 计算
+  getters:{}
+})
+```
+
+组件中读取 `state` 中的数据 `src/component/Count.vue`
+
+```vue
+<template>
+  <h2>当前求和为：{{ sumStore.sum }}</h2>
+</template>
+
+<script setup lang="ts" name="Count">
+  // 引入对应的 useXxxxxStore	
+  import {useSumStore} from '@/store/sum'
+  
+  // 调用useXxxxxStore得到对应的store
+  const sumStore = useSumStore()
+</script>
+```
+
+:::info
+
+useSumStore() 方法返回的对象为 Proxy 对象，调用保存的数据名即可，自动为 ref 数据且无需 .value
+
+:::
+
+### 5.4.【修改数据】(三种方式)
+
+1. 直接修改
+
+   在 component 组件中直接修改
+
+   ```
+   countStore.sum = 666
+   ```
+
+2. 批量修改
+
+   在 component 组件中，通过引入的 store 对象的 $patch 方法，传入对象，可部分修改值
+
+   ```js
+   countStore.$patch({
+     sum:999,
+     school:'atguigu'
+   })
+   ```
+
+3. 借助 `action` 修改（`action`中可以编写一些业务逻辑）
+
+   ```js
+   /* src/store/count.ts */
+   import { defineStore } from 'pinia'
    
-   // 定义并暴露一个store
-   export const useCountStore = defineStore('count',{
-     // 动作
-     actions:{},
-     // 状态
+   export const useCountStore = defineStore('count', {
+     actions: {
+       // 新增方法 加
+       increment(value:number) {
+         if (this.sum < 10) {
+           //操作countStore中的sum
+           this.sum += value
+         }
+       },
+       // 新增方法 减
+       decrement(value:number){
+         if(this.sum > 1){
+           this.sum -= value
+         }
+       }
+     },
      state(){
-       return {
+       return { // 保存数据
          sum:6
        }
      },
@@ -1697,112 +1886,10 @@ app.mount('#app')
    })
    ```
 
-4. 具体编码：`src/store/talk.ts`
+   组件中调用即可
 
    ```js
-   // 引入defineStore用于创建store
-   import {defineStore} from 'pinia'
-   
-   // 定义并暴露一个store
-   export const useTalkStore = defineStore('talk',{
-     // 动作
-     actions:{},
-     // 状态
-     state(){
-       return {
-         talkList:[
-           {id:'yuysada01',content:'你今天有点怪，哪里怪？怪好看的！'},
-        		{id:'yuysada02',content:'草莓、蓝莓、蔓越莓，你想我了没？'},
-           {id:'yuysada03',content:'心里给你留了一块地，我的死心塌地'}
-         ]
-       }
-     },
-     // 计算
-     getters:{}
-   })
-   ```
-   
-5. 组件中使用`state`中的数据
-
-   ```vue
-   <template>
-     <h2>当前求和为：{{ sumStore.sum }}</h2>
-   </template>
-   
-   <script setup lang="ts" name="Count">
-     // 引入对应的useXxxxxStore	
-     import {useSumStore} from '@/store/sum'
-     
-     // 调用useXxxxxStore得到对应的store
-     const sumStore = useSumStore()
-   </script>
-   ```
-
-   ```vue
-   <template>
-   	<ul>
-       <li v-for="talk in talkStore.talkList" :key="talk.id">
-         {{ talk.content }}
-       </li>
-     </ul>
-   </template>
-   
-   <script setup lang="ts" name="Count">
-     import axios from 'axios'
-     import {useTalkStore} from '@/store/talk'
-   
-     const talkStore = useTalkStore()
-   </script>
-   ```
-
-   
-
-## 5.4.【修改数据】(三种方式)
-
-1. 第一种修改方式，直接修改
-
-   ```ts
-   countStore.sum = 666
-   ```
-
-2. 第二种修改方式：批量修改
-
-   ```ts
-   countStore.$patch({
-     sum:999,
-     school:'atguigu'
-   })
-   ```
-
-3. 第三种修改方式：借助`action`修改（`action`中可以编写一些业务逻辑）
-
-   ```js
-   import { defineStore } from 'pinia'
-   
-   export const useCountStore = defineStore('count', {
-     /*************/
-     actions: {
-       //加
-       increment(value:number) {
-         if (this.sum < 10) {
-           //操作countStore中的sum
-           this.sum += value
-         }
-       },
-       //减
-       decrement(value:number){
-         if(this.sum > 1){
-           this.sum -= value
-         }
-       }
-     },
-     /*************/
-   })
-   ```
-
-4. 组件中调用`action`即可
-
-   ```js
+   /* src/component/Count.ts */
    // 使用countStore
    const countStore = useCountStore()
    
@@ -1811,7 +1898,9 @@ app.mount('#app')
    ```
 
 
-## 5.5.【storeToRefs】
+
+
+### 5.5.【storeToRefs】
 
 - 借助`storeToRefs`将`store`中的数据转为`ref`对象，方便在模板中使用。
 - 注意：`pinia`提供的`storeToRefs`只会将数据做转换，而`Vue`的`toRefs`会转换`store`中数据。
@@ -1836,7 +1925,7 @@ app.mount('#app')
 
 ```
 
-## 5.6.【getters】
+### 5.6.【getters】
 
   1. 概念：当`state`中的数据，需要经过处理后再使用时，可以使用`getters`配置。
 
@@ -1878,7 +1967,7 @@ app.mount('#app')
 
      
 
-## 5.7.【$subscribe】
+### 5.7.【$subscribe】
 
 通过 store 的 `$subscribe()` 方法侦听 `state` 及其变化
 
@@ -1891,7 +1980,7 @@ talkStore.$subscribe((mutate,state)=>{
 
 
 
-## 5.8. 【store组合式写法】
+### 5.8. 【store组合式写法】
 
 ```ts
 import {defineStore} from 'pinia'
