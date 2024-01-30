@@ -2067,27 +2067,25 @@ export const useTalkStore = defineStore('talk',()=>{
 
 
 
-# 6. 组件通信
+## 6. 组件通信
 
 **`Vue3`组件通信和`Vue2`的区别：**
 
-* 移出事件总线，使用`mitt`代替。
+* 移除事件总线，使用 `mitt` 代替。
 
-- `vuex`换成了`pinia`。
-- 把`.sync`优化到了`v-model`里面了。
-- 把`$listeners`所有的东西，合并到`$attrs`中了。
-- `$children`被砍掉了。
+- `vuex` 换成了 `pinia`。
+- 把 `.sync` 优化到了 `v-model` 里
+- 把 `$listeners` 所有的东西，合并到 `$attrs` 中了。
+- `$children` 被砍掉了
 
-**常见搭配形式：**
+### 6.1. 【props】
 
-## 6.1. 【props】
+概述：`props` 是使用频率最高的一种通信方式，常用与 ：**父 ↔ 子**（父子之间的通信）
 
-概述：`props`是使用频率最高的一种通信方式，常用与 ：**父 ↔ 子**。
+- 若 **父传子**：属性值是 **非函数**
+- 若 **子传父**：属性值是 **函数**
 
-- 若 **父传子**：属性值是**非函数**。
-- 若 **子传父**：属性值是**函数**。
-
-父组件：
+举例，父组件：
 
 ```vue
 <template>
@@ -2095,7 +2093,7 @@ export const useTalkStore = defineStore('talk',()=>{
     <h3>父组件，</h3>
 		<h4>我的车：{{ car }}</h4>
 		<h4>儿子给的玩具：{{ toy }}</h4>
-		<Child :car="car" :getToy="getToy"/>
+		<Child :car="car" :getToy="getToy"/> <!-- 将数据 car 和方法 getToy() 传给子 -->
   </div>
 </template>
 
@@ -2107,7 +2105,7 @@ export const useTalkStore = defineStore('talk',()=>{
 	const toy = ref()
 	// 方法
 	function getToy(value:string){
-		toy.value = value
+		toy.value = value // 子组件调用方法，赋值给父组件的数据
 	}
 </script>
 ```
@@ -2120,7 +2118,7 @@ export const useTalkStore = defineStore('talk',()=>{
     <h3>子组件</h3>
 		<h4>我的玩具：{{ toy }}</h4>
 		<h4>父给我的车：{{ car }}</h4>
-		<button @click="getToy(toy)">玩具给父亲</button>
+		<button @click="getToy(toy)">玩具给父亲</button> <!-- 调用方法 -->
   </div>
 </template>
 
@@ -2128,11 +2126,11 @@ export const useTalkStore = defineStore('talk',()=>{
 	import { ref } from "vue";
 	const toy = ref('奥特曼')
 	
-	defineProps(['car','getToy'])
+	defineProps(['car','getToy']) // 获得父组件的 car 数据，getToy 方法
 </script>
 ```
 
-## 6.2. 【自定义事件】
+### 6.2. 【自定义事件】
 
 1. 概述：自定义事件常用于：**子 => 父。**
 2. 注意区分好：原生事件、自定义事件。
@@ -2159,7 +2157,7 @@ export const useTalkStore = defineStore('talk',()=>{
    this.$emit('send-toy', 具体数据)
    ```
 
-## 6.3. 【mitt】
+### 6.3. 【mitt】
 
 概述：与消息订阅与发布（`pubsub`）功能类似，可以实现任意组件间通信。
 
@@ -2233,7 +2231,7 @@ function sendToy(){
 
 **注意这个重要的内置关系，总线依赖着这个内置关系**
 
-## 6.4.【v-model】
+### 6.4.【v-model】
 
 1. 概述：实现 **父↔子** 之间相互通信。
 
@@ -2324,7 +2322,7 @@ function sendToy(){
    
 
 
-## 6.5.【$attrs 】
+### 6.5.【$attrs 】
 
 1. 概述：`$attrs`用于实现**当前组件的父组件**，向**当前组件的子组件**通信（**祖→孙**）。
 
@@ -2392,7 +2390,7 @@ function sendToy(){
 </script>
 ```
 
-## 6.6. 【$refs、$parent】
+### 6.6. 【$refs、$parent】
 
 1. 概述：
 
@@ -2406,7 +2404,7 @@ function sendToy(){
    | `$refs`   | 值为对象，包含所有被`ref`属性标识的`DOM`元素或组件实例。 |
    | `$parent` | 值为对象，当前组件的父组件实例对象。                     |
 
-## 6.7. 【provide、inject】
+### 6.7. 【provide、inject】
 
 1. 概述：实现**祖孙组件**直接通信
 
@@ -2473,13 +2471,13 @@ function sendToy(){
    ```
 
 
-## 6.8. 【pinia】
+### 6.8. 【pinia】
 
 参考之前`pinia`部分的讲解
 
-## 6.9. 【slot】
+### 6.9. 【slot】
 
-### 1. 默认插槽
+#### 1. 默认插槽
 
 ```vue
 父组件中：
@@ -2498,7 +2496,7 @@ function sendToy(){
         </template>
 ```
 
-### 2. 具名插槽
+#### 2. 具名插槽
 
 ```vue
 父组件中：
@@ -2522,7 +2520,7 @@ function sendToy(){
         </template>
 ```
 
-### 3. 作用域插槽 
+#### 3. 作用域插槽 
 
 1. 理解：**数据在组件的自身，但根据数据生成的结构需要组件的使用者来决定。**（新闻数据在`News`组件中，但使用数据所遍历出来的结构由`App`组件决定）
 
