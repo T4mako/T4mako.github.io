@@ -1927,9 +1927,9 @@ useSumStore() 方法返回的对象为 Proxy 对象，调用保存的数据名�
 
 ### 5.6.【getters】
 
-  1. 概念：当`state`中的数据，需要经过处理后再使用时，可以使用`getters`配置。
+  1. 概念：当`state`中的数据，需要经过处理后再使用时，可以使用 `getters` 配置。
 
-  2. 追加```getters```配置。
+  2. 追加 `getters` 配置。
 
      ```js
      // 引入defineStore用于创建store
@@ -1969,7 +1969,7 @@ useSumStore() 方法返回的对象为 Proxy 对象，调用保存的数据名�
 
 ### 5.7.【$subscribe】
 
-通过 store 的 `$subscribe()` 方法侦听 `state` 及其变化
+通过 store 的 `$subscribe()` 方法侦听 `state` 及其变化（类似 watch）
 
 ```ts
 talkStore.$subscribe((mutate,state)=>{
@@ -1978,9 +1978,67 @@ talkStore.$subscribe((mutate,state)=>{
 })
 ```
 
+案例：
 
+```ts
+/* src/store/talk.ts */
+import {defineStore} from 'pinia'
+import axios from 'axios'
+import {nanoid} from 'nanoid'
+
+export const useTalkStore = defineStore('talk',{
+  actions:{
+    async getATalk(){
+      // 发请求，下面这行的写法是：连续解构赋值+重命名
+      let {data:{content:title}} = await axios.get('https://api.test/')
+      // 把请求回来的字符串，包装成一个对象
+      let obj = {id:nanoid(),title}
+      // 放到数组中
+      this.talkList.unshift(obj)
+    }
+  },
+  // 真正存储数据的地方
+  state(){
+    return {
+      talkList:JSON.parse(localStorage.getItem('talkList') as string) || []
+    }
+  }
+})
+```
+
+```vue
+/* src/conpoment/talk.vue */
+<template>
+  <div class="talk">
+    <button @click="getLoveTalk">获取一句话</button>
+    <ul>
+      <li v-for="talk in talkList" :key="talk.id">{{talk.title}}</li>
+    </ul>
+  </div>
+</template>
+
+<script setup lang="ts" name="LoveTalk">
+  import {useTalkStore} from '@/store/loveTalk'
+  import { storeToRefs } from "pinia";
+
+  const talkStore = useTalkStore()
+  const {talkList} = storeToRefs(talkStore)
+
+  talkStore.$subscribe((mutate,state)=>{
+    console.log('talkStore 里面保存的数据发生了变化',mutate,state)
+    localStorage.setItem('talkList',JSON.stringify(state.talkList))
+  })
+  
+  // 方法
+  function getLoveTalk(){
+    talkStore.getATalk()
+  }
+</script>
+```
 
 ### 5.8. 【store组合式写法】
+
+store 除了选项式写法，也支持组合是写法
 
 ```ts
 import {defineStore} from 'pinia'
@@ -1997,7 +2055,7 @@ export const useTalkStore = defineStore('talk',()=>{
   // getATalk函数相当于action
   async function getATalk(){
     // 发请求，下面这行的写法是：连续解构赋值+重命名
-    let {data:{content:title}} = await axios.get('https://api.uomg.com/api/rand.qinghua?format=json')
+    let {data:{content:title}} = await axios.get('https://api.test/')
     // 把请求回来的字符串，包装成一个对象
     let obj = {id:nanoid(),title}
     // 放到数组中
