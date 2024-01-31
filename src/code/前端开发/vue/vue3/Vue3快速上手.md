@@ -2069,7 +2069,7 @@ export const useTalkStore = defineStore('talk',()=>{
 
 ## 6. 组件通信
 
-**`Vue3`组件通信和`Vue2`的区别：**
+**`Vue3` 组件通信和 `Vue2` 的区别：**
 
 * 移除事件总线，使用 `mitt` 代替。
 
@@ -2132,15 +2132,53 @@ export const useTalkStore = defineStore('talk',()=>{
 
 ### 6.2. 【自定义事件】
 
-1. 概述：自定义事件常用于：**子 => 父。**
-2. 注意区分好：原生事件、自定义事件。
+1. 概述：自定义事件常用于：**子 => 父**
+2. 注意区分：原生事件、自定义事件
 
 - 原生事件：
-  - 事件名是特定的（`click`、`mosueenter`等等）	
-  - 事件对象`$event`: 是包含事件相关信息的对象（`pageX`、`pageY`、`target`、`keyCode`）
+  - 事件名是特定的（ `click`、`mosueenter` 等等）	
+  - 事件对象 `$event` : 是包含事件相关信息的对象（`pageX`、`pageY`、`target`、`keyCode`）
 - 自定义事件：
-  - 事件名是任意名称
-  - **事件对象`$event`: 是调用`emit`时所提供的数据，可以是任意类型！！！**
+  - 事件名是任意名称，推荐命名为多个单词，使用 `-` 连接
+  - 事件对象 `$event`: 是调用  `emit` 时所提供的数据，可以是任意类型！！！
+  - 事件对象 `$event` 在原生事件与自定义事件中都存在
+
+自定义事件案例：
+
+- 事件绑定
+
+  ```vue
+  <!-- component/Father.vue -->
+  <template>
+      <!-- 事件名为 abc，事件的回调：xyz() 方法 -->
+  	<!-- 给子组件绑定了事件 abc，回调为 xyz() -->
+      <Child @abc="xyz"/>
+  </template>
+  <script setup name = "Father" lang="ts">
+    import Child from "@/components/Child.vue"
+      // 事件的回调
+  	function xyz(value:number){
+          console.log(value)
+      }
+  </script>
+  ```
+
+- 事件触发
+
+  ```vue
+  <!-- <!-- component/Child.vue --> -->
+  <template>  
+  </template>
+  <script lang="ts" setup>
+  import { onMounted } from 'vue';
+    const emit = defineEmits(['abc']) // 接受自定义事件，名称一般都为 emit
+    onMounted(() => {
+      setTimeout(() => {
+        emit('abc',123) // 在合适时机调用事件 emit('事件名',传递参数)
+      }, 3000)
+    });
+  </script>
+  ```
 
 3. 示例：
 
@@ -2152,22 +2190,25 @@ export const useTalkStore = defineStore('talk',()=>{
    <button @click="toy = $event">测试</button>
    ```
 
-   ```js
-   //子组件中，触发事件：
-   this.$emit('send-toy', 具体数据)
-   ```
-
 ### 6.3. 【mitt】
 
-概述：与消息订阅与发布（`pubsub`）功能类似，可以实现任意组件间通信。
+概述：与消息订阅与发布（ `pubsub` ）功能类似，可以实现 **任意组件** 间通信
 
-安装`mitt`
+:::info
+
+发送者触发事件，接受者绑定事件
+
+建议在组件销毁时，解绑事件
+
+:::
+
+安装 `mitt`
 
 ```shell
 npm i mitt
 ```
 
-新建文件：`src\utils\emitter.ts`
+新建文件：`src\utils\emitter.ts`，创建 mitt 配置文件
 
 ```javascript
 // 引入mitt 
@@ -2176,7 +2217,19 @@ import mitt from "mitt";
 // 创建emitter
 const emitter = mitt()
 
-/*
+// 默认暴露
+export default emitter
+```
+
+emitter 的语法：
+
+```ts
+// 引入mitt 
+import mitt from "mitt";
+
+// 创建emitter
+const emitter = mitt()
+
   // 绑定事件
   emitter.on('abc',(value)=>{
     console.log('abc事件被触发',value)
@@ -2192,10 +2245,12 @@ const emitter = mitt()
   }, 1000);
 
   setTimeout(() => {
+    // 解绑事件
+    emitter.off('test') // 解绑 test1 事件
     // 清理事件
+    // emitter.all 获取所有事件
     emitter.all.clear()
   }, 3000); 
-*/
 
 // 创建并暴露mitt
 export default emitter
@@ -2218,16 +2273,45 @@ onUnmounted(()=>{
 })
 ```
 
-【第三步】：提供数据的组件，在合适的时候触发事件
+组件间通信案例：
 
-```javascript
-import emitter from "@/utils/emitter";
+- A 组件
 
-function sendToy(){
-  // 触发事件
-  emitter.emit('send-toy',toy.value)
-}
-```
+  ```vue
+  <!-- component/A.vue -->
+  <template>
+  	<!-- 事件名：eventName
+  		传递数据：data
+  		点击按钮时，触发事件，将 data 传递给绑定 eventName 的组件
+  	-->
+      <button @click="emitter.emit('eventName',data)">组件传值</button>
+  </template>
+  <script setup name = "Father" lang="ts">
+      import { ref } from 'vue';
+      import emitter from '@/utils/emitter';
+      let data = ref('数据')
+  </script>
+  ```
+
+- B 组件
+
+  ```vue
+  <template>
+      {{ getData }}
+  </template>
+  
+  <script lang="ts" setup>
+      import { ref,onUnmounted } from 'vue';
+      import emitter from '@/utils/emitter';
+      let getData = ref('123')
+      emitter.on('eventName',(value:any) => { // 绑定事件，拿到数据
+        getData.value = value
+      })
+      onUnmounted(()=>{ // 组件销毁时 解绑事件
+        emitter.off('eventName')
+      })
+  </script>
+  ```
 
 **注意这个重要的内置关系，总线依赖着这个内置关系**
 
@@ -2235,27 +2319,31 @@ function sendToy(){
 
 1. 概述：实现 **父↔子** 之间相互通信。
 
-2. 前序知识 —— `v-model`的本质
+2. 前序知识 —— `v-model` 的本质：`:value` + `@input` 事件
 
    ```vue
    <!-- 使用v-model指令 -->
    <input type="text" v-model="userName">
    
-   <!-- v-model的本质是下面这行代码 -->
+   <!-- v-model 的本质是下面这行代码 -->
+   <!-- 
+   	:value="userName" -> 实现数据到页面的绑定（v-bind）
+   	@input="userName =(<HTMLInputElement>$event.target).value" -> 实现页面到数据的绑定（输入事件）
+   -->
    <input 
      type="text" 
-     :value="userName" 
+     :value="userName"
      @input="userName =(<HTMLInputElement>$event.target).value"
    >
    ```
 
-3. 组件标签上的`v-model`的本质：`:moldeValue` ＋ `update:modelValue`事件。
+3. 组件标签上的 `v-model` 的本质：`:moldeValue` ＋ `update:modelValue`事件
 
    ```vue
-   <!-- 组件标签上使用v-model指令 -->
+   <!-- 组件标签上使用 v-model 指令 -->
    <AtguiguInput v-model="userName"/>
    
-   <!-- 组件标签上v-model的本质 -->
+   <!-- 组件标签上 v-model 的本质 -->
    <AtguiguInput :modelValue="userName" @update:model-value="userName = $event"/>
    ```
 
@@ -2275,14 +2363,14 @@ function sendToy(){
    </template>
    
    <script setup lang="ts" name="AtguiguInput">
-     // 接收props
+     // props 接受数据
      defineProps(['modelValue'])
-     // 声明事件
+     // 声明事件，触发输入事件是调用自定义事件
      const emit = defineEmits(['update:model-value'])
    </script>
    ```
 
-4. 也可以更换`value`，例如改成`abc`
+4. 也可以更换 `value`，例如改成 `abc`
 
    ```vue
    <!-- 也可以更换value，例如改成abc-->
@@ -2313,7 +2401,7 @@ function sendToy(){
    </script>
    ```
 
-5. 如果`value`可以更换，那么就可以在组件标签上多次使用`v-model`
+5. 如果 `value` 可以更换，那么就可以在组件标签上多次使用 `v-model`
 
    ```vue
    <AtguiguInput v-model:abc="userName" v-model:xyz="password"/>
@@ -2324,13 +2412,15 @@ function sendToy(){
 
 ### 6.5.【$attrs 】
 
-1. 概述：`$attrs`用于实现**当前组件的父组件**，向**当前组件的子组件**通信（**祖→孙**）。
+1. 概述：`$attrs` 用于实现 **当前组件的父组件**，向 **当前组件的子组件** 通信（**祖→孙**）。
 
-2. 具体说明：`$attrs`是一个对象，包含所有父组件传入的标签属性。
+2. 具体说明：`$attrs` 是一个对象，包含所有父组件传入的标签属性。
 
-   >  注意：`$attrs`会自动排除`props`中声明的属性(可以认为声明过的 `props` 被子组件自己“消费”了)
+   注意：`$attrs` 会自动排除 `props` 中声明的属性（可以认为声明过的 `props` 被子组件自己“消费”了）
 
-父组件：
+`$attrs` 使用举例：
+
+父组件（使用 props 向子组件传递，传递方法可以实现 孙 -> 父）：
 
 ```vue
 <template>
@@ -2354,7 +2444,7 @@ function sendToy(){
 </script>
 ```
 
-子组件：
+子组件（向孙组件传递 `$attrs`）：
 
 ```vue
 <template>
@@ -2369,7 +2459,7 @@ function sendToy(){
 </script>
 ```
 
-孙组件：
+孙组件（使用 defineProps([]) 接受）：
 
 ```vue
 <template>
