@@ -2484,30 +2484,117 @@ onUnmounted(()=>{
 
 1. 概述：
 
-   * `$refs`用于 ：**父→子。**
-   * `$parent`用于：**子→父。**
+   * `$refs` 用于 ：**父 → 子。**
+   * `$parent`用于：**子 → 父。**
 
 2. 原理如下：
 
-   | 属性      | 说明                                                     |
-   | --------- | -------------------------------------------------------- |
-   | `$refs`   | 值为对象，包含所有被`ref`属性标识的`DOM`元素或组件实例。 |
-   | `$parent` | 值为对象，当前组件的父组件实例对象。                     |
+   | 属性      | 说明                                                         |
+   | --------- | ------------------------------------------------------------ |
+   | `$refs`   | 值为对象，包含所有被 `ref` 属性标识的 `DOM` 元素或组件实例。 |
+   | `$parent` | 值为对象，当前组件的父组件实例对象。                         |
+
+使用案例：
+
+```vue
+<!-- Father.vue -->
+<template>
+	<div class="father">
+		<h3>父组件</h3>
+		<h4>房产：{{ house }}</h4>
+		<button @click="changeToy">修改 Child1 的玩具</button>
+		<button @click="changeComputer">修改 Child2 的电脑</button>
+		<button @click="getAllChild($refs)">让所有孩子的书变多</button> <!-- 获取所有子组件的引用 -->
+		<Child1 ref="c1"/> <!-- 使用 ref 获得子组件的引用 -->
+		<Child2 ref="c2"/>
+	</div>
+</template>
+
+<script setup lang="ts" name="Father">
+	import Child1 from './Child1.vue'
+	import Child2 from './Child2.vue'
+	import { ref,reactive } from "vue";
+	let c1 = ref()
+	let c2 = ref()
+
+	// 数据
+	let house = ref(4)
+	// 方法
+	function changeToy(){
+		c1.value.toy = '小猪佩奇' // 修改子组件（Child1）的 toy 属性
+	}
+	function changeComputer(){
+		c2.value.computer = '华为' // 修改子组件（Child2）的 computer 属性
+	}
+	function getAllChild(refs:{[key:string]:any}){
+		console.log(refs)
+		for (let key in refs){
+			refs[key].book += 3
+		}
+	}
+	// 向外部提供数据
+	defineExpose({house})
+</script>
+```
+
+```vue
+<!-- Child1.vue -->
+<template>
+  <div class="child1">
+    <h3>子组件1</h3>
+		<h4>玩具：{{ toy }}</h4>
+		<h4>书籍：{{ book }} 本</h4>
+		<button @click="minusHouse($parent)">干掉父亲的一套房产</button>
+  </div>
+</template>
+<script setup lang="ts" name="Child1">
+	import { ref } from "vue";
+	// 数据
+	let toy = ref('奥特曼')
+	let book = ref(3)
+	// 方法
+	function minusHouse(parent:any){
+		parent.house -= 1
+	}
+	// 把数据交给外部
+	defineExpose({toy,book})
+</script>
+```
+
+```vue
+<!-- Child2.vue -->
+<template>
+  <div class="child2">
+    <h3>子组件2</h3>
+		<h4>电脑：{{ computer }}</h4>
+		<h4>书籍：{{ book }} 本</h4>
+  </div>
+</template>
+<script setup lang="ts" name="Child2">
+		import { ref } from "vue";
+		// 数据
+		let computer = ref('联想')
+		let book = ref(6)
+		// 把数据交给外部
+		defineExpose({computer,book})
+</script>
+```
 
 ### 6.7. 【provide、inject】
 
-1. 概述：实现**祖孙组件**直接通信
+1. 概述：实现 **祖孙组件** 直接通信
 
 2. 具体使用：
 
-   * 在祖先组件中通过`provide`配置向后代组件提供数据
-   * 在后代组件中通过`inject`配置来声明接收数据
+   * 在祖先组件中通过 `provide` 配置向后代组件 **提供数据**
+   * 在后代组件中通过 `inject` 配置来声明 **接收数据**
 
 4. 具体编码：
 
-   【第一步】父组件中，使用`provide`提供数据
+   【第一步】父组件中，使用  `provide`  提供数据
 
    ```vue
+   <!-- Father.vue -->
    <template>
      <div class="father">
        <h3>父组件</h3>
@@ -2543,7 +2630,8 @@ onUnmounted(()=>{
    【第二步】孙组件中使用`inject`配置项接受数据。
    
    ```vue
-   <template>
+   <!-- GrandChild.vue -->
+   <template>+0
      <div class="grand-child">
        <h3>我是孙组件</h3>
        <h4>资产：{{ money }}</h4>
@@ -2555,7 +2643,7 @@ onUnmounted(()=>{
    <script setup lang="ts" name="GrandChild">
      import { inject } from 'vue';
      // 注入数据
-    let {money,updateMoney} = inject('moneyContext',{money:0,updateMoney:(x:number)=>{}})
+     let {money,updateMoney} = inject('moneyContext',{money:0,updateMoney:(x:number)=>{}})
      let car = inject('car')
    </script>
    ```
@@ -2563,7 +2651,7 @@ onUnmounted(()=>{
 
 ### 6.8. 【pinia】
 
-参考之前`pinia`部分的讲解
+参考前文
 
 ### 6.9. 【slot】
 

@@ -374,6 +374,7 @@ on e.reports_to = m.employee_id
 group by m.employee_id
 order by employee_id
 ```
+
 ### 610. 判断三角形
 <Badge text="简单" type="tip" vertical="middle" />
 
@@ -423,6 +424,46 @@ WHERE
     AND l1.Num = l2.Num
     AND l2.Num = l3.Num
 ;
+```
+
+### 1204. 最后一个能进入巴士的人
+
+<Badge text="中等" type="warning" vertical="middle" />
+
+```sql
+SELECT a.person_name
+FROM Queue a, Queue b
+WHERE a.turn >= b.turn
+GROUP BY a.person_id HAVING SUM(b.weight) <= 1000
+ORDER BY a.turn DESC
+LIMIT 1
+```
+
+### 1907. 安分类统计薪水
+
+<Badge text="中等" type="warning" vertical="middle" />
+
+```sql
+SELECT 
+    'Low Salary' AS category,
+    SUM(CASE WHEN income < 20000 THEN 1 ELSE 0 END) AS accounts_count
+FROM 
+    Accounts
+    
+UNION
+SELECT  
+    'Average Salary' category,
+    SUM(CASE WHEN income >= 20000 AND income <= 50000 THEN 1 ELSE 0 END) 
+    AS accounts_count
+FROM 
+    Accounts
+
+UNION
+SELECT 
+    'High Salary' category,
+    SUM(CASE WHEN income > 50000 THEN 1 ELSE 0 END) AS accounts_count
+FROM 
+    Accounts
 ```
 
 ## 子查询
