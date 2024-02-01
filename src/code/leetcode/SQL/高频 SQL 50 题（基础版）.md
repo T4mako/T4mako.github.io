@@ -527,6 +527,102 @@ UNION ALL(
 )
 ```
 
+### 1321. 餐馆营业额变化增长
+
+<Badge text="中等" type="warning" vertical="middle" />
+
+```sql
+SELECT
+	a.visited_on,
+	sum( b.amount ) AS amount,
+	round(sum( b.amount ) / 7, 2 ) AS average_amount 
+FROM
+	( SELECT DISTINCT visited_on FROM customer ) a JOIN customer b 
+ 	ON datediff( a.visited_on, b.visited_on ) BETWEEN 0 AND 6 
+WHERE
+	a.visited_on >= (SELECT min( visited_on ) FROM customer ) + 6 
+GROUP BY
+	a.visited_on
+ORDER BY
+  a.visited_on
+```
+
+### 602. 好友申请 II ：谁有最多的好友
+
+<Badge text="中等" type="warning" vertical="middle" />
+
+```sql
+select id,count(*) num from 
+    (select requester_id id from RequestAccepted
+    union all
+    select accepter_id id from RequestAccepted) tb
+group by id
+order by num desc
+limit 1
+```
+
+### 585. 2016年的投资
+
+<Badge text="中等" type="warning" vertical="middle" />
+
+```sql
+SELECT
+    ROUND(SUM(insurance.TIV_2016),2) AS TIV_2016
+FROM
+    insurance
+WHERE
+    insurance.TIV_2015 IN
+    (
+      SELECT
+        TIV_2015
+      FROM
+        insurance
+      GROUP BY TIV_2015
+      HAVING COUNT(*) > 1
+    )
+    AND CONCAT(LAT,'-', LON) IN
+    (
+      SELECT
+        CONCAT(LAT,'-', LON)
+      FROM
+        insurance
+      GROUP BY LAT , LON
+      HAVING COUNT(*) = 1
+    )
+;
+```
+
+### 185. 部门工资前三高的所有员工
+
+<Badge text="困难" type="danger" vertical="middle" />
+
+```sql
+SELECT
+    ROUND(SUM(insurance.TIV_2016),2) AS TIV_2016
+FROM
+    insurance
+WHERE
+    insurance.TIV_2015 IN
+    (
+      SELECT
+        TIV_2015
+      FROM
+        insurance
+      GROUP BY TIV_2015
+      HAVING COUNT(*) > 1
+    )
+    AND CONCAT(LAT,'-', LON) IN
+    (
+      SELECT
+        CONCAT(LAT,'-', LON)
+      FROM
+        insurance
+      GROUP BY LAT , LON
+      HAVING COUNT(*) = 1
+    )
+;
+```
+
 ## 高级字符串函数 / 正则表达式 / 字句
 
 ### 1667. 修复表中的名字
