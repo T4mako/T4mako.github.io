@@ -248,7 +248,7 @@ setup(){
 <script setup lang="ts">
   console.log(this) //undefined
   
-  // 数据（注意：此时的name、age、tel都不是响应式数据）
+  // 数据（注意：此时的 name、age、tel 都不是响应式数据）
   let name = '张三'
   let age = 18
   let tel = '13888888888'
