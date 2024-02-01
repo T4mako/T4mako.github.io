@@ -2655,15 +2655,20 @@ onUnmounted(()=>{
 
 ### 6.9. 【slot】
 
+slot 插槽的作用：将组件多标签内的内容插入到原组件中
+
 #### 1. 默认插槽
 
+默认插槽可以将组件中的内容放入原组件的单独位置（默认插槽的名称为 default）
+
 ```vue
-父组件中：
-        <Category title="今日热门游戏">
-          <ul>
-            <li v-for="g in games" :key="g.id">{{ g.name }}</li>
-          </ul>
-        </Category>
+父组件：
+    <Category title="游戏">
+      <!-- 将组件中内容放入原组件中 -->
+      <ul>
+        <li v-for="g in games" :key="g.id">{{ g.name }}</li>
+      </ul>
+    </Category>
 子组件中：
         <template>
           <div class="item">
@@ -2675,6 +2680,16 @@ onUnmounted(()=>{
 ```
 
 #### 2. 具名插槽
+
+当组件中的不同内容放入原组件中的不同位置，使用具名插槽
+
+具名插槽，名称定义：
+
+- 在标签上写 `v-slot:xxx` 或简写为 `#xxx`
+
+插槽使用：
+
+- `<slot name="xxx"></slot>`
 
 ```vue
 父组件中：
@@ -2700,46 +2715,53 @@ onUnmounted(()=>{
 
 #### 3. 作用域插槽 
 
-1. 理解：**数据在组件的自身，但根据数据生成的结构需要组件的使用者来决定。**（新闻数据在`News`组件中，但使用数据所遍历出来的结构由`App`组件决定）
+用于数据在子组件，数据生成的结构由父组件（组件的使用者）决定
 
-3. 具体编码：
+接受子组件 slot 传递的所有的 props `v-slot="params"`
 
-   ```vue
-   父组件中：
-         <Game v-slot="params">
-         <!-- <Game v-slot:default="params"> -->
-         <!-- <Game #default="params"> -->
-           <ul>
-             <li v-for="g in params.games" :key="g.id">{{ g.name }}</li>
-           </ul>
-         </Game>
-   
-   子组件中：
-         <template>
-           <div class="category">
-             <h2>今日游戏榜单</h2>
-             <slot :games="games" a="哈哈"></slot>
-           </div>
-         </template>
-   
-         <script setup lang="ts" name="Category">
-           import {reactive} from 'vue'
-           let games = reactive([
-             {id:'asgdytsa01',name:'英雄联盟'},
-             {id:'asgdytsa02',name:'王者荣耀'},
-             {id:'asgdytsa03',name:'红色警戒'},
-             {id:'asgdytsa04',name:'斗罗大陆'}
-           ])
-         </script>
-   ```
+带有名字的插槽：  
 
+- `<slot name="myName" :test="data"></slot>`
+- `<Component v-slot:myName="param">{{ param.test}}</Component>`
 
+编码案例：
 
-# 7. 其它 API
+```vue
+父组件中：
+	  <!-- params 为子组件 slot 传递的所有 props -->
+      <Game v-slot="params">
+      <!-- <Game v-slot:default="params"> -->
+      <!-- <Game #default="params"> -->
+        <ul>
+          <li v-for="g in params.games" :key="g.id">{{ g.name }}</li>
+        </ul>
+      </Game>
 
-## 7.1.【shallowRef 与 shallowReactive 】
+子组件中：
+      <template>
+        <div class="category">
+          <h2>game</h2>
+          <!-- 使用 props 给父组件（插槽使用者）传值 -->
+          <slot :games="games" a="哈哈"></slot>
+        </div>
+      </template>
 
-### `shallowRef`
+      <script setup lang="ts" name="Category">
+        import {reactive} from 'vue'
+        let games = reactive([
+          {id:'asgdytsa01',name:'英雄联盟'},
+          {id:'asgdytsa02',name:'王者荣耀'},
+          {id:'asgdytsa03',name:'红色警戒'},
+          {id:'asgdytsa04',name:'斗罗大陆'}
+        ])
+      </script>
+```
+
+## 7. 其它 API
+
+### 7.1.【shallowRef 与 shallowReactive 】
+
+`shallowRef`：
 
 1. 作用：创建一个响应式数据，但只对顶层属性进行响应式处理。
 
@@ -2751,7 +2773,7 @@ onUnmounted(()=>{
 
 3. 特点：只跟踪引用值的变化，不关心值内部的属性变化。
 
-### `shallowReactive`
+`shallowReactive`：
 
 1. 作用：创建一个浅层响应式对象，只会使对象的最顶层属性变成响应式的，对象内部的嵌套属性则不会变成响应式的
 
@@ -2763,15 +2785,14 @@ onUnmounted(()=>{
 
 3. 特点：对象的顶层属性是响应式的，但嵌套对象的属性不是。
 
-### 总结
-
-> 通过使用 [`shallowRef()`](https://cn.vuejs.org/api/reactivity-advanced.html#shallowref) 和 [`shallowReactive()`](https://cn.vuejs.org/api/reactivity-advanced.html#shallowreactive) 来绕开深度响应。浅层式 `API` 创建的状态只在其顶层是响应式的，对所有深层的对象不会做任何处理，避免了对每一个内部属性做响应式所带来的性能成本，这使得属性的访问变得更快，可提升性能。
-
+通过使用 `shallowRef()` 和 `shallowReactive()` 来绕开深度响应  
+浅层式 `API` 创建的状态只在其顶层是响应式的，对所有深层的对象不会做任何处理，避免了对每一个内部属性做响应式所带来的性能成本，这使得属性的访问变得更快，可提升性能。
 
 
-## 7.2.【readonly 与 shallowReadonly】
 
-### **`readonly`**
+### 7.2.【readonly 与 shallowReadonly】
+
+`readonly`:
 
 1. 作用：用于创建一个对象的深只读副本。
 
@@ -2784,14 +2805,14 @@ onUnmounted(()=>{
 
 3. 特点：
 
-   * 对象的所有嵌套属性都将变为只读。
-   * 任何尝试修改这个对象的操作都会被阻止（在开发模式下，还会在控制台中发出警告）。
+   * 对象的 **所有** 嵌套属性都将变为只读。
+   * 任何尝试修改这个对象的操作都会被阻止（在开发模式下，还会在控制台中发出警告）
 
 4. 应用场景：
    * 创建不可变的状态快照。
    * 保护全局状态或配置不被修改。
 
-### **`shallowReadonly`**
+`shallowReadonly`:
 
 1. 作用：与 `readonly` 类似，但只作用于对象的顶层属性。
 
@@ -2810,15 +2831,15 @@ onUnmounted(()=>{
 
      
 
-## 7.3.【toRaw 与 markRaw】
+### 7.3.【toRaw 与 markRaw】
 
-### `toRaw`
+`toRaw`:
 
-1. 作用：用于获取一个响应式对象的原始对象， `toRaw` 返回的对象不再是响应式的，不会触发视图更新。
+1. 作用：用于获取一个响应式对象的原始对象， `toRaw` 返回的对象不再是响应式的，不会触发视图更新
 
-   > 官网描述：这是一个可以用于临时读取而不引起代理访问/跟踪开销，或是写入而不触发更改的特殊方法。不建议保存对原始对象的持久引用，请谨慎使用。
+   官网描述：这是一个可以用于临时读取而不引起代理访问/跟踪开销，或是写入而不触发更改的特殊方法。不建议保存对原始对象的持久引用，请谨慎使用。
 
-   > 何时使用？ —— 在需要将响应式对象传递给非 `Vue` 的库或外部系统时，使用 `toRaw` 可以确保它们收到的是普通对象
+   在需要将响应式对象传递给非 `Vue` 的库或外部系统时，使用 `toRaw` 可以确保它们收到的是普通对象
 
 2. 具体编码：
 
@@ -2830,28 +2851,13 @@ onUnmounted(()=>{
    let person = reactive({name:'tony',age:18})
    // 原始对象
    let rawPerson = toRaw(person)
-   
-   
-   /* markRaw */
-   let citysd = markRaw([
-     {id:'asdda01',name:'北京'},
-     {id:'asdda02',name:'上海'},
-     {id:'asdda03',name:'天津'},
-     {id:'asdda04',name:'重庆'}
-   ])
-   // 根据原始对象citys去创建响应式对象citys2 —— 创建失败，因为citys被markRaw标记了
-   let citys2 = reactive(citys)
-   console.log(isReactive(person))
-   console.log(isReactive(rawPerson))
-   console.log(isReactive(citys))
-   console.log(isReactive(citys2))
    ```
 
-### `markRaw`
+`markRaw`:
 
-1. 作用：标记一个对象，使其**永远不会**变成响应式的。
+1. 作用：标记一个对象，使其 **永远不会** 变成响应式的。
 
-   > 例如使用`mockjs`时，为了防止误把`mockjs`变为响应式对象，可以使用 `markRaw` 去标记`mockjs`
+   例如使用 `mockjs` 时，为了防止误把 ` mockjs` 变为响应式对象，可以使用 `markRaw` 去标记 `mockjs`
 
 2. 编码：
 
@@ -2863,13 +2869,13 @@ onUnmounted(()=>{
      {id:'asdda03',name:'天津'},
      {id:'asdda04',name:'重庆'}
    ])
-   // 根据原始对象citys去创建响应式对象citys2 —— 创建失败，因为citys被markRaw标记了
+   // 根据原始对象 citys 去创建响应式对象 citys2 —— 创建失败，因为 citys 被 markRaw 标记了
    let citys2 = reactive(citys)
    ```
 
-## 7.4.【customRef】
+### 7.4.【customRef】
 
-作用：创建一个自定义的`ref`，并对其依赖项跟踪和更新触发进行逻辑控制。
+作用：**自定义 `ref` **，并对其依赖项跟踪和更新触发进行逻辑控制。
 
 实现防抖效果（`useSumRef.ts`）：
 
@@ -2881,14 +2887,14 @@ export default function(initValue:string,delay:number){
     let timer:number
     return {
       get(){
-        track() // 告诉Vue数据msg很重要，要对msg持续关注，一旦变化就更新
+        track() // 告诉 Vue 数据 msg 很重要，要对 msg 持续关注，一旦变化就更新
         return initValue
       },
       set(value){
         clearTimeout(timer)
         timer = setTimeout(() => {
           initValue = value
-          trigger() //通知Vue数据msg变化了
+          trigger() //通知 Vue 数据 msg 变化了
         }, delay);
       }
     }
@@ -2897,90 +2903,11 @@ export default function(initValue:string,delay:number){
 }
 ```
 
-组件中使用：
-
-
-
-
-
-# 8. Vue3新组件
-
-## 8.1. 【Teleport】
-
-- 什么是Teleport？—— Teleport 是一种能够将我们的**组件html结构**移动到指定位置的技术。
-
-```html
-<teleport to='body' >
-    <div class="modal" v-show="isShow">
-      <h2>我是一个弹窗</h2>
-      <p>我是弹窗中的一些内容</p>
-      <button @click="isShow = false">关闭弹窗</button>
-    </div>
-</teleport>
-```
-
-## 8.2. 【Suspense】
-
--  等待异步组件时渲染一些额外内容，让应用有更好的用户体验 
--  使用步骤： 
-   -  异步引入组件
-   -  使用`Suspense`包裹组件，并配置好`default` 与 `fallback`
-
-```tsx
-import { defineAsyncComponent,Suspense } from "vue";
-const Child = defineAsyncComponent(()=>import('./Child.vue'))
-```
-
-```vue
-<template>
-    <div class="app">
-        <h3>我是App组件</h3>
-        <Suspense>
-          <template v-slot:default>
-            <Child/>
-          </template>
-          <template v-slot:fallback>
-            <h3>加载中.......</h3>
-          </template>
-        </Suspense>
-    </div>
-</template>
-```
-
-
-
-## 8.3.【全局API转移到应用对象】
-
-- `app.component`
-- `app.config`
-- `app.directive`
-- `app.mount`
-- `app.unmount`
-- `app.use`
-
-## 8.4.【其他】
-
-- 过渡类名 `v-enter` 修改为 `v-enter-from`、过渡类名 `v-leave` 修改为 `v-leave-from`。
-
-
-- `keyCode` 作为 `v-on` 修饰符的支持。
-
-- `v-model` 指令在组件上的使用已经被重新设计，替换掉了 `v-bind.sync。`
-
-- `v-if` 和 `v-for` 在同一个元素身上使用时的优先级发生了变化。
-
-- 移除了`$on`、`$off` 和 `$once` 实例方法。
-
-- 移除了过滤器 `filter`。
-
-- 移除了`$children` 实例 `propert`。
-
-  ......
-
+## 8. Vue3 新组件
 
 ### 8.1. 【Teleport】
 
-- 什么是Teleport？—— Teleport 是一种能够将我们的**组件html结构**移动到指定位置的技术。
+- 什么是 Teleport？—— Teleport 是一种能够将我们的 **组件 html 结构** 移动到指定位置的技术。
 
 ```html
 <teleport to='body' >
@@ -2997,7 +2924,7 @@ const Child = defineAsyncComponent(()=>import('./Child.vue'))
 -  等待异步组件时渲染一些额外内容，让应用有更好的用户体验 
 -  使用步骤： 
    -  异步引入组件
-   -  使用`Suspense`包裹组件，并配置好`default` 与 `fallback`
+   -  使用 `Suspense` 包裹组件，并配置好 ` default` 与 `fallback`
 
 ```tsx
 import { defineAsyncComponent,Suspense } from "vue";
@@ -3007,7 +2934,7 @@ const Child = defineAsyncComponent(()=>import('./Child.vue'))
 ```vue
 <template>
     <div class="app">
-        <h3>我是App组件</h3>
+        <h3>我是 App 组件</h3>
         <Suspense>
           <template v-slot:default>
             <Child/>
@@ -3022,7 +2949,7 @@ const Child = defineAsyncComponent(()=>import('./Child.vue'))
 
 
 
-### 8.3.【全局API转移到应用对象】
+### 8.3.【全局  API  转移到应用对象】
 
 - `app.component`
 - `app.config`
