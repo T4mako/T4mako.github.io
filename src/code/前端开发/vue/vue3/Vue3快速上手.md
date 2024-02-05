@@ -2085,6 +2085,8 @@ export const useTalkStore = defineStore('talk',()=>{
 - 若 **父传子**：属性值是 **非函数**
 - 若 **子传父**：属性值是 **函数**
 
+父组件向子组件通过 props 传值时，值对子组件是可读的，不可修改，修改需要在父组件修改
+
 举例，父组件：
 
 ```vue
@@ -2093,7 +2095,7 @@ export const useTalkStore = defineStore('talk',()=>{
     <h3>父组件，</h3>
 		<h4>我的车：{{ car }}</h4>
 		<h4>儿子给的玩具：{{ toy }}</h4>
-		<Child :car="car" :getToy="getToy"/> <!-- 将数据 car 和方法 getToy() 传给子 -->
+		<Child :car="car" :getToy="getToy" a="a"/> <!-- 将数据 car,a 和方法 getToy() 传给子 -->
   </div>
 </template>
 
@@ -2103,6 +2105,7 @@ export const useTalkStore = defineStore('talk',()=>{
 	// 数据
 	const car = ref('奔驰')
 	const toy = ref()
+    let a = ref(10)
 	// 方法
 	function getToy(value:string){
 		toy.value = value // 子组件调用方法，赋值给父组件的数据
@@ -2119,6 +2122,7 @@ export const useTalkStore = defineStore('talk',()=>{
 		<h4>我的玩具：{{ toy }}</h4>
 		<h4>父给我的车：{{ car }}</h4>
 		<button @click="getToy(toy)">玩具给父亲</button> <!-- 调用方法 -->
+      	<button @click="a++"> 修改 a 的值 </button> <!-- 报错，a 只读 -->
   </div>
 </template>
 
@@ -2126,7 +2130,7 @@ export const useTalkStore = defineStore('talk',()=>{
 	import { ref } from "vue";
 	const toy = ref('奥特曼')
 	
-	defineProps(['car','getToy']) // 获得父组件的 car 数据，getToy 方法
+	defineProps(['car','getToy','a']) // 获得父组件的 car,a 数据，getToy 方法
 </script>
 ```
 
@@ -2373,11 +2377,13 @@ onUnmounted(()=>{
 4. 也可以更换 `value`，例如改成 `abc`
 
    ```vue
-   <!-- 也可以更换value，例如改成abc-->
+   <!-- 也可以更换 value，例如改成 abc-->
    <AtguiguInput v-model:abc="userName"/>
    
    <!-- 上面代码的本质如下 -->
    <AtguiguInput :abc="userName" @update:abc="userName = $event"/>
+   
+   <!-- 相当于给子组件传递了 props，并添加自定义方法 update:abc -->
    ```
 
    `AtguiguInput`组件中：
@@ -2416,7 +2422,7 @@ onUnmounted(()=>{
 
 2. 具体说明：`$attrs` 是一个对象，包含所有父组件传入的标签属性。
 
-   注意：`$attrs` 会自动排除 `props` 中声明的属性（可以认为声明过的 `props` 被子组件自己“消费”了）
+   注意：`$attrs` 会自动排除 `props` 中声明的属性（可以认为声明过的 `props` 被子组件自己消费了）
 
 `$attrs` 使用举例：
 
@@ -2491,8 +2497,8 @@ onUnmounted(()=>{
 
    | 属性      | 说明                                                         |
    | --------- | ------------------------------------------------------------ |
-   | `$refs`   | 值为对象，包含所有被 `ref` 属性标识的 `DOM` 元素或组件实例。 |
-   | `$parent` | 值为对象，当前组件的父组件实例对象。                         |
+   | `$refs`   | 值为对象，包含所有被 `ref` 属性标识的 **`DOM` 元素** 或 **组件实例** |
+   | `$parent` | 值为对象，当前组件（子组件）的父组件 **实例** 对象           |
 
 使用案例：
 
