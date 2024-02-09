@@ -44,7 +44,7 @@ document.write('hello')
 </body>
 ```
 
-如果 script 标签**使用 src 属性引入了某 .js 文件**，那么 标签**内部的代码会被忽略**
+如果 script 标签 **使用 src 属性引入了某 .js 文件**，那么 标签 **内部的代码会被忽略**
 
 ```html
 <body>

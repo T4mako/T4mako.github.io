@@ -11,17 +11,17 @@ icon: object
 Promise 是一门新的技术(ES6 规范)  
 Promise 是 JS 中进行 **异步编程** 的新解决方案  （旧方案是单纯使用 **回调函数**  ）
 
-从语法上来说: Promise 是一个**构造函数**  
-从功能上来说: promise 对象用来**封装（包裹）一个异步操作**并可以获取其成功/失败的结果值  
+从语法上来说: Promise 是一个 **构造函数**  
+从功能上来说: promise 对象用来 **封装（包裹）一个异步操作** 并可以获取其成功/失败的结果值  
 
 #### 1.1.2、promise 的状态
 
 1. pending 变为 **resolved**
 2.  pending 变为 **rejected**  
 
-说明: 只有这 2 种, 且一个 promise 对象**只改变一次**
-		无论变为成功还是失败, 都会有一个结果数据
-		成功的结果数据一般称为 **value**, 失败的结果数据一般称为 **reason**  
+说明: 只有这 2 种, 且一个 promise 对象 **只改变一次**  
+		无论变为成功还是失败, 都会有一个结果数据  
+		成功的结果数据一般称为 value, 失败的结果数据一般称为 reason  
 
 ### 1.2、promise 工作流程
 
@@ -31,12 +31,11 @@ Promise 是 JS 中进行 **异步编程** 的新解决方案  （旧方案是单
 
 ① 指定回调函数的方式更加灵活  
 
-旧回调：必须在启动异步任务前指定  
+旧回调：必须在启动异步任务前指定   
 
-promise: 启动异步任务 => 返回promie对象 => 给promise对象绑定回调函
-数(甚至可以在异步任务结束后指定/多个)  
+promise: 启动异步任务 => 返回 promie 对象 => 给 promise 对象绑定回调函数(甚至可以在异步任务结束后指定 / 多个)  
 
-② 支持**链式调用**, 可以解决回调地狱问题  
+② 支持 **链式调用**, 可以解决回调地狱问题  
 
 回调函数嵌套调用, 外部回调函数异步执行的结果是嵌套的回调执行的条件  
 
@@ -48,50 +47,50 @@ promise: 启动异步任务 => 返回promie对象 => 给promise对象绑定回�
 
 #### 1、构造函数
 
-Promise **构造函数**: **Promise (excutor) {}**
- executor 函数: 执行器 **(resolve, reject) => {}**
-	 resolve 函数: 内部定义 **成功时的回调** **value => {}**
- 	reject 函数: 内部定义 **失败时的回调** **reason => {}**
-说明: executor 会在 Promise 内部立即 ***同步*** 调用,异步操作在执行器中执行
+- Promise 构造函数: `Promise (excutor) {}`  
+  - executor 函数: 执行器 `(resolve, reject) => {}`
+  - resolve 函数: 内部定义 成功时的回调 `value => {}`
+  - reject 函数: 内部定义 失败时的回调 `reason => {}`
+说明: executor 会在 Promise 内部立即 **同步** 调用，异步操作在执行器中执行
 
 #### 2、PromiseState 属性
 
-Promise 内置 **属性**：**PromiseState**
-	**pending**：未决定的
-	**resolved / fullfilled** 成功
-	**rejected** 失败
+Promise 内置属性：**PromiseState**
+- pending：未决定的
+- resolved / fullfilled 成功
+- rejected 失败
 
 #### 3、PromiseResult 属性
 
-Promise 内置 **属性**：**PromiseResult**
-	该属性保存对象 成功 / 失败 的结果
-	resolve() 和 reject() 两个函数 可以修改 PromiseResult 的值
+Promise 内置属性：**PromiseResult**
+该属性保存对象 成功 / 失败 的结果   
+`resolve()` 和 `reject()` 两个函数 可以修改 `PromiseResult` 的值
 
 #### 4、then() 方法
 
-Promise.prototype.**then**(onResolved, [onRejected]) => {} 方法: 
+`Promise.prototype.then(onResolved, [onRejected]) => {}` 方法: 
 
 ```js
 then(onFulfilled)
 then(onFulfilled, onRejected)
 ```
 
-(1) onResolved 函数: **成功** 的回调函数 **(value) => {}**
-(2) onRejected 函数: **失败** 的回调函数 **(reason) => {}**
+- onResolved 函数: 成功的回调函数 `(value) => {}`
+- onRejected 函数: 失败的回调函数 `(reason) => {}`
 说明: 指定用于得到成功 value 的成功回调 和 用于得到失败 reason 的失败回调
 返回一个新的 promise 对象
 
 #### 5、catch() 方法
 
-Promise.prototype.catch (onRejected) => {} 方法:
+`Promise.prototype.catch (onRejected) => {}` 方法:
 
-catch 只能指定 **失败** 的回调
-onRejected 函数:  (reason) => {} 
-说明: then()的语法糖, 相当于: then(undefined, onRejected)   
+catch 只能指定 **失败** 的回调 
+onRejected 函数:  `(reason) => {} `
+说明: then() 的语法糖，相当于: `then(undefined, onRejected)   `
 
 #### 6、resolve() 方法
 
-Promise.resolve(value) => {} 方法: 
+`Promise.resolve(value) => {}` 方法: 
 
 value: 数据 或 promise 对象
 说明: 快速返回一个成功/失败的 promise 对象
@@ -114,56 +113,56 @@ value: 数据 或 promise 对象
 
 #### 7、reject() 方法
 
-Promise.reject(reason) => {} 方法: 
+`Promise.reject(reason) => {}` 方法: 
 
-reason: 失败的原因
+reason: 失败的原因  
 说明: 快速返回一个失败的 promise 对象
 
 #### 8、all() 方法
 
-Promise.**all**(promises) => {} 方法: 
+`Promise.all(promises) => {}` 方法: 
 
 (1) promises: 包含 n 个 promise 的 **数组**
-说明: 返回一个新的 promise, 只有**所有的 promise 都成功才成功**, 只要有一个失败了就 直接失败
+说明: 返回一个新的 promise, 只有所有的 promise 都成功才成功, 只要有一个失败了就 直接失败
 
 #### 9、race() 方法
 
-Promise.**race**(promises) => {} 方法: 
+`Promise.race(promises) => {}` 方法: 
 
-(1) promises: 包含 n 个 promise 的 **数组**
-说明: 返回一个新的 promise, **第一个完成的 promise** 的结果状态就是最终的结果状态  
+(1) promises: 包含 n 个 promise 的 数组  
+说明: 返回一个新的 promise, 第一个完成的 promise 的结果状态就是最终的结果状态  
 
 ### 1.5、几个关键问题
 
 1、如何改变 promise 的状态：
-	(1) resolve(value): 如果当前是 pending 就会变为 resolved
-	(2) reject(reason): 如果当前是 pending 就会变为 rejected
-	(3) 抛出异常 `throw '出问题了'`: 如果当前是 pending 就会变为 rejected  
+	- resolve(value): 如果当前是 pending 就会变为 resolved
+	- reject(reason): 如果当前是 pending 就会变为 rejected
+	- 抛出异常 `throw 'sth wrong'`: 如果当前是 pending 就会变为 rejected  
 
 2、一个 promise 调用 then 方法 指定多个成功/失败回调函数, 都会调用（当 promise 改变为对应状态时都会调用  ）
 
 3、改变 promise 状态改变 和 then方法 的先后顺序
-	(1) 都有可能, 正常情况下是先指定回调（then）再 改变状态, 但也可以先改状态再指定回调
-	(2) 如何先改状态再指定回调?
-		① 在执行器中直接调用 resolve()/reject()
-		② 延迟更长时间才调用 then()
-	(3) 什么时候才能得到数据?
-		① 如果先指定的回调, 那当状态发生改变时, 回调函数就会调用, 得到数据
-		② 如果先改变的状态, 那当指定回调时, 回调函数就会调用, 得到数据  
+	- 都有可能, 正常情况下是先指定回调（then）再 改变状态, 但也可以先改状态再指定回调
+	- 如何先改状态再指定回调?
+		① 在执行器中直接调用 resolve()/reject()  
+		② 延迟更长时间才调用 then()  
+	- 什么时候才能得到数据? 
+		① 如果先指定的回调, 那当状态发生改变时, 回调函数就会调用, 得到数据  
+		② 如果先改变的状态, 那当指定回调时, 回调函数就会调用, 得到数据    
 
-4、promise.then()返回的 **新 promise 的结果状态** 由什么决定?  
+4、`promise.then() `返回的 新 promise 的结果状态 由什么决定?  
 	由 then()指定的回调函数执行的结果决定  
 		① 如果抛出异常, 新 promise 变为 rejected, reason 为抛出的异常
 		② 如果返回的是非 promise 的任意值, 新 promise 变为 resolved, value 为返回的值
 		③ 如果返回的是另一个新 promise, 此 promise 的结果就会成为新  promise 的结果  
 
-5、promise 如何串连多个操作任务?（**链式**操作）
-	(1) promise 的 then()返回一个新的 promise, 可以看成 then()的链式调用
-	(2) 通过 then 的链式调用串连多个同步/异步任务  
+5、promise 如何串连多个操作任务?（链式操作）
+	- promise 的 then()返回一个新的 promise, 可以看成 then()的链式调用
+	- 通过 then 的链式调用串连多个同步/异步任务  
 
-6、promise **异常传透**
-	(1) 当使用 promise 的 then 链式调用时, 可以 **在最后指定失败的回调,**
-	(2) 前面任何操作出了异常, 都会传到最后失败的回调中处理 （类似异常处理 catch）
+6、promise 异常传透
+	- 当使用 promise 的 then 链式调用时, 可以 **在最后指定失败的回调,**
+	- 前面任何操作出了异常, 都会传到最后失败的回调中处理 （类似异常处理 catch）
 
 ```html
 <script>
@@ -187,7 +186,7 @@ Promise.**race**(promises) => {} 方法:
 </script>
 ```
 
-7、**中断** promise **链**
+7、中断 promise 链
 	(1) 当使用 promise 的 then 链式调用时, 在中间中断, 不再调用后面的回调函数
 	(2) 办法: 在回调函数中**返回一个 pendding 状态的 promise 对象**  
 
