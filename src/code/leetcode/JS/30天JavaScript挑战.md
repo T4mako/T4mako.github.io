@@ -74,5 +74,147 @@ var createCounter = function(init) {
 };
 ```
 
+## 基本数组转换
 
+### 2635. 转换数组中的每个元素
 
+```js
+var map = function(arr, fn) {
+    let res = []
+    for(let i = 0;i < arr.length;i++){
+        res.push(fn(arr[i],i))
+    }
+    return res
+};
+```
+
+### 2634. 过滤数组中的元素
+
+```js
+var filter = function(arr, fn) {
+    let res = []
+    for(i = 0;i < arr.length;i++){
+        if(fn(arr[i],i)){
+            res.push(arr[i])
+        }
+    }
+    return res;
+};
+```
+
+### 2626. 数组归约运算
+
+```js
+var reduce = function(nums, fn, init) {
+    for(i = 0;i < nums.length;i++){
+        init = fn(init,nums[i])
+    }
+    return init;
+};
+```
+
+## 函数转换
+
+### 2629. 复合函数
+
+```js
+var compose = function(functions) {
+	return function(x) {
+        for(i = functions.length - 1;i >= 0;i--){
+            let f = functions[i];
+            x = f(x)
+        }
+        return x
+    }
+};
+```
+
+### 2703. 返回传递的参数的长度
+
+```js
+var argumentsLength = function(...args) {
+    let res = 0
+    for( i in args){
+        res++;
+    }
+    return res;
+};
+```
+
+### 2666. 只允许一次函数调用
+
+```js
+var once = function(fn) {
+    let count = 0;
+    return function(...args){
+        if(count < 1){
+            count++;
+            return fn(...args)
+        }
+        return undefined
+    }
+};
+```
+
+### 2623. 记忆函数
+
+```js
+function memoize(fn) {
+  const cache = {};
+  return function() {
+    // 将参数转换为字符串
+    let key = '';
+    for (const arg of arguments) {
+      key += ',' + arg;
+    }
+
+    if (key in cache) {
+      return cache[key];
+    }
+    const functionOutput = fn(...arguments);
+    cache[key] = functionOutput;
+    return functionOutput;
+  }
+}
+```
+
+## Promise 和 Time
+
+### 2723. 两个 Promise 对象相加
+
+```js
+var addTwoPromises = async function(promise1, promise2) {
+    return await Promise.all([promise1, promise2]).then(([a, b]) => a + b)
+};
+```
+
+### 2621. 睡眠函数
+
+```js
+async function sleep(millis) {
+    return new Promise(resolve => setTimeout(resolve, millis))  
+}
+```
+
+### 2715. 执行可取消的延迟函数
+
+```js
+var cancellable = function(fn, args, t) {
+    let timer = setTimeout(() => fn(...args), t)
+    return () => {
+        clearTimeout(timer)
+    }
+};
+```
+
+### 2725. 间隔取消
+
+```js
+var cancellable = function(fn, args, t) {
+    fn(...args);
+    
+    const timer = setInterval(fn, t, ...args);
+    
+    return () => clearInterval(timer);
+};
+```
