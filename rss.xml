@@ -6,15 +6,14 @@
     <link>https://T4mako.github.io/</link>
     <description>T4mako</description>
     <language>zh-CN</language>
-    <pubDate>Thu, 22 Feb 2024 15:01:30 GMT</pubDate>
-    <lastBuildDate>Thu, 22 Feb 2024 15:01:30 GMT</lastBuildDate>
+    <pubDate>Mon, 26 Feb 2024 05:20:24 GMT</pubDate>
+    <lastBuildDate>Mon, 26 Feb 2024 05:20:24 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>算法</category>
     <category>JS</category>
     <category>多线程</category>
     <category>java</category>
-    <category>MySQL</category>
     <category>TypeScript</category>
     <category>SQL</category>
     <category>Vue</category>
@@ -597,29 +596,6 @@ SpringBoot 项目的 spring-boot-starter-web 依赖中已经有 hibernate-valida
       <category>算法</category>
       <pubDate>Fri, 01 Sep 2023 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[<h1> 162. 寻找峰值</h1>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>MySQL 索引</title>
-      <link>https://T4mako.github.io/code/%E6%95%B0%E6%8D%AE%E5%BA%93/MySQL%E7%B4%A2%E5%BC%95.html</link>
-      <guid>https://T4mako.github.io/code/%E6%95%B0%E6%8D%AE%E5%BA%93/MySQL%E7%B4%A2%E5%BC%95.html</guid>
-      <source url="https://T4mako.github.io/rss.xml">MySQL 索引</source>
-      <description>参考： https://javaguide.cn/database/mysql/mysql-index.html https://www.bilibili.com/video/BV1Wm4y147mS</description>
-      <category>MySQL</category>
-      <pubDate>Thu, 31 Aug 2023 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<blockquote>
-<p>参考：<br>
-<a href="https://javaguide.cn/database/mysql/mysql-index.html" target="_blank" rel="noopener noreferrer">https://javaguide.cn/database/mysql/mysql-index.html</a><br>
-<a href="https://www.bilibili.com/video/BV1Wm4y147mS" target="_blank" rel="noopener noreferrer">https://www.bilibili.com/video/BV1Wm4y147mS</a></p>
-</blockquote>
-<p>索引是一种用于快速查询和检索数据的数据结构，其本质可以看成是一种排序好的数据结构。</p>
-<p>索引底层数据结构存在很多种类型，常见的索引结构有: B 树， B+树 和 Hash、红黑树。<br>
-在 MySQL 中，无论是 Innodb 还是 MyIsam，都使用了 <strong>B+树</strong> 作为索引结构。</p>
-<div class="hint-container info">
-<p class="hint-container-title">相关信息</p>
-<p>存储引擎是数据库的核心，在MySQL中，存储引擎是以插件的形式运行的。支持的引擎有十几种之多，实战常用到的，大概只有 <code>InnoDB</code>、<code>MyISAM</code> 和 <code>Memory</code></p>
-<p><a href="https://cloud.tencent.com/developer/article/1662516" target="_blank" rel="noopener noreferrer">https://cloud.tencent.com/developer/article/1662516</a></p>
-</div>
 ]]></content:encoded>
     </item>
     <item>
@@ -3136,6 +3112,24 @@ GitHub 只要发现<code>.github/workflows</code>目录里面有<code>.yml</code
       <category>算法</category>
       <pubDate>Mon, 21 Feb 2022 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[<h1> 162. 寻找峰值</h1>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>代码笔记</title>
+      <link>https://T4mako.github.io/code/</link>
+      <guid>https://T4mako.github.io/code/</guid>
+      <source url="https://T4mako.github.io/rss.xml">代码笔记</source>
+      <description>基础知识 (/code/基础知识) 前端开发 (/code/前端开发) Java后端 (/code/java) 数据库 (/code/数据库) 运维与部署 (/code/运维与部署) Python (/code/python) Leetcode (/code/Leetcode) 其他 (/code/其他)</description>
+      <content:encoded><![CDATA[<h1> </h1>
+<!-- more -->
+<h3> <a href="/code/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86">基础知识</a></h3>
+<h3> <a href="/code/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91">前端开发</a></h3>
+<h3> <a href="/code/java">Java后端</a></h3>
+<h3> <a href="/code/%E6%95%B0%E6%8D%AE%E5%BA%93">数据库</a></h3>
+<h3> <a href="/code/%E8%BF%90%E7%BB%B4%E4%B8%8E%E9%83%A8%E7%BD%B2">运维与部署</a></h3>
+<h3> <a href="/code/python">Python</a></h3>
+<h3> <a href="/code/Leetcode">Leetcode</a></h3>
+<h3> <a href="/code/%E5%85%B6%E4%BB%96">其他</a></h3>
 ]]></content:encoded>
     </item>
   </channel>
