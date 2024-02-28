@@ -5,7 +5,7 @@ icon: article
 Redis的安装位置：
 **/usr/local/bin**
 
-**启动redis：**
+**启动 redis：**
 	cd /usr/local/bin
 	redis-server /etc/redis.conf
 **连接redis**：
@@ -16,29 +16,29 @@ Redis的安装位置：
 ### 1.1、技术发展
 
 技术的分类：
-1、解决**功能性**的问题：Java、Jsp、RDBMS、Tomcat、HTML、Linux、JDBC、SVN
-2、解决**扩展性**的问题：Struts、Spring、SpringMVC、Hibernate、Mybatis
-3、解决**性能**的问题：NoSQL、Java线程、Hadoop、Nginx、MQ、ElasticSearch
+1、解决 **功能性** 的问题：Java、Jsp、RDBMS、Tomcat、HTML、Linux、JDBC、SVN
+2、解决 **扩展性** 的问题：Struts、Spring、SpringMVC、Hibernate、Mybatis
+3、解决 **性能** 的问题：NoSQL、Java线程、Hadoop、Nginx、MQ、ElasticSearch
 
-#### 1.1.1、Web1.0时代
+#### 1.1.1、Web1.0 时代
 
 Web1.0的时代，数据访问量很有限，用一夫当关的高性能的单点服务器可以解决大部分问题。
 
-#### 1.1.2.、Web2.0时代
+#### 1.1.2.、Web2.0 时代
 
 随着Web2.0的时代的到来，用户访问量大幅度提升，同时产生了大量的用户数据。加上后来的智能移动设备的普及，所有的互联网平台都面临了巨大的性能挑战。
 
-#### 1.1.3、 解决CPU及内存压力
+#### 1.1.3、 解决 CPU 及内存压力
 
 ![](https://raw.githubusercontent.com/T4mako/ImageBed/main/20230212180730.png)
 
-#### 1.1.4、解决IO压力
+#### 1.1.4、解决 IO 压力
 
 ![](https://raw.githubusercontent.com/T4mako/ImageBed/main/20230212180815.png)
 
-### 1.2、NoSQL数据库
+### 1.2、NoSQL 数据库
 
-#### 1.2.1、NoSQL数据库概述
+#### 1.2.1、NoSQL 数据库概述
 
 NoSQL(**Not Only SQL**)，意即“不仅仅是SQL”，泛指**非关系型的数据库**。 
 NoSQL 不依赖业务逻辑方式存储，而以简单的key-value模式存储。因此大大的增加了数据库的扩展能力。
