@@ -13,7 +13,7 @@ tag:
 
 <Badge text="简单" type="tip" vertical="middle" />
 
-[题目描述](https://leetcode.cn/problems/maximum-average-subarray-i/description/?envType=study-plan-v2&envId=leetcode-75)
+[题目描述](https://leetcode.cn/problems/maximum-average-subarray-i/)
 
 
 解题思路：使用大小固定的滑动窗口，判断窗口在移动时的大小变化（新数与旧数）
