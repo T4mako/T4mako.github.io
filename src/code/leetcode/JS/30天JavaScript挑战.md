@@ -218,3 +218,15 @@ var cancellable = function(fn, args, t) {
     return () => clearInterval(timer);
 };
 ```
+
+
+### 2727. 判断对象是否为空
+
+```js
+var isEmpty = function(obj) {
+    for(let i in obj) {
+        return false;
+    }
+    return true;
+};
+```
