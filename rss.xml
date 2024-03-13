@@ -6,8 +6,8 @@
     <link>https://T4mako.github.io/</link>
     <description>T4mako</description>
     <language>zh-CN</language>
-    <pubDate>Sun, 10 Mar 2024 07:20:23 GMT</pubDate>
-    <lastBuildDate>Sun, 10 Mar 2024 07:20:23 GMT</lastBuildDate>
+    <pubDate>Wed, 13 Mar 2024 14:04:41 GMT</pubDate>
+    <lastBuildDate>Wed, 13 Mar 2024 14:04:41 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>算法</category>
@@ -16,6 +16,17 @@
     <category>java</category>
     <category>TypeScript</category>
     <category>SQL</category>
+    <item>
+      <title>290. 单词规律</title>
+      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_283_%E7%A7%BB%E5%8A%A80%20copy.html</link>
+      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_283_%E7%A7%BB%E5%8A%A80%20copy.html</guid>
+      <source url="https://T4mako.github.io/rss.xml">290. 单词规律</source>
+      <description>290. 单词规律</description>
+      <category>算法</category>
+      <pubDate>Wed, 13 Mar 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<h1> 290. 单词规律</h1>
+]]></content:encoded>
+    </item>
     <item>
       <title>52. N 皇后 II</title>
       <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_052_N%20%E7%9A%87%E5%90%8E%20II.html</link>
@@ -2506,17 +2517,6 @@ JDK5.0 以后每个线程堆栈大小为 1M，以前每个线程堆栈大小为 
       <category>算法</category>
       <pubDate>Mon, 07 Aug 2023 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[<h1> 643_子数组最大平均数 I</h1>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>283_移动0</title>
-      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_283_%E7%A7%BB%E5%8A%A80.html</link>
-      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_283_%E7%A7%BB%E5%8A%A80.html</guid>
-      <source url="https://T4mako.github.io/rss.xml">283_移动0</source>
-      <description>283_移动0</description>
-      <category>算法</category>
-      <pubDate>Sun, 06 Aug 2023 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<h1> 283_移动0</h1>
 ]]></content:encoded>
     </item>
   </channel>
