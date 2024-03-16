@@ -6,8 +6,8 @@
     <link>https://T4mako.github.io/</link>
     <description>T4mako</description>
     <language>zh-CN</language>
-    <pubDate>Thu, 14 Mar 2024 06:53:40 GMT</pubDate>
-    <lastBuildDate>Thu, 14 Mar 2024 06:53:40 GMT</lastBuildDate>
+    <pubDate>Sat, 16 Mar 2024 09:12:50 GMT</pubDate>
+    <lastBuildDate>Sat, 16 Mar 2024 09:12:50 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>算法</category>
@@ -16,6 +16,28 @@
     <category>java</category>
     <category>TypeScript</category>
     <category>SQL</category>
+    <item>
+      <title>76. 最小覆盖子串</title>
+      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_072_%E7%BC%96%E8%BE%91%E8%B7%9D%E7%A6%BB%20copy.html</link>
+      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_072_%E7%BC%96%E8%BE%91%E8%B7%9D%E7%A6%BB%20copy.html</guid>
+      <source url="https://T4mako.github.io/rss.xml">76. 最小覆盖子串</source>
+      <description>76. 最小覆盖子串</description>
+      <category>算法</category>
+      <pubDate>Sat, 16 Mar 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<h1> 76. 最小覆盖子串</h1>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>219. 存在重复元素 II</title>
+      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_219_%E5%AD%98%E5%9C%A8%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0%20II.html</link>
+      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_219_%E5%AD%98%E5%9C%A8%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0%20II.html</guid>
+      <source url="https://T4mako.github.io/rss.xml">219. 存在重复元素 II</source>
+      <description>219. 存在重复元素 II</description>
+      <category>算法</category>
+      <pubDate>Fri, 15 Mar 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<h1> 219. 存在重复元素 II</h1>
+]]></content:encoded>
+    </item>
     <item>
       <title>202. 快乐数</title>
       <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_202_%E5%BF%AB%E4%B9%90%E6%95%B0.html</link>
@@ -2495,28 +2517,6 @@ JDK5.0 以后每个线程堆栈大小为 1M，以前每个线程堆栈大小为 
       <category>算法</category>
       <pubDate>Tue, 08 Aug 2023 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[<h1> 1493. 删掉一个元素以后全为 1 的最长子数组</h1>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>2215. 找出两数组的不同</title>
-      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_2215_%E6%89%BE%E5%87%BA%E4%B8%A4%E6%95%B0%E7%BB%84%E7%9A%84%E4%B8%8D%E5%90%8C.html</link>
-      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_2215_%E6%89%BE%E5%87%BA%E4%B8%A4%E6%95%B0%E7%BB%84%E7%9A%84%E4%B8%8D%E5%90%8C.html</guid>
-      <source url="https://T4mako.github.io/rss.xml">2215. 找出两数组的不同</source>
-      <description>2215. 找出两数组的不同</description>
-      <category>算法</category>
-      <pubDate>Tue, 08 Aug 2023 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<h1> 2215. 找出两数组的不同</h1>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>1004. 最大连续1的个数 III</title>
-      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_1004_%E6%9C%80%E5%A4%A7%E8%BF%9E%E7%BB%AD1%E7%9A%84%E4%B8%AA%E6%95%B0%20III.html</link>
-      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_1004_%E6%9C%80%E5%A4%A7%E8%BF%9E%E7%BB%AD1%E7%9A%84%E4%B8%AA%E6%95%B0%20III.html</guid>
-      <source url="https://T4mako.github.io/rss.xml">1004. 最大连续1的个数 III</source>
-      <description>1004. 最大连续1的个数 III</description>
-      <category>算法</category>
-      <pubDate>Mon, 07 Aug 2023 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<h1> 1004. 最大连续1的个数 III</h1>
 ]]></content:encoded>
     </item>
   </channel>
