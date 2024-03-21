@@ -173,6 +173,24 @@ public class Main8001{
 }
 ```
 
+### 1.4、Consul 持久化
+
+bat 配置文件：
+
+```bat
+@echo.服务启动......  
+@echo off  
+@sc create Consul binpath= "D:\consul\consul.exe agent -server -ui -bind=127.0.0.1 -client=0.0.0.0 -bootstrap-expect  1  -data-dir D:\consul\mydata"
+@net start Consul
+@sc config Consul start= AUTO  
+@echo.Consul start is OK......success
+@pause
+```
+
+需要 Consul.exe 的路径和持久化保存的路径
+
+以管理员身份运行 bat 文件即可
+
 ## 2、LoadBalancer
 
 [使用介绍](https://docs.spring.io/spring-cloud-commons/reference/spring-cloud-commons/loadbalancer.html)
@@ -540,4 +558,261 @@ resilience4j:
 
 Controller
 
+```java
+@GetMapping(value = "/feign/pay/bulkhead/{id}")
+@Bulkhead(name = "cloud-payment-service",fallbackMethod = "myBulkheadFallback",type = Bulkhead.Type.SEMAPHORE)
+public String myBulkhead(@PathVariable("id") Integer id){
+    return payFeignApi.myBulkhead(id);
+}
+public String myBulkheadFallback(Throwable t){
+    return "myBulkheadFallback，隔板超出最大数量限制，系统繁忙，请稍后再试-----/(ㄒoㄒ)/~~";
+}
+```
+
+#### 4.3.2、FixedThreadPoolBulkhead
+
+底层使用 JUC 的线程池 ThreadPoolExecutor
+
+POM
+
+```xml
+<!--resilience4j-bulkhead-->
+<dependency>
+    <groupId>io.github.resilience4j</groupId>
+    <artifactId>resilience4j-bulkhead</artifactId>
+</dependency>
+```
+
+YML
+
+```yaml
+resilience4j:
+  timelimiter:
+    configs:
+      default:
+        timeout-duration: 10s #timelimiter默认限制远程1s，超过报错不好演示效果所以加上10秒
+  thread-pool-bulkhead:
+    configs:
+      default:
+        core-thread-pool-size: 1
+        max-thread-pool-size: 1
+        queue-capacity: 1
+    instances:
+      cloud-payment-service:
+        baseConfig: default
+```
+
 ### 4.4、限流
+
+[官网](https://resilience4j.readme.io/docs/ratelimiter) | [中文](https://github.com/lmhmhl/Resilience4j-Guides-Chinese/blob/main/core-modules/ratelimiter.md)
+
+ 常见的限流算法：
+
+- 漏斗算法（漏桶算法对于存在突发特性的流量来说缺乏效率）
+- 令牌桶算法（SpringCloud 默认使用该算法）
+- 滚动时间窗口（间隔临界的一段时间内的请求肯呢个会超过系统限制，导致系统被压垮）
+- 滑动时间窗口
+
+POM
+
+```xml
+<dependency>
+    <groupId>io.github.resilience4j</groupId>
+    <artifactId>resilience4j-ratelimiter</artifactId>
+</dependency>
+```
+
+YML
+
+```yaml
+resilience4j:
+  ratelimiter:
+    configs:
+      default:
+        limitForPeriod: 2 #在一次刷新周期内，允许执行的最大请求数
+        limitRefreshPeriod: 1s # 限流器每隔limitRefreshPeriod刷新一次，将允许处理的最大请求数量重置为limitForPeriod
+        timeout-duration: 1 # 线程等待权限的默认等待时间
+    instances:
+        cloud-payment-service:
+          baseConfig: default
+```
+
+Controller
+
+```java
+@GetMapping(value = "/feign/pay/ratelimit/{id}")
+@RateLimiter(name = "cloud-payment-service",fallbackMethod = "myRatelimitFallback")
+public String myBulkhead(@PathVariable("id") Integer id){
+    return payFeignApi.myRatelimit(id);
+}
+public String myRatelimitFallback(Integer id,Throwable t){
+    return "你被限流了，禁止访问/(ㄒoㄒ)/~~";
+}
+```
+
+## 5、Sleuth(Micrometer) + ZipKin 分布式链路追踪
+
+### 介绍
+
+Sleth 目前进入维护模式，Sleth 的替换方案（Micrometer Tracing）
+
+随着问题的复杂化，微服务的增多，调用链条变长，链路追踪的需求明显
+
+[Micrometer 官网](https://micrometer.io/docs/tracing) | [Spring Micrometer 官网](https://spring.io/projects/spring-cloud-sleuth#overview) | [GitHub](https://github.com/spring-cloud/spring-cloud-sleuth)
+
+链路追踪原理：  
+
+- 一条链路通过 Trace Id 唯一标识
+- 每个节点有各自的 Span Id 标识发起的请求信息
+- 各 Span Id 通过 Parent id 关联起来
+
+[Zipkin 官网](https://zipkin.io/) Zipkin 为链路追踪提供了 UI 界面
+
+### 使用
+
+#### 父工程 POM
+
+```xml
+<properties>
+    <micrometer-tracing.version>1.2.0</micrometer-tracing.version>
+    <micrometer-observation.version>1.12.0</micrometer-observation.version>
+    <feign-micrometer.version>12.5</feign-micrometer.version>
+    <zipkin-reporter-brave.version>2.17.0</zipkin-reporter-brave.version>
+</properties>
+
+<dependencyManagement>
+    <dependencies>
+        <!--micrometer-tracing-bom导入链路追踪版本中心  1-->
+        <dependency>
+            <groupId>io.micrometer</groupId>
+            <artifactId>micrometer-tracing-bom</artifactId>
+            <version>${micrometer-tracing.version}</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+        <!--micrometer-tracing指标追踪  2-->
+        <dependency>
+            <groupId>io.micrometer</groupId>
+            <artifactId>micrometer-tracing</artifactId>
+            <version>${micrometer-tracing.version}</version>
+        </dependency>
+        <!--micrometer-tracing-bridge-brave适配zipkin的桥接包 3-->
+        <dependency>
+            <groupId>io.micrometer</groupId>
+            <artifactId>micrometer-tracing-bridge-brave</artifactId>
+            <version>${micrometer-tracing.version}</version>
+        </dependency>
+        <!--micrometer-observation 4-->
+        <dependency>
+            <groupId>io.micrometer</groupId>
+            <artifactId>micrometer-observation</artifactId>
+            <version>${micrometer-observation.version}</version>
+        </dependency>
+        <!--feign-micrometer 5-->
+        <dependency>
+            <groupId>io.github.openfeign</groupId>
+            <artifactId>feign-micrometer</artifactId>
+            <version>${feign-micrometer.version}</version>
+        </dependency>
+        <!--zipkin-reporter-brave 6-->
+        <dependency>
+            <groupId>io.zipkin.reporter2</groupId>
+            <artifactId>zipkin-reporter-brave</artifactId>
+            <version>${zipkin-reporter-brave.version}</version>
+        </dependency>
+    </dependencies>
+    </dependencyManagement>
+```
+
+#### 服务提供者
+
+POM
+
+```xml
+<!--micrometer-tracing指标追踪  1-->
+<dependency>
+    <groupId>io.micrometer</groupId>
+    <artifactId>micrometer-tracing</artifactId>
+</dependency>
+<!--micrometer-tracing-bridge-brave适配zipkin的桥接包 2-->
+<dependency>
+    <groupId>io.micrometer</groupId>
+    <artifactId>micrometer-tracing-bridge-brave</artifactId>
+</dependency>
+<!--micrometer-observation 3-->
+<dependency>
+    <groupId>io.micrometer</groupId>
+    <artifactId>micrometer-observation</artifactId>
+</dependency>
+<!--feign-micrometer 4-->
+<dependency>
+    <groupId>io.github.openfeign</groupId>
+    <artifactId>feign-micrometer</artifactId>
+</dependency>
+<!--zipkin-reporter-brave 5-->
+<dependency>
+    <groupId>io.zipkin.reporter2</groupId>
+    <artifactId>zipkin-reporter-brave</artifactId>
+</dependency>
+```
+
+YML
+
+```yaml
+# ========================zipkin===================
+management:
+  zipkin:
+    tracing:
+      endpoint: http://localhost:9411/api/v2/spans
+  tracing:
+    sampling:
+      probability: 1.0 #采样率默认为0.1(0.1就是10次只能有一次被记录下来)，值越大收集越及时。
+```
+
+#### 服务的调用者
+
+POM
+
+```xml
+<!--micrometer-tracing指标追踪  1-->
+<dependency>
+    <groupId>io.micrometer</groupId>
+    <artifactId>micrometer-tracing</artifactId>
+</dependency>
+<!--micrometer-tracing-bridge-brave适配zipkin的桥接包 2-->
+<dependency>
+    <groupId>io.micrometer</groupId>
+    <artifactId>micrometer-tracing-bridge-brave</artifactId>
+</dependency>
+<!--micrometer-observation 3-->
+<dependency>
+    <groupId>io.micrometer</groupId>
+    <artifactId>micrometer-observation</artifactId>
+</dependency>
+<!--feign-micrometer 4-->
+<dependency>
+    <groupId>io.github.openfeign</groupId>
+    <artifactId>feign-micrometer</artifactId>
+</dependency>
+<!--zipkin-reporter-brave 5-->
+<dependency>
+    <groupId>io.zipkin.reporter2</groupId>
+    <artifactId>zipkin-reporter-brave</artifactId>
+</dependency>
+```
+
+YML
+
+```yaml
+# zipkin图形展现地址和采样率设置
+management:
+  zipkin:
+    tracing:
+      endpoint: http://localhost:9411/api/v2/spans
+  tracing:
+    sampling:
+      probability: 1.0 #采样率默认为0.1(0.1就是10次只能有一次被记录下来)，值越大收集越及时。
+```
+
+## 6、GateWay 网关
+
