@@ -816,3 +816,525 @@ management:
 
 ## 6、GateWay 网关
 
+### 6.1、基本概念
+
+网关通常在各个微服务的前面，有反向代理，鉴权，流量控制，熔断，日志监控等作用
+
+Spring Cloud Gateway 是整个微服务最前沿的防火墙和代理器，隐藏微服务结点 IP 端口信息，从而加强安全保护  
+Spring Cloud Gateway 本身也是一个微服务，需要注册进服务注册中心
+
+**GateWay 三大核心：**
+
+- **Route** 路由：  
+  由 **ID**，目标 **URI**，一系列的断言和过滤器组成，如果 **断言为 true 则匹配该路由**
+- **Predicate** 断言：  
+  参考的是 Java8 的 java.util.function.Predicate  
+  开发人员可以匹配 **HTTP 请求中的所有内容**，通过断言判断 true 或 false
+- **Filter** 过滤：  
+  指的是 Spring 框架中 GatewayFilter 的实例，使用过滤器，可以在请求被路由前或者之后对请求进行修改
+
+:::info
+
+Predicate 就是匹配条件
+
+Filter，可以理解为拦截器
+
+有了这两个元素，再加上目标 uri，就可以实现一个具体的路由了
+
+:::
+
+**GateWay 工作流程：路由转发 + 断言判断 + 执行过滤链**
+
+### 6.2、基础使用
+
+新建网关模块
+
+POM
+
+```xml
+<dependencies>
+    <!--gateway-->
+    <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-starter-gateway</artifactId>
+    </dependency>
+    <!--服务注册发现consul discovery,网关也要注册进服务注册中心统一管控-->
+    <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-starter-consul-discovery</artifactId>
+    </dependency>
+    <!-- 指标监控健康检查的actuator,网关是响应式编程删除掉spring-boot-starter-web dependency-->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-actuator</artifactId>
+    </dependency>
+</dependencies>
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+        </plugin>
+    </plugins>
+</build>
+```
+
+基本 YML
+
+```yaml
+server:
+  port: 9527
+spring:
+  application:
+    name: cloud-gateway #以微服务注册进consul或nacos服务列表内
+  cloud:
+    consul: #配置consul地址
+      host: localhost
+      port: 8500
+      discovery:
+        prefer-ip-address: true
+        service-name: ${spring.application.name}
+```
+
+主启动类
+
+```java
+@SpringBootApplication
+@EnableDiscoveryClient //服务注册和发现
+public class Main9527{
+    public static void main(String[] args){
+        SpringApplication.run(Main9527.class,args);
+    }
+}
+```
+
+GateWay 配置，YML：
+
+```yaml
+spring:
+  application:
+    name: cloud-gateway #以微服务注册进consul或nacos服务列表内
+  cloud:
+    consul: # 配置consul地址
+      host: localhost
+      port: 8500
+      discovery:
+        prefer-ip-address: true
+        service-name: ${spring.application.name}
+    gateway:
+      routes:
+        - id: pay_routh1 #pay_routh1                # 路由的 ID(类似主键 ID)，要求唯一，建议配合服务名
+          uri: http://localhost:8001                # 匹配后提供服务的路由地址
+          predicates:
+            - Path=/pay/gateway/get/**              # 断言，路径相匹配的进行路由
+
+        - id: pay_routh2 #pay_routh2               
+          uri: http://localhost:8001                
+          predicates:
+            - Path=/pay/gateway/info/**           
+```
+
+此时，通过访问 `http://localhost:9527/pay/gateway/get/1` 也可访问成功
+
+通常情况：
+
+- 公司内部，系统内环境，直接找微服务
+
+  修改 Feign 接口：
+
+  ```java
+  @FeignClient(value = "cloud-payment-service") //内部访问，写微服务名字即可
+  public interface PayFeignApi{
+      /**
+       * GateWay 进行网关测试
+       * @param id
+       * @return
+       */
+      @GetMapping(value = "/pay/gateway/get/{id}")
+      public ResultData getById(@PathVariable("id") Integer id);
+  
+      @GetMapping(value = "/pay/gateway/info")
+      public ResultData<String> getGatewayInfo();
+  }
+  ```
+
+- 公司外部，系统外访问，先找网关再服务
+
+  修改 gateway 的 yml
+
+  修改 Feign 接口：
+
+  ```java
+  @FeignClient(value = "cloud-gateway") //外部访问，先访问网关
+  public interface PayFeignApi{
+      /**
+       * GateWay 进行网关测试
+       * @param id
+       * @return
+       */
+      @GetMapping(value = "/pay/gateway/get/{id}")
+      public ResultData getById(@PathVariable("id") Integer id);
+  
+      @GetMapping(value = "/pay/gateway/info")
+      public ResultData<String> getGatewayInfo();
+  }
+  ```
+
+### 6.3、Route 动态获取 URI
+
+为了解决 gateway 的 yaml 中的 uri 硬编码，需要修改 uri 的值
+
+修改方式：`lb://服务名`，修改后，端口变更，同样能正常请求
+
+```yaml
+server:
+  port: 9527
+
+spring:
+  application:
+    name: cloud-gateway #以微服务注册进consul或nacos服务列表内
+  cloud:
+    consul: #配置consul地址
+      host: localhost
+      port: 8500
+      discovery:
+        prefer-ip-address: true
+        service-name: ${spring.application.name}
+    gateway:
+      routes:
+        - id: pay_routh1 #pay_routh1                #路由的ID(类似mysql主键ID)，没有固定规则但要求唯一，建议配合服务名
+          #uri: http://localhost:8001                #匹配后提供服务的路由地址
+          uri: lb://cloud-payment-service          #匹配后提供服务的路由地址
+          predicates:
+            - Path=/pay/gateway/get/**              # 断言，路径相匹配的进行路由
+
+        - id: pay_routh2 #pay_routh2                #路由的ID(类似mysql主键ID)，没有固定规则但要求唯一，建议配合服务名
+          #uri: http://localhost:8001                #匹配后提供服务的路由地址
+          uri: lb://cloud-payment-service                #匹配后提供服务的路由地址
+          predicates:
+            - Path=/pay/gateway/info/**              # 断言，路径相匹配的进行路由
+```
+
+### 6.4、Predicate 断言（谓词）
+
+[Route Predicate Factories](https://docs.spring.io/spring-cloud-gateway/docs/4.0.4/reference/html/#gateway-request-predicates-factories) 断言工程可以配置多种断言
+
+##### 常用的内置断言
+
+内置断言有 [两种配置方式](https://docs.spring.io/spring-cloud-gateway/reference/spring-cloud-gateway/configuring-route-predicate-factories-and-filter-factories.html)，通常使用 Shortcut Configuration
+
+- [After Route Predicate Factory](https://docs.spring.io/spring-cloud-gateway/docs/4.0.4/reference/html/#the-after-route-predicate-factory) ：
+
+  在指定的日期时间后发生的请求匹配（格式按照 java.time.ZonedDateTime 类的格式）  
+
+  ```java
+  ZonedDateTime zbj = ZonedDateTime.now(); // 默认时区
+  System.out.println(zbj);
+  ```
+
+  YAML 配置：
+
+  ```yaml
+  predicates:
+  	- Path=/pay/gateway/get/**              # 断言，路径相匹配的进行路由
+  	- After=2023-11-20T17:38:13.586918800+08:00[Asia/Shanghai]
+  ```
+
+- [Before Route Predicate Factory](https://docs.spring.io/spring-cloud-gateway/docs/4.0.4/reference/html/#the-before-route-predicate-factory)
+
+  ```yaml
+  - Before=2023-11-27T15:25:06.424566300+08:00[Asia/Shanghai] #超过规定时间不可访问
+  ```
+
+- [Between Route Predicate Factory](https://docs.spring.io/spring-cloud-gateway/docs/4.0.4/reference/html/#the-between-route-predicate-factory)
+
+  ```yaml
+  - Between=2023-11-21T17:38:13.586918800+08:00[Asia/Shanghai],2023-11-22T17:38:13.586918800+08:00[Asia/Shanghai]
+  ```
+
+- [Cookie Route Predicate Factory](https://docs.spring.io/spring-cloud-gateway/docs/4.0.4/reference/html/#the-cookie-route-predicate-factory)
+
+  ```yaml
+  - Cookie=username,zzyy
+  ```
+
+- [Header Route Predicate Factory](https://docs.spring.io/spring-cloud-gateway/docs/4.0.4/reference/html/#the-header-route-predicate-factory)
+
+  ```yaml
+  - Header=X-Request-Id, \d+  # 请求头要有X-Request-Id属性并且值为整数的正则表达式
+  ```
+
+- [Host Route Predicate Factory](https://docs.spring.io/spring-cloud-gateway/docs/4.0.4/reference/html/#the-host-route-predicate-factory)
+
+  ```yaml
+  - Host=**.t4mako.com
+  ```
+
+- [Method Route Predicate Factory](https://docs.spring.io/spring-cloud-gateway/docs/4.0.4/reference/html/#the-method-route-predicate-factory)
+
+- [Path Route Predicate Factory](https://docs.spring.io/spring-cloud-gateway/docs/4.0.4/reference/html/#the-path-route-predicate-factory)
+
+- [Query Route Predicate Factory](https://docs.spring.io/spring-cloud-gateway/docs/4.0.4/reference/html/#the-query-route-predicate-factory)
+
+- [RemoteAddr Route Predicate Factory](https://docs.spring.io/spring-cloud-gateway/docs/4.0.4/reference/html/#the-remoteaddr-route-predicate-factory)
+
+### 6.5、自定义断言
+
+继承 AbstractRoutePredicateFactory 抽象类或实现 RoutePredicateFactory 接口
+
+- 类的命名规则：`XXXRoutePredicateFactory`
+- 重写 **apply** 方法  
+- 新建 Config 静态内部类， 这个 Config 类就是我们的路由断言规则
+- 创建 **空参构造器**  
+- 重写 **shortcutFieldOrder** 方法以支持 shortcut 格式
+
+案例：
+
+```java
+@Component
+public class MyRoutePredicateFactory extends AbstractRoutePredicateFactory<MyRoutePredicateFactory.Config>{
+    public MyRoutePredicateFactory(){
+        super(MyRoutePredicateFactory.Config.class);
+    }
+
+    @Validated
+    public static class Config{
+        @Setter
+        @Getter
+        @NotEmpty
+        private String userType; //钻、金、银等用户等级
+    }
+
+    @Override
+    public Predicate<ServerWebExchange> apply(MyRoutePredicateFactory.Config config){
+        return new Predicate<ServerWebExchange>(){
+            @Override
+            public boolean test(ServerWebExchange serverWebExchange)
+            {
+                //检查 request 的参数里面，userType 是否为指定的值，符合配置就通过
+                String userType = serverWebExchange.getRequest().getQueryParams().getFirst("userType");
+
+                if (userType == null) return false;
+
+                //如果说参数存在，就和config的数据进行比较
+                if(userType.equals(config.getUserType())) {
+                    return true;
+                }
+                return false;
+            }
+        };
+    }
+    
+    @Override
+    public List<String> shortcutFieldOrder() {
+      return Collections.singletonList("userType");
+    }
+}
+```
+
+### 6.6、Filter 过滤
+
+[spring 使用官网](https://docs.spring.io/spring-cloud-gateway/docs/current/reference/html/#gatewayfilter-factories)
+
+通过切面，在请求被执行前和被执行后调用，用来修改亲够和响应信息
+
+通常用途：请求鉴权、异常处理、记录接口调用时长...
+
+过滤器分为：
+
+- 全局默认过滤器 [Global Filters](https://docs.spring.io/spring-cloud-gateway/docs/current/reference/html/#global-filters)
+  - Gateway 出厂默认已有的，直接用即可，作用于所有的路由
+  - 不需要在配置文件中配置，作用在所有的路由上，实现 GlobalFilter 接口即可
+- 单一内置过滤器 [Gateway Filter](https://docs.spring.io/spring-cloud-gateway/docs/4.0.4/reference/html/#gatewayfilter-factories)
+  - 也可以称为网关过滤器，这种过滤器主要是作用于单一路由或者某个路由分组
+- 自定义过滤器
+
+#### Gateway 内置过滤器
+
+常用的内置过滤器：
+
+- 请求头(RequestHeader)相关组
+
+  - [AddRequestHeader GatewayFilter Factory](https://docs.spring.io/spring-cloud-gateway/docs/current/reference/html/#the-addrequestheader-gatewayfilter-factory) 添加请求头
+
+  - [RemoveRequestHeader GatewayFilter Factory](https://docs.spring.io/spring-cloud-gateway/docs/current/reference/html/#the-removerequestheader-gatewayfilter-factory) 删除请求头
+
+  - [SetRequestHeader GatewayFilter Factory](https://docs.spring.io/spring-cloud-gateway/docs/current/reference/html/#the-setrequestheader-gatewayfilter-factory) 修改请求头
+
+  - 案例：
+
+    ```yaml
+     - id: pay_routh3 #pay_routh3
+          uri: lb://cloud-payment-service                #匹配后提供服务的路由地址
+          predicates:
+            - Path=/pay/gateway/filter/**              # 断言，路径相匹配的进行路由
+          filters:
+            - AddRequestHeader=X-Request-atguigu1,atguiguValue1  # 请求头 kv，若一头含有多参则重写一行设置
+            - AddRequestHeader=X-Request-atguigu2,atguiguValue2
+            - RemoveRequestHeader=sec-fetch-site      # 删除请求头 sec-fetch-site
+            - SetRequestHeader=sec-fetch-mode, Blue-updatebyzzyy # 将请求头 sec-fetch-mode 对应的值修改为 Blue-updatebyzzyy
+    ```
+
+- 请求参数(RequestParameter)相关组
+
+  - [AddRequestParameter GatewayFilter Factory](https://docs.spring.io/spring-cloud-gateway/docs/current/reference/html/#the-addrequestparameter-gatewayfilter-factory)
+
+  - [RemoveRequestParameter GatewayFilter Factory](https://docs.spring.io/spring-cloud-gateway/docs/current/reference/html/#the-removerequestparameter-gatewayfilter-factory)
+
+  - 案例：
+
+  - ```yaml
+    filters:
+    	- AddRequestParameter=customerId,9527001 # 新增请求参数Parameter：k ，v
+    	- RemoveRequestParameter=customerName   # 删除url请求参数customerName，你传递过来也是null
+    ```
+
+- 回应头(ResponseHeader)相关组
+
+  - [AddResponseHeader GatewayFilter Factory](https://docs.spring.io/spring-cloud-gateway/docs/current/reference/html/#the-addresponseheader-gatewayfilter-factory)
+  - [SetResponseHeader GatewayFilter Factory](https://docs.spring.io/spring-cloud-gateway/docs/current/reference/html/#the-setresponseheader-gatewayfilter-factory)
+  - [RemoveResponseHeader GatewayFilter Factory](https://docs.spring.io/spring-cloud-gateway/docs/current/reference/html/#the-removeresponseheader-gatewayfilter-factory)
+
+- 前缀和路径相关组
+
+  - [PrefixPath GatewayFilter Factory](https://docs.spring.io/spring-cloud-gateway/docs/current/reference/html/#the-prefixpath-gatewayfilter-factory)
+  - [SetPath GatewayFilter Factory](https://docs.spring.io/spring-cloud-gateway/docs/current/reference/html/#the-setpath-gatewayfilter-factory)
+  - [RedirectTo GatewayFilter Factory](https://docs.spring.io/spring-cloud-gateway/docs/current/reference/html/#the-redirectto-gatewayfilter-factory)
+
+- 其他
+
+  - [Default Filters](https://docs.spring.io/spring-cloud-gateway/docs/current/reference/html/#default-filters)  配置在此处相当于全局通用
+
+#### Gateway 自定义过滤器
+
+##### 自定义全局 Filter
+
+[官网](https://docs.spring.io/spring-cloud-gateway/docs/current/reference/html/#gateway-combined-global-filter-and-gatewayfilter-ordering)
+
+新建类 **XXXGlobalFilter** 并实现 **GlobalFilter**，**Ordered** 两个接口
+
+Yaml 中的配置：
+
+```yaml
+gateway:
+      routes:
+        - id: pay_routh1 #pay_routh1                #路由的ID(类似mysql主键ID)，没有固定规则但要求唯一，建议配合服务名
+          uri: lb://cloud-payment-service                #匹配后提供服务的路由地址
+          predicates:
+            - Path=/pay/gateway/get/**              # 断言，路径相匹配的进行路由
+            - After=2023-12-30T23:02:39.079979400+08:00[Asia/Shanghai]
+
+        - id: pay_routh2 #pay_routh2                #路由的ID(类似mysql主键ID)，没有固定规则但要求唯一，建议配合服务名
+          uri: lb://cloud-payment-service
+          predicates:
+            - Path=/pay/gateway/info/**              # 断言，路径相匹配的进行路由
+
+        - id: pay_routh3 #pay_routh3
+          uri: lb://cloud-payment-service                #匹配后提供服务的路由地址
+          predicates:
+            - Path=/pay/gateway/filter/**              # 断言，路径相匹配的进行路由，默认正确地址
+          filters:
+            - AddRequestHeader=X-Request-atguigu1,atguiguValue1  # 请求头kv，若一头含有多参则重写一行设置
+```
+
+XXXGlobalFilter 类
+
+```java
+@Component
+@Slf4j
+public class MyGlobalFilter implements GlobalFilter, Ordered
+{
+
+    /**
+     * 数字越小优先级越高
+     * @return
+     */
+    @Override
+    public int getOrder()
+    {
+        return 0;
+    }
+
+    private static final String BEGIN_VISIT_TIME = "begin_visit_time";//开始访问时间
+    /**
+     *第2版，各种统计
+     * @param exchange
+     * @param chain
+     * @return
+     */
+    @Override
+    public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
+        //先记录下访问接口的开始时间
+        exchange.getAttributes().put(BEGIN_VISIT_TIME, System.currentTimeMillis());
+
+        return chain.filter(exchange).then(Mono.fromRunnable(()->{
+            Long beginVisitTime = exchange.getAttribute(BEGIN_VISIT_TIME);
+            if (beginVisitTime != null){
+                log.info("访问接口主机: " + exchange.getRequest().getURI().getHost());
+                log.info("访问接口端口: " + exchange.getRequest().getURI().getPort());
+                log.info("访问接口URL: " + exchange.getRequest().getURI().getPath());
+                log.info("访问接口URL参数: " + exchange.getRequest().getURI().getRawQuery());
+                log.info("访问接口时长: " + (System.currentTimeMillis() - beginVisitTime) + "ms");
+                log.info("我是美丽分割线: ###################################################");
+                System.out.println();
+            }
+        }));
+    }
+
+}
+```
+
+##### 自定义条件 Filter
+
+- 新建类名 **XXXGatewayFilterFactory** 类并继承 **AbstractGatewayFilterFactory** 类
+- 重写 **apply** 方法
+- 重写 **shortcutFieldOrder**
+- 空参构造方法，内部调用 super
+
+案例：
+
+```java
+@Component
+public class MyGatewayFilterFactory extends AbstractGatewayFilterFactory<MyGatewayFilterFactory.Config>
+{
+    public MyGatewayFilterFactory()
+    {
+        super(MyGatewayFilterFactory.Config.class);
+    }
+
+
+    @Override
+    public GatewayFilter apply(MyGatewayFilterFactory.Config config)
+    {
+        return new GatewayFilter()
+        {
+            @Override
+            public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain)
+            {
+                ServerHttpRequest request = exchange.getRequest();
+                System.out.println("进入了自定义网关过滤器MyGatewayFilterFactory，status："+config.getStatus());
+                if(request.getQueryParams().containsKey("atguigu")){
+                    return chain.filter(exchange);
+                }else{
+                    exchange.getResponse().setStatusCode(HttpStatus.BAD_REQUEST);
+                    return exchange.getResponse().setComplete();
+                }
+            }
+        };
+    }
+
+    @Override
+    public List<String> shortcutFieldOrder() {
+        return Arrays.asList("status");
+    }
+
+    public static class Config
+    {
+        @Getter@Setter
+        private String status;//设定一个状态值/标志位，它等于多少，匹配和才可以访问
+    }
+}
+//单一内置过滤器GatewayFilter
+```
+
+## 
