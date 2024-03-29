@@ -45,4 +45,4 @@ class Solution {
 }
 ```
 
-> 建立两个 ListNode，分别为 result 和 cur，将 result 赋给 cur，循环遍历条件为(l1 != null || l2 != null || i != 0)，使得即使l1，12都循环结束，而i=1，仍然继续执行一次。在循环体内首先判断参数l1和l2的ListNode是否存在，若存在则取出值，若不存在则为，维护一个整数i，赋值为(x+y+i)/10用于判断是否需要进位，将计算的值赋给cur.next，并将cur.next赋给cur，便于下一次操作，最后返回result.next，为一个链表，此算法的时间复杂度为O(n)。
+> 建立两个 ListNode，分别为 result 和 cur，将 result 赋给 cur，循环遍历条件为(l1 != null || l2 != null || i != 0)，使得即使l1，12都循环结束，而 i=1，仍然继续执行一次。在循环体内首先判断参数 l1 和 l2 的 ListNode 是否存在，若存在则取出值，若不存在则为，维护一个整数i，赋值为 (x+y+i)/10 用于判断是否需要进位，将计算的值赋给 cur.next，并将 cur.next 赋给 cur，便于下一次操作，最后返回result.next，为一个链表，此算法的时间复杂度为 O(n)。

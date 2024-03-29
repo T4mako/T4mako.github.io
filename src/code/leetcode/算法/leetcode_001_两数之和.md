@@ -12,7 +12,7 @@ tag:
 <Badge text="简单" type="tip" vertical="middle" />
 
 
-## 解法一：两层for循环遍历
+## 解法一：两层 for 循环遍历
 
 ```java
 class Solution {
@@ -29,7 +29,7 @@ class Solution {
 }
 ```
 
-> 由于数组中的同一个元素在答案里不能重复出现，通过两层for循环，第一个for从i=0开始，第二个循环从j=i+1开始，找到满足要求的下标。此解法时间复杂度为O(n^2^)
+> 由于数组中的同一个元素在答案里不能重复出现，通过两层 for 循环，第一个 for 从 `i = 0` 开始，第二个循环从j=i+1开始，找到满足要求的下标。此解法时间复杂度为 O(n^2^)
 
 ## 解法二：使用hashmap
 
@@ -52,4 +52,4 @@ class Solution {
 }
 ```
 
-> 建立一个HashMap，key存储数组值，value存储数组下标，通过一次遍历，再查找target减去第一次遍历的值是否存在即可。
+> 建立一个 HashMap，key 存储数组值，value 存储数组下标，通过一次遍历，再查找 target 减去第一次遍历的值是否存在即可

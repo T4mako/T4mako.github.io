@@ -35,4 +35,4 @@ class Solution {
 }
 ```
 
-创建两个 int 型数据 left，right，计算水池的面积，由于左右指针的移动会使得left到right的举例变短，若果要获得更大的水的面积，将left与right中更短的边移动，直到移动到的那条边超过left和right中的最短边。
+创建两个 int 型数据 left，right，计算水池的面积，由于左右指针的移动会使得left到right的举例变短，若果要获得更大的水的面积，将 left 与 right 中更短的边移动，直到移动到的那条边超过 left 和 right 中的最短边。

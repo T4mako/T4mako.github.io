@@ -1,4 +1,4 @@
----
+ ---
 category: 
   - 算法
 tag: 
@@ -61,4 +61,4 @@ class Solution {
 }
 ```
 
-首先用trim()方法删除字符串前后的空格，创建一个long型res，创建最大数maxBig，判断字符第一个是否为+或-，定义一个flag储存符号，遍历字符串，通过res = res * 10 + Integer.parseInt(String.valueOf(s.charAt(i)))给res赋值，如果res等于maxBIg做判断，返回，如果是一般情况，判断符号，返回res；
+首先用 trim() 方法删除字符串前后的空格，创建一个 long 型 res，创建最大数 maxBig，判断字符第一个是否为+或-，定义一个 flag 储存符号，遍历字符串，通过 `res = res * 10 + Integer.parseInt(String.valueOf(s.charAt(i)))` 给 res 赋值，如果 res 等于 maxBIg 做判断，返回，如果是一般情况，判断符号，返回 res；

@@ -61,7 +61,7 @@ class Solution {
 }
 ```
 
-定义一个left和right，通过二分查找的思想，取mid=（left+right）/2，从left开始判断到mid的字符串是否都相等，如果都相等，left移动到mid+1，如果不相等，right移动到mid-1，在进行判断。
+定义一个 left 和 right，通过二分查找的思想，取 `mid=（left+right）/2`，从left开始判断到 mid 的字符串是否都相等，如果都相等，left 移动到 mid+1，如果不相等，right 移动到 mid-1，在进行判断。
 
 ## 解法二：
 

@@ -85,7 +85,7 @@ public  String longestPalindrome(String s) {
     }
 ```
 
-创建一个方法isPalindrome，用于返回当前字符所处位置的最长回文子串，通过两个指针left，right，对当前所指字符分别向左，右移动，如果两处所指的字符不同，则退出循环，如果相同继续执行，在longestPalindrome方法中，通过for循环不断遍历字符，并记录最长的那串字符。
+创建一个方法 isPalindrome，用于返回当前字符所处位置的最长回文子串，通过两个指针 left，right，对当前所指字符分别向左，右移动，如果两处所指的字符不同，则退出循环，如果相同继续执行，在 longestPalindrome 方法中，通过 for 循环不断遍历字符，并记录最长的那串字符。
 
 ## 解法一优化：
 
@@ -115,7 +115,7 @@ public static String longestPalindrome(String s){
     }
 ```
 
-isPalindrome方法中传入字符串s，left，right后，判断left，right是否越界，并且所指字符是否相同，返回right到left的值，并在longestPalindrome方法中计算字符的位置
+isPalindrome 方法中传入字符串 s，left，right 后，判断 left，right 是否越界，并且所指字符是否相同，返回 right 到 left 的值，并在 longestPalindrome 方法中计算字符的位置
 
 
 
