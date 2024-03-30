@@ -30,4 +30,4 @@ class Solution {
 }
 ```
 
-运用双指针，左边指向不重复的数，right往右移动指针，如果有重复的就right++；如果没重复nums[++left] = nums[right++];定义一个res用于返回
+运用双指针，左边指向不重复的数，right 往右移动指针，如果有重复的就 right++；如果没重复 `nums[++left] = nums[right++];` 定义一个 res 用于返回

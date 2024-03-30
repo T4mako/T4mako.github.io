@@ -72,7 +72,7 @@ class Solution {
 }
 ```
 
-定义一个left，通过for循环比较left与left+1的大小，如果left+1<left，将left前移，当left+1>left是，找到在left+1到len-1的大于left的数的最小的那个，与left交换，然后对left-1到len-1的数进行排序
+定义一个left，通过for循环比较 left 与 left+1 的大小，如果`left+1 < left`，将 left 前移，当 `left+1>  left`  ，找到在 left+1 到 len-1 的大于 left 的数的最小的那个，与 left 交换，然后对 left-1 到 len-1 的数进行排序
 
 ## 解法二：
 
