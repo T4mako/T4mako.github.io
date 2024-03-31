@@ -6,8 +6,8 @@
     <link>https://T4mako.github.io/</link>
     <description>T4mako</description>
     <language>zh-CN</language>
-    <pubDate>Sat, 30 Mar 2024 15:07:29 GMT</pubDate>
-    <lastBuildDate>Sat, 30 Mar 2024 15:07:29 GMT</lastBuildDate>
+    <pubDate>Sun, 31 Mar 2024 12:27:51 GMT</pubDate>
+    <lastBuildDate>Sun, 31 Mar 2024 12:27:51 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>算法</category>
@@ -83,8 +83,19 @@
     </item>
     <item>
       <title>146. LRU 缓存</title>
-      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_145_%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86%20copy.html</link>
-      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_145_%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86%20copy.html</guid>
+      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_146_LRU%20%E7%BC%93%E5%AD%98.html</link>
+      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_146_LRU%20%E7%BC%93%E5%AD%98.html</guid>
+      <source url="https://T4mako.github.io/rss.xml">146. LRU 缓存</source>
+      <description>146. LRU 缓存</description>
+      <category>算法</category>
+      <pubDate>Sat, 23 Mar 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<h1> 146. LRU 缓存</h1>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>146. LRU 缓存</title>
+      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_148_%E6%8E%92%E5%BA%8F%E9%93%BE%E8%A1%A8.html</link>
+      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_148_%E6%8E%92%E5%BA%8F%E9%93%BE%E8%A1%A8.html</guid>
       <source url="https://T4mako.github.io/rss.xml">146. LRU 缓存</source>
       <description>146. LRU 缓存</description>
       <category>算法</category>
@@ -2389,17 +2400,6 @@ JDK5.0 以后每个线程堆栈大小为 1M，以前每个线程堆栈大小为 
 <p>TypeScript 的一个规则是，凡是可以使用父类型的地方，都可以使用子类型，但是反过来不行。</p>
 <div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，<code>hi</code>是<code>string</code>的子类型，<code>string</code>是<code>hi</code>的父类型。所以，变量<code>a</code>可以赋值给变量<code>b</code>，但是反过来就会报错。</p>
 <p>之所以有这样的规则，是因为子类型继承了父类型的所有特征，所以可以用在父类型的场合。但是，子类型还可能有一些父类型没有的特征，所以父类型不能用在子类型的场合。</p>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>649. Dota2 参议院</title>
-      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_649_Dota2%20%E5%8F%82%E8%AE%AE%E9%99%A2.html</link>
-      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_649_Dota2%20%E5%8F%82%E8%AE%AE%E9%99%A2.html</guid>
-      <source url="https://T4mako.github.io/rss.xml">649. Dota2 参议院</source>
-      <description>649. Dota2 参议院</description>
-      <category>算法</category>
-      <pubDate>Mon, 14 Aug 2023 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<h1> 649. Dota2 参议院</h1>
 ]]></content:encoded>
     </item>
   </channel>
