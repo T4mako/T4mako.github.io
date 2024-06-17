@@ -6,8 +6,8 @@
     <link>https://T4mako.github.io/</link>
     <description>T4mako</description>
     <language>zh-CN</language>
-    <pubDate>Tue, 07 May 2024 07:46:43 GMT</pubDate>
-    <lastBuildDate>Tue, 07 May 2024 07:46:43 GMT</lastBuildDate>
+    <pubDate>Mon, 17 Jun 2024 11:04:07 GMT</pubDate>
+    <lastBuildDate>Mon, 17 Jun 2024 11:04:07 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>机器学习</category>
@@ -30,7 +30,9 @@
 <p><a href="https://zhuanlan.zhihu.com/c_135909947" target="_blank" rel="noopener noreferrer">https://zhuanlan.zhihu.com/c_135909947</a></p>
 <p><a href="https://datawhalechina.github.io/easy-rl/#/" target="_blank" rel="noopener noreferrer">https://datawhalechina.github.io/easy-rl/#/</a></p>
 <h2> 1、介绍</h2>
-<p><strong>强化学习（reinforcement learning，RL）</strong>：<strong>Agent</strong>（玩家）在复杂、不确定的 <strong>environment</strong> （环境）中最大化它能获得的奖励</p>
+<p><strong>强化学习（reinforcement learning，RL）</strong>：</p>
+<p>是一种将 <strong>状态映射到动作</strong><br>
+<strong>Agent</strong>（玩家）在复杂、不确定的 <strong>environment</strong> （环境）中最大化它能获得的奖励</p>
 <p>强化学习与其他机器学习范例的不同</p>
 <ul>
 <li>无监督</li>
@@ -192,7 +194,7 @@ S^a_t = \sigma(S^a_{t-1}W_s+O_tW_o)
 <p><strong>Markov 作用</strong>：描述环境、几乎所有 RL 问题都可被定义为 MDPs 问题</p>
 </li>
 <li>
-<p><strong>Markov 性质</strong>（Markov Property）：有了 S<sub>t</sub>，就可以丢掉 S<sub>1</sub>,...S<sub>t</sub>，当前状态就可以决定未来</p>
+<p><strong>Markov 性质</strong>（Markov Property）：有了 S<sub>t</sub>，就可以丢掉 S<sub>1</sub>,...S<sub>t</sub>，当前状态就可以决定未来（无记忆性）</p>
 <p class="katex-block"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>P</mi><mo stretchy="false">[</mo><msub><mi>S</mi><mrow><mi>t</mi><mo>+</mo><mn>1</mn></mrow></msub><mi mathvariant="normal">∣</mi><msub><mi>S</mi><mi>t</mi></msub><mo stretchy="false">]</mo><mo>=</mo><mi>P</mi><mo stretchy="false">[</mo><msub><mi>S</mi><mrow><mi>t</mi><mo>+</mo><mn>1</mn></mrow></msub><mo separator="true">,</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mo separator="true">,</mo><msub><mi>S</mi><mi>t</mi></msub><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">
 P[S_{t+1}|S_t]=P[S_{t+1},...,S_t]
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mopen">[</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0576em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">t</span><span class="mbin mtight">+</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2083em;"><span></span></span></span></span></span></span><span class="mord">∣</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2806em;"><span style="top:-2.55em;margin-left:-0.0576em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mopen">[</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0576em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">t</span><span class="mbin mtight">+</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2083em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">...</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2806em;"><span style="top:-2.55em;margin-left:-0.0576em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">]</span></span></span></span></span></p>
@@ -223,7 +225,7 @@ M347 1759 V0 H263 V1759 v600 v1759 h84z"></path></svg></span></span></span><span
 </li>
 </ul>
 <h3> 2.2、马尔科夫奖励过程</h3>
-<p>马尔科夫奖励过程（Markov Reward Processes）在马尔科夫过程的基础上增加了奖励 R 和衰减系数 <em>γ</em>：<em>&lt;S,P,R,γ&gt;</em>。</p>
+<p>马尔科夫奖励过程（MRPs）在马尔科夫过程的基础上增加了奖励 R 和衰减系数 <em>γ</em>：<em>&lt;S,P,R,γ&gt;</em>。</p>
 <ul>
 <li>
 <p><strong>Reward</strong> 是一个 <strong>奖励函数</strong>。在 S 状态下的奖励是某一时刻 t 处在状态 s下在下一个时刻 t+1 能获得的 <strong>奖励期望</strong>：（当进入某个状态会获得相应的奖励）</p>
@@ -390,6 +392,97 @@ q_*(s,a)=\mathsf{max}q_\pi(s,a)
 </ul>
 <h2> 3、动态规划</h2>
 <p>动态规划应用于 MDP 的规划问题（planning）而不是学习问题（learning），就是要知道 <strong>状态转移概率</strong> 和对应的 <strong>reward</strong> 才行</p>
+<p>动态规划可完成预测问题和控制问题的求解</p>
+<ul>
+<li>预测问题：
+<ul>
+<li>Input：MDP&lt;S;A;P;R;γ&gt; and policy π 或 MRP&lt;S;P<sup>π</sup>;R<sup>π</sup>;γ&gt;</li>
+<li>Output：value function v<sub>π</sub></li>
+<li>根据当前 MDP 过程，衡量每一个状态的 value</li>
+</ul>
+</li>
+<li>控制问题
+<ul>
+<li>Input：MDP&lt;S;A;P;R;γ&gt; without policy</li>
+<li>Output：最优 value function，进而输出最优 policy π<sub>*</sub></li>
+</ul>
+</li>
+</ul>
+<h3> 策略迭代 Policy Iteration</h3>
+<ul>
+<li>Policy evaluation ：评估 π 的 value function V<sub>π</sub></li>
+<li>Policy improvement ：根据得到的  V<sub>π</sub>，利用贪心算法获得优化的 policy π‘</li>
+<li>根据得到的 π’ 以及我们的状态转移概率，进行新的一轮 Policy evaluation</li>
+<li>这个过程一直持续到新旧两轮迭代的相同</li>
+</ul>
+<h3> 价值评估解决方案</h3>
+<ul>
+<li>给定任意一个 policy，通过迭代 Bellman Expectation Equation 找到一个最优 policy</li>
+<li>初始化一个 value function 的值，比如全部置为1，同时初始化一个 policy。这个初始化不会影响迭代结果，并且，它不会影响收敛速率</li>
+<li>接着使用 Bellman Expectation Equation，利用已经得到的 value function 来计算新一轮迭代得到的 value function</li>
+</ul>
+<p class="katex-block"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>v</mi><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><munder><mo>∑</mo><mrow><mi>a</mi><mo>∈</mo><mi>A</mi></mrow></munder><mi>π</mi><mo stretchy="false">(</mo><mi>a</mi><mi mathvariant="normal">∣</mi><mi>s</mi><mo stretchy="false">)</mo><mo stretchy="false">(</mo><msubsup><mi>R</mi><mi>s</mi><mi>a</mi></msubsup><mo>+</mo><mi>γ</mi><munder><mo>∑</mo><mrow><msup><mi>s</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo>∈</mo><mi>S</mi></mrow></munder><msubsup><mi>P</mi><mrow><mi>s</mi><msup><mi>s</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup></mrow><mi>a</mi></msubsup><msub><mi>v</mi><mi>k</mi></msub><mo stretchy="false">(</mo><msup><mi>s</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo stretchy="false">)</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">
+v_{k+1} = \sum_{a\in A}\pi(a|s)(R^a_s + \gamma \sum_{s' \in S}P_{ss'}^av_k(s'))
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6389em;vertical-align:-0.2083em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.03148em;">k</span><span class="mbin mtight">+</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2083em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.3717em;vertical-align:-1.3217em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.05em;"><span style="top:-1.8557em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">a</span><span class="mrel mtight">∈</span><span class="mord mathnormal mtight">A</span></span></span></span><span style="top:-3.05em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">∑</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.3217em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">π</span><span class="mopen">(</span><span class="mord mathnormal">a</span><span class="mord">∣</span><span class="mord mathnormal">s</span><span class="mclose">)</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.7144em;"><span style="top:-2.453em;margin-left:-0.0077em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">s</span></span></span><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">a</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.247em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:2.3717em;vertical-align:-1.3217em;"></span><span class="mord mathnormal" style="margin-right:0.05556em;">γ</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.05em;"><span style="top:-1.8557em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathnormal mtight">s</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6828em;"><span style="top:-2.786em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mrel mtight">∈</span><span class="mord mathnormal mtight" style="margin-right:0.05764em;">S</span></span></span></span><span style="top:-3.05em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">∑</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.3217em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.7144em;"><span style="top:-2.453em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">s</span><span class="mord mtight"><span class="mord mathnormal mtight">s</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6828em;"><span style="top:-2.786em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span></span></span></span><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">a</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.247em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.03148em;">k</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">s</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8019em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mclose">))</span></span></span></span></span></p>
+<p>举例：格子世界</p>
+<ul>
+<li>action：上下左右四个方向等概率</li>
+<li>reward：-1（每进行一次 action 奖励为 -1）</li>
+<li>γ：1（折扣因子）</li>
+</ul>
+<p>![image-20240509151022706](E:\Study=my repo\vuepress-hope-bloc\my-docs\src\code\机器学习\强化学习\assets\image-20240509151022706.png)</p>
+<h2> 4、不基于模型的预测</h2>
+<p>上章介绍从理论上解决一个已知的 MDP：</p>
+<ul>
+<li>通过动态规划，评估给定策略，得到最优价值函数，根据最优价值函数确定最优策略</li>
+<li>也可以直接进行不基于任何策略的状态价值迭代得到最优价值函数和最优策略</li>
+</ul>
+<p>如何直接从 Agent 与环境的交互来得得到一个估计的最优价值函数和最优策略？</p>
+<ul>
+<li>本讲的内容，聚焦于 <strong>策略评估</strong>，即预测，在给定的策略同时不清楚 MDP 细节的情况下，估计 Agent 会得到怎样的最终奖励</li>
+<li>下一讲将利用本讲的主要观念来进行控制进而找出最优策略，最大化 Agent 的奖励。</li>
+</ul>
+<p>本章分为三个部分：蒙特卡洛强化学习、时序差分强化学习和介于两者之间的 λ 时序差分强化学习</p>
+<h3> 4.1、蒙特卡洛强化学习 MC</h3>
+<h4> 蒙特卡洛强化学习：</h4>
+<ul>
+<li>不清楚 MDP 状态转移及即时奖励的情况下</li>
+<li>不基于模型本身，直接从完整的 Episode 来学习状态价值</li>
+<li>通常情况下某状态的价值等于在多个 Episode 中以该状态算得到的所有收获的平均</li>
+<li>理论上 Episode 越多，结果越准确</li>
+</ul>
+<p>完整的 Episode：指必须从某一个状态开始，Agent 与 Environment 交互直到终止状态，环境给出终止状态的即时收获为止</p>
+<p>完整的 Episode 包含的信息：状态的转移、使用的行为序列、中间状态获得的即时奖励以及到达终止状态时获得的即时奖励</p>
+<h4> 蒙特卡洛策略评估</h4>
+<p>**目标：**在给定策略下，从一系列的完整 Episode 经历中学习得到该策略下的状态价值函数</p>
+<ul>
+<li>基于策略 π 的 Episode 序列：S<sub>1</sub>,A<sub>1</sub>,R<sub>2</sub>,S<sub>2</sub>......</li>
+<li>t 时刻 S<sub>t</sub> 的收获：G<sub>t</sub> = R<sub>t+1</sub> + γR<sub>t+2</sub> +.... γ<sup>T-1</sup>R<sub>T</sub></li>
+<li>T 为终止时刻</li>
+<li>策略 π 下某一状态 s 的价值： V<sub>π</sub>(S) = E<sub>π</sub>[G<sub>t</sub> | S<sub>t</sub> = s]</li>
+</ul>
+<p>访问蒙特卡洛策略评估</p>
+<ul>
+<li>
+<p>首次访问蒙特卡洛策略评估：对于每一个 Episode，仅当该状态第一次出现时列入计算</p>
+<ul>
+<li>状态出现的次数加一：N(s) = N(s) + 1</li>
+<li>总收获值更新：S(s) + S(s) + G<sub>t</sub></li>
+<li>状态 s 的价值：V(s) = S(s) / N(s)</li>
+<li>当 N(s) 趋于无穷：V(s) = v<sub>π</sub>(s)</li>
+</ul>
+</li>
+<li>
+<p>每次访问蒙特卡洛策略评估：状态 s 每次出现在状态转移链时，计算的具体公式与上面的一样，但具体意义不一样</p>
+</li>
+</ul>
+<h3> 4.2、时序差分学习  TD</h3>
+<p>它也从 Episode 学习，但是它可以学习不完整的 Episode</p>
+<p>算法在估计某一个状态的价值时，用的是离开该状态的即刻奖励 R<sub>t+1</sub> 与下一状态 S<sub>t+1</sub> 的预估状态价值乘以衰减系数</p>
+<ul>
+<li>TD 的目标值：R<sub>t+1</sub> + γV(S<sub>t+1</sub>)</li>
+<li>TD 误差 R<sub>t+1</sub> + γV(S<sub>t+1</sub>) - V(S<sub>t</sub>)</li>
+</ul>
 ]]></content:encoded>
     </item>
     <item>
