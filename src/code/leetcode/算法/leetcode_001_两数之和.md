@@ -32,7 +32,8 @@ class Solution {
 > 由于数组中的同一个元素在答案里不能重复出现，通过两层 for 循环，第一个 for 从 `i = 0` 开始，第二个循环从j=i+1开始，找到满足要求的下标。此解法时间复杂度为 O(n^2^)
 
 ## 解法二：使用hashmap
-
+:::code-tabs
+@tab Java
 ```java
 class Solution {
     public int[] twoSum(int[] nums, int target) {
@@ -51,5 +52,18 @@ class Solution {
     }
 }
 ```
+@tab python
+```python
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        d1 = {}
+        for index in range(len(nums)):
+            complement = target - nums[index]
+            if complement in d1:
+                return [d1[complement], index]
+            d1[nums[index]] = index
+        return []
+```
+:::
 
 > 建立一个 HashMap，key 存储数组值，value 存储数组下标，通过一次遍历，再查找 target 减去第一次遍历的值是否存在即可

@@ -24,7 +24,7 @@ Consul 用于服务注册与发现，数据共享
 
 为什么要引入服务注册中心：  
 
-- 微服务所在的IP地址和端口号硬编码到订单微服务中，会存在非常多的问题
+- 微服务所在的 IP 地址和端口号硬编码到订单微服务中，会存在非常多的问题
 - 因此需要引入服务治理功能，实现微服务之间的动态注册与发现
 
 通过在 Consul 官网下载客户端，通过 cmd `consul agent -dev` 命令即可启动 Consul 与本地的 8500 端口
@@ -1334,7 +1334,1071 @@ public class MyGatewayFilterFactory extends AbstractGatewayFilterFactory<MyGatew
         private String status;//设定一个状态值/标志位，它等于多少，匹配和才可以访问
     }
 }
-//单一内置过滤器GatewayFilter
+//单一内置过滤器 GatewayFilter
 ```
 
-## 
+## 7、Nacos
+
+[官网](https://nacos.io/)  [中文文档](https://spring-cloud-alibaba-group.github.io/github-pages/2022/zh-cn/2022.0.0.0-RC2.html)
+
+Nacos 就是注册中心 + 配置中心，等价于 Consul
+
+Nacos 的下载：官网下载安装包，运行 bin 目录下 startup.cmd，访问 http://localhost:8848/nacos，默认账号密码都是 nacos
+
+### 7.1、服务注册与发现
+
+#### 服务提供者
+
+POM
+
+```xml
+<!--nacos-discovery-->
+<dependency>
+    <groupId>com.alibaba.cloud</groupId>
+    <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+</dependency>
+```
+
+YML
+
+```yml
+# application.yml
+server:
+  port: 9001
+
+spring:
+  application:
+    name: nacos-payment-provider # 提供者的服务名称
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848 #配置 Nacos 地址
+```
+
+启动类
+
+```java
+@SpringBootApplication
+@EnableDiscoveryClient
+public class Main9001
+{
+    public static void main(String[] args)
+    {
+        SpringApplication.run(Main9001.class,args);
+    }
+}
+```
+
+业务类
+
+```java
+@RestController
+public class PayAlibabaController
+{
+    @Value("${server.port}")
+    private String serverPort;
+
+    @GetMapping(value = "/pay/nacos/{id}")
+    public String getPayInfo(@PathVariable("id") Integer id)
+    {
+        return "nacos registry, serverPort: "+ serverPort+"\t id"+id;
+    }
+}
+```
+
+#### 服务消费者
+
+POM
+
+```xml
+<!--nacos-discovery-->
+<dependency>
+    <groupId>com.alibaba.cloud</groupId>
+    <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+</dependency>
+<!--loadbalancer-->
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-loadbalancer</artifactId>
+</dependency>
+```
+
+YML
+
+```yml
+server:
+  port: 83
+
+spring:
+  application:
+    name: nacos-order-consumer # 消费者的服务名称
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+# 消费者将要去访问的微服务名称(nacos 微服务提供者叫什么你写什么)
+service-url:
+  nacos-user-service: http://nacos-payment-provider # 提供者的 url
+```
+
+启动类
+
+```java
+@EnableDiscoveryClient
+@SpringBootApplication
+public class Main83
+{
+    public static void main(String[] args)
+    {
+        SpringApplication.run(Main83.class,args);
+    }
+}
+```
+
+业务类
+
+```java
+// RestTemplateConfig.java
+@Configuration
+public class RestTemplateConfig
+{
+    @Bean
+    @LoadBalanced //赋予 RestTemplate 负载均衡的能力
+    public RestTemplate restTemplate()
+    {
+        return new RestTemplate();
+    }
+}
+```
+
+```java
+// Controller
+@RestController
+public class OrderNacosController
+{
+    @Resource
+    private RestTemplate restTemplate;
+
+    @Value("${service-url.nacos-user-service}")
+    private String serverURL;
+
+    @GetMapping("/consumer/pay/nacos/{id}")
+    public String paymentInfo(@PathVariable("id") Integer id)
+    {
+        String result = restTemplate.getForObject(serverURL + "/pay/nacos/" + id, String.class);
+        return result+"\t"+"    我是OrderNacosController83调用者。。。。。。";
+    }
+}
+```
+
+### 7.2、配置中心
+
+[官方文档](https://nacos.io/zh-cn/docs/v2/ecology/use-nacos-with-spring-cloud.html)
+
+Nacos 作为配置中心的配置步骤：
+
+#### POM
+
+```xml
+ <!--bootstrap-->
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-bootstrap</artifactId>
+</dependency>
+<!--nacos-config-->
+<dependency>
+    <groupId>com.alibaba.cloud</groupId>
+    <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+</dependency>
+```
+
+Nacos 同 Consul一样，在项目初始化时，要保证先从配置中心进行配置拉取  
+拉取配置之后，才能保证项目的正常启动，为了满足动态刷新和全局广播通知
+
+springboot 中配置文件的加载是存在优先级顺序的，**bootstrap** 优先级高于 **application**
+
+#### YML
+
+bootstrap.yml
+
+```yml
+# nacos 配置
+spring:
+  application:
+    name: nacos-config-client
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848 #Nacos 服务注册中心地址
+      config:
+        server-addr: localhost:8848 #Nacos 作为配置中心地址
+        file-extension: yaml #指定 yaml 格式的配置
+
+# nacos 端配置文件 DataId 的命名规则是：
+# ${spring.application.name}-${spring.profile.active}.${spring.cloud.nacos.config.file-extension}
+# 本案例的 DataID 是:nacos-config-client-dev.yaml
+```
+
+application.yml
+
+```yml
+server:
+  port: 3377
+spring:
+  profiles:
+    active: dev # 表示开发环境
+       #active: prod # 表示生产环境
+       #active: test # 表示测试环境
+```
+
+#### 启动类
+
+```java
+@EnableDiscoveryClient
+@SpringBootApplication
+public class NacosConfigClient3377
+{
+    public static void main(String[] args)
+    {
+        SpringApplication.run(NacosConfigClient3377.class,args);
+    }
+}
+```
+
+#### 业务类
+
+```java
+@RestController
+@RefreshScope //在控制器类加入 @RefreshScope 注解使当前类下的配置支持Nacos的动态刷新功能。
+public class NacosConfigClientController
+{
+    @Value("${config.info}")
+    private String configInfo;
+
+    @GetMapping("/config/info")
+    public String getConfigInfo() {
+        return configInfo;
+    }
+}
+```
+
+#### 在 Nacos 中添加配置信息
+
+[DataId 的组成格式与配置规则](https://nacos.io/zh-cn/docs/v2/ecology/use-nacos-with-spring-cloud.html)：${spring.application.name}-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
+
+- prefix 默认为 spring.application.name 的值
+- spring.profile.active 即为当前环境对应的 profile，可以通过配置项 spring.profile.active 来配置
+- file-exetension 为配置内容的数据格式，可以通过配置项 spring.cloud.nacos.config.file-extension 来配置
+
+### 7.3、Namespace-Group-DataId
+
+一个系统通常有多个子项目，每个子项目通常有 dev、test、prod 环境，如何对每个项目每个环境进行分组，配置文件管理？
+
+Nacos data model：Namespace，Group，DataId
+
+DataId 方案：
+
+- 指定 spring.profile.active 和配置文件的 DataID 来使不同环境下读取不同的配置
+- 默认空间 public + 默认分组 DEFAULT_GROUP + 新建 DataId
+- 通过 spring.profile.active 属性就能进行多环境下配置文件的读取
+
+Group 方案：
+
+- 通过 Group 实现环境区分
+
+- 默认空间 public + 新建 PROD_GROUP + 新建 DataID
+
+- 修改 yaml，新增 group 配置
+
+  ```yml
+  # bootstrap.yml
+  # nacos 配置 第2种:默认空间 + 新建分组 + 新建 DataID
+  spring:
+    application:
+      name: nacos-config-client
+    cloud:
+      nacos:
+        discovery:
+          server-addr: localhost:8848 #Nacos服务注册中心地址
+        config:
+          server-addr: localhost:8848 #Nacos作为配置中心地址
+          file-extension: yaml #指定yaml格式的配置
+          group: PROD_GROUP
+  
+  # nacos端配置文件DataId的命名规则是：
+  # ${spring.application.name}-${spring.profile.active}.${spring.cloud.nacos.config.file-extension}
+  # 本案例的DataID是:nacos-config-client-dev.yaml
+  ```
+
+  ```yml
+  # application.yml
+  server:
+    port: 3377
+  
+  spring:
+    profiles:
+      #active: dev # 表示开发环境
+      #active: test # 表示测试环境
+      active: prod # 表示生产环境
+  ```
+
+Namespace 方案
+
+- 通过 Namespace 实现命名空间环境区分
+
+- Prod_Namespace + PROD_GROUP + DataID(nacos-config-client-prod.yaml)
+
+- 修改 yml，添加 namespace 字段
+
+  ```yml
+  # bootstrap.yml
+  # nacos配置 第3种:新建空间+新建分组+新建DataID
+  spring:
+    application:
+      name: nacos-config-client
+    cloud:
+      nacos:
+        discovery:
+          server-addr: localhost:8848 #Nacos服务注册中心地址
+        config:
+          server-addr: localhost:8848 #Nacos作为配置中心地址
+          file-extension: yaml #指定yaml格式的配置
+          group: PROD_GROUP
+          namespace: Prod_Namespace
+  
+  # nacos端配置文件DataId的命名规则是：
+  # ${spring.application.name}-${spring.profile.active}.${spring.cloud.nacos.config.file-extension}
+  # 本案例的DataID是:nacos-config-client-dev.yaml
+  ```
+
+  ```yml
+  # application.yml
+  server:
+    port: 3377
+  
+  spring:
+    profiles:
+      #active: dev # 表示开发环境
+      #active: test # 表示测试环境
+      active: prod # 表示生产环境
+  ```
+
+## 8、Sentinel 熔断与限流
+
+[官网](https://sentinelguard.io/zh-cn/) [GitHub](https://github.com/alibaba/Sentinel/wiki/%E4%B8%BB%E9%A1%B5)  [下载](https://github.com/alibaba/Sentinel/releases) 等价于 CircuitBreaker 
+
+作用：流量路由、流量控制、流量整形、熔断降级、系统自适应过载保护、热点流量防护
+
+解决
+
+- 服务雪崩
+
+  多个微服务之间调用的时候，假设微服务A调用微服务B和微服务C，微服务B和微服务C又调用其它的微服务，这就是所谓的“扇出”。如果扇出的链路上某个微服务的调用响应时间过长或者不可用，对微服务A的调用就会占用越来越多的系统资源，进而引起系统崩溃，所谓的“雪崩效应”。对于高流量的应用来说，单一的后端依赖可能会导致所有服务器上的所有资源都在几秒钟内饱和。比失败更糟糕的是，这些应用程序还可能导致服务之间的延迟增加，备份队列，线程和其他系统资源紧张，导致整个系统发生更多的级联故障。这些都表示需要对故障和延迟进行隔离和管理，以便单个依赖关系的失败，不能取消整个应用程序或系统。
+
+  复杂分布式体系结构中的应用程序有数十个依赖关系，每个依赖关系在某些时候将不可避免地失败。
+
+- 服务降级
+
+  是一种服务托底方案，如果服务无法完成正常的调用流程，就使用默认的托底方案来返回数据
+
+- 服务熔断
+
+  如果下游服务因为访问压力过大导致响应很慢或者一直调用失败时，上游服务为了保证系统的整体可用性，会暂时断开与下游服务的调用连接。这种方式就是熔断。类比保险丝达到最大服务访问后，直接拒绝访问，拉闸限电，然后调用服务降级的方法并返回友好提示。
+
+  服务熔断一般情况下会有三种状态：闭合、开启和半熔断：
+
+  - 闭合：服务一切正常，没有故障时，上游服务调用下游服务时，不会有任何限制
+  - 开启：上游服务不再调用下游服务的接口，会直接返回上游服务中预定的方法
+  - 半熔断状态：处于开启状态时，上游服务会根据一定的规则，尝试恢复对下游服务的调用
+
+- 服务限流
+
+  限制进入系统的流量，以防止进入系统的流量过大而压垮系统。防止瞬时流量过大使服务和数据崩溃；还可用于平滑请求，类似秒杀高并发等操作，严禁一窝蜂的过来拥挤，大家排队，一秒钟 N 个，有序进行。
+
+  限流算法有两种，一种就是简单的请求总量计数，一种就是时间窗口限流（一般为1s），如令牌桶算法和漏牌桶算法就是时间窗口的限流算法
+
+- 服务隔离
+
+  按照一定的规则将系统划分成多个服务模块，并且每个服务模块之间是互相独立的，不会存在强依赖的关系。如果某个拆分后的服务发生故障后，能够将故障产生的影响限制在某个具体的服务内，不会向其他服务扩散，自然也就不会对整体服务产生致命的影响
+
+  常用的服务隔离方式有：线程池隔离 和 信号量隔离
+
+- 服务超时
+
+  服务与服务之间互相调用的现象，从而形成一个个调用链。主动调用其他服务接口的服务处于调用链的上游，提供接口供其他服务调用的服务处于调用链的下游。服务超时就是在上游服务调用下游服务时，设置一个最大响应时间，如果超过这个最大响应时间下游服务还未返回结果，则断开上游服务与下游服务之间的请求连接，释放资源。
+
+sentinel 有两部分组成：
+
+- 核心库，运行与所有 Java 运行时环境
+- 控制台（Dashboard），基于 SpringBoot
+
+### 8.1 基本使用
+
+启动 Nacos 8848，Sentinel 8080
+
+新建微服务
+
+#### POM
+
+```xml
+<!--SpringCloud alibaba sentinel -->
+<dependency>
+    <groupId>com.alibaba.cloud</groupId>
+    <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+</dependency>
+```
+
+#### YML
+
+```yaml
+server:
+  port: 8401
+
+spring:
+  application:
+    name: cloudalibaba-sentinel-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848         #Nacos服务注册中心地址
+    sentinel:
+      transport:
+        dashboard: localhost:8080 #配置Sentinel dashboard控制台服务地址
+        port: 8719 #默认8719端口，假如被占用会自动从8719开始依次+1扫描,直至找到未被占用的端口
+```
+
+#### 主启动
+
+```java
+@EnableDiscoveryClient
+@SpringBootApplication
+public class Main8401
+{
+    public static void main(String[] args)
+    {
+        SpringApplication.run(Main8401.class,args);
+    }
+}
+```
+
+#### 业务类
+
+```java
+@RestController
+public class FlowLimitController
+{
+
+    @GetMapping("/testA")
+    public String testA()
+    {
+        return "------testA";
+    }
+
+    @GetMapping("/testB")
+    public String testB()
+    {
+        return "------testB";
+    }
+}
+```
+
+Sentinel 采用懒加载：
+
+- 想使用 Sentinel 对某个接口进行限流和降级等，一定要先访问下接口，使 Sentinel 检测出相应接口
+
+### 8.2、流量控制
+
+Sentinel 监控应用的 QPS 流量或者并发线程数等指标，如果达到指定的阈值时，就会被流量进行控制
+
+流控模式：
+
+- 直连：默认的流控模式，当接口达到限流条件时，直接开启限流功能。
+- 关联：当与 A 关联的资源B达到阀值后，就限流 A 自己（B 惹事，A 挂了）
+- 链路：来自不同链路的请求对同一个目标访问时，实施针对性的不同限流措施
+
+流控效果：
+
+- 直接：快速失败（默认的流控处理），直接抛出异常
+- 预热 WarmUp：https://github.com/alibaba/Sentinel/wiki/%E9%99%90%E6%B5%81---%E5%86%B7%E5%90%AF%E5%8A%A8
+- 排队等待：处理间隔性突发的流量
+
+### 8.3、熔断规则
+
+[官网](https://github.com/alibaba/Sentinel/wiki/%E7%86%94%E6%96%AD%E9%99%8D%E7%BA%A7) 
+
+### 8.4、@SentinelResource 注解
+
+SentinelResource 是一个流量防卫防护组件，用于指定防护资源，对配置的资源进行流量控制、熔断降级等功能。
+
+- 不使用注解的限流方式：按照 Rest 地址限流 + 默认限流返回
+
+- 按 SentinelResource 资源名称限流 + 自定义限流返回：
+
+  ```java
+  @RestController
+  @Slf4j
+  public class RateLimitController
+  {
+      @GetMapping("/rateLimit/byUrl")
+      public String byUrl()
+      {
+          return "按rest地址限流测试OK";
+      }
+  
+      @GetMapping("/rateLimit/byResource")
+      @SentinelResource(value = "byResourceSentinelResource",blockHandler = "handleException")
+      public String byResource()
+      {
+          return "按资源名称SentinelResource限流测试OK";
+      }
+      public String handleException(BlockException exception)
+      {
+          return "服务不可用@SentinelResource启动"+"\t"+"o(╥﹏╥)o";
+      }
+  }
+  ```
+
+  资源名：byResourceSentinelResource
+
+  自定义限流返回：handleException
+
+- 资源名称限流 + 自定义限流返回 + 服务降级处理
+
+  ```java
+  @GetMapping("/rateLimit/doAction/{p1}")
+  @SentinelResource(value = "doActionSentinelResource",
+          blockHandler = "doActionBlockHandler", fallback = "doActionFallback")
+  public String doAction(@PathVariable("p1") Integer p1) {
+      if (p1 == 0){
+          throw new RuntimeException("p1等于零直接异常");
+      }
+      return "doAction";
+  }
+  
+  public String doActionBlockHandler(@PathVariable("p1") Integer p1,BlockException e){
+      log.error("sentinel配置自定义限流了:{}", e);
+      return "sentinel配置自定义限流了";
+  }
+  
+  public String doActionFallback(@PathVariable("p1") Integer p1,Throwable e){
+      log.error("程序逻辑异常了:{}", e);
+      return "程序逻辑异常了"+"\t"+e.getMessage();
+  }
+  ```
+
+### 8.5、热点规则
+
+https://github.com/alibaba/Sentinel/wiki/%E7%83%AD%E7%82%B9%E5%8F%82%E6%95%B0%E9%99%90%E6%B5%81
+
+统计或者限制某个热点数据中访问频次最高的 TopN 数据，并对其访问进行限流或者其它操作
+
+```java
+@GetMapping("/testHotKey")
+@SentinelResource(value = "testHotKey",blockHandler = "dealHandler_testHotKey")
+public String testHotKey(@RequestParam(value = "p1",required = false) String p1, 
+                         @RequestParam(value = "p2",required = false) String p2){
+    return "------testHotKey";
+}
+public String dealHandler_testHotKey(String p1,String p2,BlockException exception)
+{
+    return "-----dealHandler_testHotKey";
+}
+```
+
+配置：方法 testHotKey 里面第一个参数 P1 只要 QPS 超过每秒 1 次，马上降级处理
+
+热点参数的注意点，参数必须是基本类型或者 String
+
+### 8.6、授权规则
+
+https://github.com/alibaba/Sentinel/wiki/%E9%BB%91%E7%99%BD%E5%90%8D%E5%8D%95%E6%8E%A7%E5%88%B6
+
+在 Sentinel 的授权规则中，提供了 白名单与黑名单 两种授权类型。白放行、黑禁止（监控请求参数）
+
+### 8.7、规则持久化：
+
+#### POM
+
+```xml
+<!--SpringCloud ailibaba sentinel-datasource-nacos -->
+<dependency>
+    <groupId>com.alibaba.csp</groupId>
+    <artifactId>sentinel-datasource-nacos</artifactId>
+</dependency>
+```
+
+YML：添加 Nacos 数据源配置
+
+```yaml
+spring:
+  cloud:
+    sentinel:
+      datasource: # Sentinel 持久化配置
+        ds1:  # 自定义 Key，也可称为限流类型
+          nacos:
+            server-addr: localhost:8848 # nacos
+            dataId: ${spring.application.name}
+            groupId: DEFAULT_GROUP
+            data-type: json
+            rule-type: flow # 流控规则
+```
+
+添加 Nacos 业务配置规则：
+
+填写 Data ID，配置格式 Json
+
+```json
+[
+    {
+        "resource": "/rateLimit/byUrl",
+        "limitApp": "default",
+        "grade": 1,
+        "count": 1,
+        "strategy": 0,
+        "controlBehavior": 0,
+        "clusterMode": false
+    }
+]
+```
+
+### 8.8、OpenFeign 和 Sentinel 集成实现 fallback 服务降级
+
+访问者要有 fallback 服务降级的情况，不要持续访问加大微服务负担，但是通过 feign 接口调用的又方法各自不同，如果每个不同方法都加一个 fallback 配对方法，会导致代码膨胀不好管理
+
+解决方式：
+
+- OpenFeign 接口的统一 fallback 服务降级处理
+- Sentinel 访问触发了自定义的限流配置，在注解 @SentinelResource 里面配置的 blockHandler 方法
+
+#### 案例：
+
+##### 服务提供方：
+
+POM
+
+```xml
+<!--openfeign-->
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-openfeign</artifactId>
+</dependency>
+<!--alibaba-sentinel-->
+<dependency>
+    <groupId>com.alibaba.cloud</groupId>
+    <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+</dependency>
+```
+
+yml
+
+```yml
+sentinel:
+      transport:
+        dashboard: localhost:8080 #配置Sentinel dashboard控制台服务地址
+        port: 8719 #默认8719端口，假如被占用会自动从8719开始依次+1扫描,直至找到未被占用的端口
+```
+
+启动类
+
+```java
+@SpringBootApplication
+@EnableDiscoveryClient
+public class Main9001
+{
+    public static void main(String[] args)
+    {
+        SpringApplication.run(Main9001.class,args);
+    }
+}
+```
+
+业务类
+
+```java
+@RestController
+public class PayAlibabaController
+{
+    @Value("${server.port}")
+    private String serverPort;
+
+    @GetMapping(value = "/pay/nacos/{id}")
+    public String getPayInfo(@PathVariable("id") Integer id)
+    {
+        return "nacos registry, serverPort: "+ serverPort+"\t id"+id;
+    }
+
+    @GetMapping("/pay/nacos/get/{orderNo}")
+    @SentinelResource(value = "getPayByOrderNo",blockHandler = "handlerBlockHandler")
+    public ResultData getPayByOrderNo(@PathVariable("orderNo") String orderNo)
+    {
+        //模拟从数据库查询出数据并赋值给DTO
+        PayDTO payDTO = new PayDTO();
+
+        payDTO.setId(1024);
+        payDTO.setOrderNo(orderNo);
+        payDTO.setAmount(BigDecimal.valueOf(9.9));
+        payDTO.setPayNo("pay:"+IdUtil.fastUUID());
+        payDTO.setUserId(1);
+
+        return ResultData.success("查询返回值："+payDTO);
+    }
+    public ResultData handlerBlockHandler(@PathVariable("orderNo") String orderNo,BlockException exception)
+    {
+        return ResultData.fail(ReturnCodeEnum.RC500.getCode(),"getPayByOrderNo服务不可用，" +
+                "触发sentinel流控配置规则"+"\t"+"o(╥﹏╥)o");
+    }
+    /*
+    fallback服务降级方法纳入到Feign接口统一处理，全局一个
+    public ResultData myFallBack(@PathVariable("orderNo") String orderNo,Throwable throwable)
+    {
+        return ResultData.fail(ReturnCodeEnum.RC500.getCode(),"异常情况："+throwable.getMessage());
+    }
+    */
+}
+```
+
+##### 修改 api-commons（feign）
+
+POM
+
+```xml
+<!--openfeign-->
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-openfeign</artifactId>
+</dependency>
+<!--alibaba-sentinel-->
+<dependency>
+    <groupId>com.alibaba.cloud</groupId>
+    <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+</dependency>
+<!-- 引入自己定义的api通用包 -->
+<dependency>
+    <groupId>com.atguigu.cloud</groupId>
+    <artifactId>cloud-api-commons</artifactId>
+    <version>1.0-SNAPSHOT</version>
+</dependency>
+```
+
+新增 PayFeignSentinelApi 接口
+
+```java
+@FeignClient(value = "nacos-payment-provider",fallback = PayFeignSentinelApiFallBack.class)
+public interface PayFeignSentinelApi
+{
+    @GetMapping("/pay/nacos/get/{orderNo}")
+    public ResultData getPayByOrderNo(@PathVariable("orderNo") String orderNo);
+}
+```
+
+新建全局统一服务降级类
+
+```java
+@Component
+public class PayFeignSentinelApiFallBack implements PayFeignSentinelApi
+{
+    @Override
+    public ResultData getPayByOrderNo(String orderNo)
+    {
+        return ResultData.fail(ReturnCodeEnum.RC500.getCode(),"对方服务宕机或不可用，FallBack服务降级o(╥﹏╥)o");
+    }
+}
+```
+
+##### 修改服务消费者
+
+POM
+
+```xml
+<!-- 引入自己定义的api通用包 -->
+<dependency>
+    <groupId>com.atguigu.cloud</groupId>
+    <artifactId>cloud-api-commons</artifactId>
+    <version>1.0-SNAPSHOT</version>
+</dependency>
+<!--openfeign-->
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-openfeign</artifactId>
+</dependency>
+<!--alibaba-sentinel-->
+<dependency>
+    <groupId>com.alibaba.cloud</groupId>
+    <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+</dependency>
+```
+
+YML
+
+```yml
+# 激活Sentinel对Feign的支持
+feign:
+  sentinel:
+    enabled: true
+```
+
+启动类
+
+```java
+@EnableDiscoveryClient
+@SpringBootApplication
+@EnableFeignClients
+public class Main83
+{
+    public static void main(String[] args)
+    {
+        SpringApplication.run(Main83.class,args);
+    }
+}
+```
+
+业务类
+
+```java
+@RestController
+public class OrderNacosController
+{
+    @Resource
+    private RestTemplate restTemplate;
+    @Resource
+    private PayFeignSentinelApi payFeignSentinelApi;
+
+    @Value("${service-url.nacos-user-service}")
+    private String serverURL;
+
+    @GetMapping("/consumer/pay/nacos/{id}")
+    public String paymentInfo(@PathVariable("id") Integer id)
+    {
+        String result = restTemplate.getForObject(serverURL + "/pay/nacos/" + id, String.class);
+        return result+"\t"+"    我是OrderNacosController83调用者。。。。。。";
+    }
+
+    @GetMapping(value = "/consumer/pay/nacos/get/{orderNo}")
+    public ResultData getPayByOrderNo(@PathVariable("orderNo") String orderNo)
+    {
+        return payFeignSentinelApi.getPayByOrderNo(orderNo);
+    }
+}
+```
+
+### 8.9、GateWay 和 Sentinel 集成实现服务限流
+
+GateWay 保护服务提供者
+
+## 9、Seata
+
+一次业务操作需要跨 **多个数据源** 或多个系统进行远程调用，就会产生分布式事务问题
+
+关系型数据库提供的能力是基于 **单机事务** 的，一旦遇到分布式事务场景，就需要通过更多其他技术手段来解决问题
+
+Seata：简单可扩展自治事务框架，一款开源的分布式事务解决方案，致力于在微服务架构下提供高性能和简单易用的分布式事务服务
+
+[官网](https://seata.io/zh-cn/index.html) [源码](https://github.com/seata/seata/releases) [下载](https://seata.io/zh-cn/unversioned/download/seata-server) 
+
+下载 Seata 后，在数据库中添加 Seata 库，备份 conf 下的 application.yml，添加新的 yml
+
+```yml
+server:
+  port: 7091
+spring:
+  application:
+    name: seata-server
+logging:
+  config: classpath:logback-spring.xml
+  file:
+    path: ${log.home:${user.home}/logs/seata}
+  extend:
+    logstash-appender:
+      destination: 127.0.0.1:4560
+    kafka-appender:
+      bootstrap-servers: 127.0.0.1:9092
+      topic: logback_to_logstash
+console:
+  user:
+    username: seata
+    password: seata
+seata:
+  config:
+    type: nacos
+    nacos:
+      server-addr: 127.0.0.1:8848
+      namespace:
+      group: SEATA_GROUP #后续自己在nacos里面新建,不想新建SEATA_GROUP，就写DEFAULT_GROUP
+      username: nacos
+      password: nacos
+  registry:
+    type: nacos
+    nacos:
+      application: seata-server
+      server-addr: 127.0.0.1:8848
+      group: SEATA_GROUP #后续自己在nacos里面新建,不想新建SEATA_GROUP，就写DEFAULT_GROUP
+      namespace:
+      cluster: default
+      username: nacos
+      password: nacos    
+  store:
+    mode: db
+    db:
+      datasource: druid
+      db-type: mysql
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/seata?characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8&rewriteBatchedStatements=true&allowPublicKeyRetrieval=true
+      user: root
+      password: 123456
+      min-conn: 10
+      max-conn: 100
+      global-table: global_table
+      branch-table: branch_table
+      lock-table: lock_table
+      distributed-lock-table: distributed_lock
+      query-limit: 1000
+      max-wait: 5000
+  #  server:
+  #    service-port: 8091 #If not configured, the default is '${server.port} + 1000'
+  security:
+    secretKey: SeataSecretKey0c382ef121d778043159209298fd40bf3850a017
+    tokenValidityInMilliseconds: 1800000
+    ignore:
+      urls: /,/**/*.css,/**/*.js,/**/*.html,/**/*.map,/**/*.svg,/**/*.png,/**/*.jpeg,/**/*.ico,/api/v1/auth/login,/metadata/v1/**
+```
+
+### 9.1、Seata 工作流程
+
+纵观整个分布式事务的管理，就是全局事务ID的传递和变更，要让开发者无感知
+
+1 个 XID
+
+- XID 是全局事务的唯一标识，它可以在服务的调用链路中传递，绑定到服务的事务上下文中
+
+TC、TM、RM
+
+- TC（Transaction Coordinator）事务协调器：就是 Seata，维护全局事务和分支事务的状态，驱动全局事务提交或回滚
+- TM（Transaction Manager）事务管理器：标注全局 @GlobalTransaction 启动入口动作的微服务模块。它是事务的发起者，负责定义全局事务的范围，并根据 TC 维护的全局事务和分支事务状态，做出开始事务、提交事务、回滚事务的决议
+- RM（Resource Manager）资源管理器：mysql 数据本身，可以是多个 RM，负责管理分支事务上的资源，向 TC 注册分支事务，汇报分支事务状态，驱动分支事务的提交或回滚
+
+![image-20240522162640287](E:\Study\=my repo\vuepress-hope-bloc\my-docs\src\code\java\assets\image-20240522162640287.png)
+
+### 9.2、案例
+
+目前有三个数据库：订单，库存，账户。当用户下单时，会在订单服务中创建一个订单，然后通过远程调用库存服务来扣减下单商品的库存，再通过远程调用账户服务来扣减用户账户里面的余额，最后在订单服务中修改订单状态为已完成。
+
+为上述数据库分别创建 undo_log 表（[AT 模式 ](https://seata.io/zh-cn/docs/user/mode/at/)专用）[表案例](https://github.com/seata/seata/blob/2.x/script/client/at/db/mysql.sql)
+
+为业务添加 OpenFeign 接口，为上述三个微服务模块添加 Seata 的 yml
+
+```yml
+seata:
+  registry:
+    type: nacos
+    nacos:
+      server-addr: 127.0.0.1:8848
+      namespace: ""
+      group: SEATA_GROUP
+      application: seata-server
+  tx-service-group: default_tx_group # 事务组，由它获得TC服务的集群名称
+  service:
+    vgroup-mapping: # 点击源码分析
+      default_tx_group: default # 事务组与TC服务集群的映射关系
+  data-source-proxy-mode: AT
+
+logging:
+  level:
+    io:
+      seata: info
+```
+
+对于订单业务模块的 ServiceImpl 代码，在订单模块下添加 **@GlobalTransactional** 完成分布式事务：
+
+```java
+/*
+* 下订单->减库存->扣余额->改(订单)状态
+*/
+@Slf4j
+@Service
+public class OrderServiceImpl implements OrderService
+{
+    @Resource
+    private OrderMapper orderMapper;
+    @Resource//订单微服务通过OpenFeign去调用库存微服务
+    private StorageFeignApi storageFeignApi;
+    @Resource//订单微服务通过OpenFeign去调用账户微服务
+    private AccountFeignApi accountFeignApi;
+
+
+    @Override
+    @GlobalTransactional(name = "zzyy-create-order",rollbackFor = Exception.class) //AT
+    //@GlobalTransactional @Transactional(rollbackFor = Exception.class) //XA
+    public void create(Order order) {
+
+        //xid检查
+        String xid = RootContext.getXID();
+
+        //1. 新建订单
+        log.info("==================>开始新建订单"+"\t"+"xid_order:" +xid);
+        //订单状态status：0：创建中；1：已完结
+        order.setStatus(0);
+        int result = orderMapper.insertSelective(order);
+
+        //插入订单成功后获得插入 mysql 的实体对象
+        Order orderFromDB = null;
+        if(result > 0)
+        {
+            orderFromDB = orderMapper.selectOne(order);
+            //orderFromDB = orderMapper.selectByPrimaryKey(order.getId());
+            log.info("-------> 新建订单成功，orderFromDB info: "+orderFromDB);
+
+            //2. 扣减库存
+            log.info("-------> 订单微服务开始调用Storage库存，做扣减count");
+            storageFeignApi.decrease(orderFromDB.getProductId(), orderFromDB.getCount());
+            log.info("-------> 订单微服务结束调用Storage库存，做扣减完成");
+
+            //3. 扣减账号余额
+            log.info("-------> 订单微服务开始调用Account账号，做扣减money");
+            accountFeignApi.decrease(orderFromDB.getUserId(), orderFromDB.getMoney());
+            log.info("-------> 订单微服务结束调用Account账号，做扣减完成");
+            System.out.println();
+            //4. 修改订单状态
+            //订单状态status：0：创建中；1：已完结
+            log.info("-------> 修改订单状态");
+            orderFromDB.setStatus(1);
+
+            Example whereCondition=new Example(Order.class);
+            Example.Criteria criteria=whereCondition.createCriteria();
+            criteria.andEqualTo("userId",orderFromDB.getUserId());
+            criteria.andEqualTo("status",0);
+
+            int updateResult = orderMapper.updateByExampleSelective(orderFromDB, whereCondition);
+
+            log.info("-------> 修改订单状态完成"+"\t"+updateResult);
+            log.info("-------> orderFromDB info: "+orderFromDB);
+        }
+        System.out.println();
+        log.info("==================>结束新建订单"+"\t"+"xid_order:" +xid);
+    }
+}
+```
+
+### 9.3、原理
+
+AT 模式整体机制（两阶段）
+
+- 一阶段：业务数据和回滚日志记录在同一个本地事务中提交，释放本地锁和连接资源
+- 二阶段：
+  - 提交异步化，非常快速完成
+  - 回滚通过一阶段的回滚日志进行反向补偿、
+
+一阶段：
+
+- Seata 拦截 SQL，解析 SQL 语义，找到「业务 SQL」要更新的业务数据，在业务数据被更新前，将其保存成 before image
+-  执行“业务 SQL”更新业务数据，在业务数据更新之后，其保存成 after image，最后生成行锁
+
+二阶段：
+
+- 正常提交：只需将一阶段保存的快照数据和行锁删掉，完成数据清理即可
+- 异常回滚：
+  - Seata 需要回滚一阶段已经执行的「业务 SQL」，还原业务数据
+  - 用 before image 还原业务数据；但在还原前要首先要校验脏写，对比数据库当前业务数据和 after image
+  - 如果两份数据完全一致就说明没有脏写，可以还原业务数据，如果不一致就说明有脏写，出现脏写就需要转人工处理。
+
+
+
