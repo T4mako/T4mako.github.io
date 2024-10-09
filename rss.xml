@@ -6,20 +6,53 @@
     <link>https://T4mako.github.io/</link>
     <description>T4mako</description>
     <language>zh-CN</language>
-    <pubDate>Mon, 17 Jun 2024 11:04:07 GMT</pubDate>
-    <lastBuildDate>Mon, 17 Jun 2024 11:04:07 GMT</lastBuildDate>
+    <pubDate>Wed, 09 Oct 2024 13:57:43 GMT</pubDate>
+    <lastBuildDate>Wed, 09 Oct 2024 13:57:43 GMT</lastBuildDate>
     <generator>vuepress-plugin-feed2</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
-    <category>机器学习</category>
     <category>算法</category>
+    <category>机器学习</category>
     <category>JS</category>
     <category>多线程</category>
     <category>java</category>
     <category>TypeScript</category>
     <item>
+      <title>119. 杨辉三角 II</title>
+      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_119_%E6%9D%A8%E8%BE%89%E4%B8%89%E8%A7%92%20II.html</link>
+      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_119_%E6%9D%A8%E8%BE%89%E4%B8%89%E8%A7%92%20II.html</guid>
+      <source url="https://T4mako.github.io/rss.xml">119. 杨辉三角 II</source>
+      <description>119. 杨辉三角 II</description>
+      <category>算法</category>
+      <pubDate>Thu, 05 Sep 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<h1> 119. 杨辉三角 II</h1>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>118. 杨辉三角</title>
+      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_118_%E6%9D%A8%E8%BE%89%E4%B8%89%E8%A7%92.html</link>
+      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_118_%E6%9D%A8%E8%BE%89%E4%B8%89%E8%A7%92.html</guid>
+      <source url="https://T4mako.github.io/rss.xml">118. 杨辉三角</source>
+      <description>118. 杨辉三角</description>
+      <category>算法</category>
+      <pubDate>Wed, 04 Sep 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<h1> 118. 杨辉三角</h1>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>875. 爱吃香蕉的珂珂</title>
+      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_876_%E9%93%BE%E8%A1%A8%E7%9A%84%E4%B8%AD%E9%97%B4%E7%BB%93%E7%82%B9.html</link>
+      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_876_%E9%93%BE%E8%A1%A8%E7%9A%84%E4%B8%AD%E9%97%B4%E7%BB%93%E7%82%B9.html</guid>
+      <source url="https://T4mako.github.io/rss.xml">875. 爱吃香蕉的珂珂</source>
+      <description>875. 爱吃香蕉的珂珂</description>
+      <category>算法</category>
+      <pubDate>Wed, 19 Jun 2024 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<h1> 875. 爱吃香蕉的珂珂</h1>
+]]></content:encoded>
+    </item>
+    <item>
       <title>强化学习</title>
-      <link>https://T4mako.github.io/code/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0.html</link>
-      <guid>https://T4mako.github.io/code/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0.html</guid>
+      <link>https://T4mako.github.io/code/python/Machine%20Learning/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0.html</link>
+      <guid>https://T4mako.github.io/code/python/Machine%20Learning/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0.html</guid>
       <source url="https://T4mako.github.io/rss.xml">强化学习</source>
       <description>视频 参考笔记： https://blog.csdn.net/xyk_hust/category_8003647.html</description>
       <category>机器学习</category>
@@ -2552,103 +2585,6 @@ JDK5.0 以后每个线程堆栈大小为 1M，以前每个线程堆栈大小为 
 <div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，类型 F 就是一个构造函数。类型写成一个可执行对象的形式，并且在参数列表前面要加上<code>new</code>命令。</p>
 <p>某些函数既是构造函数，又可以当作普通函数使用，比如<code>Date()</code>。这时，类型声明可以写成下面这样。</p>
 <div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，F 既可以当作普通函数执行，也可以当作构造函数使用。</p>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>2095. 删除链表的中间节点</title>
-      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_2095_%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E4%B8%AD%E9%97%B4%E8%8A%82%E7%82%B9.html</link>
-      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_2095_%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E4%B8%AD%E9%97%B4%E8%8A%82%E7%82%B9.html</guid>
-      <source url="https://T4mako.github.io/rss.xml">2095. 删除链表的中间节点</source>
-      <description>2095. 删除链表的中间节点</description>
-      <category>算法</category>
-      <pubDate>Tue, 15 Aug 2023 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<h1> 2095. 删除链表的中间节点</h1>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>328. 奇偶链表</title>
-      <link>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_328_%E5%A5%87%E5%81%B6%E9%93%BE%E8%A1%A8.html</link>
-      <guid>https://T4mako.github.io/code/leetcode/%E7%AE%97%E6%B3%95/leetcode_328_%E5%A5%87%E5%81%B6%E9%93%BE%E8%A1%A8.html</guid>
-      <source url="https://T4mako.github.io/rss.xml">328. 奇偶链表</source>
-      <description>328. 奇偶链表</description>
-      <category>算法</category>
-      <pubDate>Tue, 15 Aug 2023 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<h1> 328. 奇偶链表</h1>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>any，unknown ，never 类型</title>
-      <link>https://T4mako.github.io/code/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/TypeScript/3%E3%80%81any%EF%BC%8Cunknown%20%EF%BC%8Cnever%20%E7%B1%BB%E5%9E%8B.html</link>
-      <guid>https://T4mako.github.io/code/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/TypeScript/3%E3%80%81any%EF%BC%8Cunknown%20%EF%BC%8Cnever%20%E7%B1%BB%E5%9E%8B.html</guid>
-      <source url="https://T4mako.github.io/rss.xml">any，unknown ，never 类型</source>
-      <description>三、any，unknown ，never 类型 1、any 类型 1.1、基本含义 any 类型表示没有任何限制，该类型的变量可以赋予任意类型的值。 let x:any; x = 1; // 正确 x = &amp;apos;foo&amp;apos;; // 正确 x = true; // 正确 let x:any = &amp;apos;hello&amp;apos;; x(1) // 不报错 x.foo = 100; // 不报错</description>
-      <category>TypeScript</category>
-      <pubDate>Mon, 14 Aug 2023 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<h2> 三、any，unknown ，never 类型</h2>
-<h3> 1、any 类型</h3>
-<h4> 1.1、基本含义</h4>
-<p>any 类型表示没有任何限制，该类型的变量可以赋予任意类型的值。</p>
-<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>变量类型一旦设为<code>any</code>，TypeScript 实际上会关闭这个变量的类型检查。只要句法正确，都不会报错。</p>
-<p>由于这个原因，应该尽量避免使用<code>any</code>类型，否则就失去了使用 TypeScript 的意义。</p>
-<p><code>any</code>类型主要适用以下两个场合：</p>
-<ol>
-<li>需要关闭某些变量的类型检查</li>
-<li>为了适配以前老的 JavaScript 项目，让代码快速迁移到 TypeScript，可以把变量类型设为<code>any</code></li>
-</ol>
-<h4> 1.2、类型推断问题</h4>
-<p>对于开发者没有指定类型、TypeScript 必须自己推断类型的那些变量，如果无法推断出类型，TypeScript 就会认为该变量的类型是<code>any</code></p>
-<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，函数<code>add()</code>的参数变量<code>x</code>和<code>y</code>，都没有足够的信息，TypeScript 无法推断出它们的类型，就会认为这两个变量和函数返回值的类型都是<code>any</code>。以至于后面就不再对函数<code>add()</code>进行类型检查了，怎么用都可以。</p>
-<p>TypeScript 提供了一个编译选项<code>noImplicitAny</code>，打开该选项，只要推断出<code>any</code>类型就会报错。</p>
-<div class="language-bash line-numbers-mode" data-ext="sh"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>这里有一个特殊情况，即使打开了<code>noImplicitAny</code>，使用<code>let</code>和<code>var</code>命令声明变量，但不赋值也不指定类型，是不会报错的。</p>
-<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><div class="hint-container info">
-<p class="hint-container-title">相关信息</p>
-<p>建议使用<code>let</code>和<code>var</code>声明变量时，如果不赋值，就一定要显式声明类型，否则可能存在安全隐患。</p>
-<p><code>const</code>命令没有这个问题，因为 JavaScript 语言规定<code>const</code>声明变量时，必须同时进行初始化（赋值）</p>
-<p><code>const</code>命令声明的<code>x</code>是不能改变值的，声明时必须同时赋值，否则报错，所以它不存在类型推断为<code>any</code>的问题。</p>
-<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div></div>
-<h4> 1.3、污染问题</h4>
-<p><code>any</code>类型除了关闭类型检查，还有一个很大的问题，就是它会“污染”其他变量。它可以赋值给其他任何类型的变量（因为没有类型检查），导致其他变量出错。</p>
-<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="hint-container info">
-<p class="hint-container-title">相关信息</p>
-<p>污染其他具有正确类型的变量，把错误留到运行时，这就是不宜使用<code>any</code>类型的另一个主要原因。</p>
-</div>
-<h3> 2、unknown 类型</h3>
-<p>为了解决<code>any</code>类型“污染”其他变量的问题，TypeScript 3.0 引入了<a href="https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-0.html#new-unknown-top-type" target="_blank" rel="noopener noreferrer"><code>unknown</code>类型</a>。它与<code>any</code>含义相同，表示类型不确定，可能是任意类型，但是它的使用有一些限制，不像<code>any</code>那样自由，可以视为 <strong>严格版的<code>any</code></strong>。</p>
-<p><code>unknown</code>跟<code>any</code>的<strong>相似</strong>之处，在于所有类型的值都可以分配给<code>unknown</code>类型。</p>
-<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><code>unknown</code>类型跟<code>any</code>类型的不同之处在于，它不能直接使用。主要有以下几个限制。</p>
-<ol>
-<li>
-<p><code>unknown</code>类型的变量，不能直接赋值给其他类型的变量（除了<code>any</code>类型和<code>unknown</code>类型）。</p>
-<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>变量<code>v</code>是<code>unknown</code>类型，<strong>赋值给<code>any</code>和<code>unknown</code>以外类型的变量都会报错</strong>，这就避免了污染问题，从而克服了<code>any</code>类型的一大缺点。</p>
-</li>
-<li>
-<p>不能直接调用<code>unknown</code>类型变量的方法和属性。</p>
-<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>直接调用<code>unknown</code>类型变量的属性和方法，或者直接当作函数执行，都会报错。</p>
-</li>
-<li>
-<p>再次，<code>unknown</code>类型变量能够进行的运算是有限的</p>
-<p>只能进行比较运算（运算符<code>==</code>、<code>===</code>、<code>!=</code>、<code>!==</code>、<code>||</code>、<code>&amp;&amp;</code>、<code>?</code>）、取反运算（运算符<code>!</code>）、<code>typeof</code>运算符和<code>instanceof</code>运算符这几种，其他运算都会报错。</p>
-<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></li>
-<li>
-<p>使用<code>unknown</code>类型变量</p>
-<p>只有经过“<strong>类型缩小</strong>”，<code>unknown</code>类型变量才可以使用。所谓“类型缩小”，就是缩小<code>unknown</code>变量的类型范围，确保不会出错。</p>
-<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，<code>unknown</code>类型的变量<code>a</code>经过**<code>typeof</code>**运算以后，能够确定实际类型是<code>number</code>，就能用于加法运算了。这就是“类型缩小”，即将一个不确定的类型缩小为更明确的类型。</p>
-<p><code>unknown</code>可以看作是更安全的<code>any</code>。一般来说，凡是需要设为<code>any</code>类型的地方，通常都应该优先考虑设为<code>unknown</code>类型。</p>
-<p>在集合论上，<code>unknown</code>也可以视为所有其他类型（除了<code>any</code>）的全集，所以它和<code>any</code>一样，也属于 TypeScript 的顶层类型。</p>
-</li>
-</ol>
-<h3> 3、never 类型</h3>
-<p>为了保持与集合论的对应关系，以及类型运算的完整性，TypeScript 还引入了“<strong>空类型</strong>”的概念，即该类型为空，不包含任何值。</p>
-<p>由于不存在任何属于“空类型”的值，所以该类型被称为<code>never</code>，即不可能有这样的值。</p>
-<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>上面示例中，变量<code>x</code>的类型是<code>never</code>，就不可能赋给它任何值，否则都会报错。</p>
-<p><code>never</code>类型的使用场景，主要是在一些类型运算之中，保证类型运算的完整性，详见后面章节。<br>
-另外，不可能返回值的函数，返回值的类型就可以写成<code>never</code>，详见《函数》一章。</p>
-<p>如果一个变量可能有多种类型（即联合类型），通常需要使用分支处理每一种类型。这时，处理所有可能的类型之后，剩余的情况就属于<code>never</code>类型。</p>
-<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，参数变量<code>x</code>可能是字符串，也可能是数值，判断了这两种情况后，剩下的最后那个<code>else</code>分支里面，<code>x</code>就是<code>never</code>类型了。</p>
-<p><strong><code>never</code>类型的一个重要特点是，可以赋值给任意其他类型。</strong></p>
-<div class="language-typescript line-numbers-mode" data-ext="ts"><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>上面示例中，函数<code>f()</code>会抛错，所以返回值类型可以写成<code>never</code>，即不可能返回任何值。各种其他类型的变量都可以赋值为<code>f()</code>的运行结果（<code>never</code>类型）。</p>
-<p>为什么<code>never</code>类型可以赋值给任意其他类型呢？这也跟集合论有关，空集是任何集合的子集。TypeScript 就相应规定，任何类型都包含了<code>never</code>类型。因此，<code>never</code>类型是任何其他类型所共有的，TypeScript 把这种情况称为“底层类型”（bottom type）。</p>
-<p>总之，TypeScript 有两个“<strong>顶层类型</strong>”（<code>any</code>和<code>unknown</code>），但是“<strong>底层类型</strong>”只有<code>never</code>唯一一个。</p>
 ]]></content:encoded>
     </item>
   </channel>
