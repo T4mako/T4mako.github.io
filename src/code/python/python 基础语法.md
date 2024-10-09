@@ -401,6 +401,10 @@ for k in d1:
 
 # 元素数量
 len(d1)
+
+# 判断是否包含 key
+if(k in d1):
+    print(123)
 ```
 
 | 序号 | 函数及描述                                                   |
@@ -417,6 +421,61 @@ len(d1)
 | 10   | dict.values()以列表返回字典中的所有值                        |
 | 11   | pop(key[,default\])删除字典给定键 key 所对应的值，返回值为被删除的值。key值必须给出。 否则，返回default值。 |
 | 12   | popitem()返回并删除字典中的最后一对键和值。                  |
+
+### Python 推导式
+
+#### 列表推导式
+
+格式：`[表达式 for 变量 in 列表] ` 或 `[表达式 for 变量 in 列表 if 条件]`
+
+- 表达式：新列表元素的表达式，可以是有返回值的函数
+- 条件：过滤列表中不符合条件的值
+
+```py
+names = ['Bob','Tom','alice','Jerry','Wendy','Smith']
+new_names = [name.upper()for name in names if len(name)>3]
+print(new_names) # ['ALICE', 'JERRY', 'WENDY', 'SMITH']
+
+multiples = [i for i in range(30) if i % 3 == 0]
+print(multiples) # [0, 3, 6, 9, 12, 15, 18, 21, 24, 27]
+```
+
+#### 字典推导式
+
+格式：`{ k 表达式: v 表达式 for 变量 in 集合}` 或 ` {k 表达式: v 表达式 for 变量 in 集合 if 条件}`
+
+```py
+listdemo = ['Google','Runoob', 'Taobao']
+# 将列表中各字符串值为键，各字符串的长度为值，组成键值对
+newdict = {key:len(key) for key in listdemo}
+newdict
+{'Google': 6, 'Runoob': 6, 'Taobao': 6}
+```
+
+#### 集合推导式
+
+格式：`{ expression for item in Sequence }` 或 `{ expression for item in Sequence if conditional }`
+
+```py
+a = {x for x in 'abracadabra' if x not in 'abc'}
+a # {'d', 'r'}
+```
+
+#### 元组推导式
+
+元组推导式可以利用 range 区间、元组、列表、字典和集合等数据类型，快速生成一个满足指定需求的元组
+
+元组推导式是用 () 圆括号将各部分括起来，而列表推导式用的是中括号 []，元组推导式返回的结果是一个 **生成器对象**。
+
+格式：`(expression for item in Sequence )` 或 `(expression for item in Sequence if conditional )`
+
+```py
+ a = (x for x in range(1,10))
+a # <generator object <genexpr> at 0x7faf6ee20a50>  返回的是生成器对象
+
+tuple(a)       # 使用 tuple() 函数，可以直接将生成器对象转换成元组
+(1, 2, 3, 4, 5, 6, 7, 8, 9)
+```
 
 ## 2、注释，输出输出
 
@@ -1106,7 +1165,7 @@ def func(data: Union[int,str]) -> Union[int,str]:
 
 使用函数的嵌套完成闭包的需求
 
-### 简单闭包：
+### 简单闭包
 
 ```py
 def outer(o):

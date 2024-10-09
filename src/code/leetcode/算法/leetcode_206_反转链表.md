@@ -18,6 +18,7 @@ tag:
 - 定义两个指针，初始指向 null 和 head 
 - 在两个指针不断后移吧并改变指针的指向，时间复杂度为O(n)
 
+
 ```java
 class Solution {
     public ListNode reverseList(ListNode head) {
