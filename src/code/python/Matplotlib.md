@@ -1,3 +1,5 @@
+# Matplotlib绘图
+
 ## 1、Matplotlib Pyplot
 
 Matplotlib 是 Python 的绘图库
@@ -1168,7 +1170,7 @@ markdown复制代码- **方法**: `df.plot(subplots=True)`
 - **示例**:
   ```python
   df.plot(subplots=True, layout=(2, 2), figsize=(10, 10))
-  ```
+```
 - **用途**: 将多个列的图表绘制在同一个图中，形成子图布局。
 ```
 
