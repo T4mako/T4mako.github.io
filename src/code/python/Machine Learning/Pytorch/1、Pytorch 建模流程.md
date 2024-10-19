@@ -18,7 +18,10 @@
   conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
   ```
 
-在新环境下下载 Jupyter
+在新环境下下载 Jupyter https://anaconda.org/anaconda/jupyter
+  ```bash
+  conda install anaconda::jupyter
+  ```
 
 ## Torchvision 模块
 
