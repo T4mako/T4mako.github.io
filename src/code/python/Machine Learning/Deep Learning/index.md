@@ -62,7 +62,7 @@ https://zh.d2l.ai/chapter_computational-performance/index.html
 
 使用已训练好的模型的特征提取层与权重，调整自己崔侯的全连接层
 
-![image-20241018164921787](E:\Study\=my repo\vuepress-hope-bloc\my-docs\src\code\python\Machine Learning\Deep Learning\assets\image-20241018164921787.png)
+![image-20241018164921787](https://raw.githubusercontent.com/T4mako/ImageBed/main/image-20241018164921787.png)
 
 ### 困惑度 perplexity
 
@@ -70,7 +70,7 @@ https://zh.d2l.ai/chapter_computational-performance/index.html
 
   p 是语言模型的预测概率，x是真实词
 
-  ![image-20241026194955046](E:\Study\=my repo\vuepress-hope-bloc\my-docs\src\code\python\Machine Learning\Deep Learning\assets\image-20241026194955046.png)
+  ![image-20241026194955046](https://raw.githubusercontent.com/T4mako/ImageBed/main/image-20241026194955046.png)
 
 - 历史原因NLP使用困惑度 exp(a)来衡量，是平均每次可能选项。1表示完美，无穷大是最差情况
 
@@ -290,14 +290,14 @@ print(f'Loss: {loss.item()}')
 
 可以使用多个三维卷积核（下图核函数粘贴复制），每个核生成一个输出通道
 
-![image-20241018160507227](E:\Study\=my repo\vuepress-hope-bloc\my-docs\src\code\python\Machine Learning\Deep Learning\assets\image-20241018160507227.png)
+![image-20241018160507227](https://raw.githubusercontent.com/T4mako/ImageBed/main/image-20241018160507227.png)
 
 - 计算的结果为 **特征图**
 - 一次卷积可以有多个 Filter，卷积后的深度就为 Filter 的个数（上述 7\*7\*3 经过 2 个 3\*3\*3 的 filter 变为 3\*3\*2 的特征图）
 
 1 * 1 的卷积核不识别空间模式，只是融合通道，以 **c~i~ 个输入** 值转换为 **c~o~ 个输出值** 
 
-![image-20241018160829623](E:\Study\=my repo\vuepress-hope-bloc\my-docs\src\code\python\Machine Learning\Deep Learning\assets\image-20241018160829623.png)
+![image-20241018160829623](https://raw.githubusercontent.com/T4mako/ImageBed/main/image-20241018160829623.png)
 
 ### 卷积层 conv（convolution）
 
@@ -317,11 +317,11 @@ print(f'Loss: {loss.item()}')
 
 感受野（Receptive Field）：神经元「看到的」输入区域，在卷积神经网络中，feature map 上某个元素的计算受输入图像上某个区域的影响，这个区域即该元素的感受野
 
-![image-20240821222130729](E:\Study\=my repo\vuepress-hope-bloc\my-docs\src\code\python\Machine Learning\Deep Learning\assets\image-20240821222130729-1731830179875-1.png)
+![image-20240821222130729](https://raw.githubusercontent.com/T4mako/ImageBed/main/image-20240821222130729-1731830179875-1.png)
 
 卷积结果计算公式：
 
-![image-20240822133826745](E:\Study\=my repo\vuepress-hope-bloc\my-docs\src\code\python\Machine Learning\Deep Learning\assets\image-20240822133826745-1731830179875-2.png)
+![image-20240822133826745](https://raw.githubusercontent.com/T4mako/ImageBed/main/image-20240822133826745-1731830179875-2.png)
 
 可以对一次卷积后的特征图再卷积再卷积
 
@@ -356,13 +356,13 @@ print(f'Loss: {loss.item()}')
 
 提出 vgg 块，更大更深的 AlexNet，赋值粘贴 AlexNet
 
-![image-20241012111726737](E:\Study\=my repo\vuepress-hope-bloc\my-docs\src\code\python\Machine Learning\Deep Learning\assets\image-20241012111726737.png)
+![image-20241012111726737](https://raw.githubusercontent.com/T4mako/ImageBed/main/image-20241012111726737.png)
 
 ### NiN
 
 提出 NiN 块，一个卷积层后跟两个全连接层（1*1 的卷积核）
 
-![image-20241012111744823](E:\Study\=my repo\vuepress-hope-bloc\my-docs\src\code\python\Machine Learning\Deep Learning\assets\image-20241012111744823.png)
+![image-20241012111744823](https://raw.githubusercontent.com/T4mako/ImageBed/main/image-20241012111744823.png)
 
 ### GoogLeNet
 
@@ -376,7 +376,7 @@ resnet 将 **好的层保留，不好的层跳过**。做法是通过对层数�
 
 - 若果层数堆叠的值不好，将层数堆叠权重设为 0
 
-  ![image-20240822141714082](E:\Study\=my repo\vuepress-hope-bloc\my-docs\src\code\python\Machine Learning\Deep Learning\assets\image-20240822141714082-1731830328749-5.png)
+  ![image-20240822141714082](https://raw.githubusercontent.com/T4mako/ImageBed/main/image-20240822141714082-1731830328749-5.png)
 
 ### DenseNet
 
@@ -405,9 +405,9 @@ resnet 将 **好的层保留，不好的层跳过**。做法是通过对层数�
 
 - 固定 **小批量 batch** 里的均值和方差，然后再做额外调整
 
-  ![image-20241016182432423](E:\Study\=my repo\vuepress-hope-bloc\my-docs\src\code\python\Machine Learning\Deep Learning\assets\image-20241016182432423.png)
+  ![image-20241016182432423](https://raw.githubusercontent.com/T4mako/ImageBed/main/image-20241016182432423.png)
 
-  ![image-20241016182512399](E:\Study\=my repo\vuepress-hope-bloc\my-docs\src\code\python\Machine Learning\Deep Learning\assets\image-20241016182512399.png)
+  ![image-20241016182512399](https://raw.githubusercontent.com/T4mako/ImageBed/main/image-20241016182512399.png)
 
   - 批量归一化层可学习的参数为 γ 和 β
   - 作用在
@@ -422,7 +422,7 @@ https://www.bilibili.com/video/BV1z5411f7Bm/
 
 在时间序列上，隐藏层与隐藏层之间包含关系 W~i~
 
-![image-20241117162806199](E:\Study\=my repo\vuepress-hope-bloc\my-docs\src\code\python\Machine Learning\Deep Learning\assets\image-20241117162806199.png)
+![image-20241117162806199](https://raw.githubusercontent.com/T4mako/ImageBed/main/image-20241117162806199.png)
 
 RNN 在计算梯度时容易发生梯度爆炸‘
 
@@ -456,7 +456,7 @@ https://www.bilibili.com/video/BV1Z34y1k7mc
 - 第一个组件是一个*编码器*（encoder）： 它接受一个长度可变的序列作为输入， 并将其转换为具有固定形状的编码状态。 
 - 第二个组件是*解码器*（decoder）： 它将固定形状的编码状态映射到长度可变的序列。 这被称为*编码器-解码器*（encoder-decoder）架构
 
-![image-20241117171521366](E:\Study\=my repo\vuepress-hope-bloc\my-docs\src\code\python\Machine Learning\Deep Learning\assets\image-20241117171521366.png)
+![image-20241117171521366](https://raw.githubusercontent.com/T4mako/ImageBed/main/image-20241117171521366.png)
 
 - “编码器－解码器”架构可以将长度可变的序列作为输入和输出，因此适用于机器翻译等序列转换问题。
 - 编码器将长度可变的序列作为输入，并将其转换为具有固定形状的编码状态。
@@ -480,9 +480,9 @@ https://www.bilibili.com/video/BV1Z34y1k7mc
 
 非参注意力池化层
 
-![image-20241116142811717](E:\Study\=my repo\vuepress-hope-bloc\my-docs\src\code\python\Machine Learning\Deep Learning\assets\image-20241116142811717.png)
+![image-20241116142811717](https://raw.githubusercontent.com/T4mako/ImageBed/main/image-20241116142811717.png)
 
-![image-20241116143146048](E:\Study\=my repo\vuepress-hope-bloc\my-docs\src\code\python\Machine Learning\Deep Learning\assets\image-20241116143146048.png)
+![image-20241116143146048](https://raw.githubusercontent.com/T4mako/ImageBed/main/image-20241116143146048.png)
 
 #### 注意力分数
 
@@ -491,7 +491,7 @@ https://www.bilibili.com/video/BV1Z34y1k7mc
   - 将 query 和 key 合并起来进入一个单输出单隐藏层的 MLP
   - 直接将 query 和 key 做内积
 
-![image-20241116144152145](E:\Study\=my repo\vuepress-hope-bloc\my-docs\src\code\python\Machine Learning\Deep Learning\assets\image-20241116144152145.png) 
+![image-20241116144152145](https://raw.githubusercontent.com/T4mako/ImageBed/main/image-20241116144152145.png) 
 
 ### 自注意力机制 slef-attention 
 
@@ -510,11 +510,11 @@ LSTM 的训练是迭代的、串行的，必须要等当前字处理完，才可
 
 Transformer **Encoder **负责把输入（语言序列）隐射成 **隐藏层**（下图中第2步用九宫格代表的部分），然后解码器 **Decoder** 再把隐藏层映射为自然语言序列。例如下图机器翻译的例子
 
-![image-20241120101441309](./assets/image-20241120101441309.png)
+![image-20241120101441309](https://raw.githubusercontent.com/T4mako/ImageBed/main/image-20241120101441309.png)
 
 **Encoder** Block 结构图：
 
-![image-20241119170408502](./assets/image-20241119170408502.png)
+![image-20241119170408502](https://raw.githubusercontent.com/T4mako/ImageBed/main/image-20241119170408502.png)
 
 ### 1. Positional Encoding
 
@@ -535,33 +535,33 @@ Transformer **没有** RNN 的迭代操作（在时间上递归）
 - 将所有 k~t~ 拼接成一个大矩阵，记作 **键矩阵 K**
 - 将所有 v~t~ 拼接成一个大矩阵，记作 **值矩阵 V**
 
-![image-20241119182619002](./assets/image-20241119182619002.png)
+![image-20241119182619002](https://raw.githubusercontent.com/T4mako/ImageBed/main/image-20241119182619002.png)
 
 为获得第一个字的 **注意力权重**，需要用第一个字的查询向量 q~1~ 乘以 键矩阵 K
 
 > 注意力权重：衡量输入序列中每个位置对其他位置的重要性。通过这些权重，模型可以动态地关注序列中不同部分的信息，从而更好地处理任务，如机器翻译、文本生成或图像处理
 
-![image-20241119182928754](./assets/image-20241119182928754.png)
+![image-20241119182928754](https://raw.githubusercontent.com/T4mako/ImageBed/main/image-20241119182928754.png)
 
 将得到的值经过 softmax，使得它们的和为1 `softmax([2, 4, 4]) = [0.0, 0.5, 0.5]`
 
-![image-20241119183529922](./assets/image-20241119183529922.png)
+![image-20241119183529922](https://raw.githubusercontent.com/T4mako/ImageBed/main/image-20241119183529922.png)
 
 有了权重之后，将权重其分别乘以对应字的 **值向量 v~t~**
 
-![image-20241119183721028](./assets/image-20241119183721028.png)
+![image-20241119183721028](https://raw.githubusercontent.com/T4mako/ImageBed/main/image-20241119183721028.png)
 
 将这些 **权重化后的值向量求和**，得到第一个字的输出
 
-![image-20241119183743445](./assets/image-20241119183743445.png)
+![image-20241119183743445](https://raw.githubusercontent.com/T4mako/ImageBed/main/image-20241119183743445.png)
 
 对其它的输入向量也执行相同的操作，即可得到通过 self-attention 后的所有输出
 
-![image-20241119183854798](./assets/image-20241119183854798.png)
+![image-20241119183854798](https://raw.githubusercontent.com/T4mako/ImageBed/main/image-20241119183854798.png)
 
 矩阵形式：
 
-![image-20241119184531165](./assets/image-20241119184531165.png)
+![image-20241119184531165](https://raw.githubusercontent.com/T4mako/ImageBed/main/image-20241119184531165.png)
 
 ### 3、Multi-Head Attention 多头注意力
 
@@ -594,9 +594,9 @@ $$
 $$
 LayerNorm(x) = \frac{X_{ij}-\mu{j}}{\sqrt{\sigma_j^2+\xi}}
 $$
-![image-20241120092929178](./assets/image-20241120092929178.png)
+![image-20241120092929178](https://raw.githubusercontent.com/T4mako/ImageBed/main/image-20241120092929178.png)
 
-![image-20241120093056505](./assets/image-20241120093056505.png)
+![image-20241120093056505](https://raw.githubusercontent.com/T4mako/ImageBed/main/image-20241120093056505.png)
 
 ### 5、Transformer Encoder 整体结构
 
