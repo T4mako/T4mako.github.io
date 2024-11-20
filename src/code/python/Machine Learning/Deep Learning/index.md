@@ -1,3 +1,7 @@
+---
+date: 2024-11-20
+---
+# 深度学习
 ## 1、预备知识
 
 https://zh.d2l.ai/chapter_preliminaries/index.html
