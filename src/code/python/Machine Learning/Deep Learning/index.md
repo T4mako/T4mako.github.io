@@ -478,8 +478,6 @@ https://www.bilibili.com/video/BV1Z34y1k7mc
 - 注意力机制则显示的考虑随意线索
   - 注意力 attention 即权重
 
-![image-20241117175803177](./assets/image-20241117175803177.png)
-
 非参注意力池化层
 
 ![image-20241116142811717](E:\Study\=my repo\vuepress-hope-bloc\my-docs\src\code\python\Machine Learning\Deep Learning\assets\image-20241116142811717.png)
