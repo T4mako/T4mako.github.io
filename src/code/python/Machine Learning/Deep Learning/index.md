@@ -510,7 +510,7 @@ LSTM 的训练是迭代的、串行的，必须要等当前字处理完，才可
 
 Transformer **Encoder **负责把输入（语言序列）隐射成 **隐藏层**（下图中第2步用九宫格代表的部分），然后解码器 **Decoder** 再把隐藏层映射为自然语言序列。例如下图机器翻译的例子
 
-![image-20241119170313004](./assets/image-20241119170313004.png)
+![image-20241120101441309](./assets/image-20241120101441309.png)
 
 **Encoder** Block 结构图：
 
@@ -631,4 +631,3 @@ $$
    X_{hidden} = X_{attention} + X_{hidden} \\
    X_{hidden} = LayerNorm(X_{hidden})
    $$
-   
