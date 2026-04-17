@@ -1,5 +1,4 @@
-
 User-agent:*
 Disallow:
 
-Sitemap: https://T4mako.github.io/sitemap.xml
+Sitemap: https://t4mako.github.io/sitemap.xml
