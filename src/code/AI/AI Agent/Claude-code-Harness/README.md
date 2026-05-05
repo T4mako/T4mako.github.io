@@ -45,8 +45,7 @@ src/
 │   ├── compress_prompt.py   #   提示词压缩
 │   ├── error_recovery.py    #   API 错误恢复
 │   ├── logging.py           #   日志记录
-│   ├── subagent_prompt.py   #   子代理提示词
-│   └── system_prompt.py     #   系统提示词工具
+│   └── subagent_prompt.py   #   子代理提示词
 └── worktrees/               # Worktree 隔离
     ├── manager.py           #   工作树管理
     └── event_bus.py         #   事件总线

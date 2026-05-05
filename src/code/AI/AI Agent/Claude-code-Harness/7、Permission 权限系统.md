@@ -1,7 +1,5 @@
 # Permission 权限系统
 
-> 对应提交: `d689aab` - 添加 Permission 命令验证以及 default / plan / auto 三种模式的权限规则引擎
-
 ## 整体交互流程
 
 ```
