@@ -1,1 +1,0 @@
-# 审视 Claude Code Harness
