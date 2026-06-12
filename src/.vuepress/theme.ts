@@ -126,7 +126,9 @@ export default hopeTheme({
   },
 
   plugins: {
-    blog: true,
+    blog: {
+      excerptLength: 0,
+    },
 
     docsearch: {
       appId: "N2PYVPZBPZ",
