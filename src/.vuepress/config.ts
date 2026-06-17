@@ -28,7 +28,7 @@ export default defineUserConfig({
   base: "/",
   port: 8888,
   define: {
-    __RAG_BACKEND_URL__: ragBackendUrl,
+    __RAG_BACKEND_URL__: JSON.stringify(ragBackendUrl),
   },
   
   theme,

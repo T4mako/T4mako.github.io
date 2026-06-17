@@ -41,6 +41,10 @@ jobs:
           NODE_OPTIONS: --max_old_space_size=8192
           VITE_RAG_BACKEND_URL: ${{ vars.VITE_RAG_BACKEND_URL || vars.RAG_BACKEND_URL }}
         run: |
+          if [ -z "$VITE_RAG_BACKEND_URL" ]; then
+            echo "VITE_RAG_BACKEND_URL or RAG_BACKEND_URL repository variable is not configured."
+            exit 1
+          fi
           pnpm run docs:build
           touch src/.vuepress/dist/.nojekyll
 
