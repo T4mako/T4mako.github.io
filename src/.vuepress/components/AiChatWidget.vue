@@ -258,6 +258,10 @@ const sendQuestion = async (): Promise<void> => {
   void scrollToBottom();
 
   try {
+    if (!apiBase) {
+      throw new Error("未配置 RAG 后端地址");
+    }
+
     const response = await fetch(`${apiBase}/api/chat`, {
       method: "POST",
       headers: {
