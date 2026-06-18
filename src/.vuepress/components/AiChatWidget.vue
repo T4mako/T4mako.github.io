@@ -262,6 +262,10 @@ const sendQuestion = async (): Promise<void> => {
       throw new Error("未配置 RAG 后端地址");
     }
 
+    if (globalThis.location.protocol === "https:" && apiBase.startsWith("http://")) {
+      throw new Error("HTTPS 页面不能请求 HTTP 后端，请配置 HTTPS 后端地址");
+    }
+
     const response = await fetch(`${apiBase}/api/chat`, {
       method: "POST",
       headers: {
