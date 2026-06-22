@@ -63,7 +63,7 @@ Memory 设计的重点：
 
 ## Claude Code
 
-[Claude Code Memory 记忆系统](../Claude-code-Harness/9、Memory 记忆系统.md)
+[Claude Code Memory 记忆系统](../Claude-code-Harness/9、Memory%20记忆系统.md)
 
 ### 存储结构
 
