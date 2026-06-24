@@ -27,14 +27,16 @@ jobs:
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
         with:
-          version: 8
-          run_install: true
+          version: 10.33.0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 20.19.0
           cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
 
       - name: Build docs
         env:
@@ -45,6 +47,7 @@ jobs:
             echo "VITE_RAG_BACKEND_URL or RAG_BACKEND_URL repository variable is not configured."
             exit 1
           fi
+          rm -rf src/.vuepress/.temp src/.vuepress/.cache src/.vuepress/dist
           pnpm run docs:build
           touch src/.vuepress/dist/.nojekyll
 
