@@ -34,6 +34,6 @@ export const enNavbar = navbar([
   {
     text: "Articles",
     icon: "article",
-    link: "/articles",
+    link: "/article/",
   }
 ]);
