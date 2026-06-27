@@ -41,45 +41,23 @@
 
 ## vllm 部署脚本
 
+模型使用：Qwen3.6-27B
+
 ```bash
-#!/usr/bin/env bash
-set -euo pipefail
-cd "$(dirname "$0")"
+export CUDA_VISIBLE_DEVICES=2,3
 
-# ── 配置 ──
-MODEL_DIR="${1:-/data1/modelscope_models/Qwen/Qwen3___6-27B}"
-MODEL_NAME="Qwen3.6-27B"
-HOST="${HOST:-0.0.0.0}"
-PORT="${PORT:-8000}"
-VLLM_API_KEY="${VLLM_API_KEY:?请设置 VLLM_API_KEY 环境变量}"
-CUDA_VISIBLE_DEVICES="${CUDA_VISIBLE_DEVICES:-2,3}"
-LOG_DIR="${LOG_DIR:-./logs}"
-PID_FILE="${LOG_DIR}/vllm_${MODEL_NAME}.pid"
-
-export CUDA_VISIBLE_DEVICES
-mkdir -p "$LOG_DIR"
-
-# ── 防重复启动 ──
-if [[ -f "$PID_FILE" ]]; then
-  pid="$(<"$PID_FILE")"
-  if [[ -n "$pid" ]] && kill -0 "$pid" 2>/dev/null; then
-    echo "Error: 已在运行 (PID $pid)"; exit 1
-  fi
-  rm -f "$PID_FILE"
-fi
-
-# ── 启动 vLLM ──
-nohup ./.venv/bin/python -m vllm.entrypoints.cli.main serve "$MODEL_DIR" \
-  --host "$HOST" \
-  --port "$PORT" \
-  --served-model-name "$MODEL_NAME" \
+nohup ./.venv/bin/python -m vllm.entrypoints.cli.main serve \
+  /data1/modelscope_models/Qwen/Qwen3___6-27B \
+  --served-model-name Qwen3.6-27B \
+  --host 0.0.0.0 \
+  --port 8000 \
   --api-key "$VLLM_API_KEY" \
-  --speculative-config '{"method":"mtp","num_speculative_tokens":4}' \
   --tensor-parallel-size 2 \
   --dtype float16 \
   --max-model-len 262144 \
   --max-num-seqs 24 \
   --gpu-memory-utilization 0.92 \
+  --speculative-config '{"method":"mtp","num_speculative_tokens":4}' \
   --enable-prefix-caching \
   --enable-chunked-prefill \
   --max-num-batched-tokens 32768 \
@@ -88,8 +66,5 @@ nohup ./.venv/bin/python -m vllm.entrypoints.cli.main serve "$MODEL_DIR" \
   --reasoning-parser qwen3 \
   --override-generation-config '{"temperature":0.6,"top_p":0.95,"top_k":20,"min_p":0.0,"presence_penalty":0.0,"repetition_penalty":1.0}' \
   --default-chat-template-kwargs '{"enable_thinking": false}' \
-  > "${LOG_DIR}/vllm_${MODEL_NAME}.log" 2>&1 &
-
-echo "$!" > "$PID_FILE"
-echo "[$(date '+%F %T')] vLLM started, PID=$!, log=${LOG_DIR}/vllm_${MODEL_NAME}.log"
+  > ./logs/vllm.log 2>&1 &
 ```
