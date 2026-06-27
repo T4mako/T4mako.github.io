@@ -10,6 +10,8 @@ tag:
   - Claude Code
 ---
 
+参考：https://zhuanlan.zhihu.com/p/2045516328530863788?theme=dark
+
 ## 从 RAG 到 LLM Wiki
 
 传统 RAG 的局限性：

@@ -10,6 +10,8 @@ tag:
   - Claude Code
 ---
 
+参考：https://zhuanlan.zhihu.com/p/2047445627097944488?theme=dark
+
 目前的 Context 压缩仍然处在一个比较早期的状态，原因：
 - SubAgent 返回执行概要或结果文档给主 session，类似于 context 压缩
 - 前沿模型可以读取自己在 home 目录下的历史 session 翻找信息
