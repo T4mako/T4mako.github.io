@@ -1,4 +1,14 @@
-
+---
+title: 主流 Agent Harness 的 Goal 实现对比
+date: 2026-06-28
+category:
+  - AI Agent
+tag:
+  - Goal
+  - Agent Harness
+  - Codex
+  - Claude Code
+---
 
 参考：https://zhuanlan.zhihu.com/p/2050710316212806091?theme=dark
 
