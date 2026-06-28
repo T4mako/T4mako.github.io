@@ -32,6 +32,8 @@ export default hopeTheme({
   print: true,
 
   navbar: enNavbar,
+
+  toc: true,
     
   // sidebar
   sidebar: enSidebar,
@@ -39,6 +41,7 @@ export default hopeTheme({
   footer: "T4mako's blog",
 
   displayFooter: true,
+
 
   metaLocales: {
     editLink: "Edit this page on GitHub",

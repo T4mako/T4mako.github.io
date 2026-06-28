@@ -26,6 +26,8 @@ const ragBackendUrl =
 
 export default defineUserConfig({
   base: "/",
+  lang: "zh-CN",
+  title: "T4mako's Blog",
   port: 8888,
   define: {
     __RAG_BACKEND_URL__: ragBackendUrl,
