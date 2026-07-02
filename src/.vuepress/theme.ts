@@ -137,7 +137,7 @@ export default hopeTheme({
     docsearch: {
       appId: "N2PYVPZBPZ",
       apiKey: "5df65a8c4559b591054e254eee37dbea",
-      indexName: "document crawler",
+      indexName: "t4makoio",
       locales: {
         "/": {
           placeholder: "搜索文档",
