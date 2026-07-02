@@ -96,6 +96,7 @@ title: Python 常用 API 速查
 | `dict(x)` | 转为字典 |
 | `range(n)` | 生成 `0` 到 `n-1` 的整数序列 |
 | `range(start, stop, step)` | 按步长生成整数序列 |
+| `x in range(...)` | 判断数字是否在范围内 |
 | `enumerate(x)` | 遍历时同时获取下标和值 |
 | `zip(a, b)` | 将多个可迭代对象按位置打包 |
 | `sorted(x)` | 返回排序后的新列表 |
@@ -147,6 +148,8 @@ title: Python 常用 API 速查
 | `s.capitalize()` | 首字母大写 |
 | `s.startswith(prefix)` | 判断是否以指定内容开头 |
 | `s.endswith(suffix)` | 判断是否以指定内容结尾 |
+| `sub in s` | 判断是否包含子串 |
+| `sub not in s` | 判断是否不包含子串 |
 | `s.isdigit()` | 判断是否全是数字字符 |
 | `s.isalpha()` | 判断是否全是字母 |
 | `s.isalnum()` | 判断是否全是字母或数字 |
@@ -155,6 +158,8 @@ title: Python 常用 API 速查
 | `f"{x}"` | f-string 格式化，最常用 |
 | `s.encode("utf-8")` | 字符串转字节 |
 | `b.decode("utf-8")` | 字节转字符串 |
+| `part in b` | 判断 bytes 是否包含指定字节片段 |
+| `part not in b` | 判断 bytes 是否不包含指定字节片段 |
 
 ## 列表 list
 
@@ -162,6 +167,8 @@ title: Python 常用 API 速查
 | :--- | :--- |
 | `lst[index]` | 按下标取元素 |
 | `lst[start:end:step]` | 列表切片 |
+| `x in lst` | 判断列表是否包含元素 |
+| `x not in lst` | 判断列表是否不包含元素 |
 | `lst.append(x)` | 在末尾添加一个元素 |
 | `lst.extend(iterable)` | 在末尾追加多个元素 |
 | `lst.insert(i, x)` | 在指定下标插入元素 |
@@ -188,6 +195,8 @@ title: Python 常用 API 速查
 | :--- | :--- |
 | `t[index]` | 按下标取元素 |
 | `t[start:end:step]` | 元组切片 |
+| `x in t` | 判断元组是否包含元素 |
+| `x not in t` | 判断元组是否不包含元素 |
 | `t.count(x)` | 统计元素出现次数 |
 | `t.index(x)` | 查找元素下标，找不到报错 |
 | `tuple(lst)` | 列表转元组 |
@@ -199,13 +208,15 @@ title: Python 常用 API 速查
 | API | 简单说明 |
 | :--- | :--- |
 | `set(iterable)` | 创建集合并去重 |
+| `x in st` | 判断集合是否包含元素 |
+| `x not in st` | 判断集合是否不包含元素 |
 | `st.add(x)` | 添加元素 |
 | `st.update(iterable)` | 批量添加元素 |
 | `st.remove(x)` | 删除元素，不存在则报错 |
 | `st.discard(x)` | 删除元素，不存在不报错 |
 | `st.pop()` | 随机删除并返回一个元素 |
 | `st.clear()` | 清空集合 |
-| `a | b` | 求并集 |
+| `a \| b` | 求并集 |
 | `a.union(b)` | 求并集 |
 | `a & b` | 求交集 |
 | `a.intersection(b)` | 求交集 |
@@ -234,7 +245,8 @@ title: Python 常用 API 速查
 | `d.items()` | 获取所有 key-value |
 | `d.update(other)` | 合并或更新字典 |
 | `d.setdefault(key, default)` | key 不存在时设置默认值 |
-| `key in d` | 判断 key 是否存在 |
+| `key in d` | 判断字典是否包含 key |
+| `key not in d` | 判断字典是否不包含 key |
 | `dict.fromkeys(keys, value)` | 用一组 key 创建字典 |
 | `{k: v for x in lst}` | 字典推导式 |
 
@@ -260,6 +272,7 @@ title: Python 常用 API 速查
 | `open(path, "w", encoding="utf-8")` | 写入文件，存在则清空 |
 | `open(path, "a", encoding="utf-8")` | 追加写入文件 |
 | `with open(...) as f:` | 自动关闭文件，推荐写法 |
+| `text in f.read()` | 判断文件内容是否包含指定文本 |
 | `f.read()` | 读取全部内容 |
 | `f.read(n)` | 读取指定字符数 |
 | `f.readline()` | 读取一行 |
@@ -394,6 +407,8 @@ title: Python 常用 API 速查
 | `np.log(arr)` | 求自然对数 |
 | `np.power(arr, n)` | 求幂 |
 | `arr[arr > 0]` | 布尔索引筛选 |
+| `x in arr` | 判断数组是否包含元素 |
+| `np.isin(arr, values)` | 判断数组元素是否在指定值集合中 |
 | `np.concatenate([a, b])` | 拼接数组 |
 
 ## Pandas Series
@@ -419,6 +434,8 @@ title: Python 常用 API 速查
 | `s.fillna(value)` | 填充空值 |
 | `s.dropna()` | 删除空值 |
 | `s.value_counts()` | 统计不同值出现次数 |
+| `value in s.values` | 判断 Series 是否包含某个值 |
+| `index in s.index` | 判断 Series 是否包含某个索引 |
 | `s.apply(func)` | 对每个元素应用函数 |
 
 ## Pandas DataFrame
@@ -440,6 +457,8 @@ title: Python 常用 API 速查
 | `df.describe()` | 查看数值列描述统计 |
 | `df["col"]` | 选择单列 |
 | `df[["a", "b"]]` | 选择多列 |
+| `"col" in df.columns` | 判断 DataFrame 是否包含某列 |
+| `value in df["col"].values` | 判断某列是否包含指定值 |
 | `df.loc[row, col]` | 按标签选择行列 |
 | `df.iloc[row, col]` | 按位置选择行列 |
 | `df[df["age"] > 18]` | 按条件筛选行 |
