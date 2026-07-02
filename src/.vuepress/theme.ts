@@ -26,6 +26,7 @@ export default hopeTheme({
     intro: "/intro.html",
     medias: {
       GitHub: "https://github.com/T4mako",
+      Twitter: "https://x.com/T4mako_",
     },
   },
 
