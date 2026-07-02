@@ -56,12 +56,12 @@ class Solution {
 ```python
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        d1 = {}
-        for index in range(len(nums)):
-            complement = target - nums[index]
-            if complement in d1:
-                return [d1[complement], index]
-            d1[nums[index]] = index
+        d = {}
+        idx = 0
+        for i in nums:
+            if((target - i) in d): return [d[target - i],idx]
+            d[i] = idx
+            idx += 1
         return []
 ```
 :::

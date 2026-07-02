@@ -156,6 +156,7 @@ title: Python 常用 API 速查
 | `s.isspace()` | 判断是否全是空白字符 |
 | `s.format(x)` | 格式化字符串 |
 | `f"{x}"` | f-string 格式化，最常用 |
+| `ord(ch)` | 单个字符转 Unicode 编码整数 |
 | `s.encode("utf-8")` | 字符串转字节 |
 | `b.decode("utf-8")` | 字节转字符串 |
 | `part in b` | 判断 bytes 是否包含指定字节片段 |
@@ -368,17 +369,24 @@ title: Python 常用 API 速查
 
 ## collections 常用容器
 
+`collections` 是 Python 标准库中的容器工具模块，常用于计数、队列、带默认值字典、轻量数据对象等场景。
+
 | API | 简单说明 |
 | :--- | :--- |
-| `Counter(iterable)` | 统计元素出现次数 |
-| `counter.most_common(n)` | 获取出现次数最多的前 `n` 个 |
-| `defaultdict(type)` | 带默认值的字典 |
-| `deque()` | 双端队列 |
+| `from collections import Counter` | 导入计数器 |
+| `Counter(iterable)` | 统计元素出现次数，返回类似字典的计数结果 |
+| `counter.most_common(n)` | 获取出现次数最多的前 `n` 个元素 |
+| `counter[key]` | 获取某元素出现次数，不存在返回 `0` |
+| `from collections import defaultdict` | 导入默认值字典 |
+| `defaultdict(type)` | key 不存在时自动创建类型为 type（工厂函数） 的默认值  |
+| `from collections import deque` | 导入双端队列 |
+| `deque()` | 双端队列，适合队列和栈，头尾操作快 |
 | `dq.append(x)` | 右侧添加元素 |
 | `dq.appendleft(x)` | 左侧添加元素 |
 | `dq.pop()` | 右侧弹出元素 |
 | `dq.popleft()` | 左侧弹出元素 |
-| `namedtuple(name, fields)` | 创建轻量级具名元组 |
+| `from collections import namedtuple` | 导入具名元组 |
+| `namedtuple(name, fields)` | 创建轻量级具名元组，可用属性名访问值 |
 
 ## Numpy ndarray
 
