@@ -66,7 +66,7 @@ class Solution {
 }
 ```
 
-传入数组排序，判断全为 0，最小数为正数的特殊情况，然后使用 for 循环找到第一个数，通过 HashMap 与两数之和的方法求第三个数，最后放入一个数组中，再对数组进行判重，有重复则删除，最后返回最终数组
+> 传入数组排序，判断全为 0，最小数为正数的特殊情况，然后使用 for 循环找到第一个数，通过 HashMap 与两数之和的方法求第三个数，最后放入一个数组中，再对数组进行判重，有重复则删除，最后返回最终数组
 
 ## 解法二：
 
@@ -119,10 +119,11 @@ class Solution {
 }
 ```
 
-传入数组排序，判断全为 0，最小数为正数的特殊情况，通过for循环，定义两个指针 left，right，判断 for 循环遍历的数和两个指针所指的数的和是否为 0，如果为 0，添加到 list 中，如果小于0，left 指针右移，如果大于 0，right 指针左移。如果和为 0，左右指针均移动，如果移动到的数和上一次相同，继续移动。最后返回结果数组
+> 传入数组排序，判断全为 0，最小数为正数的特殊情况，通过for循环，定义两个指针 left，right，判断 for 循环遍历的数和两个指针所指的数的和是否为 0，如果为 0，添加到 list 中，如果小于0，left 指针右移，如果大于 0，right 指针左移。如果和为 0，左右指针均移动，如果移动到的数和上一次相同，继续移动。最后返回结果数组
 
 ## 解法二优化:
-
+:::code-tabs
+@tab Java
 ```java
 public List<List<Integer>> threeSum(int[] nums) {
         List<List<Integer>> res = new ArrayList();
@@ -170,5 +171,38 @@ public List<List<Integer>> threeSum(int[] nums) {
         return res;
     }
 ```
+@tab Python
+```py
+class Solution:
+    def threeSum(self, nums: List[int]) -> List[List[int]]:
+        n = len(nums)
+        nums.sort()
+        ans = list()
+        
+        # 枚举 a
+        for first in range(n):
+            # 需要和上一次枚举的数不相同
+            if first > 0 and nums[first] == nums[first - 1]:
+                continue
+            # c 对应的指针初始指向数组的最右端
+            third = n - 1
+            target = -nums[first]
+            # 枚举 b
+            for second in range(first + 1, n):
+                # 需要和上一次枚举的数不相同
+                if second > first + 1 and nums[second] == nums[second - 1]:
+                    continue
+                # 需要保证 b 的指针在 c 的指针的左侧
+                while second < third and nums[second] + nums[third] > target:
+                    third -= 1
+                # 如果指针重合，随着 b 后续的增加
+                # 就不会有满足 a+b+c=0 并且 b<c 的 c 了，可以退出循环
+                if second == third:
+                    break
+                if nums[second] + nums[third] == target:
+                    ans.append([nums[first], nums[second], nums[third]])
+        
+        return ans
+```
 
-在判断 left+1 与 right-1 与 left 和 right 所指的数是否相同时，在内层通过 while 循环判断，这样只保留最后一个相同的 left 和 right，在外层 for 循环时，如果 i 指向的数大于 0，表示不会有匹配的结果，直接 return 即可
+> 在判断 left+1 与 right-1 与 left 和 right 所指的数是否相同时，在内层通过 while 循环判断，这样只保留最后一个相同的 left 和 right，在外层 for 循环时，如果 i 指向的数大于 0，表示不会有匹配的结果，直接 return 即可

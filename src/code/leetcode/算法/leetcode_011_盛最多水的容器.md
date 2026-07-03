@@ -13,6 +13,10 @@ tag:
 
 <Badge text="中等" type="warning" vertical="middle" />
 
+创建两个 int 型数据 left，right，计算水池的面积，由于左右指针的移动会使得left到right的举例变短，若果要获得更大的水的面积，将 left 与 right 中更短的边移动，直到移动到的那条边超过 left 和 right 中的最短边。
+
+:::code-tabs
+@tab Java
 ```java
 class Solution {
     public int maxArea(int[] height) {
@@ -34,5 +38,23 @@ class Solution {
     }
 }
 ```
+@tab Python
+```py
+class Solution:
+    def maxArea(self, height: List[int]) -> int:
+        left = 0
+        right = len(height) - 1
+        res = (right - left) * min(height[left],height[right])
+        while(left < right):
+            if(height[left] <= height[right]):
+                left += 1
+            else:
+                right -= 1
+            res = max(res,(right - left) * min(height[left],height[right]))
+        
+        return res
 
-创建两个 int 型数据 left，right，计算水池的面积，由于左右指针的移动会使得left到right的举例变短，若果要获得更大的水的面积，将 left 与 right 中更短的边移动，直到移动到的那条边超过 left 和 right 中的最短边。
+
+        
+```
+
