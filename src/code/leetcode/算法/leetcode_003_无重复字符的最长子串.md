@@ -37,7 +37,6 @@ class Solution {
     }
 }
 ```
-
 #### 解法思路：
 
 从大到小获取字符串的所有子串，将子串存入 HashSet 中，若 HashSet 的长度与子串长度相等，返回 HashSet 的长度。此算法的时间复杂度为 O(n^3^)
@@ -77,6 +76,8 @@ class Solution {
 
 ## 滑动窗口的优化：
 
+:::code-tabs
+@tab Java
 ```java
 class Solution {
     public int lengthOfLongestSubstring(String s) {
@@ -102,6 +103,32 @@ class Solution {
         }
     }
 }
+```
+@tab Python
+```py
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        left = 0
+        right = 1
+        s_len = len(s)
+        if(s_len <= 1): return s_len
+        d = dict()
+        d[s[left]] = left
+        res = 1
+        while (right < s_len):
+            if(s[right] in d):
+                res = max(len(d),res)
+                idx = d.get(s[right])
+                for i in range(left , idx + 1):
+                    d.pop(s[i])
+                left = idx + 1
+                d[s[right]] = right
+                right += 1
+            else:
+                d[s[right]] = right
+                right += 1
+                res = max(res,len(d))
+        return res
 ```
 
 #### 解法思路：

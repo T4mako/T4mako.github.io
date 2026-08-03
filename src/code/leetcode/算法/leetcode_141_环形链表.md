@@ -12,6 +12,8 @@ tag:
 
 ## 解法一：Set 存储
 
+:::code-tabs
+@tab Java
 ```java
 public class Solution {
     public boolean hasCycle(ListNode head) {
@@ -24,11 +26,14 @@ public class Solution {
     }
 }
 ```
+:::
 
 ## 解法二：快慢指针
 
-定义一个快指针一个慢指针，如果有环，快指针和满指正会相遇
+定义一个快指针一个慢指针，如果有环，快指针和慢指正会相遇
 
+:::code-tabs
+@tab Java
 ```java
 public class Solution {
     public boolean hasCycle(ListNode head) {
@@ -48,3 +53,22 @@ public class Solution {
     }
 }
 ```
+@tab Python
+```py
+class Solution:
+    def hasCycle(self, head: ListNode) -> bool:
+        if not head or not head.next:
+            return False
+        
+        slow = head
+        fast = head.next
+
+        while slow != fast:
+            if not fast or not fast.next:
+                return False
+            slow = slow.next
+            fast = fast.next.next
+        
+        return True
+```
+:::

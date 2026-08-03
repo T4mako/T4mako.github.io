@@ -20,6 +20,8 @@ tag:
 
 建立两个左右数组，通过两次for遍历得出结果
 
+:::code-tabs
+@tab Java
 ```java
 class Solution {
     public int[] productExceptSelf(int[] nums) {
@@ -43,3 +45,16 @@ class Solution {
     }
 }
 ```
+@tab Python
+```py
+class Solution:
+    def productExceptSelf(self, nums: List[int]) -> List[int]:
+        ans, tmp = [1] * len(nums), 1
+        for i in range(1, len(nums)):
+            ans[i] = ans[i - 1] * nums[i - 1] 
+        for i in range(len(nums) - 2, -1, -1):
+            tmp *= nums[i + 1]                
+            ans[i] *= tmp                     
+        return ans
+```
+:::

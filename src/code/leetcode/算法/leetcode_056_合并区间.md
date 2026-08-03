@@ -23,6 +23,8 @@ tag:
 4、最后需要加上`intervals`末尾的数组  
 5、`arr.toArray()`中的参数为返回的类型，`arr.toArray(new int[0][])`返回二维数组  
 
+:::code-tabs
+@tab Java
 ```java
 class Solution {
     public int[][] merge(int[][] intervals) {
@@ -52,3 +54,25 @@ class Solution {
     }
 }
 ```
+@tab Python
+```py
+class Solution:
+    def merge(self, intervals: List[List[int]]) -> List[List[int]]:
+        res = []
+        intervals.sort(key=lambda x: x[0])
+
+        for num in intervals:
+            if(len(res) == 0):
+                res.append(num)
+                continue
+
+            last = res[-1]
+            if(num[0] <= last[1]):
+                last = [last[0],max(num[1],last[1])]
+                res[-1] = last
+            else:
+                res.append(num)
+        
+        return res
+```
+:::

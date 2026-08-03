@@ -10,6 +10,8 @@
 - 对于状态转移方程 `dp[i + 1] = Math.max(dp[i],dp[i - 1] + num[i])`
   - 如果 `dp[i - 1] < 0`，则必然有 `dp [i - 1] + num[i] < num[i]`
 
+:::code-tabs
+@tab Java
 ```java
 class Solution {
     public int maxSubArray(int[] nums) {
@@ -24,3 +26,18 @@ class Solution {
     }
 }
 ```
+
+@tab Python
+```py
+class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:
+        max_sum = nums[0]
+        current_sum = nums[0]
+        
+        for i in range(1, len(nums)):
+            current_sum = max(nums[i], current_sum + nums[i])
+            max_sum = max(max_sum, current_sum)
+            
+        return max_sum
+```
+:::

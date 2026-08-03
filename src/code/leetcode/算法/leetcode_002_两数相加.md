@@ -52,28 +52,22 @@ class Solution {
 #     def __init__(self, val=0, next=None):
 #         self.val = val
 #         self.next = next
-class Solution(object):
-    def addTwoNumbers(self, l1, l2):
-        """
-        :type l1: ListNode
-        :type l2: ListNode
-        :rtype: ListNode
-        """
+class Solution:
+    def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
         res = ListNode()
-        cur = res
-        carry = 0
-        while l1 is not None or l2 is not None or carry != 0:
-            x = l1.val if l1 else 0
-            y = l2.val if l2 else 0
-            
-            total = x + y + carry
-            carry = total // 10
-            cur.next = ListNode(total % 10)
-            
-            cur = cur.next
-            if l1: l1 = l1.next
-            if l2: l2 = l2.next
-        
+        res_cur = res
+        l1_cur = l1
+        l2_cur = l2
+        tmp = 0
+        while(l1_cur != None or l2_cur != None or tmp):
+            a = l1_cur.val if l1_cur != None else 0
+            b = l2_cur.val if l2_cur != None else 0
+            val = a + b + tmp
+            res_cur.next = ListNode(val % 10)
+            res_cur = res_cur.next
+            tmp = val // 10
+            l1_cur = l1_cur.next if l1_cur != None else None
+            l2_cur = l2_cur.next if l2_cur != None else None
         return res.next
         
 ```

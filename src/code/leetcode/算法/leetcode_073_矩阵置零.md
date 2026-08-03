@@ -17,6 +17,8 @@ tag:
 
 解法思路：首先通过遍历记录哪些行和列需要置 0，再遍历一次将 0 填充
 
+:::code-tabs
+@tab Java
 ```java
 class Solution {
     public void setZeroes(int[][] matrix) {
@@ -44,4 +46,29 @@ class Solution {
 	}
 }
 ```
+
+@tab Python
+```py
+class Solution:
+    def setZeroes(self, matrix: List[List[int]]) -> None:
+        """
+        Do not return anything, modify matrix in-place instead.
+        """
+        rows = set()
+        cols = set()
+        
+        # 记录需要置零的行和列
+        for r in range(len(matrix)):
+            for c in range(len(matrix[0])):
+                if matrix[r][c] == 0:
+                    rows.add(r)
+                    cols.add(c)
+        
+        # 将对应的行和列置零
+        for r in range(len(matrix)):
+            for c in range(len(matrix[0])):
+                if r in rows or c in cols:
+                    matrix[r][c] = 0
+```
+:::
 

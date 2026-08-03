@@ -111,7 +111,8 @@ int sum = 0;
 对于第i列，只要知道其左边最高列和右边最高列就可以知道它对应的值，建立两个数组，存放第i列对应的左右最高值，最后通过for循环相加返回
 
 ## 解法二优化：
-
+:::code-tabs
+@tab Java
 ```java
 public int trap(int[] height) {
     int sum = 0;
@@ -141,6 +142,35 @@ public int trap(int[] height) {
     return sum;
 }
 ```
+@tab python
+```py
+from typing import List
 
+class Solution:
+    def trap(self, height: List[int]) -> int:
+        total = 0
+        max_left = 0
+        max_right = 0
+        left = 1
+        right = len(height) - 2  # 加右指针进去
+        
+        for i in range(1, len(height) - 1):
+            # 从左到右更
+            if height[left - 1] < height[right + 1]:
+                max_left = max(max_left, height[left - 1])
+                min_height = max_left
+                if min_height > height[left]:
+                    total += min_height - height[left]
+                left += 1
+            # 从右到左更
+            else:
+                max_right = max(max_right, height[right + 1])
+                min_height = max_right
+                if min_height > height[right]:
+                    total += min_height - height[right]
+                right -= 1
+        
+        return total
+```
 
 不需要预先定义数组和遍历数组，通过一个for循环，在遍历时，如果`height[left-1]<right[left-1]`，那么较小的最高处一定在左边，相反在右边，此时将left指正右移即可

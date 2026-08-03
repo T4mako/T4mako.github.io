@@ -44,6 +44,8 @@ public class Solution {
 4. 比较长的链表指针指向较短链表head时，长度差就消除了
 5. 如此，只需要将最短链表遍历两次即可找到位置
 
+:::code-tabs
+@tab Java
 ```java
 public class Solution {
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
@@ -57,3 +59,15 @@ public class Solution {
     }
 }
 ```
+
+@tab Python
+```py
+class Solution:
+    def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> ListNode:
+        h1, h2 = headA, headB
+        while h1 != h2:
+            h1 = h1.next if h1 else headB
+            h2 = h2.next if h2 else headA
+        return h1
+```
+:::

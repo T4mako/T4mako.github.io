@@ -10,6 +10,8 @@ tag:
 <Badge text="简单" type="tip" vertical="middle" />
 
 
+:::code-tabs
+@tab Java
 ```java
 /**
  * Definition for singly-linked list.
@@ -54,5 +56,37 @@ class Solution {
     }
 }
 ```
+@tab Python
+```py
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
+        res = ListNode()
+        res_cur = res
+        list1_cur = list1
+        list2_cur = list2
+        while(True):
+            if(list1_cur == None):
+                res_cur.next = list2_cur
+                return res.next
+            elif(list2_cur == None):
+                res_cur.next = list1_cur
+                return res.next
+            elif(list1_cur.val <= list2_cur.val):
+                res_cur.next = list1_cur
+                res_cur = res_cur.next
+                list1_cur = list1_cur.next
+            else:
+                res_cur.next = list2_cur
+                res_cur = res_cur.next
+                list2_cur = list2_cur.next
+        return res.next
+        
+```
+:::
 
 建立一个res链表用于返回，通过list1，list2两个节点遍历链表，将值赋给新的链表节点中
