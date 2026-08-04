@@ -42,3 +42,22 @@ class Solution {
 ```
 
 先遍历一边链表，得出链表的总个数count，如果n=count，返回head.next，否则定义一个left和right指针，指针不断后移，count--，直到count==n，判断right后面是否有值，如果没有，left.next = null，否则left.next = right.next
+
+
+```py
+class Solution:
+    def removeNthFromEnd(self, head: ListNode, n: int) -> ListNode:
+        dummy = ListNode(0, head)
+        first = head
+        second = dummy
+        for i in range(n):
+            first = first.next
+
+        while first:
+            first = first.next
+            second = second.next
+        
+        second.next = second.next.next
+        return dummy.next
+```
+快慢指针

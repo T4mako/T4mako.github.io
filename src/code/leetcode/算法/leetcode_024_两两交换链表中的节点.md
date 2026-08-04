@@ -60,3 +60,20 @@ class Solution {
 ```
 
  将链表元素为0，链表元素为1的情况直接返回原来数组即可，当元素为2，改变连个节点元素的指针指向， 并返回，如果元素节点大于等于三个，设置一个指针i，指向第双数个元素节点，通过临时变量将元素i的洗衣歌，下下一个，下下下一个元素记录，并改变它们的指针指向，然后将i指针后移两个，直到指针的下一个元素节点或者下下一个元素节点都不存在时，结束循环，返回head指针。
+
+
+```py
+class Solution:
+    def swapPairs(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        node = ListNode(0, head)
+        cur = node
+        while(cur.next != None and cur.next.next != None):
+            fir = cur.next
+            sec = cur.next.next
+            thr = cur.next.next.next
+            cur.next = sec
+            sec.next = fir
+            fir.next = thr
+            cur = fir
+        return node.next
+```
