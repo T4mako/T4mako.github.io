@@ -12,7 +12,8 @@ tag:
 <Badge text="简单" type="tip" vertical="middle" />
 
 
-
+:::code-tabs
+@tab Java
 ```java
 class Solution {
     public int maxDepth(TreeNode root) {
@@ -22,6 +23,14 @@ class Solution {
         return 0;
     }
 }
+```
+@tab Python
+```py
+class Solution:
+    def maxDepth(self, root: Optional[TreeNode]) -> int:
+        if not root:
+            return 0
+        return 1 + max(self.maxDepth(root.left), self.maxDepth(root.right))
 ```
 
 返回1加上左右子树的最大深度，递归运算得出结果

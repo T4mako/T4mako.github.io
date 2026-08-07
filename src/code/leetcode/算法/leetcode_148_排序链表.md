@@ -16,6 +16,8 @@ tag:
 
 解法：遍历
 
+:::code-tabs 
+@tab Java
 ```java
 class Solution {
     public ListNode sortList(ListNode head) {
@@ -38,3 +40,22 @@ class Solution {
     }
 }
 ```
+@tab Python
+```py
+class Solution:
+    def sortList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        node_vals = []
+        cur = head
+        while(cur != None):
+            node_vals.append(cur.val)
+            cur = cur.next
+        node_vals = sorted(node_vals)
+        cur = head
+        idx = 0
+        while (cur != None):
+            cur.val = node_vals[idx]
+            idx += 1
+            cur = cur.next
+        return head
+```
+:::

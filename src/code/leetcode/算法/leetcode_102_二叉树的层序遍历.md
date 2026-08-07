@@ -43,28 +43,20 @@ class Solution {
 ```
 @tab Python
 ```py
-class Solution(object):
-    def levelOrder(self, root):
-        """
-        :type root: TreeNode
-        :rtype: List[List[int]]
-        """
+class Solution:
+    def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
         res = []
-        if root is None:
-            return res
-        queue = []
-        queue.append(root)
-        while queue:
-            size = len(queue)
-            node_list = []
-            for _ in range(size):
-                node = queue.pop(0)  
-                node_list.append(node.val)
-                if node.left:
-                    queue.append(node.left)
-                if node.right:
-                    queue.append(node.right)
-            res.append(node_list)
+        if root == None: return res
+        queue = [root]
+        while(len(queue) > 0):
+            res_tmp = []
+            node_tmp = []
+            for node in queue:
+                res_tmp.append(node.val)
+                if node.left: node_tmp.append(node.left)
+                if node.right: node_tmp.append(node.right)
+            res.append(res_tmp)
+            queue = node_tmp
         return res
         
 ```

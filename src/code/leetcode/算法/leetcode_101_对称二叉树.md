@@ -58,6 +58,8 @@ public boolean isSymmetric(TreeNode root) {
 
 解法二：递归，通过两个对称节点的左孩子与右孩子，右孩子与左孩子的值是否相同
 
+:::code-tabs
+@tab Java
 ```java
 class Solution {
     public boolean isSymmetric(TreeNode root) {
@@ -74,4 +76,19 @@ class Solution {
         return p.val == q.val && check(p.left, q.right) && check(p.right, q.left);
     }
 }
+```
+@tab Python
+```py
+class Solution:
+    def isSymmetric(self, root: Optional[TreeNode]) -> bool:
+        def isMirror(left, right):
+            if not left and not right:
+                return True
+            if not left or not right:
+                return False
+            return (left.val == right.val and 
+                    isMirror(left.left, right.right) and 
+                    isMirror(left.right, right.left))
+        
+        return isMirror(root.left, root.right)
 ```

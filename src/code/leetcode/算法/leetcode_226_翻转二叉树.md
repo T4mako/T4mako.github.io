@@ -43,4 +43,25 @@ class Solution {
     }
 }
 ```
+@tab Python
+```py
+class Solution:
+    def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
+        if(root == None): return
+        if(root.left != None and root.right != None):
+            tmp = root.left
+            root.left = root.right
+            root.right = tmp
+            self.invertTree(root.left)
+            self.invertTree(root.right)
+        elif(root.left != None):
+            root.right = root.left
+            root.left = None
+            self.invertTree(root.right)
+        else:
+            root.left = root.right
+            root.right = None
+            self.invertTree(root.left)
+        return root
+```
 :::
