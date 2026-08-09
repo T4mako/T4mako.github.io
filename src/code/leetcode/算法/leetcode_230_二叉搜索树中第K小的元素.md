@@ -16,6 +16,8 @@ tag:
 
 解法：中序遍历
 
+:::code-tabs
+@tab Java
 ```java
 class Solution {
     int num = 0;
@@ -33,3 +35,20 @@ class Solution {
     }
 }
 ```
+@tab Python
+```py
+class Solution:
+    def kthSmallest(self, root: Optional[TreeNode], k: int) -> int:
+        def dfs(root):
+            if not root: return
+            dfs(root.left)
+            if self.k == 0: return
+            self.k -= 1
+            if self.k == 0: self.res = root.val
+            dfs(root.right)
+
+        self.k = k
+        dfs(root)
+        return self.res
+```
+:::

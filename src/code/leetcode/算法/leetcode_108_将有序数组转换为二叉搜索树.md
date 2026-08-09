@@ -16,6 +16,8 @@ date: 2024-03-28
 
 解法：递归
 
+:::code-tabs
+@tab Java
 ```java
 class Solution {
     public TreeNode sortedArrayToBST(int[] nums) {
@@ -38,3 +40,16 @@ class Solution {
 	}
 }
 ```
+@tab Python
+```py
+class Solution:
+    def sortedArrayToBST(self, nums: List[int]) -> Optional[TreeNode]:
+        if(len(nums) == 0):
+                return None
+        else:
+            node = TreeNode(val = nums[len(nums)//2])
+            node.left = self.sortedArrayToBST(nums[0:len(nums)//2])
+            node.right = self.sortedArrayToBST(nums[len(nums)//2 + 1 : len(nums)])
+        return node
+```
+:::

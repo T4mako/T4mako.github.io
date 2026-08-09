@@ -12,7 +12,8 @@ tag:
 <Badge text="中等" type="warning" vertical="middle" />
 
 
-
+:::code-tabs
+@tab Java
 ```java
 class Solution {
     public boolean isValidBST(TreeNode root) {
@@ -32,5 +33,19 @@ class Solution {
     }
 }
 ```
+@tab Python
+```py
+class Solution:
+    def isValidBST(self, root: Optional[TreeNode]) -> bool:
+        def area(node,left=None,right=None):
+            if node == None: return True
+            elif(left is not None and left >= node.val) or (right is not None and right <= node.val):
+                return False
+            else:
+                return area(node.left,left,node.val) and area(node.right,node.val,right)
+            
+        return area(root)
+```
+:::
 
 递归判断左右节点是否满足条件，传入参数为左右区间的值，小于等于left或大于等于right都是false

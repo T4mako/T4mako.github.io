@@ -45,4 +45,20 @@ class Solution {
     }    
 }
 ```
+@tab Python
+```py
+class Solution:
+    def rightSideView(self, root: Optional[TreeNode]) -> List[int]:
+        if root == None: return []
+        res = []
+        node_list = [root]
+        while node_list:
+            res.append(node_list[-1].val)
+            tmp = []
+            for node in node_list:
+                if node.left: tmp.append(node.left) 
+                if node.right: tmp.append(node.right) 
+            node_list = tmp
+        return res
+```
 :::
