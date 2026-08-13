@@ -40,6 +40,8 @@ class Solution {
 
 ## 解法一优化：
 
+::: tab-codes
+@tab Java
 ```java
 class Solution {
     public List<List<Integer>> permute(int[] nums) {
@@ -66,6 +68,20 @@ class Solution {
     }
 }
 ```
-
+@tab Python
+```py
+class Solution:
+    def permute(self, nums: List[int]) -> List[List[int]]:
+        res = []
+        def list_all(nums,tmp,res):
+            if not nums: 
+                res.append(tmp)
+                return
+            for idx,i in enumerate(nums):
+                list_all(nums[0:idx] + nums[idx+1:],tmp + [i],res)
+        
+        list_all(nums,[],res)
+        return res
+```
 
 维护一个辅助数组vis，长度与nums相等，当nums中的值被添加到temp中，vis相对的值赋为1，递归调用def函数，当n满足条件时添加新的数组temp，然后将数组vis[i]置为0，temp去除相应的值。

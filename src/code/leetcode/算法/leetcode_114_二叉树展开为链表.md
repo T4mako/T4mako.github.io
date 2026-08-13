@@ -14,7 +14,8 @@ date: 2024-03-07
 
 <Badge text="中等" type="warning" vertical="middle" />
 
-解法：
+## 解法一
+
 先序遍历树，将结果存入数组中，再通过根节点构造树
 
 ```java
@@ -46,3 +47,30 @@ class Solution {
 }
 ```
 
+## 解法二
+
+找出左子树最右边的节点，把右子树接过来
+
+```py
+class Solution:
+    def flatten(self, root: Optional[TreeNode]) -> None:
+        while root is not None:
+            # 左子树为空，直接处理下一个节点（右子树）
+            if root.left is None:
+                root = root.right
+            else:
+                # 找到左子树中最右边的节点
+                pre = root.left
+                while pre.right is not None:
+                    pre = pre.right
+                
+                # 将原来的右子树接到该节点的右侧
+                pre.right = root.right
+                
+                # 将左子树移到右子树位置，左子树置空
+                root.right = root.left
+                root.left = None
+                
+                # 继续处理下一个节点（即新的右子树根）
+                root = root.right
+```

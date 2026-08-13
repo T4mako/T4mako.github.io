@@ -12,6 +12,8 @@ tag:
 # 105_从前序与中序遍历序列构造二叉树
 <Badge text="中等" type="warning" vertical="middle" />
 
+# Hash + 递归
+
 ```java
 class Solution {
     TreeNode res = new TreeNode();
@@ -46,3 +48,22 @@ class Solution {
 ```
 
 将节点存入到map中，方便之后的查找，记录每一次递归时前序数组和中序数组的首尾值，方便递归时判断，当首大于尾时，结束递归。否则按照构造二叉树的方法，将前序的第一个数加入，在构造对应的左右子树
+
+## 递归
+
+```py
+class Solution:
+    def buildTree(self, preorder: List[int], inorder: List[int]) -> Optional[TreeNode]:
+        
+        if(not inorder or not preorder): return None
+
+        head = TreeNode(val = preorder[0])
+
+        mid = inorder.index(preorder[0])
+        head.left = self.buildTree(preorder[1:mid+1], inorder[:mid])
+        head.right = self.buildTree(preorder[mid+1:], inorder[mid+1:])
+
+        return head
+```
+
+
