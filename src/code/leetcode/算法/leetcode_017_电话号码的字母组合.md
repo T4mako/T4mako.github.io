@@ -61,6 +61,8 @@ class Solution {
 
 ### 解法二：递归
 
+:::code-tabs
+@tab Java
 ```java
 class Solution {
 	List res = new ArrayList();
@@ -86,6 +88,33 @@ class Solution {
     }
 }
 ```
+@tab Python
+```py
+class Solution:
+    def letterCombinations(self, digits: str) -> List[str]:
+        if not digits: return []
+
+        phone = {'2':['a','b','c'],
+                 '3':['d','e','f'],
+                 '4':['g','h','i'],
+                 '5':['j','k','l'],
+                 '6':['m','n','o'],
+                 '7':['p','q','r','s'],
+                 '8':['t','u','v'],
+                 '9':['w','x','y','z']}
+                
+        def backtrack(conbination,nextdigit):
+            if len(nextdigit) == 0:
+                res.append(conbination)
+            else:
+                for letter in phone[nextdigit[0]]:
+                    backtrack(conbination + letter,nextdigit[1:])
+
+        res = []
+        backtrack('',digits)
+        return res
+```
+:::
 
 运用递归思想，添加到list数组中的元素长度为输入数字的总长度，定义一个string，调用add方法，检测传进来的index值，对应digits中的数字，让通过for循环遍历digits对应数字的对应字母，再次调用add方法，并传入index+1，如果index等于digits的长度，将字符串添加到list中
 

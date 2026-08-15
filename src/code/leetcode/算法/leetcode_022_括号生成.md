@@ -64,6 +64,8 @@ class Solution {
 
 ## 解法二：
 
+:::code-tabs
+@tab Java
 ```java
 class Solution {
     public static List<String> generateParenthesis(int n) {
@@ -84,5 +86,23 @@ class Solution {
     }
 }
 ```
+@tab Python
+```py
+class Solution:
+    def generateParenthesis(self, n: int) -> List[str]:
+        res = []
+        def dfs(tmp,left_num,right_num,res,n):
+            if left_num == right_num & left_num == n:
+                res.append(tmp)
+            elif right_num > left_num or left_num > n or right_num > n:
+                return
+            else:
+                dfs(tmp + '(',left_num + 1,right_num,res,n)
+                dfs(tmp + ')',left_num,right_num + 1,res,n)
+
+        dfs('',0,0,res,n)
+        return res
+```
+:::
 
 通过 dfs 深度优先遍历，递归调用def方法，再通过剪枝的操作完成输出

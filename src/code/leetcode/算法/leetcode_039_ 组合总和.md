@@ -10,6 +10,8 @@ tag:
 
 <Badge text="中等" type="warning" vertical="middle" />
 
+:::code-tabs
+@tab Java
 ```java
 class Solution {
      public List<List<Integer>> combinationSum(int[] candidates, int target) {
@@ -37,4 +39,21 @@ class Solution {
     }
 }
 ```
+@tab Python
+```py
+class Solution:
+    def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
+        res = []
+        def dfs(candidates,nums,nums_sum,target,res):
+            for idx,i in enumerate(candidates):
+                if(nums_sum + i == target):
+                    res.append(nums + [i])
+                elif(nums_sum + i < target):
+                    dfs(candidates[idx:],nums + [i],nums_sum + i,target,res)
+
+        dfs(candidates,[],0,target,res)
+        return res
+```
+:::
+
 将数组排序，通过深度遍历递归的思想，传入参数i为最大的那个数的下标，再通过剪枝的方法，求出res结果作为返回

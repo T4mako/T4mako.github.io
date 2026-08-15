@@ -40,7 +40,7 @@ class Solution {
 
 ## 解法一优化：
 
-::: tab-codes
+:::code-tabs
 @tab Java
 ```java
 class Solution {
