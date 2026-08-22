@@ -47,3 +47,19 @@ class Solution {
 ```
 
 先将nums[0]的值得到，如果nums[0]正好为target，返回0，用一个布尔值bool用于判断target位于数组的左半部分还是右半部分，开始二分查找，判断mid所处位置与target所处位置是否同区域，若同区，判断mid与target的值，移动相应指针，若不同区，判断mid与nums[0]的值，让指针往同区域的地方靠
+
+```py
+class Solution:
+    def search(self, nums: List[int], target: int) -> int:
+        left, right = 0, len(nums) - 1
+        while left < right:
+            mid = (left + right) // 2
+            # 三个布尔值异或，判断 target 位于哪一侧
+            if (nums[0] > target) ^ (nums[0] > nums[mid]) ^ (target > nums[mid]):
+                left = mid + 1
+            else:
+                right = mid
+        return left if left == right and nums[left] == target else -1
+```
+
+快速解法，条件 `(nums[0] > target) ^ (nums[0] > nums[mid]) ^ (target > nums[mid])` 有两个还是一个真来判断移动哪个指针

@@ -18,7 +18,8 @@ tag:
 
 解法：回溯
 
-
+:::code-tabs
+@tab Java
 ```java
 class Solution {
     public boolean exist(char[][] board, String word) {
@@ -62,3 +63,27 @@ public boolean dfs(int row, int col, int i, char[][] board, String word, boolean
 
 }
 ```
+@tab Python
+```py
+class Solution:
+    def exist(self, board: List[List[str]], word: str) -> bool:
+        def dfs(board,cur_i,cur_j,word,visted):
+            if not word: return True
+            if cur_i < 0 or cur_i >= len(board) or cur_j < 0 or cur_j >= len(board[0]): return False
+            if(word[0] == board[cur_i][cur_j] and not visited[cur_i][cur_j]):
+                visited[cur_i][cur_j] = True
+                res = (dfs(board, cur_i - 1, cur_j, word[1:], visited) or 
+                         dfs(board, cur_i + 1, cur_j, word[1:], visited) or 
+                         dfs(board, cur_i, cur_j - 1, word[1:], visited) or 
+                         dfs(board, cur_i, cur_j + 1, word[1:], visited))
+                visited[cur_i][cur_j] = False
+                return res
+            else: return False
+
+        visited = [[False] * len(board[0]) for _ in range(len(board))]
+        for i in range(len(board)):
+            for j in range(len(board[0])):
+                if dfs(board,i,j,word,visited): return True
+        return False
+```
+:::

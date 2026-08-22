@@ -45,3 +45,20 @@ class Solution {
 }
 ```
 通过二分法查找元素是否在数组中，先判断target值是否小于nums[0]或nums[nums.length-1]，如果是，返回0或nums,length，当left指针与right相邻或left==right时，判断left所指向值是否等于target，如果是，返回left，如果不是，返回left+1
+
+
+```py
+class Solution:
+    def searchInsert(self, nums: List[int], target: int) -> int:
+        left = 0
+        right = len(nums) - 1
+        mid = 0
+        while left <= right:
+            if(left == right and nums[left] < target): return left + 1
+            if(left == right and nums[left] > target): return left
+            mid = (left + right) // 2
+            if nums[mid] == target: return mid
+            elif nums[mid] > target: right = mid - 1
+            else: left = mid + 1
+        return mid
+```

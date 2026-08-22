@@ -8,6 +8,152 @@ tag:
   - LLM
   - vLLM
 ---
+
+## 核心思路
+
+问题：业务主要为短输出的任务下，模型峰值 QPS 多少？如何优化？如何避免 KV Cache 浪费？
+
+测试方式：分别设置 `[2,4,8,16,32,64,128,256]` 个 Worker（并发请求），输出在 50 token 左右，不使用思考模式，请求持续 30s，计算 QPS、TTFT 首字延迟、总时延
+
+默认参数下测试，`--max-num-seqs 16`：
+
+```log
+并发 2 × 30s（短输出：max_tokens=50）
+  成功 96 失败 0 | 实际 QPS 3.2 | 平均输出 12 chunks
+  TTFT       P50/P99：156 / 199 ms
+  总时延     P50/P99：741 / 1247 ms
+
+并发 4 × 30s（短输出：max_tokens=50）
+  成功 172 失败 0 | 实际 QPS 5.6 | 平均输出 11 chunks
+  TTFT       P50/P99：162 / 230 ms
+  总时延     P50/P99：796 / 1377 ms
+
+并发 8 × 30s（短输出：max_tokens=50）
+  成功 274 失败 0 | 实际 QPS 8.9 | 平均输出 13 chunks
+  TTFT       P50/P99：201 / 235 ms
+  总时延     P50/P99：1016 / 1591 ms
+
+并发 16 × 30s（短输出：max_tokens=50）
+  成功 466 失败 0 | 实际 QPS 15.1 | 平均输出 12 chunks
+  TTFT       P50/P99：221 / 262 ms
+  总时延     P50/P99：1194 / 1913 ms
+
+并发 32 × 30s（短输出：max_tokens=50）
+  成功 504 失败 0 | 实际 QPS 15.9 | 平均输出 12 chunks
+  TTFT       P50/P99：1148 / 1511 ms
+  总时延     P50/P99：2076 / 3081 ms
+
+并发 64 × 30s（短输出：max_tokens=50）
+  成功 536 失败 0 | 实际 QPS 15.8 | 平均输出 12 chunks
+  TTFT       P50/P99：3160 / 3699 ms
+  总时延     P50/P99：4045 / 5079 ms
+
+并发 128 × 30s（短输出：max_tokens=50）
+  成功 612 失败 0 | 实际 QPS 16.2 | 平均输出 12 chunks
+  TTFT       P50/P99：6867 / 7718 ms
+  总时延     P50/P99：7595 / 8927 ms
+
+发 2 × 30s（短输出：max_tokens=50）
+  成功 96 失败 0 | 实际 QPS 3.2 | 平均输出 12 chunks
+  TTFT       P50/P99：156 / 199 ms
+  总时延     P50/P99：741 / 1247 ms
+
+并发 4 × 30s（短输出：max_tokens=50）
+  成功 172 失败 0 | 实际 QPS 5.6 | 平均输出 11 chunks
+  TTFT       P50/P99：162 / 230 ms
+  总时延     P50/P99：796 / 1377 ms
+
+并发 8 × 30s（短输出：max_tokens=50）
+  成功 274 失败 0 | 实际 QPS 8.9 | 平均输出 13 chunks
+  TTFT       P50/P99：201 / 235 ms
+  总时延     P50/P99：1016 / 1591 ms
+
+并发 16 × 30s（短输出：max_tokens=50）
+  成功 466 失败 0 | 实际 QPS 15.1 | 平均输出 12 chunks
+  TTFT       P50/P99：221 / 262 ms
+  总时延     P50/P99：1194 / 1913 ms
+
+并发 32 × 30s（短输出：max_tokens=50）
+  成功 504 失败 0 | 实际 QPS 15.9 | 平均输出 12 chunks
+  TTFT       P50/P99：1148 / 1511 ms
+  总时延     P50/P99：2076 / 3081 ms
+
+并发 64 × 30s（短输出：max_tokens=50）
+  成功 536 失败 0 | 实际 QPS 15.8 | 平均输出 12 chunks
+  TTFT       P50/P99：3160 / 3699 ms
+  总时延     P50/P99：4045 / 5079 ms
+
+并发 128 × 30s（短输出：max_tokens=50）
+  成功 612 失败 0 | 实际 QPS 16.2 | 平均输出 12 chunks
+  TTFT       P50/P99：6867 / 7718 ms
+  总时延     P50/P99：7595 / 8927 ms
+```
+
+QPS 峰值 16，此时的 vllm 日志：
+
+```log
+Running: 16 reqs, Waiting: 13 reqs, GPU KV cache usage: 27.5%, Prefix cache hit rate: 0.0%, MM cache hit rate: 92.0%
+```
+
+KV Cache 没有用满，最大请求 16
+
+调整参数：`--max-num-seqs 64`
+
+输出日志：
+
+```log
+并发 2 × 30s（短输出：max_tokens=50）
+  成功 55 失败 0 | 实际 QPS 1.8 | 平均输出 14 chunks
+  TTFT       P50/P99：156 / 2124 ms
+  总时延     P50/P99：825 / 11285 ms
+
+并发 4 × 30s（短输出：max_tokens=50）
+  成功 161 失败 0 | 实际 QPS 5.2 | 平均输出 13 chunks
+  TTFT       P50/P99：162 / 230 ms
+  总时延     P50/P99：837 / 1341 ms
+
+并发 8 × 30s（短输出：max_tokens=50）
+  成功 286 失败 0 | 实际 QPS 9.2 | 平均输出 12 chunks
+  TTFT       P50/P99：201 / 234 ms
+  总时延     P50/P99：1014 / 1594 ms
+
+并发 16 × 30s（短输出：max_tokens=50）
+  成功 461 失败 0 | 实际 QPS 14.7 | 平均输出 12 chunks
+  TTFT       P50/P99：219 / 370 ms
+  总时延     P50/P99：1222 / 2003 ms
+
+并发 32 × 30s（短输出：max_tokens=50）
+  成功 803 失败 0 | 实际 QPS 25.7 | 平均输出 12 chunks
+  TTFT       P50/P99：266 / 323 ms
+  总时延     P50/P99：1417 / 2298 ms
+
+并发 64 × 30s（短输出：max_tokens=50）
+  成功 958 失败 0 | 实际 QPS 29.8 | 平均输出 12 chunks
+  TTFT       P50/P99：547 / 952 ms
+  总时延     P50/P99：2336 / 3764 ms
+
+并发 128 × 30s（短输出：max_tokens=50）
+  成功 1041 失败 0 | 实际 QPS 30.3 | 平均输出 12 chunks
+  TTFT       P50/P99：2687 / 3304 ms
+  总时延     P50/P99：4199 / 6016 ms
+
+并发 256 × 30s（短输出：max_tokens=50）
+  成功 1125 失败 0 | 实际 QPS 29.5 | 平均输出 12 chunks
+  TTFT       P50/P99：6965 / 7633 ms
+  总时延     P50/P99：8308 / 10286 ms
+```
+
+峰值 QPS 在 30 左右，但首字延迟暴涨，此时的 vllm 日志：
+
+```log
+ Avg prompt throughput: 475.5 tokens/s, Avg generation throughput: 1023.8 tokens/s, Running: 50 reqs, Waiting: 197 reqs, GPU KV cache usage: 91.2%, Prefix cache hit rate: 0.0%
+```
+
+KV Cache 几乎打满，提升 QPS 的情况下，用户体验还算可以（32/64 并行度）
+
+
+
+
 ##  测试指标
 
 ### 性能指标
@@ -65,7 +211,7 @@ nohup ./.venv/bin/python -m vllm.entrypoints.cli.main serve \
   --tensor-parallel-size 2 \
   --dtype float16 \
   --max-model-len 262144 \
-  --max-num-seqs 24 \
+  --max-num-seqs 32 \
   --gpu-memory-utilization 0.92 \
   --speculative-config '{"method":"mtp","num_speculative_tokens":4}' \
   --enable-prefix-caching \
@@ -78,3 +224,5 @@ nohup ./.venv/bin/python -m vllm.entrypoints.cli.main serve \
   --default-chat-template-kwargs '{"enable_thinking": false}' \
   > ./logs/vllm.log 2>&1 &
 ```
+
+
