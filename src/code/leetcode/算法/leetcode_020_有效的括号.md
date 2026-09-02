@@ -10,7 +10,8 @@ tag:
 <Badge text="简单" type="tip" vertical="middle" />
 
 
-
+:::code-tabs
+@tab Java
 ```java
 class Solution {
     public boolean isValid(String s) {
@@ -37,6 +38,19 @@ class Solution {
         }
     }
 }
+```
+@tab Python
+```py
+class Solution:
+    def isValid(self, s: str) -> bool:
+        stack = deque()
+        for i in s:
+            if i == ')' and len(stack) > 0 and stack.pop() == '(': continue 
+            elif i == ']' and len(stack) > 0 and stack.pop() == '[': continue
+            elif i == '}' and len(stack) > 0 and stack.pop() == '{': continue
+            elif i == '(' or i == '[' or i == '{': stack.append(i)
+            else: return False
+        return True if len(stack) == 0 else False
 ```
 
 建立一个数组，一个指针index，如果index指针指向0并且入栈为有括号时，返回false，如果是左括号则进栈，inmdex++，如果是有括号，匹配index-1所指向的括号是否匹配，匹配则index--

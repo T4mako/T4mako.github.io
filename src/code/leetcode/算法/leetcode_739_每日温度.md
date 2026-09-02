@@ -18,9 +18,11 @@ tag:
 解法：单调栈
 遍历 temperatures 数组并维护一个单调栈，栈存放元素在 temperatures 中的位置
 - 如果栈为空，将元素入栈
-- 如果遍历到的元素比栈底小，则入栈
-- 如果遍历到的元素比栈底大，则找到了更大的温度。执行出栈操作，并计算位置差。
+- 如果遍历到的元素比栈顶小，则入栈
+- 如果遍历到的元素比栈顶大，则找到了更大的温度。执行出栈操作，并计算位置差。
 
+:::code-tabs
+@tab Java
 ```java
 public int[] dailyTemperatures(int[] temperatures) {
     int[] res = new int[temperatures.length];
@@ -36,3 +38,19 @@ public int[] dailyTemperatures(int[] temperatures) {
     return res;
 }
 ```
+@tab Python
+```py
+class Solution:
+    def dailyTemperatures(self, temperatures: List[int]) -> List[int]:
+        n = len(temperatures)
+        ans = [0] * n
+        stack = []  # 存储索引，栈内温度单调递减
+        for i in range(n):
+            # 当前温度大于栈顶索引对应的温度时，说明找到 warmer day
+            while stack and temperatures[i] > temperatures[stack[-1]]:
+                idx = stack.pop()
+                ans[idx] = i - idx
+            stack.append(i)
+        return ans
+```
+:::

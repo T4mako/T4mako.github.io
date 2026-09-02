@@ -66,6 +66,8 @@ public static double findMedianSortedArrays(int[] nums1, int[] nums2) {
 
 ## 解法二：二分法
 
+:::code-tabs
+@tab Java
 ```java
 class Solution {
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
@@ -92,11 +94,41 @@ class Solution {
     }
 }
 ```
+@tab Python
+```py
+class Solution:
+    def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
+        if len(nums1) > len(nums2):
+            nums1, nums2 = nums2, nums1
+        m, n = len(nums1), len(nums2)
+        lo, hi = 0, m
+        
+        while lo <= hi:
+            i = (lo + hi) // 2
+            j = (m + n + 1) // 2 - i
+            
+            left1 = nums1[i-1] if i > 0 else float('-inf')
+            right1 = nums1[i] if i < m else float('inf')
+            left2 = nums2[j-1] if j > 0 else float('-inf')
+            right2 = nums2[j] if j < n else float('inf')
+            
+            if left1 <= right2 and left2 <= right1:
+                if (m + n) % 2 == 1:
+                    return max(left1, left2)
+                return (max(left1, left2) + min(right1, right2)) / 2
+            elif left1 > right2:
+                hi = i - 1
+            else:
+                lo = i + 1
+```
+:::
 
 
-题目提示算法的时间复杂度为O(log(n+m))，看到logn的复杂度就想到二分法，对于这题两个数组的和可能是奇数也可能是偶数，即m+n 的奇偶不确定。为了简化代码，分别找 **第 (m+n+1) / 2 个，和 (m+n+2) / 2 个**，然后求其平均值即可，这对奇偶数均适用。  
+题目提示算法的时间复杂度为 O(log(n+m))，看到 logn 的复杂度就想到二分法，对于这题两个数组的和可能是奇数也可能是偶数，即 m+n 的奇偶不确定。为了简化代码，分别找 **第 (m+n+1) / 2 个，和 (m+n+2) / 2 个**，然后求其平均值即可，这对奇偶数均适用。  
 定义一个函数来在两个有序数组中找到第 K 个元素，函数参数为两个原始数组和两个开始的指针与要找的第 k 个数。  
-当某一个 数组的起始位置大于等于其数组长度 时，实际上就变成了在 另一个数组中找数字。如果 K=1的话，那么我们只要比较 nums1 和 nums2 的起始位置 i 和 j 上的数字就可以了。在正常情况下，对K二分，先检查一下，数组中到底存不存在第K/2个数字，如果存在就取出来，否则就赋值上一个整型最大值。如果某个数组没有第K/2个数字，那么我们就淘汰另一个数字的前K/2个数字即可。比较这两个数组的第K/2小的数字temp1，temp2的大小，如果第一个数组的第K/2个数字小的话，那么说明我们要找的数字肯定不在nums1中的前K/2个数字，所以我们可以将其淘汰，将nums1的起始位置向后移动K/2个，并且此时的K也自减去K/2，调用递归。反之，淘汰nums2中的前K/2个数字，并将nums2的起始位置向后移动K/2个，并且此时的K也自减去K/2，调用递归即可。
+当某一个 数组的起始位置大于等于其数组长度 时，实际上就变成了在 另一个数组中找数字。如果 K=1 的话，那么我们只要比较 nums1 和 nums2 的起始位置 i 和 j 上的数字就可以了。在正常情况下，对K二分，先检查一下，数组中到底存不存在第 K/2 个数字，如果存在就取出来，否则就赋值上一个整型最大值。如果某个数组没有第 K/2 个数字，那么我们就淘汰另一个数字的前 K/2 个数字即可。比较这两个数组的第 K/2 小的数字 temp1，temp2 的大小，如果第一个数组的第K/2个数字小的话，那么说明我们要找的数字肯定不在nums1中的前K/2个数字，所以我们可以将其淘汰，将 nums1 的起始位置向后移动K/2个，并且此时的K也自减去 K/2，调用递归。反之，淘汰 nums2 中的前 K/2 个数字，并将 nums2 的起始位置向后移动 K/2 个，并且此时的K也自减去 K/2，调用递归即可。
+
+https://www.bilibili.com/video/BV162PVzPECg/?share_source=copy_web&vd_source=e15d81161453174d0e9cd6d90343cb39
 
 
 

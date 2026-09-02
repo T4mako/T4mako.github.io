@@ -127,6 +127,34 @@ title: Python 常用 API 速查
 | `divmod(a, b)` | 同时返回商和余数 |
 | `n.bit_length()` | 返回整数二进制位数 |
 
+## 最大值与最小值
+
+| API | 简单说明 |
+| :--- | :--- |
+| `max(iterable)` | 获取可迭代对象中的最大值 |
+| `min(iterable)` | 获取可迭代对象中的最小值 |
+| `max(a, b, c)` | 获取多个参数中的最大值 |
+| `min(a, b, c)` | 获取多个参数中的最小值 |
+| `max(iterable, key=func)` | 按指定规则获取最大元素 |
+| `min(iterable, key=func)` | 按指定规则获取最小元素 |
+| `float("inf")` | 正无穷，常用作最小值的初始值 |
+| `float("-inf")` | 负无穷，常用作最大值的初始值 |
+| `math.inf` / `-math.inf` | `math` 模块中的正无穷和负无穷 |
+
+```python
+nums = [3, 1, 8, 2]
+
+max_value = max(nums)  # 8
+min_value = min(nums)  # 1
+
+# 遍历求最大值和最小值时的安全初始值
+max_value = float("-inf")
+min_value = float("inf")
+for x in nums:
+    max_value = max(max_value, x)
+    min_value = min(min_value, x)
+```
+
 ## 字符串 str
 
 | API | 简单说明 |
