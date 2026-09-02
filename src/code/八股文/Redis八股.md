@@ -150,7 +150,7 @@ Redis Cluster 使用 **哈希槽（Hash Slot）** 处理 **数据** 与 **节点
 
 ### Redis 分布式锁实现原理
 
-![alt text](images/image.png)
+![alt text](./images/image.png)
 
 - 如果 key 不存在，则显示插入成功，可以用来表示加锁成功
 - 如果 key 存在，则会显示插入失败，可以用来表示加锁失败
