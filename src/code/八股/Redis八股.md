@@ -1,3 +1,5 @@
+# Redis 八股
+
 ## Redis 数据结构
 
 - string: 字符或数字
