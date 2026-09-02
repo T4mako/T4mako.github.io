@@ -14,6 +14,7 @@ export const enNavbar = navbar([
       { text: "Operations", link: "运维与部署/"},
       { text: "Leetcode", link: "leetcode/" },
       { text: "AI", link: "AI/" },
+      { text: "Interview", link: "八股/" },
     ],
   },
   {
